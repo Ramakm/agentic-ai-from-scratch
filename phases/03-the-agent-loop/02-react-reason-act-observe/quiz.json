@@ -1,0 +1,78 @@
+{
+  "lesson": "02-react-reason-act-observe",
+  "title": "ReAct: Reason, Act, Observe",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "In text ReAct, who writes the 'Observation:' line?",
+      "options": [
+        "The model",
+        "Your code, with the tool's real result",
+        "The user",
+        "Nobody; it's optional"
+      ],
+      "correct": 1,
+      "explanation": "The observation must come from the tool. When the model writes it, it's inventing a result."
+    },
+    {
+      "stage": "check",
+      "question": "What does stop=[\"\\nObservation:\"] do?",
+      "options": [
+        "Removes observations from the history",
+        "Makes the API stop generating as soon as the model starts writing an Observation line",
+        "Tells the tool to stop",
+        "Ends the whole agent run"
+      ],
+      "correct": 1,
+      "explanation": "Generation halts right after Action Input, so the model can't imagine the tool's result."
+    },
+    {
+      "stage": "check",
+      "question": "The model's reply contains an Action and then its own Observation and Final Answer. What should the parser do?",
+      "options": [
+        "Accept the Final Answer",
+        "Keep the Action, discard the invented Observation and everything after it, and run the tool",
+        "Raise an exception and end the run",
+        "Use the invented Observation as the tool result"
+      ],
+      "correct": 1,
+      "explanation": "Anything reasoned from an invented result is untrustworthy, including the answer."
+    },
+    {
+      "stage": "check",
+      "question": "The model replies with prose and no Action or Final Answer line. What does this lesson's loop do?",
+      "options": [
+        "Treats the prose as the final answer",
+        "Feeds back 'Observation: error: …' explaining the format, and continues",
+        "Crashes",
+        "Silently retries the same request"
+      ],
+      "correct": 1,
+      "explanation": "Format errors are observations, the same rule as tool errors in Lesson 1."
+    },
+    {
+      "stage": "post",
+      "question": "In 20 runs without a stop sequence, llama3.2 invented observations in 10. With it: 0. Accuracy stayed at 1/20 either way. What follows?",
+      "options": [
+        "Stop sequences make agents accurate",
+        "The stop sequence fixes one failure (invented results) but not others (skipping tools, weak reasoning)",
+        "The measurement is wrong",
+        "Temperature doesn't matter"
+      ],
+      "correct": 1,
+      "explanation": "Each fix targets one failure mode. Measure each one separately."
+    },
+    {
+      "stage": "post",
+      "question": "Why does native tool calling avoid invented observations without a stop sequence?",
+      "options": [
+        "Native models are smarter",
+        "The model's turn ends at the structured tool call, so it never gets to write the result",
+        "It uses a different tokenizer",
+        "It doesn't; you still need stop sequences"
+      ],
+      "correct": 1,
+      "explanation": "The API ends the turn at the call and waits for a tool message. Text ReAct has to recreate that with a stop sequence."
+    }
+  ]
+}

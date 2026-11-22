@@ -1,0 +1,78 @@
+{
+  "lesson": "09-state-machines-for-agents",
+  "title": "State Machines for Agents",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Your agent must always verify an order before refunding. Where is that rule strongest?",
+      "options": [
+        "In the system prompt, in capital letters",
+        "In the structure: the refund state is only reachable from the verification state",
+        "In the tool description",
+        "In a comment in the code"
+      ],
+      "correct": 1,
+      "explanation": "Prompts are suggestions a model can ignore. A transition table makes skipping verification impossible."
+    },
+    {
+      "stage": "check",
+      "question": "A handler returns a next state that isn't in the transition table. What should happen?",
+      "options": [
+        "Go there anyway",
+        "Raise an IllegalTransition error, so the bug fails loudly in tests",
+        "Pick the closest allowed state",
+        "Restart the machine"
+      ],
+      "correct": 1,
+      "explanation": "The table is the contract. Violations are programming errors and should never pass silently."
+    },
+    {
+      "stage": "check",
+      "question": "In this lesson, why did the first version's visit limit fail to stop an endless ask-the-customer cycle?",
+      "options": [
+        "The limit was too high",
+        "The counter lived inside run(), so every pause and resume reset it",
+        "The model ignored it",
+        "Python dicts lose data"
+      ],
+      "correct": 1,
+      "explanation": "Anything that must survive a pause belongs with the run's state (Ctx), not in a local variable."
+    },
+    {
+      "stage": "check",
+      "question": "When the model's answer to choose() is invalid after all retries, why fall back to 'other' (escalate)?",
+      "options": [
+        "It's the most common label",
+        "It's the safest outcome: a human looks at it, and no risky state is reached",
+        "It's alphabetically last",
+        "The model prefers it"
+      ],
+      "correct": 1,
+      "explanation": "A fallback should minimise harm, not maximise the chance of being right."
+    },
+    {
+      "stage": "post",
+      "question": "llama3.2 labelled refund requests as 'returns'. Why did no wrong refund happen?",
+      "options": [
+        "The model was lucky",
+        "A wrong label can only route to a safe state; refund is reachable only after verification and the policy check",
+        "Returns and refunds are the same",
+        "The tests mocked the model"
+      ],
+      "correct": 1,
+      "explanation": "Design the machine so every possible wrong decision lands somewhere safe. Then model accuracy affects quality, not safety."
+    },
+    {
+      "stage": "post",
+      "question": "Adding one-line label definitions moved accuracy from 3/8 to 5/8. What's the right next step?",
+      "options": [
+        "Ship it",
+        "Measure on more labelled examples and try few-shot examples, since 8 tickets is a small sample",
+        "Remove the definitions",
+        "Switch to a free loop"
+      ],
+      "correct": 1,
+      "explanation": "Eight examples show direction, not a reliable rate. Grow the labelled set and keep measuring as you change the prompt."
+    }
+  ]
+}

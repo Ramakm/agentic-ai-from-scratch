@@ -39,7 +39,7 @@ window.SITE = {
   "totals": {
     "phases": 16,
     "lessons": 163,
-    "published": 11,
+    "published": 22,
     "hours": 127
   }
 };
@@ -325,8 +325,8 @@ window.PHASES = [
   "id": "03-the-agent-loop",
   "name": "The Agent Loop",
   "desc": "A while-loop, a model, and a toolbox. ReAct, stop conditions, retries, interrupts, and the loop as a graph.",
-  "status": "in-progress",
-  "published": 1,
+  "status": "complete",
+  "published": 12,
   "lessons": [
    {
     "id": "01-the-agent-loop-in-120-lines",
@@ -343,88 +343,110 @@ window.PHASES = [
     "title": "ReAct: reason, act, observe",
     "minutes": 60,
     "path": "phases/03-the-agent-loop/02-react-reason-act-observe",
-    "type": "",
-    "num": "03.02"
+    "type": "Build",
+    "num": "03.02",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "03-stop-conditions-max-steps",
     "title": "Stop conditions & max steps",
     "minutes": 35,
     "path": "phases/03-the-agent-loop/03-stop-conditions-max-steps",
-    "type": "",
-    "num": "03.03"
+    "type": "Build",
+    "num": "03.03",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "04-scratchpads-and-thought-traces",
     "title": "Scratchpads and thought traces",
     "minutes": 40,
     "path": "phases/03-the-agent-loop/04-scratchpads-and-thought-traces",
-    "type": "",
-    "num": "03.04"
+    "type": "Build",
+    "num": "03.04",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "05-handling-malformed-actions",
     "title": "Handling malformed actions",
     "minutes": 40,
     "path": "phases/03-the-agent-loop/05-handling-malformed-actions",
-    "type": "",
-    "num": "03.05"
+    "type": "Build",
+    "num": "03.05",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "06-retries-backoff-recovery",
     "title": "Retries, backoff & recovery",
     "minutes": 45,
     "path": "phases/03-the-agent-loop/06-retries-backoff-recovery",
-    "type": "",
-    "num": "03.06"
+    "type": "Build",
+    "num": "03.06",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "07-streaming-an-agent-s-steps",
     "title": "Streaming an agent's steps",
     "minutes": 45,
     "path": "phases/03-the-agent-loop/07-streaming-an-agent-s-steps",
-    "type": "",
-    "num": "03.07"
+    "type": "Build",
+    "num": "03.07",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "08-interrupts-and-resumption",
     "title": "Interrupts and resumption",
     "minutes": 50,
     "path": "phases/03-the-agent-loop/08-interrupts-and-resumption",
-    "type": "",
-    "num": "03.08"
+    "type": "Build",
+    "num": "03.08",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "09-state-machines-for-agents",
     "title": "State machines for agents",
     "minutes": 55,
     "path": "phases/03-the-agent-loop/09-state-machines-for-agents",
-    "type": "",
-    "num": "03.09"
+    "type": "Build",
+    "num": "03.09",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "10-the-loop-as-a-graph",
     "title": "The loop as a graph",
     "minutes": 55,
     "path": "phases/03-the-agent-loop/10-the-loop-as-a-graph",
-    "type": "",
-    "num": "03.10"
+    "type": "Build",
+    "num": "03.10",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "11-cost-and-step-budgets",
     "title": "Cost and step budgets",
     "minutes": 35,
     "path": "phases/03-the-agent-loop/11-cost-and-step-budgets",
-    "type": "",
-    "num": "03.11"
+    "type": "Build",
+    "num": "03.11",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "12-debugging-a-stuck-loop",
     "title": "Debugging a stuck loop",
     "minutes": 45,
     "path": "phases/03-the-agent-loop/12-debugging-a-stuck-loop",
-    "type": "",
-    "num": "03.12"
+    "type": "Build",
+    "num": "03.12",
+    "published": true,
+    "hasQuiz": true
    }
   ]
  },

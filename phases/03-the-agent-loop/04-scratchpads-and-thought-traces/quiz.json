@@ -1,0 +1,78 @@
+{
+  "lesson": "04-scratchpads-and-thought-traces",
+  "title": "Scratchpads and Thought Traces",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Who should see an agent's internal reasoning?",
+      "options": [
+        "The user, always",
+        "Developers, through a trace; the user sees the answer",
+        "Nobody; it should be discarded",
+        "Only the model"
+      ],
+      "correct": 1,
+      "explanation": "Reasoning is valuable for debugging, and noise or even a leak risk in a user-facing reply."
+    },
+    {
+      "stage": "check",
+      "question": "What does the think tool return, and why?",
+      "options": [
+        "The answer, computed from the thought",
+        "Just 'ok': its value is giving the model a place to reason between actions, not new information",
+        "A summary of the conversation",
+        "An error, to force a retry"
+      ],
+      "correct": 1,
+      "explanation": "It's a no-op tool. The thought itself lands in the history and the trace."
+    },
+    {
+      "stage": "check",
+      "question": "Old messages are trimmed to save tokens. How does a looked-up fact survive?",
+      "options": [
+        "It doesn't",
+        "The agent saved it with note(), and notes are pinned into the system prompt on every turn",
+        "The model memorises it",
+        "Trimming never removes tool results"
+      ],
+      "correct": 1,
+      "explanation": "Pinned notes are re-rendered each turn, independent of which messages are kept."
+    },
+    {
+      "stage": "check",
+      "question": "Why must trimmed history never start with a tool message?",
+      "options": [
+        "Tool messages are too long",
+        "A tool result without its assistant tool call is an orphan; most APIs reject it",
+        "Tool messages contain secrets",
+        "It doesn't matter"
+      ],
+      "correct": 1,
+      "explanation": "Every tool result must follow the assistant message that requested it."
+    },
+    {
+      "stage": "post",
+      "question": "In 20 live runs, llama3.2 never called the think tool, and every run took exactly 2 steps. What's the likely cause?",
+      "options": [
+        "The think tool is broken",
+        "Its chat template shows tools only with the last user message, so after one tool call the model sees no tools at all",
+        "Think tools only work with OpenAI",
+        "The temperature was too high"
+      ],
+      "correct": 1,
+      "explanation": "With one tool-visible turn per run, spending it on 'think' would mean never calling a real tool."
+    },
+    {
+      "stage": "post",
+      "question": "Re-prompting after tool results kept tools visible: runs got longer and lookups succeeded, but correctness didn't improve. What's the takeaway?",
+      "options": [
+        "Re-prompting is useless",
+        "Fixing tool visibility removed one blocker; the small model's reasoning is the next one. Measure each fix separately",
+        "Always use more steps",
+        "The lookup tool is wrong"
+      ],
+      "correct": 1,
+      "explanation": "One fix, one measured effect. Don't expect a plumbing fix to make a 3B model reason well."
+    }
+  ]
+}

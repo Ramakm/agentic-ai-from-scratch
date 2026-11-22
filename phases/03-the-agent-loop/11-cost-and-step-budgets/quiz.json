@@ -1,0 +1,78 @@
+{
+  "lesson": "11-cost-and-step-budgets",
+  "title": "Cost and Step Budgets",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "A tool returns a 4,000-character report at step 2 of a 10-step run. Which steps pay for it?",
+      "options": [
+        "Only step 2",
+        "Every step from 3 onwards, because each call re-sends the whole history",
+        "None; tool output is free",
+        "Only the last step"
+      ],
+      "correct": 1,
+      "explanation": "The observation sits in the history, and the history is re-sent on every later model call."
+    },
+    {
+      "stage": "check",
+      "question": "Each step adds about the same number of tokens to the history. How does a run's total input grow with its number of steps N?",
+      "options": [
+        "Linearly, about N",
+        "Roughly with N squared",
+        "Logarithmically",
+        "It stays constant"
+      ],
+      "correct": 1,
+      "explanation": "Step n sends about n·k tokens; summing over N steps gives about k·N²/2."
+    },
+    {
+      "stage": "check",
+      "question": "Why does the budget warn the model at 80% instead of only stopping at 100%?",
+      "options": [
+        "To use more tokens",
+        "So the model can wrap up with what it has, instead of being cut off with no answer",
+        "Because providers require it",
+        "To lower the temperature"
+      ],
+      "correct": 1,
+      "explanation": "A model that knows it's nearly out of budget can produce a useful final answer."
+    },
+    {
+      "stage": "check",
+      "question": "In the measured run, trimming observations to 600 characters changed the real prompt-token total from 2,737 to:",
+      "options": [
+        "2,500",
+        "931",
+        "2,737 (no change)",
+        "100"
+      ],
+      "correct": 1,
+      "explanation": "A 66% cut, because the long report was re-sent at every later step."
+    },
+    {
+      "stage": "post",
+      "question": "llama3.2 reported fewer input tokens at step 2 than at step 1, despite a longer history. Why?",
+      "options": [
+        "Ollama caches prompts and doesn't count them",
+        "Its chat template only includes tool definitions in the last user message; after a tool result, the tools drop out of the prompt",
+        "The tokenizer changed",
+        "A bug in this lesson's code"
+      ],
+      "correct": 1,
+      "explanation": "Token counts depend on the template. This one also hides the tools from the model after its first call."
+    },
+    {
+      "stage": "post",
+      "question": "When are token estimates (characters ÷ 4) the right choice for a budget?",
+      "options": [
+        "Always",
+        "Only for rough planning, or when the API returns no usage; enforce budgets with reported usage",
+        "Never",
+        "Only for output tokens"
+      ],
+      "correct": 1,
+      "explanation": "Measured here, the estimate was off by 17–30% in both directions."
+    }
+  ]
+}

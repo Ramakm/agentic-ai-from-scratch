@@ -1,6 +1,6 @@
 # Agentic AI from Scratch
 
-> Build AI agents from a raw while-loop and an HTTP call, before a single framework gets imported. 16 phases, 163 lessons (11 live), Python and TypeScript, free and open source (MIT).
+> Build AI agents from a raw while-loop and an HTTP call, before a single framework gets imported. 16 phases, 163 lessons (22 live), Python and TypeScript, free and open source (MIT).
 
 Source: https://github.com/Ramakm/agentic-ai-from-scratch
 Site: https://ramakm.github.io/agentic-ai-from-scratch/
@@ -57,17 +57,17 @@ Turn text into action. Tool schemas, dispatchers, parallel calls, and errors fed
 A while-loop, a model, and a toolbox. ReAct, stop conditions, retries, interrupts, and the loop as a graph.
 
 - 03.01 The agent loop in 120 lines (60 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/03-the-agent-loop/01-the-agent-loop-in-120-lines | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/03-the-agent-loop/01-the-agent-loop-in-120-lines/docs/en.md
-- 03.02 ReAct: reason, act, observe (60 min) [planned]
-- 03.03 Stop conditions & max steps (35 min) [planned]
-- 03.04 Scratchpads and thought traces (40 min) [planned]
-- 03.05 Handling malformed actions (40 min) [planned]
-- 03.06 Retries, backoff & recovery (45 min) [planned]
-- 03.07 Streaming an agent's steps (45 min) [planned]
-- 03.08 Interrupts and resumption (50 min) [planned]
-- 03.09 State machines for agents (55 min) [planned]
-- 03.10 The loop as a graph (55 min) [planned]
-- 03.11 Cost and step budgets (35 min) [planned]
-- 03.12 Debugging a stuck loop (45 min) [planned]
+- 03.02 ReAct: reason, act, observe (60 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/03-the-agent-loop/02-react-reason-act-observe | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/03-the-agent-loop/02-react-reason-act-observe/docs/en.md
+- 03.03 Stop conditions & max steps (35 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/03-the-agent-loop/03-stop-conditions-max-steps | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/03-the-agent-loop/03-stop-conditions-max-steps/docs/en.md
+- 03.04 Scratchpads and thought traces (40 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/03-the-agent-loop/04-scratchpads-and-thought-traces | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/03-the-agent-loop/04-scratchpads-and-thought-traces/docs/en.md
+- 03.05 Handling malformed actions (40 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/03-the-agent-loop/05-handling-malformed-actions | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/03-the-agent-loop/05-handling-malformed-actions/docs/en.md
+- 03.06 Retries, backoff & recovery (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/03-the-agent-loop/06-retries-backoff-recovery | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/03-the-agent-loop/06-retries-backoff-recovery/docs/en.md
+- 03.07 Streaming an agent's steps (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/03-the-agent-loop/07-streaming-an-agent-s-steps | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/03-the-agent-loop/07-streaming-an-agent-s-steps/docs/en.md
+- 03.08 Interrupts and resumption (50 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/03-the-agent-loop/08-interrupts-and-resumption | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/03-the-agent-loop/08-interrupts-and-resumption/docs/en.md
+- 03.09 State machines for agents (55 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/03-the-agent-loop/09-state-machines-for-agents | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/03-the-agent-loop/09-state-machines-for-agents/docs/en.md
+- 03.10 The loop as a graph (55 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/03-the-agent-loop/10-the-loop-as-a-graph | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/03-the-agent-loop/10-the-loop-as-a-graph/docs/en.md
+- 03.11 Cost and step budgets (35 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/03-the-agent-loop/11-cost-and-step-budgets | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/03-the-agent-loop/11-cost-and-step-budgets/docs/en.md
+- 03.12 Debugging a stuck loop (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/03-the-agent-loop/12-debugging-a-stuck-loop | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/03-the-agent-loop/12-debugging-a-stuck-loop/docs/en.md
 
 ## Phase 04: Memory & Context Engineering
 

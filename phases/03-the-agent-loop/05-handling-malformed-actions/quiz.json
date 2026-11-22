@@ -1,0 +1,78 @@
+{
+  "lesson": "05-handling-malformed-actions",
+  "title": "Handling Malformed Actions",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "A model sends tool arguments wrapped in a ```json code fence. What should the loop do?",
+      "options": [
+        "Reject it so the model learns the right format",
+        "Strip the fence and run the call: the intent is unambiguous",
+        "Ask the user what the model meant",
+        "Run eval() on the text"
+      ],
+      "correct": 1,
+      "explanation": "A code fence can't change the meaning of the JSON inside it, so removing it is a lossless repair."
+    },
+    {
+      "stage": "check",
+      "question": "The model calls 'look_up' but the tool is named 'lookup'. Why reject with a hint instead of auto-correcting?",
+      "options": [
+        "difflib is too slow",
+        "Guessing tool names can run the wrong tool; a hint lets the model confirm what it meant",
+        "Tool names are case-sensitive",
+        "The model will never make that mistake twice"
+      ],
+      "correct": 1,
+      "explanation": "Near-misses can be different tools (delete_file vs delete_files). Repairs must be lossless; a name guess isn't."
+    },
+    {
+      "stage": "check",
+      "question": "Why parse Python-style arguments like {'topic': 'K2'} with ast.literal_eval rather than eval?",
+      "options": [
+        "literal_eval is faster",
+        "literal_eval only accepts literals and never runs code, so model output can't execute anything",
+        "eval can't parse dictionaries",
+        "They are identical"
+      ],
+      "correct": 1,
+      "explanation": "Tool arguments are untrusted input. literal_eval rejects __import__('os') and any other expression."
+    },
+    {
+      "stage": "check",
+      "question": "Which coercion is lossless for a schema field of type number?",
+      "options": [
+        "\"about 8611\" -> 8611",
+        "\"8611\" -> 8611",
+        "true -> 1",
+        "\"8.6k\" -> 8600"
+      ],
+      "correct": 1,
+      "explanation": "Only a string that is exactly a number converts without guessing. Booleans are not numbers, even though Python treats bool as int."
+    },
+    {
+      "stage": "post",
+      "question": "In this lesson's survey, llama3.2 received specific error messages but never retried a tool call. What does that suggest?",
+      "options": [
+        "Error messages are useless",
+        "Whether feedback helps depends on the model; for small models, constrained decoding or fewer tools may work better",
+        "The survey was broken",
+        "The model was too large"
+      ],
+      "correct": 1,
+      "explanation": "Specific errors are necessary but not sufficient. Measure, then pick the fix that works for your model."
+    },
+    {
+      "stage": "post",
+      "question": "The model put 'unit_from' (an argument of convert) on a call to lookup. What's a structural way to reduce this?",
+      "options": [
+        "Use a larger temperature",
+        "Offer only the tools relevant to the current step, so fewer schemas compete",
+        "Rename every argument to 'x'",
+        "Remove all descriptions"
+      ],
+      "correct": 1,
+      "explanation": "Argument bleed happens when many schemas are visible at once. Scoping tools per step or state (Lesson 9) reduces it."
+    }
+  ]
+}

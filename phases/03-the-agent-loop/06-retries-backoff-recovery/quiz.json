@@ -1,0 +1,78 @@
+{
+  "lesson": "06-retries-backoff-recovery",
+  "title": "Retries, Backoff & Recovery",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "A payment tool times out. Why is an automatic retry dangerous?",
+      "options": [
+        "Timeouts are always permanent",
+        "The charge may have gone through before the timeout, so a retry could charge twice",
+        "Retries are slow",
+        "Payment APIs don't allow retries"
+      ],
+      "correct": 1,
+      "explanation": "A timeout means 'unknown outcome', not 'failed'. Side effects need idempotency before they can be retried."
+    },
+    {
+      "stage": "check",
+      "question": "The model endpoint returns 404 'model not found'. What should the model layer do?",
+      "options": [
+        "Retry 5 times with backoff",
+        "Treat it as permanent and move to the next model in the fallback chain",
+        "Ask the model what went wrong",
+        "Wait an hour"
+      ],
+      "correct": 1,
+      "explanation": "Retrying a missing model can't help. In the live run, the chain went straight to llama3.2."
+    },
+    {
+      "stage": "check",
+      "question": "What does an idempotency key let a tool wrapper do?",
+      "options": [
+        "Run faster",
+        "Recognise a repeated request and return the saved result instead of acting again",
+        "Skip validation",
+        "Encrypt the arguments"
+      ],
+      "correct": 1,
+      "explanation": "With a key, retries and replays become safe: the side effect happens at most once."
+    },
+    {
+      "stage": "check",
+      "question": "A search tool's circuit breaker is open. What happens when the agent calls it?",
+      "options": [
+        "The call waits for the usual timeout",
+        "It fails fast with an observation telling the model the tool is unavailable for now",
+        "The agent crashes",
+        "The call is retried 10 times"
+      ],
+      "correct": 1,
+      "explanation": "Failing fast saves every later step from waiting on a dead dependency, and the model can work around it."
+    },
+    {
+      "stage": "post",
+      "question": "Why should a permanent error (e.g. 400 bad request) not trip the tool's circuit breaker?",
+      "options": [
+        "Permanent errors are rare",
+        "It's the caller's mistake, not the tool being unhealthy; the next well-formed call may work",
+        "Breakers only count successes",
+        "It should; that's a bug"
+      ],
+      "correct": 1,
+      "explanation": "Breakers protect against unhealthy dependencies. A bad request says nothing about the tool's health."
+    },
+    {
+      "stage": "post",
+      "question": "Why use full jitter (a random delay between 0 and the cap) instead of a fixed exponential delay?",
+      "options": [
+        "It's shorter on average",
+        "It spreads out retries from many clients, so they don't all hit the recovering service at the same moment",
+        "Random numbers are required by HTTP",
+        "Fixed delays are illegal"
+      ],
+      "correct": 1,
+      "explanation": "Synchronised retries create thundering herds. Jitter desynchronises them."
+    }
+  ]
+}

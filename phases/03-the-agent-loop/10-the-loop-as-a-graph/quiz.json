@@ -1,0 +1,78 @@
+{
+  "lesson": "10-the-loop-as-a-graph",
+  "title": "The Loop as a Graph",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "As a graph, what is Lesson 1's agent loop?",
+      "options": [
+        "One node that calls itself",
+        "Two nodes (agent, tools) with a conditional edge from agent and a fixed edge back from tools",
+        "A straight line of five nodes",
+        "It can't be expressed as a graph"
+      ],
+      "correct": 1,
+      "explanation": "agent -> tools if it requested tools, else END; tools -> agent. That's the whole loop."
+    },
+    {
+      "stage": "check",
+      "question": "Why do nodes return partial updates merged by reducers, instead of the whole new state?",
+      "options": [
+        "It's faster to type",
+        "Each node only knows about what it changed, and reducers define how values combine (append messages, overwrite flags)",
+        "Python dicts can't be copied",
+        "LangGraph requires it for no reason"
+      ],
+      "correct": 1,
+      "explanation": "Partial updates keep nodes small and independent; reducers make merging explicit, which matters most when branches run in parallel."
+    },
+    {
+      "stage": "check",
+      "question": "What does compile() catch before the graph runs?",
+      "options": [
+        "Wrong answers from the model",
+        "Wiring mistakes: edges to unknown nodes, nodes without an outgoing edge, unreachable nodes",
+        "Slow tools",
+        "Network errors"
+      ],
+      "correct": 1,
+      "explanation": "Structural bugs fail at build time with a clear message instead of halfway through a paid run."
+    },
+    {
+      "stage": "check",
+      "question": "Two parallel branches both lead to a 'join' node. In this lesson's runtime, how many times does join run in the next super-step?",
+      "options": [
+        "Twice",
+        "Once: the active set is de-duplicated",
+        "Never",
+        "It depends on the model"
+      ],
+      "correct": 1,
+      "explanation": "The next active set is a set of node names. Both branches' updates are already merged into the state join sees."
+    },
+    {
+      "stage": "post",
+      "question": "The live run's check node passed an answer from memory because of the '2' in 'K2'. What's the general lesson?",
+      "options": [
+        "Never write checkers",
+        "Heuristic checkers have false positives too; test them against real outputs and keep each miss as a regression test",
+        "Only use LLM judges",
+        "Rename K2"
+      ],
+      "correct": 1,
+      "explanation": "Guards are code too, so they have bugs. Real model output is the best source of test cases for them."
+    },
+    {
+      "stage": "post",
+      "question": "You need human approval before every tool call. In the graph, what's the smallest change?",
+      "options": [
+        "Rewrite the agent node",
+        "compile(interrupt_before=('tools',)) and resume with resume_at=['tools'] after approval",
+        "Delete the tools node",
+        "Add approval text to the system prompt"
+      ],
+      "correct": 1,
+      "explanation": "Interrupts are a runtime feature of the graph, so no node has to change."
+    }
+  ]
+}

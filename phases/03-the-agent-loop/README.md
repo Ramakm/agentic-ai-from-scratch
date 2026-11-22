@@ -3,22 +3,22 @@
 
 > A while-loop, a model, and a toolbox. ReAct, stop conditions, retries, interrupts, and the loop as a graph.
 
-**Status:** ◩ in progress · **Lessons:** 1 of 12 live · **Time:** ~9 hours
+**Status:** ■ complete · **Lessons:** 12 of 12 live · **Time:** ~9 hours
 
 | # | Lesson | Type | Time |
 |---|--------|------|------|
 | 03.01 | [The agent loop in 120 lines](01-the-agent-loop-in-120-lines/docs/en.md) | Build | 60 min |
-| 03.02 | ReAct: reason, act, observe | planned | 60 min |
-| 03.03 | Stop conditions & max steps | planned | 35 min |
-| 03.04 | Scratchpads and thought traces | planned | 40 min |
-| 03.05 | Handling malformed actions | planned | 40 min |
-| 03.06 | Retries, backoff & recovery | planned | 45 min |
-| 03.07 | Streaming an agent's steps | planned | 45 min |
-| 03.08 | Interrupts and resumption | planned | 50 min |
-| 03.09 | State machines for agents | planned | 55 min |
-| 03.10 | The loop as a graph | planned | 55 min |
-| 03.11 | Cost and step budgets | planned | 35 min |
-| 03.12 | Debugging a stuck loop | planned | 45 min |
+| 03.02 | [ReAct: reason, act, observe](02-react-reason-act-observe/docs/en.md) | Build | 60 min |
+| 03.03 | [Stop conditions & max steps](03-stop-conditions-max-steps/docs/en.md) | Build | 35 min |
+| 03.04 | [Scratchpads and thought traces](04-scratchpads-and-thought-traces/docs/en.md) | Build | 40 min |
+| 03.05 | [Handling malformed actions](05-handling-malformed-actions/docs/en.md) | Build | 40 min |
+| 03.06 | [Retries, backoff & recovery](06-retries-backoff-recovery/docs/en.md) | Build | 45 min |
+| 03.07 | [Streaming an agent's steps](07-streaming-an-agent-s-steps/docs/en.md) | Build | 45 min |
+| 03.08 | [Interrupts and resumption](08-interrupts-and-resumption/docs/en.md) | Build | 50 min |
+| 03.09 | [State machines for agents](09-state-machines-for-agents/docs/en.md) | Build | 55 min |
+| 03.10 | [The loop as a graph](10-the-loop-as-a-graph/docs/en.md) | Build | 55 min |
+| 03.11 | [Cost and step budgets](11-cost-and-step-budgets/docs/en.md) | Build | 35 min |
+| 03.12 | [Debugging a stuck loop](12-debugging-a-stuck-loop/docs/en.md) | Build | 45 min |
 
 Every live lesson folder has `docs/en.md`, runnable `code/` with tests, a `quiz.json`, and an artifact in `outputs/`.
 Want to write a planned lesson? See [CONTRIBUTING.md](../../CONTRIBUTING.md) and [LESSON_TEMPLATE.md](../../LESSON_TEMPLATE.md).

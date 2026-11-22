@@ -1,0 +1,78 @@
+{
+  "lesson": "07-streaming-an-agent-s-steps",
+  "title": "Streaming an Agent's Steps",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Why isn't token streaming enough for an agent?",
+      "options": [
+        "Tokens are too small",
+        "Most of an agent's time goes to tool calls and tool waits, which produce no text tokens",
+        "Agents can't stream",
+        "Streaming is only for chat"
+      ],
+      "correct": 1,
+      "explanation": "In the live run, step 1 produced only a tool call. A token-only stream showed nothing for 2 seconds."
+    },
+    {
+      "stage": "check",
+      "question": "Why is a tool_call event yielded only once the call is complete, while text is yielded per fragment?",
+      "options": [
+        "Tool calls are always short",
+        "A partial tool call can't be run; partial text is still useful to show",
+        "SSE can't carry partial JSON",
+        "To save bandwidth"
+      ],
+      "correct": 1,
+      "explanation": "Arguments arrive in fragments; only the merged, complete JSON can be executed."
+    },
+    {
+      "stage": "check",
+      "question": "Two tool calls stream interleaved. How does merge_tool_deltas keep them apart?",
+      "options": [
+        "By arrival order",
+        "By each fragment's index field",
+        "By tool name",
+        "It can't; parallel calls are unsupported"
+      ],
+      "correct": 1,
+      "explanation": "Every fragment carries the index of the call it belongs to."
+    },
+    {
+      "stage": "check",
+      "question": "The user clicks Stop while the agent is mid-run. In this lesson's design, what stops further model calls?",
+      "options": [
+        "A global flag checked by every tool",
+        "The consumer calls close() on the generator, which raises GeneratorExit at the paused yield",
+        "Killing the Python process",
+        "Nothing; the run always completes"
+      ],
+      "correct": 1,
+      "explanation": "Generators stop when closed. No polling or flags needed."
+    },
+    {
+      "stage": "post",
+      "question": "In the live run, the final answer was complete at 11.9 s. When did the user first see text?",
+      "options": [
+        "11.9 s",
+        "2.6 s",
+        "0 s",
+        "Never"
+      ],
+      "correct": 1,
+      "explanation": "With an event stream, the tool call showed at 2.0 s and the answer started at 2.6 s."
+    },
+    {
+      "stage": "post",
+      "question": "Ollama sent llama3.2's tool call as a single chunk, while hosted APIs send arguments in pieces. What does that mean for your code?",
+      "options": [
+        "Write separate code per provider",
+        "Merge fragments by index anyway; one complete chunk is just the simplest case",
+        "Disable streaming for tool calls",
+        "Use only Ollama"
+      ],
+      "correct": 1,
+      "explanation": "The fragment-merging code handles one chunk and many chunks the same way."
+    }
+  ]
+}

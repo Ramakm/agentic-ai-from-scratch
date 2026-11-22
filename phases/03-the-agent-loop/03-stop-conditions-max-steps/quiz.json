@@ -1,0 +1,78 @@
+{
+  "lesson": "03-stop-conditions-max-steps",
+  "title": "Stop Conditions & Max Steps",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Why give every way a run can end its own stop reason?",
+      "options": [
+        "It looks tidier",
+        "So logs and callers can tell a finished run from a loop, a timeout or a broken tool, and handle each differently",
+        "Providers require it",
+        "It makes runs faster"
+      ],
+      "correct": 1,
+      "explanation": "'max_steps' for everything hides whether the agent was looping, failing, or slow."
+    },
+    {
+      "stage": "check",
+      "question": "The step budget runs out after the agent looked up Everest's height. What does wrap-up do?",
+      "options": [
+        "Returns an empty answer",
+        "Makes one more model call with no tools, asking for the best answer from the observations, marked partial",
+        "Restarts the run",
+        "Raises an exception"
+      ],
+      "correct": 1,
+      "explanation": "The agent often has most of what it needs. Wrap-up turns a dead end into a labelled partial answer."
+    },
+    {
+      "stage": "check",
+      "question": "lookup('x') is called, then lookup('y'), then lookup('x') again. With max_repeats=3, does repeated_call fire?",
+      "options": [
+        "Yes, 'x' appeared twice",
+        "No: the check counts the same call in a row, and the 'y' call reset the counter",
+        "Yes, three lookups were made",
+        "Only if the results were the same"
+      ],
+      "correct": 1,
+      "explanation": "This lesson's check looks for consecutive repeats. Exercise 2 extends it to repeats anywhere in the run."
+    },
+    {
+      "stage": "check",
+      "question": "What is the typical failure of a 'finish tool' design?",
+      "options": [
+        "It ends too early",
+        "The model forgets to call finish (or writes it as text), so the run doesn't end on its own",
+        "It can't return text",
+        "It doubles the cost"
+      ],
+      "correct": 1,
+      "explanation": "In the live trials, llama3.2 wrote finish(...) as text and repeated lookups. Nudges and safety nets catch it."
+    },
+    {
+      "stage": "post",
+      "question": "Implicit stop scored 10/10 correct but 0/10 grounded. What happened?",
+      "options": [
+        "The tools returned the answer",
+        "The model made one failed tool call, then answered from memory; Everest's height is famous, so memory was right",
+        "The grounded check is broken",
+        "Implicit stop is the better agent"
+      ],
+      "correct": 1,
+      "explanation": "Correctness alone measured the model's memory, not the agent's use of tools."
+    },
+    {
+      "stage": "post",
+      "question": "What should an agent eval check besides the final answer?",
+      "options": [
+        "Only the run time",
+        "Where the answer's facts came from: whether they appeared in tool results during the run",
+        "The model's temperature",
+        "Nothing else"
+      ],
+      "correct": 1,
+      "explanation": "A grounded check separates an agent that uses its tools from a model reciting what it memorised."
+    }
+  ]
+}

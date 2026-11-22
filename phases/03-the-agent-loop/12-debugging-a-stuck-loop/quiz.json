@@ -1,0 +1,78 @@
+{
+  "lesson": "12-debugging-a-stuck-loop",
+  "title": "Debugging a Stuck Loop",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "A run ends with stop_reason max_steps. What does that tell you?",
+      "options": [
+        "Why the agent failed",
+        "Only that it didn't finish in time; you need the trace to learn why",
+        "That the model is too small",
+        "That max_steps is too low"
+      ],
+      "correct": 1,
+      "explanation": "The step budget is a safety net. Diagnosis needs the pattern inside the trace."
+    },
+    {
+      "stage": "check",
+      "question": "The trace shows calculator('round(1.06)') -> error, calculator('1.06') -> 1.06, then the same pair again. Which pattern is it?",
+      "options": [
+        "Error streak",
+        "Oscillation",
+        "Premature stop",
+        "Healthy run"
+      ],
+      "correct": 1,
+      "explanation": "Two calls alternating A, B, A, B. Not an error streak, because every other call succeeds."
+    },
+    {
+      "stage": "check",
+      "question": "Why does the watchdog nudge first instead of forcing an answer immediately?",
+      "options": [
+        "Forcing is not possible",
+        "A specific nudge often fixes the run with a real, tool-grounded answer; forcing gives up on tools",
+        "Nudges are cheaper than tool calls",
+        "To use more steps"
+      ],
+      "correct": 1,
+      "explanation": "In the demo, a model that listens fixed its call after one nudge. Forcing is the fallback for models that don't."
+    },
+    {
+      "stage": "check",
+      "question": "Why convert ReAct text transcripts into native tool-call form before diagnosing?",
+      "options": [
+        "Native form is shorter",
+        "One internal shape lets every detector stay simple, while still reading the traces you actually have",
+        "ReAct traces are invalid",
+        "JSON is required by Python"
+      ],
+      "correct": 1,
+      "explanation": "Adapters at the edge, one shape inside. A doctor that can't read your trace format is useless."
+    },
+    {
+      "stage": "post",
+      "question": "In this lesson's live runs, how did llama3.2 usually fail with native tool calling?",
+      "options": [
+        "It looped forever",
+        "It gave up early: tool calls written as text, or answering itself after one call",
+        "It crashed the loop",
+        "It never failed"
+      ],
+      "correct": 1,
+      "explanation": "9 runs, no loops: 4 text tool calls and 5 early answers. Detectors must cover premature stops as well as loops."
+    },
+    {
+      "stage": "post",
+      "question": "Many runs get stuck because the calculator has no rounding. What's the most structural fix?",
+      "options": [
+        "Raise max_steps",
+        "Change the tool contract: add rounding, or make the error say rounding isn't supported and show what is",
+        "Lower the temperature",
+        "Add more nudges"
+      ],
+      "correct": 1,
+      "explanation": "Fix the cause (the tool's contract) before adding loop machinery around it."
+    }
+  ]
+}

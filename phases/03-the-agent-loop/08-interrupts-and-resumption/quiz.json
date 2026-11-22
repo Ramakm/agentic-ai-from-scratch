@@ -1,0 +1,78 @@
+{
+  "lesson": "08-interrupts-and-resumption",
+  "title": "Interrupts and Resumption",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Why can't 'pause for approval' just be input() in the agent's process?",
+      "options": [
+        "input() is too slow",
+        "The approver may answer hours later, and the process may restart or be one of many workers",
+        "input() doesn't work with JSON",
+        "Models can't wait"
+      ],
+      "correct": 1,
+      "explanation": "Pausing has to mean saving the state and stopping, so any process can resume later."
+    },
+    {
+      "stage": "check",
+      "question": "Why does Checkpointer.save write a temp file and then call os.replace?",
+      "options": [
+        "It's faster than writing directly",
+        "os.replace is atomic: readers see the old or the new checkpoint, never a half-written one",
+        "To keep a backup",
+        "JSON requires it"
+      ],
+      "correct": 1,
+      "explanation": "A crash mid-write would otherwise leave a corrupt checkpoint and an unresumable run."
+    },
+    {
+      "stage": "check",
+      "question": "After a crash, how does advance() know which tool calls still need to run?",
+      "options": [
+        "It keeps a counter in memory",
+        "It finds tool calls in the latest assistant message that have no matching tool result in the history",
+        "It re-runs all of them",
+        "It asks the model"
+      ],
+      "correct": 1,
+      "explanation": "The history is the source of truth. Calls with results are done; the rest aren't."
+    },
+    {
+      "stage": "check",
+      "question": "A human rejects a refund with the reason 'refund only half'. What does the model see?",
+      "options": [
+        "Nothing; the run ends",
+        "An error observation with the reason, telling it not to retry the call as-is",
+        "The refund's result",
+        "A new user task"
+      ],
+      "correct": 1,
+      "explanation": "Rejections are observations, so the model can adapt (refund half) instead of the run dying."
+    },
+    {
+      "stage": "post",
+      "question": "The scripted test model picks its reply by counting assistant messages in the history. Why not use an iterator?",
+      "options": [
+        "Iterators are slow",
+        "An iterator's position lives in the process; after a resume in a new process, it would start over",
+        "Iterators can't hold dicts",
+        "It's just a style choice"
+      ],
+      "correct": 1,
+      "explanation": "Everything about a run must be recoverable from the saved state, including a fake model's position."
+    },
+    {
+      "stage": "post",
+      "question": "A run crashes after the first of two tool calls in one turn. The first was a payment. What prevents a double charge on resume?",
+      "options": [
+        "Luck",
+        "The payment's tool result was checkpointed before the crash, so resume sees it as done and runs only the second call",
+        "The model remembers",
+        "Payments can't crash"
+      ],
+      "correct": 1,
+      "explanation": "Checkpointing after every tool result is what makes resume skip completed side effects. The in-flight call is the case for idempotency keys (Lesson 6)."
+    }
+  ]
+}
