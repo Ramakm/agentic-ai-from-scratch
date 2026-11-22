@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agentic AI from Scratch | Free Agentic AI Course</title>
+  <meta name="description" content="A free, open-source course that builds AI agents from a raw while-loop and an HTTP call: tools, memory, planning, MCP, multi-agent systems, evals, and safety.">
+  <meta name="theme-color" content="#fafaf5">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%233553ff'/%3E%3Crect x='4' y='4' width='8' height='8' fill='%23fafaf5'/%3E%3C/svg%3E">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('aafs-theme'); } catch (e) {}
+      if (!t) t = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="./" class="logo"><span class="logo-icon" aria-hidden="true"></span>AGENTS / FROM SCRATCH</a>
+      <nav class="header-nav" id="headerNav" aria-label="Primary">
+        <a href="#contents">Contents</a>
+        <a href="#paths">Paths</a>
+        <a href="#machines">Machines</a>
+        <a href="#books">Books</a>
+        <a href="#capstone">Capstone</a>
+        <a href="#" data-repo-link target="_blank" rel="noopener">GitHub ↗</a>
+      </nav>
+      <button class="icon-btn" type="button" id="searchToggle" aria-label="Search lessons (⌘K)" title="Search (⌘K)">
+        <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M11 11l4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button class="icon-btn" type="button" id="themeToggle" aria-label="Toggle theme"><span id="themeIcon">N</span></button>
+      <button class="icon-btn menu-toggle" type="button" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="headerNav">≡</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ================= MASTHEAD ================= -->
+    <section class="masthead container">
+      <h1 class="masthead-title">Agentic AI<br>from Scratch<span class="cursor" aria-hidden="true"></span></h1>
+      <p class="masthead-tagline reveal"><span data-lesson-count>163 lessons</span>. <span data-phase-count>16 phases</span>. Every agent built from a raw while-loop and an HTTP call before a single framework gets imported.</p>
+      <p class="masthead-attribution reveal" style="--d:40ms">Maintained by <span data-maintainer>Ramakm</span> and contributors. Runs on your own machine, with local or hosted models.</p>
+      <div class="masthead-cta reveal" style="--d:80ms">
+        <button class="btn btn--primary" type="button" data-open-phase="0" data-lesson="0">Start the Course</button>
+        <a class="btn" href="#paths">Explore Learning Paths</a>
+        <a class="btn btn--quiet" href="#" data-repo-link target="_blank" rel="noopener">★ Star on GitHub</a>
+        <a class="btn btn--quiet" href="#contents">↓ Browse the curriculum</a>
+      </div>
+
+      <nav class="start-box reveal" style="--d:100ms" aria-labelledby="startTitle">
+        <p class="start-box-title" id="startTitle">Start where you are</p>
+        <ul class="start-list">
+          <li><button class="start-row" type="button" data-open-phase="0" data-lesson="0">
+            <span class="start-who">New to agents</span>
+            <span class="start-lesson"><span class="start-phase">Phase 0</span>Your agent dev environment</span>
+            <span class="start-time">45 min →</span>
+          </button></li>
+          <li><button class="start-row" type="button" data-open-phase="2" data-lesson="1">
+            <span class="start-who">I've shipped LLM apps</span>
+            <span class="start-lesson"><span class="start-phase">Phase 2</span>Tool schemas from first principles</span>
+            <span class="start-time">50 min →</span>
+          </button></li>
+          <li><button class="start-row" type="button" data-open-phase="3" data-lesson="0">
+            <span class="start-who">Build an agent from scratch</span>
+            <span class="start-lesson"><span class="start-phase">Phase 3</span>The agent loop in 120 lines</span>
+            <span class="start-time">60 min →</span>
+          </button></li>
+          <li><button class="start-row" type="button" data-open-phase="8" data-lesson="1">
+            <span class="start-who">Go multi-agent</span>
+            <span class="start-lesson"><span class="start-phase">Phase 8</span>Orchestrator–worker</span>
+            <span class="start-time">55 min →</span>
+          </button></li>
+        </ul>
+        <a class="start-more" href="#contents">Browse all <span data-phase-count>16 phases</span> ↓</a>
+      </nav>
+
+      <div class="terminal reveal" style="--d:120ms">
+        <div class="terminal-bar">
+          <span>Learn in your terminal</span>
+          <button class="copy-chip" type="button" data-copy-target="installCmdText" aria-label="Copy the install command">copy</button>
+        </div>
+        <pre><span id="installCmdText">npx skills add Ramakm/agentic-ai-from-scratch</span>
+<span class="p">&gt;</span> <span class="b">Use start-building to begin the course.</span></pre>
+        <div class="terminal-agents" aria-label="Works with any coding agent">
+          <span>Claude Code</span><span>Cursor</span><span>Codex</span><span>+ any SKILL.md agent</span>
+        </div>
+      </div>
+      <p class="terminal-caption reveal" style="--d:160ms">An agent teaches you to build agents: placement quiz, personalized build plan, and lessons taught interactively in your terminal. <a href="#tutor">How it works →</a></p>
+    </section>
+
+    <!-- ================= STACK STRIP ================= -->
+    <section class="stack-strip" aria-label="Tools covered in the course">
+      <div class="stack-eyebrow">Built from scratch first, then with</div>
+      <div class="marquee">
+        <div class="marquee-track" id="marqueeTrack">
+          <div class="marquee-half">
+            <span class="marquee-item">Python</span><span class="marquee-item">TypeScript</span>
+            <span class="marquee-item">Model Context Protocol</span><span class="marquee-item">LangGraph</span>
+            <span class="marquee-item">Claude Agent SDK</span><span class="marquee-item">OpenAI Agents SDK</span>
+            <span class="marquee-item">CrewAI</span><span class="marquee-item">AutoGen</span>
+            <span class="marquee-item">Pydantic AI</span><span class="marquee-item">LlamaIndex</span>
+            <span class="marquee-item">Ollama</span><span class="marquee-item">pgvector</span>
+            <span class="marquee-item">Docker</span><span class="marquee-item">OpenTelemetry</span>
+            <span class="marquee-item">A2A</span>
+          </div>
+        </div>
+      </div>
+      <p class="stack-quote">&ldquo;Every framework is optional. The loop is not.&rdquo; <span>· course principle №1</span></p>
+    </section>
+
+    <!-- ================= AGENT TUTOR ================= -->
+    <section class="section container" id="tutor" aria-labelledby="tutorTitle">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Your agent is the tutor</p>
+          <h2 class="section-title" id="tutorTitle">You don't read this course. An agent teaches it.</h2>
+        </div>
+        <p class="section-lede">It's a course about agents, so it ships with one. Install the course skills into the coding agent you already use. It places you, writes your build plan, and walks you through each lesson in your terminal, then reviews the agent you wrote. You don't need to know the curriculum to start.</p>
+      </div>
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step-num">01</span>
+          <code class="step-cmd" data-install-cmd>npx skills add Ramakm/agentic-ai-from-scratch</code>
+          <h3 class="step-title">Install the skills</h3>
+          <p class="step-text">Nothing to clone. Works in Claude Code, Codex, Cursor, and any agent that reads SKILL.md.</p>
+        </li>
+        <li class="step reveal" style="--d:40ms">
+          <span class="step-num">02</span>
+          <code class="step-cmd">/find-your-level</code>
+          <h3 class="step-title">Find your level</h3>
+          <p class="step-text">Ten questions on prompts, tools, loops and evals. Your agent maps them to a starting phase, marks what you can skip, and estimates the hours.</p>
+        </li>
+        <li class="step reveal" style="--d:80ms">
+          <span class="step-num">03</span>
+          <code class="step-cmd">/start-building</code>
+          <h3 class="step-title">Get your build plan</h3>
+          <p class="step-text">Your goal and placement go into BUILD.md, a plan that lives in the same repo as the agent you're building.</p>
+        </li>
+        <li class="step reveal" style="--d:120ms">
+          <span class="step-num">04</span>
+          <code class="step-cmd">/build</code>
+          <h3 class="step-title">Build every session</h3>
+          <p class="step-text">A warm-up on the last lesson, the next one taught section by section, a code review of your agent, and your progress saved.</p>
+        </li>
+      </ol>
+      <p class="section-foot">Agent stuck in a loop? <code>/debug-my-agent</code> reads your trace and links the lesson that fixes it. Commands are shown for Claude Code. In other agents, ask for the skill by name. <a href="#" data-repo-link target="_blank" rel="noopener">See every skill →</a></p>
+    </section>
+
+    <!-- ================= CURRICULUM ================= -->
+    <section class="toc container" id="contents">
+      <div class="toc-title">Curriculum · <span data-phase-count>16 phases</span> · <span data-lesson-count>163 lessons</span></div>
+      <div class="toc-subtitle">Tap a phase to open its lessons. A lesson ships once its loop runs, its tools are tested, and its eval passes.</div>
+      <div class="toc-legend" aria-hidden="true">
+        <span><i class="status complete"></i>Published</span>
+        <span><i class="status in-progress"></i>In progress</span>
+        <span><i class="status planned"></i>Planned</span>
+      </div>
+      <div class="phase-grid" id="phaseGrid"></div>
+    </section>
+
+    <!-- ================= HOW EVERY LESSON WORKS ================= -->
+    <section class="section container" aria-labelledby="loopTitle">
+      <h2 class="stat-title" id="loopTitle">How every lesson works</h2>
+      <div class="preface-body">
+        <p>Most agent material comes as framework tutorials. A LangChain notebook here, a flashy multi-agent demo there, a thread about MCP somewhere else. The pieces rarely connect. You can wire a crew of five agents but can't say why the third one loops forever. You can install an MCP server but couldn't write the JSON-RPC message it answers.</p>
+        <p>This curriculum is the spine. <span data-phase-count>16 phases</span>, <span data-lesson-count>163 lessons</span>, in Python and TypeScript. One HTTP call to a model at one end, a full agent harness with subagents, sandboxes and evals at the other. Every pattern gets built by hand first: the tool dispatcher, the ReAct loop, the vector store, the MCP server, the orchestrator. When the frameworks show up, you already know what they do.</p>
+      </div>
+      <figure class="loop-figure reveal">
+        <ol class="loop-steps">
+          <li class="loop-step">
+            <span class="loop-step-label">The problem</span>
+            <h3>A concrete failure</h3>
+            <p>A model only returns text. Ask it to book a flight and it describes booking one.</p>
+            <pre><span class="c">&gt;&gt;&gt;</span> llm("book SFO→JFK")
+<span class="c">"Sure! To book…"</span></pre>
+          </li>
+          <li class="loop-step">
+            <span class="loop-step-label">Build it</span>
+            <h3>Raw code</h3>
+            <p>No framework. A ReAct loop in plain Python: think, call a tool, read the result, repeat.</p>
+            <pre><span class="k">while</span> step &lt; MAX:
+  msg = llm(ctx)
+  <span class="k">if not</span> msg.tool: <span class="k">break</span>
+  ctx += run(msg.tool)</pre>
+          </li>
+          <li class="loop-step">
+            <span class="loop-step-label">Use it</span>
+            <h3>Real tools</h3>
+            <p>The same loop inside LangGraph, the Agents SDKs and MCP. Now you can read what they're doing.</p>
+            <pre>g.add_node(<span class="k">"agent"</span>, call)
+g.add_edge(<span class="k">"tools"</span>, <span class="k">"agent"</span>)</pre>
+          </li>
+          <li class="loop-step">
+            <span class="loop-step-label">Ship it</span>
+            <h3>An artifact</h3>
+            <p>Something you keep: a tool, an MCP server, or a skill your coding agent can load.</p>
+            <pre><span class="c">$</span> npx skills add ./my-agent
+<span class="k">✓</span> 1 skill installed</pre>
+          </li>
+        </ol>
+        <figcaption>Build the small version first, then see where the production tools do the same work. The example above is <a href="#" data-open-phase="3" data-lesson="0">The Agent Loop in 120 Lines</a> in Phase 3.</figcaption>
+      </figure>
+    </section>
+
+    <!-- ================= LEARNING PATHS ================= -->
+    <section class="section container" id="paths" aria-labelledby="pathsTitle">
+      <header class="paths-header">
+        <h2 id="pathsTitle">Choose the agents you want to build</h2>
+        <div>
+          <p>Agentic AI is more than a prompt plus a tool. Pick one of four learning paths, then learn from the same lessons, labs, traces, and evals in the browser or on GitHub.</p>
+          <div class="paths-links">
+            <a href="#contents">View all phases</a>
+            <a href="#capstone">Jump to the capstone</a>
+          </div>
+        </div>
+      </header>
+      <figure class="paths-figure reveal">
+        <svg class="paths-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <line x1="50" y1="50" x2="18" y2="16"/><line x1="50" y1="50" x2="82" y2="16"/>
+          <line x1="50" y1="50" x2="18" y2="84"/><line x1="50" y1="50" x2="82" y2="84"/>
+        </svg>
+        <figcaption class="paths-root"><strong>Agentic AI</strong><span>4 connected domains</span></figcaption>
+        <button class="path-node" type="button" data-open-phase="3">
+          <span class="path-node-tag">Path 01</span>
+          <span class="path-node-name">Building Single Agents</span>
+          <span class="path-node-desc">The loop, tools, memory, retrieval, and planning. One agent that actually finishes the job.</span>
+          <span class="path-node-phases">Phases 01–06</span>
+        </button>
+        <button class="path-node" type="button" data-open-phase="7">
+          <span class="path-node-tag">Path 02</span>
+          <span class="path-node-name">Tools, Protocols &amp; Computer Use</span>
+          <span class="path-node-desc">MCP servers and clients, browser and terminal control, and coding agents that edit real repos.</span>
+          <span class="path-node-phases">Phases 07 · 10</span>
+        </button>
+        <button class="path-node" type="button" data-open-phase="8">
+          <span class="path-node-tag">Path 03</span>
+          <span class="path-node-name">Multi-Agent Systems</span>
+          <span class="path-node-desc">Orchestrators, handoffs, supervisors, A2A, and the frameworks that package them.</span>
+          <span class="path-node-phases">Phases 08–09</span>
+        </button>
+        <button class="path-node" type="button" data-open-phase="11">
+          <span class="path-node-tag">Path 04</span>
+          <span class="path-node-name">Reliable Agents in Production</span>
+          <span class="path-node-desc">Evals, tracing, guardrails, sandboxes, durable execution, and interfaces people trust.</span>
+          <span class="path-node-phases">Phases 11–15</span>
+        </button>
+      </figure>
+    </section>
+
+    <!-- ================= MACHINES ================= -->
+    <div class="machine-row container" id="machines">
+      <div class="machine-row-title">Interactive machines · run one, then break it</div>
+      <div class="machine-grid">
+
+        <button class="machine reveal" type="button" data-open-phase="3" aria-labelledby="m1">
+          <svg viewBox="0 0 360 200" aria-hidden="true">
+            <defs>
+              <pattern id="grid1" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M12 0H0V12" class="sv-soft"/></pattern>
+              <marker id="ar1" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L8 4L0 8z" class="sv-fill"/></marker>
+            </defs>
+            <rect width="360" height="200" fill="url(#grid1)"/>
+            <path class="sv-blue" marker-end="url(#ar1)" d="M66 100H96"/>
+            <path class="sv-blue sv-flow" stroke-dasharray="4 4" marker-end="url(#ar1)" d="M172 58H202"/>
+            <path class="sv-blue sv-flow" stroke-dasharray="4 4" marker-end="url(#ar1)" d="M242 82V116"/>
+            <path class="sv-blue sv-flow" stroke-dasharray="4 4" marker-end="url(#ar1)" d="M206 142H176"/>
+            <path class="sv-blue sv-flow" stroke-dasharray="4 4" marker-end="url(#ar1)" d="M136 120V86"/>
+            <path class="sv-dash" marker-end="url(#ar1)" d="M172 46C250 20 300 40 314 82"/>
+            <rect x="15" y="87" width="52" height="30" class="sv-side"/><rect x="11" y="83" width="52" height="30" class="sv-box"/>
+            <text x="37" y="101" text-anchor="middle" class="sv-text">request</text>
+            <text x="37" y="110" text-anchor="middle" class="sv-text-blue">user</text>
+            <rect x="104" y="40" width="70" height="44" class="sv-side"/><rect x="100" y="36" width="70" height="44" class="sv-tint"/>
+            <text x="135" y="55" text-anchor="middle" class="sv-text">model</text>
+            <text x="135" y="69" text-anchor="middle" class="sv-text-blue">think·act</text>
+            <rect x="211" y="40" width="70" height="44" class="sv-side"/><rect x="207" y="36" width="70" height="44" class="sv-box"/>
+            <text x="242" y="55" text-anchor="middle" class="sv-text">tools</text>
+            <text x="242" y="69" text-anchor="middle" class="sv-text-blue">search·code</text>
+            <rect x="211" y="124" width="70" height="44" class="sv-side"/><rect x="207" y="120" width="70" height="44" class="sv-box"/>
+            <text x="242" y="139" text-anchor="middle" class="sv-text">observe</text>
+            <text x="242" y="153" text-anchor="middle" class="sv-text-blue">→ context</text>
+            <rect x="104" y="124" width="70" height="44" class="sv-side"/><rect x="100" y="120" width="70" height="44" class="sv-box"/>
+            <text x="135" y="139" text-anchor="middle" class="sv-text">memory</text>
+            <text x="135" y="153" text-anchor="middle" class="sv-text-blue">context</text>
+            <rect x="303" y="87" width="48" height="30" class="sv-side"/><rect x="299" y="83" width="48" height="30" class="sv-box"/>
+            <text x="323" y="102" text-anchor="middle" class="sv-text">answer</text>
+            <text x="186" y="105" text-anchor="middle" class="sv-text-blue">↻ step 3/8</text>
+            <circle r="3.5" class="sv-pulse"><animateMotion dur="4s" repeatCount="indefinite" path="M170 58H210V142H170V86"/></circle>
+            <text x="12" y="190" class="sv-text-blue">FIG_LOOP · REACT</text>
+          </svg>
+          <div class="machine-copy">
+            <span class="eyebrow">FIG_LOOP · Interactive simulation</span>
+            <h3 id="m1">Inside an Agent Loop</h3>
+            <p>An agent is a model in a while-loop. Run one task through it, cut the memory, break a tool, or remove the step budget, and watch which failure appears.</p>
+            <span class="machine-cta">Break the machine →</span>
+          </div>
+        </button>
+
+        <button class="machine reveal" type="button" data-open-phase="7" style="--d:60ms" aria-labelledby="m2">
+          <svg viewBox="0 0 360 200" aria-hidden="true">
+            <defs>
+              <pattern id="grid2" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M12 0H0V12" class="sv-soft"/></pattern>
+              <marker id="ar2" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L8 4L0 8z" class="sv-fill"/></marker>
+            </defs>
+            <rect width="360" height="200" fill="url(#grid2)"/>
+            <rect x="20" y="40" width="96" height="116" class="sv-side"/><rect x="15" y="35" width="96" height="116" class="sv-box"/>
+            <text x="63" y="52" text-anchor="middle" class="sv-text">host</text>
+            <rect x="27" y="62" width="72" height="28" class="sv-tint"/>
+            <text x="63" y="80" text-anchor="middle" class="sv-text">model</text>
+            <rect x="27" y="104" width="72" height="34" class="sv-box"/>
+            <text x="63" y="118" text-anchor="middle" class="sv-text">mcp client</text>
+            <text x="63" y="130" text-anchor="middle" class="sv-text-blue">session</text>
+            <path class="sv-line" d="M63 90V104"/>
+            <path class="sv-blue sv-flow" stroke-dasharray="4 4" marker-end="url(#ar2)" d="M112 108H226"/>
+            <path class="sv-blue sv-flow" stroke-dasharray="4 4" marker-end="url(#ar2)" d="M226 130H112"/>
+            <text x="169" y="102" text-anchor="middle" class="sv-text-blue">stdin · tools/call</text>
+            <text x="169" y="144" text-anchor="middle" class="sv-text-blue">stdout · result</text>
+            <rect x="131" y="58" width="76" height="22" class="sv-box"/>
+            <text x="169" y="72" text-anchor="middle" class="sv-text">json-rpc 2.0</text>
+            <rect x="237" y="30" width="108" height="140" class="sv-side"/><rect x="232" y="25" width="108" height="140" class="sv-box"/>
+            <text x="286" y="42" text-anchor="middle" class="sv-text">mcp server</text>
+            <rect x="244" y="52" width="84" height="28" class="sv-tint"/><text x="286" y="70" text-anchor="middle" class="sv-text">tools</text>
+            <rect x="244" y="88" width="84" height="28" class="sv-box"/><text x="286" y="106" text-anchor="middle" class="sv-text">resources</text>
+            <rect x="244" y="124" width="84" height="28" class="sv-box"/><text x="286" y="142" text-anchor="middle" class="sv-text">prompts</text>
+            <circle r="3.5" class="sv-pulse"><animateMotion dur="3s" repeatCount="indefinite" path="M112 108H226V130H112z"/></circle>
+            <text x="15" y="190" class="sv-text-blue">FIG_MCP · STDIO TRANSPORT</text>
+          </svg>
+          <div class="machine-copy">
+            <span class="eyebrow">FIG_MCP · Interactive simulation</span>
+            <h3 id="m2">Inside an MCP Server</h3>
+            <p>MCP is JSON-RPC over a pipe. Trace one tools/call from host to server and back, corrupt a schema, drop the initialize handshake, or inject a poisoned tool description.</p>
+            <span class="machine-cta">Break the machine →</span>
+          </div>
+        </button>
+
+        <button class="machine reveal" type="button" data-open-phase="8" style="--d:120ms" aria-labelledby="m3">
+          <svg viewBox="0 0 360 200" aria-hidden="true">
+            <defs>
+              <pattern id="grid3" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M12 0H0V12" class="sv-soft"/></pattern>
+              <marker id="ar3" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L8 4L0 8z" class="sv-fill"/></marker>
+            </defs>
+            <rect width="360" height="200" fill="url(#grid3)"/>
+            <rect x="139" y="20" width="90" height="38" class="sv-side"/><rect x="135" y="16" width="90" height="38" class="sv-tint"/>
+            <text x="180" y="32" text-anchor="middle" class="sv-text">orchestrator</text>
+            <text x="180" y="45" text-anchor="middle" class="sv-text-blue">plan · route</text>
+            <path class="sv-blue sv-flow" stroke-dasharray="4 4" marker-end="url(#ar3)" d="M160 54L72 86"/>
+            <path class="sv-blue sv-flow" stroke-dasharray="4 4" marker-end="url(#ar3)" d="M180 54V86"/>
+            <path class="sv-blue sv-flow" stroke-dasharray="4 4" marker-end="url(#ar3)" d="M200 54L288 86"/>
+            <rect x="27" y="92" width="80" height="38" class="sv-side"/><rect x="23" y="88" width="80" height="38" class="sv-box"/>
+            <text x="63" y="104" text-anchor="middle" class="sv-text">researcher</text><text x="63" y="117" text-anchor="middle" class="sv-text-blue">web · rag</text>
+            <rect x="144" y="92" width="80" height="38" class="sv-side"/><rect x="140" y="88" width="80" height="38" class="sv-box"/>
+            <text x="180" y="104" text-anchor="middle" class="sv-text">coder</text><text x="180" y="117" text-anchor="middle" class="sv-text-blue">sandbox</text>
+            <rect x="261" y="92" width="80" height="38" class="sv-side"/><rect x="257" y="88" width="80" height="38" class="sv-box"/>
+            <text x="297" y="104" text-anchor="middle" class="sv-text">reviewer</text><text x="297" y="117" text-anchor="middle" class="sv-text-blue">verify</text>
+            <path class="sv-line" d="M63 126V146M180 126V146M297 126V146"/>
+            <path class="sv-dash" marker-end="url(#ar3)" d="M103 107H138"/>
+            <path class="sv-dash" marker-end="url(#ar3)" d="M220 107H255"/>
+            <rect x="27" y="150" width="314" height="24" class="sv-side"/><rect x="23" y="146" width="314" height="24" class="sv-box"/>
+            <text x="180" y="161" text-anchor="middle" class="sv-text">shared blackboard</text>
+            <circle r="3.5" class="sv-pulse"><animateMotion dur="3.6s" repeatCount="indefinite" path="M63 107H180H297"/></circle>
+            <text x="23" y="192" class="sv-text-blue">FIG_MAS · HANDOFF</text>
+          </svg>
+          <div class="machine-copy">
+            <span class="eyebrow">FIG_MAS · Interactive simulation</span>
+            <h3 id="m3">Inside a Multi-Agent Team</h3>
+            <p>Three agents, one blackboard, one orchestrator. Route a task, drop a handoff, let two agents argue, and see where the tokens and the errors pile up.</p>
+            <span class="machine-cta">Break the machine →</span>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <!-- ================= BOOKS ================= -->
+    <section class="books container" id="books">
+      <div class="toc-title">The book edition · four volumes</div>
+      <div class="toc-subtitle">The course, compiled. EPUB and PDF built from the same lessons and attached to every GitHub release. The site stays the living edition, and every chapter links back here for the machines, quizzes, and code.</div>
+      <div class="books-grid" id="booksGrid"></div>
+      <div class="books-note">Links resolve to the newest <a href="#" data-repo-link="/releases" target="_blank" rel="noopener">GitHub release</a> · rebuilt by CI from the lessons on every release</div>
+    </section>
+
+    <!-- ================= CAPSTONE ================= -->
+    <section class="spotlight container" id="capstone" aria-labelledby="capTitle">
+      <div class="spotlight-grid">
+        <svg class="seal" viewBox="0 0 180 180" aria-hidden="true">
+          <defs><path id="sealPath" d="M90 90m-68 0a68 68 0 1 1 136 0a68 68 0 1 1 -136 0"/></defs>
+          <circle cx="90" cy="90" r="86" class="ring"/>
+          <circle cx="90" cy="90" r="56" class="ring-d"/>
+          <g class="seal-spin"><text><textPath href="#sealPath">agentic ai · from scratch · capstone · harness ·</textPath></text></g>
+          <rect x="44" y="66" width="92" height="48" class="core"/>
+          <text x="90" y="97" text-anchor="middle" class="big">HARNESS</text>
+        </svg>
+        <div class="spotlight-copy">
+          <span class="eyebrow">Capstone · Phase 15</span>
+          <h2 id="capTitle">Finish with an agent you built yourself</h2>
+          <p>The last phase puts everything together. A loop, a tool registry, a context manager, an MCP client, subagents, a permission system, and an eval suite, shipped as a CLI you can point at your own repos. No framework required. Swap one in later if you want.</p>
+          <div class="proof">
+            <span><strong data-phase-num>16</strong>phases</span>
+            <span><strong data-lesson-num>163</strong>lessons</span>
+            <span><strong data-hours-num>130</strong>hours of build time</span>
+          </div>
+          <p class="spotlight-note">No certificate and no paywall. The proof is the repo you push at the end.</p>
+        </div>
+        <div class="spotlight-actions">
+          <button class="btn btn--primary" type="button" data-open-phase="15">Open the capstone</button>
+          <a class="btn" href="#" data-repo-link target="_blank" rel="noopener">Read it on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COLOPHON ================= -->
+    <section class="colophon container">
+      <div class="colophon-grid">
+        <div class="eyebrow">Colophon</div>
+        <div>
+          <p>The whole curriculum is on GitHub. Clone it, fork it, and work at your own pace. No paywall, no signup. Every lesson has runnable Python or TypeScript and works with local models through Ollama or with any hosted API.</p>
+          <div class="colophon-cmd">
+            <code id="cloneCmdText">git clone https://github.com/Ramakm/agentic-ai-from-scratch.git</code>
+            <button class="copy-chip" type="button" data-copy-target="cloneCmdText" aria-label="Copy clone command">copy</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 · open source · free forever</p>
+      <div class="footer-links">
+        <a href="#" data-repo-link target="_blank" rel="noopener">GitHub</a>
+        <a href="#contents">Contents</a>
+        <a href="#paths">Paths</a>
+        <a href="#machines">Machines</a>
+        <a href="#books">Books</a>
+        <a href="#capstone">Capstone</a>
+        <a href="#" data-repo-link="/issues/new" target="_blank" rel="noopener">Report</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- phase drawer -->
+  <div class="overlay" id="phaseOverlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <button class="icon-btn modal-close" type="button" id="modalClose" aria-label="Close">×</button>
+        <span class="modal-num" id="modalNum"></span>
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <p class="modal-desc" id="modalDesc"></p>
+        <div class="modal-progress"><span id="modalCount"></span><b id="modalPct"></b></div>
+        <div class="modal-bar"><span id="modalBar"></span></div>
+        <input type="search" class="modal-search" id="modalSearch" placeholder="Search this phase" autocomplete="off" spellcheck="false" aria-label="Search lessons in this phase">
+      </div>
+      <ul class="modal-lessons" id="modalLessons"></ul>
+      <div class="modal-footer">
+        <span>Progress saved in this browser only</span>
+        <button class="link-btn" type="button" id="modalReset">Reset phase</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- command palette -->
+  <div class="overlay palette-overlay" id="paletteOverlay" aria-hidden="true">
+    <div class="palette" role="dialog" aria-modal="true" aria-label="Search lessons">
+      <input class="palette-input" id="paletteInput" type="text" placeholder="Search 163 lessons…" autocomplete="off" spellcheck="false" aria-controls="paletteList">
+      <ul class="palette-list" id="paletteList" role="listbox"></ul>
+      <div class="palette-foot"><span><kbd>↑</kbd> <kbd>↓</kbd> move</span><span><kbd>↵</kbd> open</span><span><kbd>esc</kbd> close</span></div>
+    </div>
+  </div>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
