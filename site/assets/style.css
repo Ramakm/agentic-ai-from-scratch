@@ -16,9 +16,9 @@
   --rule-soft: rgba(26, 26, 26, 0.16);
   --paper-rule: rgba(26, 26, 26, 0.08);
 
-  --blueprint: #3553ff;
-  --blueprint-tint: rgba(53, 83, 255, 0.08);
-  --blueprint-tint-strong: rgba(53, 83, 255, 0.18);
+  --blueprint: #EC4D36;
+  --blueprint-tint: rgba(236, 77, 54, 0.08);
+  --blueprint-tint-strong: rgba(236, 77, 54, 0.18);
   --status-planned: #b8b6ad;
   --warn: #b8870f;
 
@@ -48,9 +48,9 @@
   --rule: #e8e6dc;
   --rule-soft: rgba(232, 230, 220, 0.18);
   --paper-rule: rgba(232, 230, 220, 0.08);
-  --blueprint: #6b8eff;
-  --blueprint-tint: rgba(107, 142, 255, 0.12);
-  --blueprint-tint-strong: rgba(107, 142, 255, 0.22);
+  --blueprint: #EC4D36;
+  --blueprint-tint: rgba(236, 77, 54, 0.12);
+  --blueprint-tint-strong: rgba(236, 77, 54, 0.22);
   --status-planned: #4a4a48;
   --warn: #d4a83d;
   --code-bg: #131830;

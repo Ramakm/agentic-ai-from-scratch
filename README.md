@@ -28,10 +28,10 @@
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-1a1a1a?style=flat-square&labelColor=fafaf5" alt="MIT License"></a>
-  <a href="#contents"><img src="https://img.shields.io/badge/phases-16-3553ff?style=flat-square&labelColor=fafaf5" alt="16 phases"></a>
-  <a href="ROADMAP.md"><img src="https://img.shields.io/badge/lessons-163-3553ff?style=flat-square&labelColor=fafaf5" alt="163 lessons"></a>
+  <a href="#contents"><img src="https://img.shields.io/badge/phases-16-EC4D36?style=flat-square&labelColor=fafaf5" alt="16 phases"></a>
+  <a href="ROADMAP.md"><img src="https://img.shields.io/badge/lessons-163-EC4D36?style=flat-square&labelColor=fafaf5" alt="163 lessons"></a>
   <a href="https://github.com/Ramakm/agentic-ai-from-scratch/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/Ramakm/agentic-ai-from-scratch/ci.yml?branch=main&style=flat-square&labelColor=fafaf5&label=tests" alt="Tests"></a>
-  <a href="https://github.com/Ramakm/agentic-ai-from-scratch/stargazers"><img src="https://img.shields.io/github/stars/Ramakm/agentic-ai-from-scratch?style=flat-square&labelColor=fafaf5&color=3553ff" alt="GitHub stars"></a>
+  <a href="https://github.com/Ramakm/agentic-ai-from-scratch/stargazers"><img src="https://img.shields.io/github/stars/Ramakm/agentic-ai-from-scratch?style=flat-square&labelColor=fafaf5&color=EC4D36" alt="GitHub stars"></a>
 </p>
 
 Turn your coding agent into a tutor with one command:
