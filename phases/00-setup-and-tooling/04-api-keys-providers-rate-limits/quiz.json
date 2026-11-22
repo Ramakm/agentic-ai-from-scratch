@@ -1,0 +1,68 @@
+{
+  "lesson": "04-api-keys-providers-rate-limits",
+  "title": "API Keys, Providers & Rate Limits",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Why are rate limits a bigger problem for agents than for chatbots?",
+      "options": [
+        "Agents use bigger models",
+        "An agent makes many calls per task (10–100), so limits are hit often and mid-task",
+        "Agents don't use API keys",
+        "Rate limits only apply to agents"
+      ],
+      "correct": 1,
+      "explanation": "One task fans out into many calls. Without retries and throttling, a single 429 can throw away the whole run."
+    },
+    {
+      "stage": "check",
+      "question": "Which response should NOT be retried?",
+      "options": ["429 Too Many Requests", "503 Service Unavailable", "401 Unauthorized", "529 Overloaded"],
+      "correct": 2,
+      "explanation": "A 401 means the key is wrong or missing. Retrying sends the same bad key again; fail fast and fix the configuration."
+    },
+    {
+      "stage": "check",
+      "question": "A 429 response includes Retry-After: 2. What should the client do?",
+      "options": [
+        "Retry immediately",
+        "Wait exactly 2 seconds, then retry",
+        "Double the wait to be safe and never retry again",
+        "Switch API keys"
+      ],
+      "correct": 1,
+      "explanation": "The server is telling you when capacity frees up. Use its value instead of your own backoff."
+    },
+    {
+      "stage": "check",
+      "question": "Why add random jitter to exponential backoff?",
+      "options": [
+        "To make debugging harder",
+        "So many clients that failed together don't all retry at the same moment (thundering herd)",
+        "Because providers require it",
+        "To use fewer retries"
+      ],
+      "correct": 1,
+      "explanation": "Without jitter, synchronized clients retry in waves and keep triggering the limit. Randomness spreads them out."
+    },
+    {
+      "stage": "post",
+      "question": "Why does load_dotenv refuse a .env file that git isn't ignoring?",
+      "options": [
+        "git can't read .env files",
+        "A .env that git would commit is the most common way keys end up public on GitHub",
+        "It's faster",
+        "dotenv files must be committed"
+      ],
+      "correct": 1,
+      "explanation": "Failing before any key is written into a tracked file prevents the leak instead of cleaning up after it."
+    },
+    {
+      "stage": "post",
+      "question": "A token bucket allows 5 requests per 10s. You send 7 requests at t=0. When does the 7th start?",
+      "options": ["0s", "2s", "4s", "10s"],
+      "correct": 2,
+      "explanation": "Five burst through at 0s. The bucket refills one token every 2s, so the 6th starts at 2s and the 7th at 4s."
+    }
+  ]
+}

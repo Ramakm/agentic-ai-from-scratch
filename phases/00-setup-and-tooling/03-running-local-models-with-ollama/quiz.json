@@ -1,0 +1,78 @@
+{
+  "lesson": "03-running-local-models-with-ollama",
+  "title": "Running Local Models with Ollama",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "llama3.2 was trained on 131,072 tokens of context. You send a 4,000-token prompt with num_ctx 2048. What happens?",
+      "options": [
+        "Ollama returns an error",
+        "The model reads all 4,000 tokens anyway",
+        "About half the prompt is silently dropped",
+        "Ollama automatically raises num_ctx"
+      ],
+      "correct": 2,
+      "explanation": "num_ctx is the window Ollama actually allocates. Tokens beyond it are dropped with no error; only prompt_eval_count reveals it."
+    },
+    {
+      "stage": "check",
+      "question": "Which field tells you whether a local model can call tools?",
+      "options": [
+        "details.family",
+        "capabilities from /api/show (look for \"tools\")",
+        "The model's name",
+        "quantization_level"
+      ],
+      "correct": 1,
+      "explanation": "capabilities lists what the model supports: completion, tools, embedding, vision, and so on."
+    },
+    {
+      "stage": "check",
+      "question": "The first call takes 4.4s and the second takes 0.1s to start. Why?",
+      "options": [
+        "The first prompt was longer",
+        "The first call loaded the weights into memory (cold start); afterwards the model stays loaded for keep_alive",
+        "Ollama caches the answer",
+        "Network latency"
+      ],
+      "correct": 1,
+      "explanation": "load_duration shows the cold start. keep_alive (default 5m) controls how long the model stays warm."
+    },
+    {
+      "stage": "check",
+      "question": "How do you make a local model return the same output on repeated runs?",
+      "options": [
+        "Set temperature high",
+        "Set temperature to 0 and fix a seed",
+        "Use a bigger num_ctx",
+        "Restart Ollama between runs"
+      ],
+      "correct": 1,
+      "explanation": "Greedy decoding (temperature 0) plus a fixed seed makes output repeatable, which you need for tests."
+    },
+    {
+      "stage": "post",
+      "question": "\"Characters ÷ 4\" estimated 5,307 tokens, but Ollama counted 4,033. What's the right takeaway?",
+      "options": [
+        "Ollama's count is buggy",
+        "Use the rule of thumb for rough budgeting only; enforce limits with the tokenizer's real count (prompt_eval_count)",
+        "Always divide by 5 instead",
+        "Token counts don't matter for local models"
+      ],
+      "correct": 1,
+      "explanation": "Token ratios vary by tokenizer and text. Estimates are fine for planning; real counts decide truncation."
+    },
+    {
+      "stage": "post",
+      "question": "Why do this course's agent lessons use /v1/chat/completions instead of Ollama's native /api/chat?",
+      "options": [
+        "The native API is deprecated",
+        "The OpenAI-compatible API is portable: the same code runs on Ollama, OpenAI, vLLM and others",
+        "It's faster",
+        "Only it supports tools"
+      ],
+      "correct": 1,
+      "explanation": "Portability. The native API is still the right tool for metadata, timings and load control, as this lesson shows."
+    }
+  ]
+}

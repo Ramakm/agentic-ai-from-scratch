@@ -1,0 +1,73 @@
+{
+  "lesson": "02-python-typescript-for-agents",
+  "title": "Python & TypeScript for Agents",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "An agent makes four model calls of about 0.25s each. Roughly how long do they take sequentially versus concurrently?",
+      "options": ["1s vs 1s", "1s vs ~0.25–0.3s", "0.25s vs 1s", "4s vs 1s"],
+      "correct": 1,
+      "explanation": "Sequential is the sum of the waits. Concurrent is about as long as the slowest single call, because the waits overlap."
+    },
+    {
+      "stage": "check",
+      "question": "Where should untrusted JSON from a model or tool be validated?",
+      "options": [
+        "Wherever a field is first used",
+        "Once, at the boundary where it enters the program, turning it into typed objects",
+        "Only in tests",
+        "It doesn't need validation if it came from your own API call"
+      ],
+      "correct": 1,
+      "explanation": "Validate once at the boundary. Everything past that point can trust the types; scattered checks miss cases."
+    },
+    {
+      "stage": "check",
+      "question": "Why wrap each call in asyncio.wait_for(..., timeout)?",
+      "options": [
+        "To make calls faster",
+        "So one hung call becomes an error result instead of freezing the whole agent",
+        "Because asyncio requires it",
+        "To retry automatically"
+      ],
+      "correct": 1,
+      "explanation": "Without a per-call timeout, gather waits for the slowest call forever. The timeout turns a hang into a reportable failure."
+    },
+    {
+      "stage": "check",
+      "question": "In what order does asyncio.gather return results?",
+      "options": [
+        "The order the calls finished",
+        "Random order",
+        "The order the awaitables were passed in",
+        "Alphabetical by result"
+      ],
+      "correct": 2,
+      "explanation": "gather preserves input order, which is what lets you map results back to the tool calls that produced them."
+    },
+    {
+      "stage": "post",
+      "question": "You fire 200 tool calls at once with gather and no limit. What's the most likely problem?",
+      "options": [
+        "Python runs out of threads",
+        "Rate limits (429s) from the provider, or a local server queueing and timing out, so you need a semaphore",
+        "The results come back in the wrong order",
+        "Nothing, async handles it"
+      ],
+      "correct": 1,
+      "explanation": "Async makes unbounded fan-out easy, but providers and servers have limits. A semaphore caps calls in flight."
+    },
+    {
+      "stage": "post",
+      "question": "Why does main.ts avoid TypeScript enums?",
+      "options": [
+        "Enums are deprecated",
+        "Node's built-in TypeScript support only strips erasable syntax; enums generate runtime code and need a compiler",
+        "Enums are slower",
+        "JSON can't contain enums"
+      ],
+      "correct": 1,
+      "explanation": "Type stripping deletes type annotations. Enums and parameter properties emit JavaScript, so they'd need a build step."
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "lesson": "08-project-layout-for-agent-repos",
+  "title": "Project Layout for Agent Repos",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Why should only one module (config.py) read environment variables?",
+      "options": [
+        "Python only allows one module to read os.environ",
+        "So every setting and its default lives in one place, and secrets can be masked consistently",
+        "It's faster",
+        "Environment variables are deprecated"
+      ],
+      "correct": 1,
+      "explanation": "Scattered env reads mean conflicting defaults and secrets leaking through ad-hoc prints. One config module fixes both."
+    },
+    {
+      "stage": "check",
+      "question": "What's the difference between tests/ and evals/ in this layout?",
+      "options": [
+        "There is none",
+        "Tests are deterministic offline checks of the code (scripted model); evals run real tasks on a real model and score behavior",
+        "Evals are just slower tests",
+        "Tests use real models; evals use fakes"
+      ],
+      "correct": 1,
+      "explanation": "Tests check code correctness on every commit. Evals measure agent behavior, which varies and needs a real model."
+    },
+    {
+      "stage": "check",
+      "question": "Why keep prompts as files in agent/prompts/ instead of strings in code?",
+      "options": [
+        "Models read files faster",
+        "Prompt changes show up as clear diffs, get reviewed like code, and can be compared in evals",
+        "Strings can't hold prompts",
+        "It saves tokens"
+      ],
+      "correct": 1,
+      "explanation": "Prompts change agent behavior as much as code does, so they deserve versioning and review."
+    },
+    {
+      "stage": "check",
+      "question": "Why does the generated CLI fall back to a scripted model when AGENT_BASE_URL is unset?",
+      "options": [
+        "Scripted models are smarter",
+        "So a fresh project runs immediately with zero setup, and CI never needs a model or key",
+        "Ollama requires it",
+        "To hide errors"
+      ],
+      "correct": 1,
+      "explanation": "Offline-by-default makes the project runnable and testable anywhere; a real model is one env var away."
+    },
+    {
+      "stage": "post",
+      "question": "The same eval case failed in one run and passed in the next. What should you conclude?",
+      "options": [
+        "The eval is broken",
+        "Model behavior varies; run each case several times and report a pass rate instead of a single pass/fail",
+        "The second run is the true result",
+        "Use a scripted model for evals"
+      ],
+      "correct": 1,
+      "explanation": "Real-model evals are noisy. Repeated runs and pass rates turn anecdotes into measurements."
+    },
+    {
+      "stage": "post",
+      "question": "The scaffolder's tests run the generated project's tests, CLI and evals. Why go that far?",
+      "options": [
+        "To make CI slower",
+        "Generated code can be broken even when templates look fine; only executing it proves the scaffold works",
+        "Python requires it",
+        "To test Ollama"
+      ],
+      "correct": 1,
+      "explanation": "This lesson's own tests caught a template that generated a syntax error, which only running the output reveals."
+    }
+  ]
+}

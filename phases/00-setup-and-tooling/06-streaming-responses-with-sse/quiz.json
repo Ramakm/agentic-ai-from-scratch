@@ -1,0 +1,73 @@
+{
+  "lesson": "06-streaming-responses-with-sse",
+  "title": "Streaming Responses with SSE",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "A reply takes 3.2s to generate, and streaming shows the first token at 0.5s. What did streaming improve?",
+      "options": [
+        "Total generation time",
+        "Time to first token, i.e. how soon the user sees something",
+        "Token cost",
+        "Model accuracy"
+      ],
+      "correct": 1,
+      "explanation": "The model is no faster overall. Streaming delivers output as it's produced, so perceived latency drops."
+    },
+    {
+      "stage": "check",
+      "question": "What marks the end of one SSE event?",
+      "options": ["A newline", "A blank line", "The word END", "A closing brace"],
+      "correct": 1,
+      "explanation": "Events end at an empty line. One event can contain several data: lines, joined with \\n."
+    },
+    {
+      "stage": "check",
+      "question": "Why does chunk.decode(\"utf-8\") on each network chunk sometimes crash?",
+      "options": [
+        "SSE isn't UTF-8",
+        "A multi-byte character like ✅ can be split across two chunks; use an incremental decoder",
+        "Python can't decode emoji",
+        "The server sends binary"
+      ],
+      "correct": 1,
+      "explanation": "Chunks are arbitrary byte ranges. An incremental decoder holds incomplete bytes until the rest arrive."
+    },
+    {
+      "stage": "check",
+      "question": "How are streamed tool-call fragments put back together?",
+      "options": [
+        "Each fragment is a complete JSON object",
+        "By index: the first fragment has the id and name, later ones append argument text, parsed as JSON only at the end",
+        "By arrival order only",
+        "By tool name"
+      ],
+      "correct": 1,
+      "explanation": "Fragments for parallel calls interleave, so group them by index and parse arguments after the stream finishes."
+    },
+    {
+      "stage": "post",
+      "question": "In 1 of 4 live runs, llama3.2 streamed its tool call as plain text with broken JSON. What's the right response?",
+      "options": [
+        "Stop using streaming",
+        "Detect tool-shaped text, validate it against the schema, and either convert it or return an error observation, because small models fail intermittently",
+        "Retry forever",
+        "Raise the temperature"
+      ],
+      "correct": 1,
+      "explanation": "Intermittent failures need handling in the loop, not hope. Validation decides whether the text is safe to treat as a call."
+    },
+    {
+      "stage": "post",
+      "question": "Your streamed responses never include token usage. Most likely fix?",
+      "options": [
+        "Turn streaming off",
+        "Request stream_options: {\"include_usage\": true}",
+        "Count characters ÷ 4",
+        "Add an Accept header"
+      ],
+      "correct": 1,
+      "explanation": "OpenAI-style streams only send a final usage chunk when asked via include_usage."
+    }
+  ]
+}

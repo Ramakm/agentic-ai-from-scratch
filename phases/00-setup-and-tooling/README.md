@@ -3,18 +3,18 @@
 
 > A dev environment, local and hosted models, raw HTTP calls, streaming and tracing, all wired up before writing an agent.
 
-**Status:** ◩ in progress · **Lessons:** 1 of 8 live · **Time:** ~5 hours
+**Status:** ■ complete · **Lessons:** 8 of 8 live · **Time:** ~5 hours
 
 | # | Lesson | Type | Time |
 |---|--------|------|------|
 | 00.01 | [Your agent dev environment](01-your-agent-dev-environment/docs/en.md) | Build | 45 min |
-| 00.02 | Python & TypeScript for agents | planned | 60 min |
-| 00.03 | Running local models with Ollama | planned | 40 min |
-| 00.04 | API keys, providers & rate limits | planned | 30 min |
-| 00.05 | Calling an LLM over raw HTTP | planned | 45 min |
-| 00.06 | Streaming responses with SSE | planned | 40 min |
-| 00.07 | Tracing from day one | planned | 35 min |
-| 00.08 | Project layout for agent repos | planned | 30 min |
+| 00.02 | [Python & TypeScript for agents](02-python-typescript-for-agents/docs/en.md) | Build | 60 min |
+| 00.03 | [Running local models with Ollama](03-running-local-models-with-ollama/docs/en.md) | Build | 40 min |
+| 00.04 | [API keys, providers & rate limits](04-api-keys-providers-rate-limits/docs/en.md) | Build | 30 min |
+| 00.05 | [Calling an LLM over raw HTTP](05-calling-an-llm-over-raw-http/docs/en.md) | Build | 45 min |
+| 00.06 | [Streaming responses with SSE](06-streaming-responses-with-sse/docs/en.md) | Build | 40 min |
+| 00.07 | [Tracing from day one](07-tracing-from-day-one/docs/en.md) | Build | 35 min |
+| 00.08 | [Project layout for agent repos](08-project-layout-for-agent-repos/docs/en.md) | Build | 30 min |
 
 Every live lesson folder has `docs/en.md`, runnable `code/` with tests, a `quiz.json`, and an artifact in `outputs/`.
 Want to write a planned lesson? See [CONTRIBUTING.md](../../CONTRIBUTING.md) and [LESSON_TEMPLATE.md](../../LESSON_TEMPLATE.md).

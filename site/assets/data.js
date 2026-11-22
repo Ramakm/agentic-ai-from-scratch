@@ -39,7 +39,7 @@ window.SITE = {
   "totals": {
     "phases": 16,
     "lessons": 163,
-    "published": 4,
+    "published": 11,
     "hours": 127
   }
 };
@@ -48,8 +48,8 @@ window.PHASES = [
   "id": "00-setup-and-tooling",
   "name": "Setup & Tooling",
   "desc": "A dev environment, local and hosted models, raw HTTP calls, streaming and tracing, all wired up before writing an agent.",
-  "status": "in-progress",
-  "published": 1,
+  "status": "complete",
+  "published": 8,
   "lessons": [
    {
     "id": "01-your-agent-dev-environment",
@@ -66,56 +66,70 @@ window.PHASES = [
     "title": "Python & TypeScript for agents",
     "minutes": 60,
     "path": "phases/00-setup-and-tooling/02-python-typescript-for-agents",
-    "type": "",
-    "num": "00.02"
+    "type": "Build",
+    "num": "00.02",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "03-running-local-models-with-ollama",
     "title": "Running local models with Ollama",
     "minutes": 40,
     "path": "phases/00-setup-and-tooling/03-running-local-models-with-ollama",
-    "type": "",
-    "num": "00.03"
+    "type": "Build",
+    "num": "00.03",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "04-api-keys-providers-rate-limits",
     "title": "API keys, providers & rate limits",
     "minutes": 30,
     "path": "phases/00-setup-and-tooling/04-api-keys-providers-rate-limits",
-    "type": "",
-    "num": "00.04"
+    "type": "Build",
+    "num": "00.04",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "05-calling-an-llm-over-raw-http",
     "title": "Calling an LLM over raw HTTP",
     "minutes": 45,
     "path": "phases/00-setup-and-tooling/05-calling-an-llm-over-raw-http",
-    "type": "",
-    "num": "00.05"
+    "type": "Build",
+    "num": "00.05",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "06-streaming-responses-with-sse",
     "title": "Streaming responses with SSE",
     "minutes": 40,
     "path": "phases/00-setup-and-tooling/06-streaming-responses-with-sse",
-    "type": "",
-    "num": "00.06"
+    "type": "Build",
+    "num": "00.06",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "07-tracing-from-day-one",
     "title": "Tracing from day one",
     "minutes": 35,
     "path": "phases/00-setup-and-tooling/07-tracing-from-day-one",
-    "type": "",
-    "num": "00.07"
+    "type": "Build",
+    "num": "00.07",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "08-project-layout-for-agent-repos",
     "title": "Project layout for agent repos",
     "minutes": 30,
     "path": "phases/00-setup-and-tooling/08-project-layout-for-agent-repos",
-    "type": "",
-    "num": "00.08"
+    "type": "Build",
+    "num": "00.08",
+    "published": true,
+    "hasQuiz": true
    }
   ]
  },

@@ -1,0 +1,78 @@
+{
+  "lesson": "05-calling-an-llm-over-raw-http",
+  "title": "Calling an LLM over Raw HTTP",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "What does an LLM SDK call like client.chat.completions.create(...) ultimately do?",
+      "options": [
+        "Runs the model locally",
+        "Sends one JSON body in an HTTP POST and parses the JSON response",
+        "Opens a WebSocket session",
+        "Calls a gRPC stream"
+      ],
+      "correct": 1,
+      "explanation": "SDKs build the request body, add auth headers, POST it, and parse the reply, plus retries and helpers."
+    },
+    {
+      "stage": "check",
+      "question": "In the Anthropic Messages API, where does the system prompt go?",
+      "options": [
+        "A message with role \"system\"",
+        "The top-level \"system\" field",
+        "A header",
+        "The first user message"
+      ],
+      "correct": 1,
+      "explanation": "Anthropic takes system as its own field; the messages list holds only user and assistant turns."
+    },
+    {
+      "stage": "check",
+      "question": "How do you send a tool's result back in the Anthropic format?",
+      "options": [
+        "A message with role \"tool\"",
+        "A tool_result block inside a user message, with the matching tool_use_id",
+        "In the system prompt",
+        "As an assistant message"
+      ],
+      "correct": 1,
+      "explanation": "Tool results are user-turn content blocks. Several results from one turn go into one user message."
+    },
+    {
+      "stage": "check",
+      "question": "In OpenAI-format tool calls, what type is function.arguments?",
+      "options": [
+        "A JSON object",
+        "A string containing JSON, which you must json.loads (and which can be malformed)",
+        "A Python dict",
+        "A list of values"
+      ],
+      "correct": 1,
+      "explanation": "OpenAI sends arguments as a JSON-encoded string. Anthropic's tool_use.input is already an object."
+    },
+    {
+      "stage": "post",
+      "question": "You get \"roles must alternate between user and assistant\" from Anthropic after two parallel tool calls. Likely cause?",
+      "options": [
+        "The API key is wrong",
+        "Each tool result was sent as its own user message, creating two user turns in a row; merge them into one",
+        "max_tokens is missing",
+        "The model doesn't support tools"
+      ],
+      "correct": 1,
+      "explanation": "Consecutive tool results must share one user message containing multiple tool_result blocks."
+    },
+    {
+      "stage": "post",
+      "question": "Why normalize both providers' responses into one Reply type?",
+      "options": [
+        "To save tokens",
+        "So agent code (loops, tools, evals) works with any provider without branching on the wire format",
+        "Because JSON requires it",
+        "To make responses faster"
+      ],
+      "correct": 1,
+      "explanation": "Normalizing at the boundary keeps provider differences in one adapter instead of spread through the agent."
+    }
+  ]
+}

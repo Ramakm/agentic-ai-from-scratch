@@ -1,0 +1,78 @@
+{
+  "lesson": "07-tracing-from-day-one",
+  "title": "Tracing from Day One",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "An agent gave a wrong answer after 40 steps. Why isn't the final answer enough to debug it?",
+      "options": [
+        "Final answers are always encrypted",
+        "It doesn't show which model call or tool call went wrong, how long each took, or what each saw",
+        "Agents don't produce final answers",
+        "It is, if you read it carefully"
+      ],
+      "correct": 1,
+      "explanation": "You need the trajectory, every step with its inputs, outputs, timing and errors, and that's what a trace records."
+    },
+    {
+      "stage": "check",
+      "question": "What makes a span the child of another span?",
+      "options": [
+        "They have the same name",
+        "It was started while the other span was the current span, so its parent_id is that span's id",
+        "It ran after the other one finished",
+        "They use the same model"
+      ],
+      "correct": 1,
+      "explanation": "The tracer records whichever span is current (via contextvars) as the parent when a new span starts."
+    },
+    {
+      "stage": "check",
+      "question": "A tool raises inside its span. What should the tracer do?",
+      "options": [
+        "Swallow the exception so the agent keeps going",
+        "Mark the span as error, record an exception event, close the span, and re-raise",
+        "Delete the span",
+        "Retry the tool"
+      ],
+      "correct": 1,
+      "explanation": "Tracing observes; it never changes control flow. Whether to recover is the agent loop's decision."
+    },
+    {
+      "stage": "check",
+      "question": "Why use attribute names like gen_ai.usage.input_tokens instead of inventing your own?",
+      "options": [
+        "Python requires dotted names",
+        "They're OpenTelemetry's GenAI conventions, so traces work in standard tools without renaming",
+        "They're shorter",
+        "Providers reject other names"
+      ],
+      "correct": 1,
+      "explanation": "Shared conventions make your traces portable across Jaeger, Grafana, Langfuse, Phoenix and others."
+    },
+    {
+      "stage": "post",
+      "question": "Spans created inside a plain threading.Thread show up as separate root traces. Why?",
+      "options": [
+        "Threads can't be traced",
+        "A new thread starts with an empty context; pass it in with contextvars.copy_context().run(fn)",
+        "The tracer is not thread-safe",
+        "JSONL can't store threaded spans"
+      ],
+      "correct": 1,
+      "explanation": "asyncio tasks copy the context automatically; plain threads do not. Hand the context over explicitly."
+    },
+    {
+      "stage": "post",
+      "question": "In the waterfall, input tokens grow from 412 to 688 across four model calls. What does that tell you?",
+      "options": [
+        "The model is getting slower",
+        "Each call resends the growing conversation history, so cost per step rises as the run goes on",
+        "The tool outputs are wrong",
+        "Tokens are counted twice"
+      ],
+      "correct": 1,
+      "explanation": "Agent cost grows with history length. Context management (Phase 4) exists to bend that curve."
+    }
+  ]
+}
