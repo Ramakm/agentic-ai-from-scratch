@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson | Agentic AI from Scratch</title>
+  <meta name="description" content="A lesson from Agentic AI from Scratch: build it by hand, then use the frameworks.">
+  <meta name="theme-color" content="#fafaf5">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%233553ff'/%3E%3Crect x='4' y='4' width='8' height='8' fill='%23fafaf5'/%3E%3C/svg%3E">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('aafs-theme'); } catch (e) {}
+      if (!t) t = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="lesson-page">
+  <a href="#lessonBody" class="skip-link">Skip to lesson</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="./" class="logo" aria-label="Agentic AI from Scratch home"><span class="logo-icon" aria-hidden="true"></span>AGENTS / FROM SCRATCH</a>
+      <nav class="header-nav" id="headerNav" aria-label="Primary">
+        <a href="./#contents">Contents</a>
+        <a href="./#paths">Paths</a>
+        <a href="./#machines">Machines</a>
+        <a href="./#maintainer">About</a>
+        <a href="#" data-repo-link target="_blank" rel="noopener" class="header-github" aria-label="GitHub repository"><span data-icon="github" data-icon-size="15"></span><span class="star-count" data-stars hidden></span></a>
+      </nav>
+      <button class="icon-btn" type="button" id="searchToggle" aria-label="Search lessons (⌘K)" title="Search (⌘K)">
+        <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M11 11l4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button class="icon-btn" type="button" id="themeToggle" aria-label="Toggle theme"><span id="themeIcon">N</span></button>
+      <button class="icon-btn menu-toggle" type="button" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="headerNav">≡</button>
+    </div>
+    <div class="read-progress" aria-hidden="true"><span id="readProgress"></span></div>
+  </header>
+
+  <main class="container lesson-layout" id="main">
+    <aside class="lesson-aside" aria-label="Lesson navigation">
+      <div class="aside-block">
+        <a class="aside-phase" id="asidePhase" href="./#contents"></a>
+        <ol class="aside-lessons" id="asideLessons"></ol>
+      </div>
+      <div class="aside-block" id="tocBlock" hidden>
+        <p class="aside-title">On this page</p>
+        <ol class="aside-toc" id="asideToc"></ol>
+      </div>
+      <div class="aside-block" id="filesBlock" hidden>
+        <p class="aside-title">Lesson files</p>
+        <ul class="aside-files" id="asideFiles"></ul>
+      </div>
+    </aside>
+
+    <article class="lesson" id="lessonBody" aria-live="polite">
+      <div class="lesson-crumbs" id="crumbs"></div>
+      <div class="lesson-loading" id="lessonState">Loading lesson…</div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p>© 2026 · <span data-maintainer>Ramakrushna Mohapatra</span> · MIT · free forever</p>
+        <div class="footer-socials" data-socials="icons" aria-label="Social profiles"></div>
+      </div>
+      <div class="footer-links">
+        <a href="./">Home</a>
+        <a href="./#contents">Contents</a>
+        <a href="#" data-repo-link target="_blank" rel="noopener">GitHub</a>
+        <a href="#" data-repo-link="/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contribute</a>
+        <a href="#" data-repo-link="/issues/new/choose" target="_blank" rel="noopener">Report</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="assets/data.js"></script>
+  <script src="assets/common.js"></script>
+  <script src="assets/lesson.js"></script>
+</body>
+</html>

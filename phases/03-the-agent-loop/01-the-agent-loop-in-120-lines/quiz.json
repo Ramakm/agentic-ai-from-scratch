@@ -1,0 +1,78 @@
+{
+  "lesson": "01-the-agent-loop-in-120-lines",
+  "title": "The Agent Loop in 120 Lines",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "A model supports tool calling. Why is that not yet an agent?",
+      "options": [
+        "Tool calling only works with very large models",
+        "Something still has to run the tool, return the result, and give the model another turn, repeatedly",
+        "Tool calls cannot return text",
+        "Agents need a vector database"
+      ],
+      "correct": 1,
+      "explanation": "Tool calling lets the model request an action. The loop is what runs the action, feeds the observation back, and repeats until a stop condition."
+    },
+    {
+      "stage": "check",
+      "question": "In this lesson's loop, what is the normal signal that the agent is finished?",
+      "options": [
+        "The model returns an empty string",
+        "The step counter reaches zero",
+        "The model's reply contains no tool calls",
+        "A tool returns the word 'done'"
+      ],
+      "correct": 2,
+      "explanation": "A reply without tool_calls is treated as the final answer. The step budget is the safety net, not the normal exit."
+    },
+    {
+      "stage": "check",
+      "question": "The model calls calculator with arguments that are not valid JSON. What should the loop do?",
+      "options": [
+        "Raise an exception so the developer notices",
+        "Silently skip the call",
+        "Return an error string as the tool observation so the model can correct itself",
+        "Restart the whole conversation"
+      ],
+      "correct": 2,
+      "explanation": "Errors are observations. Returning 'error: arguments were not valid JSON' usually gets a corrected call on the next turn; raising ends the run."
+    },
+    {
+      "stage": "check",
+      "question": "Why does each tool message carry a tool_call_id?",
+      "options": [
+        "To match each result to its request when the model makes several calls in one turn",
+        "To bill tool usage separately",
+        "To encrypt the tool output",
+        "It is optional decoration"
+      ],
+      "correct": 0,
+      "explanation": "With parallel calls, results can come back in any order. The id ties each observation to the call that produced it."
+    },
+    {
+      "stage": "post",
+      "question": "llama3.2 replied with a JSON tool call written inside content, and the loop stopped after one step. What is the most robust fix?",
+      "options": [
+        "Remove the step budget",
+        "Detect tool-shaped text, feed back an error observation telling the model to use tool_calls, and continue",
+        "Parse any JSON in content and execute it without checks",
+        "Switch the stop condition to 'never stop'"
+      ],
+      "correct": 1,
+      "explanation": "Feeding back a corrective observation keeps the loop's contract intact. Blindly executing text-embedded JSON skips schema checks and invites injection."
+    },
+    {
+      "stage": "post",
+      "question": "Why does run_agent take the model as a plain function llm(messages, schemas)?",
+      "options": [
+        "Python cannot import HTTP libraries inside loops",
+        "So the same loop runs with a scripted model in tests and a real model in production",
+        "Because Ollama requires it",
+        "To make the loop asynchronous"
+      ],
+      "correct": 1,
+      "explanation": "Depending on a callable instead of a vendor SDK makes the loop deterministic to test and portable across providers."
+    }
+  ]
+}

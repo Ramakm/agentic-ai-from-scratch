@@ -1,0 +1,980 @@
+{
+  "title": "Agentic AI from Scratch",
+  "tagline": "Build AI agents from a raw while-loop and an HTTP call, before a single framework gets imported.",
+  "repo": "Ramakm/agentic-ai-from-scratch",
+  "site": "https://ramakm.github.io/agentic-ai-from-scratch/",
+  "maintainer": {
+    "name": "Ramakrushna Mohapatra",
+    "handle": "techwith_ram",
+    "github": "Ramakm",
+    "role": "Sr. Data Scientist · GenAI & LLM engineer · Tech trainer · Founder of GrowTechie",
+    "avatar": "https://github.com/Ramakm.png?size=240",
+    "socials": [
+      {
+        "id": "x",
+        "label": "X / Twitter",
+        "handle": "@techwith_ram",
+        "url": "https://x.com/techwith_ram"
+      },
+      {
+        "id": "instagram",
+        "label": "Instagram",
+        "handle": "@techwith.ram",
+        "url": "https://www.instagram.com/techwith.ram/"
+      },
+      {
+        "id": "threads",
+        "label": "Threads",
+        "handle": "@techwith.ram",
+        "url": "https://www.threads.com/@techwith.ram"
+      },
+      {
+        "id": "medium",
+        "label": "Medium",
+        "handle": "@techwithram",
+        "url": "https://medium.com/@techwithram"
+      },
+      {
+        "id": "github",
+        "label": "GitHub",
+        "handle": "Ramakm",
+        "url": "https://github.com/Ramakm"
+      },
+      {
+        "id": "web",
+        "label": "Website",
+        "handle": "ramakrushna.com",
+        "url": "https://www.ramakrushna.com/"
+      }
+    ]
+  },
+  "phases": [
+    {
+      "id": "00-setup-and-tooling",
+      "name": "Setup & Tooling",
+      "desc": "A dev environment, local and hosted models, raw HTTP calls, streaming and tracing, all wired up before writing an agent.",
+      "lessons": [
+        {
+          "id": "01-your-agent-dev-environment",
+          "title": "Your agent dev environment",
+          "minutes": 45
+        },
+        {
+          "id": "02-python-typescript-for-agents",
+          "title": "Python & TypeScript for agents",
+          "minutes": 60
+        },
+        {
+          "id": "03-running-local-models-with-ollama",
+          "title": "Running local models with Ollama",
+          "minutes": 40
+        },
+        {
+          "id": "04-api-keys-providers-rate-limits",
+          "title": "API keys, providers & rate limits",
+          "minutes": 30
+        },
+        {
+          "id": "05-calling-an-llm-over-raw-http",
+          "title": "Calling an LLM over raw HTTP",
+          "minutes": 45
+        },
+        {
+          "id": "06-streaming-responses-with-sse",
+          "title": "Streaming responses with SSE",
+          "minutes": 40
+        },
+        {
+          "id": "07-tracing-from-day-one",
+          "title": "Tracing from day one",
+          "minutes": 35
+        },
+        {
+          "id": "08-project-layout-for-agent-repos",
+          "title": "Project layout for agent repos",
+          "minutes": 30
+        }
+      ]
+    },
+    {
+      "id": "01-llm-foundations",
+      "name": "LLM Foundations for Agents",
+      "desc": "What a model actually returns, how context windows fill, and how to force structured, parseable output.",
+      "lessons": [
+        {
+          "id": "01-what-an-llm-actually-returns",
+          "title": "What an LLM actually returns",
+          "minutes": 45
+        },
+        {
+          "id": "02-tokens-and-the-context-window",
+          "title": "Tokens and the context window",
+          "minutes": 50
+        },
+        {
+          "id": "03-sampling-temperature-top-p-determinism",
+          "title": "Sampling: temperature, top-p, determinism",
+          "minutes": 40
+        },
+        {
+          "id": "04-chat-templates-and-message-roles",
+          "title": "Chat templates and message roles",
+          "minutes": 40
+        },
+        {
+          "id": "05-system-prompts-as-contracts",
+          "title": "System prompts as contracts",
+          "minutes": 35
+        },
+        {
+          "id": "06-structured-output-json-mode",
+          "title": "Structured output & JSON mode",
+          "minutes": 50
+        },
+        {
+          "id": "07-parsing-and-validating-with-schemas",
+          "title": "Parsing and validating with schemas",
+          "minutes": 45
+        },
+        {
+          "id": "08-token-budgets-cost-math",
+          "title": "Token budgets & cost math",
+          "minutes": 35
+        },
+        {
+          "id": "09-model-selection-for-agent-work",
+          "title": "Model selection for agent work",
+          "minutes": 40
+        },
+        {
+          "id": "10-why-capable-models-still-fail",
+          "title": "Why capable models still fail",
+          "minutes": 45
+        }
+      ]
+    },
+    {
+      "id": "02-tool-use",
+      "name": "Tool Use & Function Calling",
+      "desc": "Turn text into action. Tool schemas, dispatchers, parallel calls, and errors fed back as observations.",
+      "lessons": [
+        {
+          "id": "01-text-in-text-out-the-limit",
+          "title": "Text in, text out: the limit",
+          "minutes": 30
+        },
+        {
+          "id": "02-tool-schemas-from-first-principles",
+          "title": "Tool schemas from first principles",
+          "minutes": 50
+        },
+        {
+          "id": "03-writing-a-tool-dispatcher",
+          "title": "Writing a tool dispatcher",
+          "minutes": 60
+        },
+        {
+          "id": "04-parallel-tool-calls",
+          "title": "Parallel tool calls",
+          "minutes": 45
+        },
+        {
+          "id": "05-tool-errors-as-observations",
+          "title": "Tool errors as observations",
+          "minutes": 40
+        },
+        {
+          "id": "06-designing-tools-models-can-use",
+          "title": "Designing tools models can use",
+          "minutes": 50
+        },
+        {
+          "id": "07-idempotency-and-side-effects",
+          "title": "Idempotency and side effects",
+          "minutes": 40
+        },
+        {
+          "id": "08-human-approval-gates",
+          "title": "Human approval gates",
+          "minutes": 45
+        },
+        {
+          "id": "09-tool-results-that-fit-the-context",
+          "title": "Tool results that fit the context",
+          "minutes": 40
+        },
+        {
+          "id": "10-native-function-calling-across-providers",
+          "title": "Native function calling across providers",
+          "minutes": 50
+        },
+        {
+          "id": "11-testing-tools-in-isolation",
+          "title": "Testing tools in isolation",
+          "minutes": 40
+        }
+      ]
+    },
+    {
+      "id": "03-the-agent-loop",
+      "name": "The Agent Loop",
+      "desc": "A while-loop, a model, and a toolbox. ReAct, stop conditions, retries, interrupts, and the loop as a graph.",
+      "lessons": [
+        {
+          "id": "01-the-agent-loop-in-120-lines",
+          "title": "The agent loop in 120 lines",
+          "minutes": 60
+        },
+        {
+          "id": "02-react-reason-act-observe",
+          "title": "ReAct: reason, act, observe",
+          "minutes": 60
+        },
+        {
+          "id": "03-stop-conditions-max-steps",
+          "title": "Stop conditions & max steps",
+          "minutes": 35
+        },
+        {
+          "id": "04-scratchpads-and-thought-traces",
+          "title": "Scratchpads and thought traces",
+          "minutes": 40
+        },
+        {
+          "id": "05-handling-malformed-actions",
+          "title": "Handling malformed actions",
+          "minutes": 40
+        },
+        {
+          "id": "06-retries-backoff-recovery",
+          "title": "Retries, backoff & recovery",
+          "minutes": 45
+        },
+        {
+          "id": "07-streaming-an-agent-s-steps",
+          "title": "Streaming an agent's steps",
+          "minutes": 45
+        },
+        {
+          "id": "08-interrupts-and-resumption",
+          "title": "Interrupts and resumption",
+          "minutes": 50
+        },
+        {
+          "id": "09-state-machines-for-agents",
+          "title": "State machines for agents",
+          "minutes": 55
+        },
+        {
+          "id": "10-the-loop-as-a-graph",
+          "title": "The loop as a graph",
+          "minutes": 55
+        },
+        {
+          "id": "11-cost-and-step-budgets",
+          "title": "Cost and step budgets",
+          "minutes": 35
+        },
+        {
+          "id": "12-debugging-a-stuck-loop",
+          "title": "Debugging a stuck loop",
+          "minutes": 45
+        }
+      ]
+    },
+    {
+      "id": "04-memory-and-context",
+      "name": "Memory & Context Engineering",
+      "desc": "Context is the program. Buffers, summaries, embeddings, a vector store by hand, and memory that stays clean.",
+      "lessons": [
+        {
+          "id": "01-context-is-the-program",
+          "title": "Context is the program",
+          "minutes": 40
+        },
+        {
+          "id": "02-conversation-buffers-truncation",
+          "title": "Conversation buffers & truncation",
+          "minutes": 40
+        },
+        {
+          "id": "03-summarization-memory",
+          "title": "Summarization memory",
+          "minutes": 45
+        },
+        {
+          "id": "04-embeddings-from-scratch",
+          "title": "Embeddings from scratch",
+          "minutes": 60
+        },
+        {
+          "id": "05-a-vector-store-in-80-lines",
+          "title": "A vector store in 80 lines",
+          "minutes": 60
+        },
+        {
+          "id": "06-episodic-memory",
+          "title": "Episodic memory",
+          "minutes": 50
+        },
+        {
+          "id": "07-semantic-procedural-memory",
+          "title": "Semantic & procedural memory",
+          "minutes": 50
+        },
+        {
+          "id": "08-memory-writes-what-to-keep",
+          "title": "Memory writes: what to keep",
+          "minutes": 45
+        },
+        {
+          "id": "09-context-compaction",
+          "title": "Context compaction",
+          "minutes": 45
+        },
+        {
+          "id": "10-files-as-long-term-memory",
+          "title": "Files as long-term memory",
+          "minutes": 40
+        },
+        {
+          "id": "11-memory-poisoning-hygiene",
+          "title": "Memory poisoning & hygiene",
+          "minutes": 40
+        }
+      ]
+    },
+    {
+      "id": "05-agentic-rag",
+      "name": "Retrieval & Agentic RAG",
+      "desc": "Retrieval as a tool the agent decides to call. Hybrid search, reranking, rewriting, and self-correcting loops.",
+      "lessons": [
+        {
+          "id": "01-naive-rag-and-where-it-breaks",
+          "title": "Naive RAG and where it breaks",
+          "minutes": 45
+        },
+        {
+          "id": "02-chunking-strategies",
+          "title": "Chunking strategies",
+          "minutes": 45
+        },
+        {
+          "id": "03-hybrid-search-bm25-vectors",
+          "title": "Hybrid search: BM25 + vectors",
+          "minutes": 55
+        },
+        {
+          "id": "04-reranking",
+          "title": "Reranking",
+          "minutes": 40
+        },
+        {
+          "id": "05-query-rewriting-decomposition",
+          "title": "Query rewriting & decomposition",
+          "minutes": 45
+        },
+        {
+          "id": "06-retrieval-as-a-tool",
+          "title": "Retrieval as a tool",
+          "minutes": 45
+        },
+        {
+          "id": "07-self-correcting-rag",
+          "title": "Self-correcting RAG",
+          "minutes": 55
+        },
+        {
+          "id": "08-corrective-rag-loops",
+          "title": "Corrective RAG loops",
+          "minutes": 50
+        },
+        {
+          "id": "09-graph-based-retrieval",
+          "title": "Graph-based retrieval",
+          "minutes": 55
+        },
+        {
+          "id": "10-evaluating-retrieval-quality",
+          "title": "Evaluating retrieval quality",
+          "minutes": 45
+        }
+      ]
+    },
+    {
+      "id": "06-planning-and-reasoning",
+      "name": "Planning & Reasoning",
+      "desc": "Plan-and-execute, task trees, Tree of Thoughts, reflection, verifiers, and knowing when not to plan.",
+      "lessons": [
+        {
+          "id": "01-chain-of-thought-for-actions",
+          "title": "Chain-of-thought for actions",
+          "minutes": 40
+        },
+        {
+          "id": "02-plan-and-execute",
+          "title": "Plan-and-execute",
+          "minutes": 55
+        },
+        {
+          "id": "03-task-decomposition-trees",
+          "title": "Task decomposition trees",
+          "minutes": 50
+        },
+        {
+          "id": "04-tree-of-thoughts-search",
+          "title": "Tree of Thoughts search",
+          "minutes": 60
+        },
+        {
+          "id": "05-reflection-self-critique",
+          "title": "Reflection & self-critique",
+          "minutes": 45
+        },
+        {
+          "id": "06-reflexion-learning-from-failures",
+          "title": "Reflexion: learning from failures",
+          "minutes": 55
+        },
+        {
+          "id": "07-verifiers-and-checkers",
+          "title": "Verifiers and checkers",
+          "minutes": 50
+        },
+        {
+          "id": "08-replanning-on-surprise",
+          "title": "Replanning on surprise",
+          "minutes": 45
+        },
+        {
+          "id": "09-reasoning-models-in-the-loop",
+          "title": "Reasoning models in the loop",
+          "minutes": 45
+        },
+        {
+          "id": "10-when-not-to-plan",
+          "title": "When not to plan",
+          "minutes": 30
+        }
+      ]
+    },
+    {
+      "id": "07-model-context-protocol",
+      "name": "Model Context Protocol",
+      "desc": "MCP from the wire up. JSON-RPC over stdio, a server and a client by hand, transports, auth, and security.",
+      "lessons": [
+        {
+          "id": "01-why-mcp-exists",
+          "title": "Why MCP exists",
+          "minutes": 35
+        },
+        {
+          "id": "02-the-protocol-json-rpc-over-stdio",
+          "title": "The protocol: JSON-RPC over stdio",
+          "minutes": 50
+        },
+        {
+          "id": "03-build-an-mcp-server-from-scratch",
+          "title": "Build an MCP server from scratch",
+          "minutes": 60
+        },
+        {
+          "id": "04-tools-resources-prompts",
+          "title": "Tools, resources & prompts",
+          "minutes": 50
+        },
+        {
+          "id": "05-build-an-mcp-client",
+          "title": "Build an MCP client",
+          "minutes": 55
+        },
+        {
+          "id": "06-streamable-http-transport",
+          "title": "Streamable HTTP transport",
+          "minutes": 50
+        },
+        {
+          "id": "07-auth-for-remote-servers",
+          "title": "Auth for remote servers",
+          "minutes": 50
+        },
+        {
+          "id": "08-sampling-and-elicitation",
+          "title": "Sampling and elicitation",
+          "minutes": 45
+        },
+        {
+          "id": "09-composing-many-servers",
+          "title": "Composing many servers",
+          "minutes": 45
+        },
+        {
+          "id": "10-testing-mcp-servers",
+          "title": "Testing MCP servers",
+          "minutes": 40
+        },
+        {
+          "id": "11-mcp-security-pitfalls",
+          "title": "MCP security pitfalls",
+          "minutes": 45
+        }
+      ]
+    },
+    {
+      "id": "08-multi-agent-systems",
+      "name": "Multi-Agent Systems",
+      "desc": "Orchestrators, workers, handoffs, supervisors, blackboards, A2A, and the real cost of coordination.",
+      "lessons": [
+        {
+          "id": "01-when-one-agent-is-not-enough",
+          "title": "When one agent is not enough",
+          "minutes": 35
+        },
+        {
+          "id": "02-orchestrator-worker",
+          "title": "Orchestrator–worker",
+          "minutes": 55
+        },
+        {
+          "id": "03-handoffs-between-agents",
+          "title": "Handoffs between agents",
+          "minutes": 50
+        },
+        {
+          "id": "04-supervisor-hierarchies",
+          "title": "Supervisor hierarchies",
+          "minutes": 50
+        },
+        {
+          "id": "05-shared-blackboards",
+          "title": "Shared blackboards",
+          "minutes": 45
+        },
+        {
+          "id": "06-debate-and-critique",
+          "title": "Debate and critique",
+          "minutes": 45
+        },
+        {
+          "id": "07-agent-to-agent-a2a-protocol",
+          "title": "Agent-to-agent (A2A) protocol",
+          "minutes": 55
+        },
+        {
+          "id": "08-message-passing-mailboxes",
+          "title": "Message passing & mailboxes",
+          "minutes": 50
+        },
+        {
+          "id": "09-parallel-fan-out-fan-in",
+          "title": "Parallel fan-out, fan-in",
+          "minutes": 45
+        },
+        {
+          "id": "10-role-design-specialization",
+          "title": "Role design & specialization",
+          "minutes": 40
+        },
+        {
+          "id": "11-failure-modes-of-swarms",
+          "title": "Failure modes of swarms",
+          "minutes": 45
+        },
+        {
+          "id": "12-cost-of-coordination",
+          "title": "Cost of coordination",
+          "minutes": 35
+        }
+      ]
+    },
+    {
+      "id": "09-frameworks-and-sdks",
+      "name": "Frameworks & SDKs",
+      "desc": "Now import the frameworks. The same loop in LangGraph, Agents SDKs, CrewAI, AutoGen, and when to skip them all.",
+      "lessons": [
+        {
+          "id": "01-the-same-loop-ten-frameworks",
+          "title": "The same loop, ten frameworks",
+          "minutes": 40
+        },
+        {
+          "id": "02-langgraph-state-graphs",
+          "title": "LangGraph: state graphs",
+          "minutes": 60
+        },
+        {
+          "id": "03-openai-agents-sdk",
+          "title": "OpenAI Agents SDK",
+          "minutes": 50
+        },
+        {
+          "id": "04-claude-agent-sdk",
+          "title": "Claude Agent SDK",
+          "minutes": 50
+        },
+        {
+          "id": "05-crewai-roles-crews",
+          "title": "CrewAI roles & crews",
+          "minutes": 45
+        },
+        {
+          "id": "06-autogen-conversations",
+          "title": "AutoGen conversations",
+          "minutes": 45
+        },
+        {
+          "id": "07-llamaindex-agents",
+          "title": "LlamaIndex agents",
+          "minutes": 45
+        },
+        {
+          "id": "08-pydantic-ai-typed-agents",
+          "title": "Pydantic AI typed agents",
+          "minutes": 45
+        },
+        {
+          "id": "09-choosing-or-skipping-a-framework",
+          "title": "Choosing (or skipping) a framework",
+          "minutes": 35
+        },
+        {
+          "id": "10-porting-between-frameworks",
+          "title": "Porting between frameworks",
+          "minutes": 45
+        }
+      ]
+    },
+    {
+      "id": "10-coding-and-computer-use",
+      "name": "Coding & Computer-Use Agents",
+      "desc": "Agents that edit files, run tests, drive browsers and terminals. Ends with a mini coding agent of your own.",
+      "lessons": [
+        {
+          "id": "01-anatomy-of-a-coding-agent",
+          "title": "Anatomy of a coding agent",
+          "minutes": 45
+        },
+        {
+          "id": "02-file-read-edit-search-tools",
+          "title": "File read, edit & search tools",
+          "minutes": 55
+        },
+        {
+          "id": "03-running-code-in-a-sandbox",
+          "title": "Running code in a sandbox",
+          "minutes": 55
+        },
+        {
+          "id": "04-test-driven-agent-loops",
+          "title": "Test-driven agent loops",
+          "minutes": 55
+        },
+        {
+          "id": "05-repository-maps-context",
+          "title": "Repository maps & context",
+          "minutes": 50
+        },
+        {
+          "id": "06-skills-and-skill-md",
+          "title": "Skills and SKILL.md",
+          "minutes": 45
+        },
+        {
+          "id": "07-browser-agents",
+          "title": "Browser agents",
+          "minutes": 55
+        },
+        {
+          "id": "08-computer-use-screenshots-to-clicks",
+          "title": "Computer use: screenshots to clicks",
+          "minutes": 60
+        },
+        {
+          "id": "09-terminal-agents",
+          "title": "Terminal agents",
+          "minutes": 50
+        },
+        {
+          "id": "10-long-horizon-tasks",
+          "title": "Long-horizon tasks",
+          "minutes": 50
+        },
+        {
+          "id": "11-build-a-mini-coding-agent",
+          "title": "Build a mini coding agent",
+          "minutes": 90
+        }
+      ]
+    },
+    {
+      "id": "11-evaluation-and-observability",
+      "name": "Evaluation & Observability",
+      "desc": "Golden tasks, trajectory evals, careful LLM judges, OpenTelemetry traces, replay, and your own eval harness.",
+      "lessons": [
+        {
+          "id": "01-why-agent-evals-are-hard",
+          "title": "Why agent evals are hard",
+          "minutes": 35
+        },
+        {
+          "id": "02-golden-tasks-datasets",
+          "title": "Golden tasks & datasets",
+          "minutes": 45
+        },
+        {
+          "id": "03-trajectory-evaluation",
+          "title": "Trajectory evaluation",
+          "minutes": 50
+        },
+        {
+          "id": "04-llm-as-judge-carefully",
+          "title": "LLM-as-judge, carefully",
+          "minutes": 50
+        },
+        {
+          "id": "05-tool-call-accuracy",
+          "title": "Tool-call accuracy",
+          "minutes": 40
+        },
+        {
+          "id": "06-tracing-with-opentelemetry",
+          "title": "Tracing with OpenTelemetry",
+          "minutes": 50
+        },
+        {
+          "id": "07-replay-and-regression",
+          "title": "Replay and regression",
+          "minutes": 45
+        },
+        {
+          "id": "08-online-metrics-feedback",
+          "title": "Online metrics & feedback",
+          "minutes": 40
+        },
+        {
+          "id": "09-benchmarks-swe-bench-to-tau-bench",
+          "title": "Benchmarks: SWE-bench to τ-bench",
+          "minutes": 45
+        },
+        {
+          "id": "10-building-an-eval-harness",
+          "title": "Building an eval harness",
+          "minutes": 70
+        }
+      ]
+    },
+    {
+      "id": "12-safety-and-security",
+      "name": "Safety, Security & Guardrails",
+      "desc": "The agent threat model. Prompt injection, exfiltration, least privilege, sandboxes, permissions, red-teaming.",
+      "lessons": [
+        {
+          "id": "01-the-agent-threat-model",
+          "title": "The agent threat model",
+          "minutes": 45
+        },
+        {
+          "id": "02-prompt-injection-direct-indirect",
+          "title": "Prompt injection, direct & indirect",
+          "minutes": 55
+        },
+        {
+          "id": "03-data-exfiltration-paths",
+          "title": "Data exfiltration paths",
+          "minutes": 45
+        },
+        {
+          "id": "04-least-privilege-tools",
+          "title": "Least-privilege tools",
+          "minutes": 40
+        },
+        {
+          "id": "05-sandboxing-with-containers",
+          "title": "Sandboxing with containers",
+          "minutes": 55
+        },
+        {
+          "id": "06-permission-systems",
+          "title": "Permission systems",
+          "minutes": 50
+        },
+        {
+          "id": "07-input-output-guardrails",
+          "title": "Input & output guardrails",
+          "minutes": 45
+        },
+        {
+          "id": "08-secrets-and-credentials",
+          "title": "Secrets and credentials",
+          "minutes": 35
+        },
+        {
+          "id": "09-human-in-the-loop-design",
+          "title": "Human-in-the-loop design",
+          "minutes": 40
+        },
+        {
+          "id": "10-red-teaming-your-agent",
+          "title": "Red-teaming your agent",
+          "minutes": 55
+        },
+        {
+          "id": "11-audit-logs",
+          "title": "Audit logs",
+          "minutes": 35
+        }
+      ]
+    },
+    {
+      "id": "13-production-agents",
+      "name": "Production Agents",
+      "desc": "Durable execution, queues, caching, routing, cost control, versioning, and incident playbooks.",
+      "lessons": [
+        {
+          "id": "01-from-notebook-to-service",
+          "title": "From notebook to service",
+          "minutes": 45
+        },
+        {
+          "id": "02-durable-execution",
+          "title": "Durable execution",
+          "minutes": 55
+        },
+        {
+          "id": "03-queues-workers-long-jobs",
+          "title": "Queues, workers & long jobs",
+          "minutes": 50
+        },
+        {
+          "id": "04-prompt-caching-latency",
+          "title": "Prompt caching & latency",
+          "minutes": 45
+        },
+        {
+          "id": "05-cost-control-at-scale",
+          "title": "Cost control at scale",
+          "minutes": 40
+        },
+        {
+          "id": "06-model-routing-fallbacks",
+          "title": "Model routing & fallbacks",
+          "minutes": 45
+        },
+        {
+          "id": "07-versioning-prompts-and-tools",
+          "title": "Versioning prompts and tools",
+          "minutes": 40
+        },
+        {
+          "id": "08-deploying-with-docker",
+          "title": "Deploying with Docker",
+          "minutes": 45
+        },
+        {
+          "id": "09-rate-limits-backpressure",
+          "title": "Rate limits & backpressure",
+          "minutes": 40
+        },
+        {
+          "id": "10-incident-playbooks",
+          "title": "Incident playbooks",
+          "minutes": 35
+        }
+      ]
+    },
+    {
+      "id": "14-agent-ux",
+      "name": "Agent UX & Interfaces",
+      "desc": "Streaming step views, approvals and undo, voice, background agents, and the design of trust.",
+      "lessons": [
+        {
+          "id": "01-streaming-uis-for-agents",
+          "title": "Streaming UIs for agents",
+          "minutes": 45
+        },
+        {
+          "id": "02-showing-the-work-step-views",
+          "title": "Showing the work: step views",
+          "minutes": 40
+        },
+        {
+          "id": "03-approvals-undo",
+          "title": "Approvals & undo",
+          "minutes": 40
+        },
+        {
+          "id": "04-chat-is-not-the-only-interface",
+          "title": "Chat is not the only interface",
+          "minutes": 35
+        },
+        {
+          "id": "05-voice-agents",
+          "title": "Voice agents",
+          "minutes": 55
+        },
+        {
+          "id": "06-background-agents-notifications",
+          "title": "Background agents & notifications",
+          "minutes": 40
+        },
+        {
+          "id": "07-generative-ui",
+          "title": "Generative UI",
+          "minutes": 45
+        },
+        {
+          "id": "08-trust-and-explainability",
+          "title": "Trust and explainability",
+          "minutes": 35
+        }
+      ]
+    },
+    {
+      "id": "15-capstone-agent-harness",
+      "name": "Capstone: Your Own Agent Harness",
+      "desc": "Everything at once. A loop, tool registry, memory, MCP, subagents, permissions, and evals, shipped as a CLI.",
+      "lessons": [
+        {
+          "id": "01-why-build-a-harness",
+          "title": "Why build a harness",
+          "minutes": 35
+        },
+        {
+          "id": "02-the-core-loop-tool-registry",
+          "title": "The core loop & tool registry",
+          "minutes": 70
+        },
+        {
+          "id": "03-memory-context-manager",
+          "title": "Memory & context manager",
+          "minutes": 70
+        },
+        {
+          "id": "04-mcp-client-integration",
+          "title": "MCP client integration",
+          "minutes": 60
+        },
+        {
+          "id": "05-subagents-delegation",
+          "title": "Subagents & delegation",
+          "minutes": 60
+        },
+        {
+          "id": "06-permissions-sandbox",
+          "title": "Permissions & sandbox",
+          "minutes": 60
+        },
+        {
+          "id": "07-evals-traces",
+          "title": "Evals & traces",
+          "minutes": 60
+        },
+        {
+          "id": "08-ship-it-cli-docs",
+          "title": "Ship it: CLI + docs",
+          "minutes": 60
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+name: Lesson proposal
+description: Claim a planned lesson, or propose a new one
+labels: [lesson]
+body:
+  - type: input
+    id: lesson
+    attributes:
+      label: Lesson id and title
+      description: From ROADMAP.md, e.g. "03.02 ReAct, reason, act, observe", or "new" plus a title
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What concrete failure does this lesson fix? (This becomes "The Problem".)
+    validations:
+      required: true
+  - type: textarea
+    id: build
+    attributes:
+      label: What the learner builds
+      description: The from-scratch code, and what runs offline with a scripted model
+    validations:
+      required: true
+  - type: textarea
+    id: ship
+    attributes:
+      label: What it ships
+      description: The artifact in outputs/ (a skill, prompt, tool, or MCP server)
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Ground rules
+      options:
+        - label: I've read LESSON_TEMPLATE.md and CONTRIBUTING.md
+          required: true

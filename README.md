@@ -1,1 +1,523 @@
-# agentic-ai-from-scratch
+<p align="center">
+  <a href="https://ramakm.github.io/agentic-ai-from-scratch/">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/readme/header-dark.svg">
+      <img src="assets/readme/header-light.svg" alt="Agentic AI from Scratch" width="840">
+    </picture>
+  </a>
+</p>
+
+<p align="center">
+  Build AI agents from a raw while-loop and an HTTP call, before a single framework gets imported.<br>
+  Tools, memory, planning, MCP, multi-agent systems, evals, and safety, written by hand and tested.
+</p>
+
+<p align="center">
+  <a href="https://ramakm.github.io/agentic-ai-from-scratch/"><b>Website</b></a> ·
+  <a href="phases/00-setup-and-tooling/01-your-agent-dev-environment/docs/en.md"><b>Start learning</b></a> ·
+  <a href="#learning-paths"><b>Choose a path</b></a> ·
+  <a href="#contents"><b>Curriculum</b></a> ·
+  <a href="ROADMAP.md"><b>Roadmap</b></a>
+</p>
+
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-1a1a1a?style=flat-square&labelColor=fafaf5" alt="MIT License"></a>
+  <a href="#contents"><img src="https://img.shields.io/badge/phases-16-3553ff?style=flat-square&labelColor=fafaf5" alt="16 phases"></a>
+  <a href="ROADMAP.md"><img src="https://img.shields.io/badge/lessons-163-3553ff?style=flat-square&labelColor=fafaf5" alt="163 lessons"></a>
+  <a href="https://github.com/Ramakm/agentic-ai-from-scratch/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/Ramakm/agentic-ai-from-scratch/ci.yml?branch=main&style=flat-square&labelColor=fafaf5&label=tests" alt="Tests"></a>
+  <a href="https://github.com/Ramakm/agentic-ai-from-scratch/stargazers"><img src="https://img.shields.io/github/stars/Ramakm/agentic-ai-from-scratch?style=flat-square&labelColor=fafaf5&color=3553ff" alt="GitHub stars"></a>
+  <a href="https://x.com/techwith_ram"><img src="https://img.shields.io/badge/follow-@techwith__ram-1a1a1a?style=flat-square&logo=x&labelColor=fafaf5" alt="Follow @techwith_ram on X"></a>
+</p>
+
+Turn your coding agent into a tutor with one command:
+
+```bash
+npx skills add Ramakm/agentic-ai-from-scratch
+```
+
+Then, in Claude Code, Codex, Cursor, or any agent that reads `SKILL.md`: **"Use start-building to begin the course."**
+
+---
+
+## Why build agents from scratch
+
+Most agent material is framework tutorials. You can wire a crew of five agents but can't say why the third one loops forever. You can install an MCP server but couldn't write the JSON-RPC message it answers.
+
+This course goes the other way. Every pattern is built by hand first, in plain Python you can read in one sitting:
+
+| You build | Before you use |
+|-----------|----------------|
+| A tool dispatcher with schema validation | Native function calling, `@function_tool` |
+| A ReAct loop in ~120 lines | LangGraph, the OpenAI and Claude Agent SDKs |
+| A vector store in ~80 lines | pgvector, Chroma, LlamaIndex |
+| An MCP server over stdio | Off-the-shelf MCP servers |
+| An orchestrator with parallel workers | CrewAI, AutoGen, LangGraph `Send` |
+| An eval harness and trace viewer | LangSmith, Braintrust, OpenTelemetry backends |
+
+When the frameworks show up in Phase 9, you already know what they do under the hood, and when to skip them.
+
+## How every lesson works
+
+Each lesson follows the same four steps:
+
+1. **The problem.** A concrete failure, e.g. *a model only returns text; ask it to book a flight and it describes booking one.*
+2. **Build it.** Raw code, no framework, standard library wherever possible.
+3. **Use it.** The same idea in the production tools, so you can read what they're doing.
+4. **Ship it.** An artifact you keep: a tool, a prompt, an MCP server, or a skill your coding agent can load.
+
+Every live lesson folder has the same shape:
+
+```text
+phases/03-the-agent-loop/01-the-agent-loop-in-120-lines/
+├── docs/en.md          the lesson
+├── code/main.py        runnable, offline by default (scripted model)
+├── code/test_main.py   unit tests, run in CI
+├── quiz.json           6 questions: pre, check, post
+└── outputs/            what you ship: skill-*.md, prompt-*.md
+```
+
+Lessons run **offline by default** against a scripted model, so they're deterministic and free. Point them at a real model with two environment variables. Ollama, OpenAI, vLLM, LM Studio and any other OpenAI-compatible server work:
+
+```bash
+AGENT_BASE_URL=http://localhost:11434/v1 AGENT_MODEL=llama3.2 python3 code/main.py
+```
+
+## Choose how to learn
+
+- **On the website.** Every lesson, with quizzes and progress saved in your browser: **[ramakm.github.io/agentic-ai-from-scratch](https://ramakm.github.io/agentic-ai-from-scratch/)**
+- **With your coding agent as tutor.** Install the skills, then:
+
+  | Skill | What it does |
+  |-------|--------------|
+  | `find-your-level` | 10-question placement quiz that maps you to a starting phase |
+  | `start-building` | Interviews you and writes `BUILD.md`, your personal build plan |
+  | `build` | Teaches the next lesson section by section, quizzes you, and reviews your code |
+  | `check-understanding` | Quizzes you on any phase or lesson |
+  | `debug-my-agent` | Reads your agent's trace or error and points to the lesson that fixes it |
+
+- **Locally.** Clone, then run any lesson's code and tests:
+
+  ```bash
+  git clone https://github.com/Ramakm/agentic-ai-from-scratch.git
+  cd agentic-ai-from-scratch
+  python3 phases/00-setup-and-tooling/01-your-agent-dev-environment/code/main.py --ping
+  ```
+
+## Learning paths
+
+| Path | For | Phases |
+|------|-----|--------|
+| **01 · Building single agents** | Your first agent that actually finishes the job | 01 → 06 |
+| **02 · Tools, protocols & computer use** | MCP, browser and terminal control, coding agents | 07, 10 |
+| **03 · Multi-agent systems** | Orchestrators, handoffs, A2A, frameworks | 08 → 09 |
+| **04 · Reliable agents in production** | Evals, tracing, guardrails, durable execution, UX | 11 → 15 |
+
+## Where to start
+
+| If you are… | Start at |
+|-------------|----------|
+| New to agents | [00.01 Your agent dev environment](phases/00-setup-and-tooling/01-your-agent-dev-environment/docs/en.md) |
+| Shipping LLM apps already | [02.02 Tool schemas from first principles](phases/02-tool-use/02-tool-schemas-from-first-principles/docs/en.md) |
+| Here to build an agent from scratch | [03.01 The agent loop in 120 lines](phases/03-the-agent-loop/01-the-agent-loop-in-120-lines/docs/en.md) |
+| Going multi-agent | [08.02 Orchestrator–worker](phases/08-multi-agent-systems/02-orchestrator-worker/docs/en.md) |
+
+Prerequisites: comfortable Python, and a terminal. No ML background needed.
+
+## Contents
+
+<!-- CONTENTS:START -->
+<!-- Generated by scripts/build.mjs. Edit curriculum.json instead. -->
+
+**16 phases · 163 lessons · 4 live · ~127 hours**
+
+<details open>
+<summary><b>Phase 00 · Setup & Tooling</b> · 8 lessons · 1 live</summary>
+
+A dev environment, local and hosted models, raw HTTP calls, streaming and tracing, all wired up before writing an agent.
+
+| # | Lesson | Status | Time |
+|---|--------|--------|------|
+| 00.01 | [Your agent dev environment](phases/00-setup-and-tooling/01-your-agent-dev-environment/docs/en.md) | ■ live | 45 min |
+| 00.02 | Python & TypeScript for agents | □ planned | 60 min |
+| 00.03 | Running local models with Ollama | □ planned | 40 min |
+| 00.04 | API keys, providers & rate limits | □ planned | 30 min |
+| 00.05 | Calling an LLM over raw HTTP | □ planned | 45 min |
+| 00.06 | Streaming responses with SSE | □ planned | 40 min |
+| 00.07 | Tracing from day one | □ planned | 35 min |
+| 00.08 | Project layout for agent repos | □ planned | 30 min |
+
+[Phase overview →](phases/00-setup-and-tooling/README.md)
+
+</details>
+
+<details>
+<summary><b>Phase 01 · LLM Foundations for Agents</b> · 10 lessons · 0 live</summary>
+
+What a model actually returns, how context windows fill, and how to force structured, parseable output.
+
+| # | Lesson | Status | Time |
+|---|--------|--------|------|
+| 01.01 | What an LLM actually returns | □ planned | 45 min |
+| 01.02 | Tokens and the context window | □ planned | 50 min |
+| 01.03 | Sampling: temperature, top-p, determinism | □ planned | 40 min |
+| 01.04 | Chat templates and message roles | □ planned | 40 min |
+| 01.05 | System prompts as contracts | □ planned | 35 min |
+| 01.06 | Structured output & JSON mode | □ planned | 50 min |
+| 01.07 | Parsing and validating with schemas | □ planned | 45 min |
+| 01.08 | Token budgets & cost math | □ planned | 35 min |
+| 01.09 | Model selection for agent work | □ planned | 40 min |
+| 01.10 | Why capable models still fail | □ planned | 45 min |
+
+[Phase overview →](phases/01-llm-foundations/README.md)
+
+</details>
+
+<details open>
+<summary><b>Phase 02 · Tool Use & Function Calling</b> · 11 lessons · 1 live</summary>
+
+Turn text into action. Tool schemas, dispatchers, parallel calls, and errors fed back as observations.
+
+| # | Lesson | Status | Time |
+|---|--------|--------|------|
+| 02.01 | Text in, text out: the limit | □ planned | 30 min |
+| 02.02 | [Tool schemas from first principles](phases/02-tool-use/02-tool-schemas-from-first-principles/docs/en.md) | ■ live | 50 min |
+| 02.03 | Writing a tool dispatcher | □ planned | 60 min |
+| 02.04 | Parallel tool calls | □ planned | 45 min |
+| 02.05 | Tool errors as observations | □ planned | 40 min |
+| 02.06 | Designing tools models can use | □ planned | 50 min |
+| 02.07 | Idempotency and side effects | □ planned | 40 min |
+| 02.08 | Human approval gates | □ planned | 45 min |
+| 02.09 | Tool results that fit the context | □ planned | 40 min |
+| 02.10 | Native function calling across providers | □ planned | 50 min |
+| 02.11 | Testing tools in isolation | □ planned | 40 min |
+
+[Phase overview →](phases/02-tool-use/README.md)
+
+</details>
+
+<details open>
+<summary><b>Phase 03 · The Agent Loop</b> · 12 lessons · 1 live</summary>
+
+A while-loop, a model, and a toolbox. ReAct, stop conditions, retries, interrupts, and the loop as a graph.
+
+| # | Lesson | Status | Time |
+|---|--------|--------|------|
+| 03.01 | [The agent loop in 120 lines](phases/03-the-agent-loop/01-the-agent-loop-in-120-lines/docs/en.md) | ■ live | 60 min |
+| 03.02 | ReAct: reason, act, observe | □ planned | 60 min |
+| 03.03 | Stop conditions & max steps | □ planned | 35 min |
+| 03.04 | Scratchpads and thought traces | □ planned | 40 min |
+| 03.05 | Handling malformed actions | □ planned | 40 min |
+| 03.06 | Retries, backoff & recovery | □ planned | 45 min |
+| 03.07 | Streaming an agent's steps | □ planned | 45 min |
+| 03.08 | Interrupts and resumption | □ planned | 50 min |
+| 03.09 | State machines for agents | □ planned | 55 min |
+| 03.10 | The loop as a graph | □ planned | 55 min |
+| 03.11 | Cost and step budgets | □ planned | 35 min |
+| 03.12 | Debugging a stuck loop | □ planned | 45 min |
+
+[Phase overview →](phases/03-the-agent-loop/README.md)
+
+</details>
+
+<details>
+<summary><b>Phase 04 · Memory & Context Engineering</b> · 11 lessons · 0 live</summary>
+
+Context is the program. Buffers, summaries, embeddings, a vector store by hand, and memory that stays clean.
+
+| # | Lesson | Status | Time |
+|---|--------|--------|------|
+| 04.01 | Context is the program | □ planned | 40 min |
+| 04.02 | Conversation buffers & truncation | □ planned | 40 min |
+| 04.03 | Summarization memory | □ planned | 45 min |
+| 04.04 | Embeddings from scratch | □ planned | 60 min |
+| 04.05 | A vector store in 80 lines | □ planned | 60 min |
+| 04.06 | Episodic memory | □ planned | 50 min |
+| 04.07 | Semantic & procedural memory | □ planned | 50 min |
+| 04.08 | Memory writes: what to keep | □ planned | 45 min |
+| 04.09 | Context compaction | □ planned | 45 min |
+| 04.10 | Files as long-term memory | □ planned | 40 min |
+| 04.11 | Memory poisoning & hygiene | □ planned | 40 min |
+
+[Phase overview →](phases/04-memory-and-context/README.md)
+
+</details>
+
+<details>
+<summary><b>Phase 05 · Retrieval & Agentic RAG</b> · 10 lessons · 0 live</summary>
+
+Retrieval as a tool the agent decides to call. Hybrid search, reranking, rewriting, and self-correcting loops.
+
+| # | Lesson | Status | Time |
+|---|--------|--------|------|
+| 05.01 | Naive RAG and where it breaks | □ planned | 45 min |
+| 05.02 | Chunking strategies | □ planned | 45 min |
+| 05.03 | Hybrid search: BM25 + vectors | □ planned | 55 min |
+| 05.04 | Reranking | □ planned | 40 min |
+| 05.05 | Query rewriting & decomposition | □ planned | 45 min |
+| 05.06 | Retrieval as a tool | □ planned | 45 min |
+| 05.07 | Self-correcting RAG | □ planned | 55 min |
+| 05.08 | Corrective RAG loops | □ planned | 50 min |
+| 05.09 | Graph-based retrieval | □ planned | 55 min |
+| 05.10 | Evaluating retrieval quality | □ planned | 45 min |
+
+[Phase overview →](phases/05-agentic-rag/README.md)
+
+</details>
+
+<details>
+<summary><b>Phase 06 · Planning & Reasoning</b> · 10 lessons · 0 live</summary>
+
+Plan-and-execute, task trees, Tree of Thoughts, reflection, verifiers, and knowing when not to plan.
+
+| # | Lesson | Status | Time |
+|---|--------|--------|------|
+| 06.01 | Chain-of-thought for actions | □ planned | 40 min |
+| 06.02 | Plan-and-execute | □ planned | 55 min |
+| 06.03 | Task decomposition trees | □ planned | 50 min |
+| 06.04 | Tree of Thoughts search | □ planned | 60 min |
+| 06.05 | Reflection & self-critique | □ planned | 45 min |
+| 06.06 | Reflexion: learning from failures | □ planned | 55 min |
+| 06.07 | Verifiers and checkers | □ planned | 50 min |
+| 06.08 | Replanning on surprise | □ planned | 45 min |
+| 06.09 | Reasoning models in the loop | □ planned | 45 min |
+| 06.10 | When not to plan | □ planned | 30 min |
+
+[Phase overview →](phases/06-planning-and-reasoning/README.md)
+
+</details>
+
+<details>
+<summary><b>Phase 07 · Model Context Protocol</b> · 11 lessons · 0 live</summary>
+
+MCP from the wire up. JSON-RPC over stdio, a server and a client by hand, transports, auth, and security.
+
+| # | Lesson | Status | Time |
+|---|--------|--------|------|
+| 07.01 | Why MCP exists | □ planned | 35 min |
+| 07.02 | The protocol: JSON-RPC over stdio | □ planned | 50 min |
+| 07.03 | Build an MCP server from scratch | □ planned | 60 min |
+| 07.04 | Tools, resources & prompts | □ planned | 50 min |
+| 07.05 | Build an MCP client | □ planned | 55 min |
+| 07.06 | Streamable HTTP transport | □ planned | 50 min |
+| 07.07 | Auth for remote servers | □ planned | 50 min |
+| 07.08 | Sampling and elicitation | □ planned | 45 min |
+| 07.09 | Composing many servers | □ planned | 45 min |
+| 07.10 | Testing MCP servers | □ planned | 40 min |
+| 07.11 | MCP security pitfalls | □ planned | 45 min |
+
+[Phase overview →](phases/07-model-context-protocol/README.md)
+
+</details>
+
+<details open>
+<summary><b>Phase 08 · Multi-Agent Systems</b> · 12 lessons · 1 live</summary>
+
+Orchestrators, workers, handoffs, supervisors, blackboards, A2A, and the real cost of coordination.
+
+| # | Lesson | Status | Time |
+|---|--------|--------|------|
+| 08.01 | When one agent is not enough | □ planned | 35 min |
+| 08.02 | [Orchestrator–worker](phases/08-multi-agent-systems/02-orchestrator-worker/docs/en.md) | ■ live | 55 min |
+| 08.03 | Handoffs between agents | □ planned | 50 min |
+| 08.04 | Supervisor hierarchies | □ planned | 50 min |
+| 08.05 | Shared blackboards | □ planned | 45 min |
+| 08.06 | Debate and critique | □ planned | 45 min |
+| 08.07 | Agent-to-agent (A2A) protocol | □ planned | 55 min |
+| 08.08 | Message passing & mailboxes | □ planned | 50 min |
+| 08.09 | Parallel fan-out, fan-in | □ planned | 45 min |
+| 08.10 | Role design & specialization | □ planned | 40 min |
+| 08.11 | Failure modes of swarms | □ planned | 45 min |
+| 08.12 | Cost of coordination | □ planned | 35 min |
+
+[Phase overview →](phases/08-multi-agent-systems/README.md)
+
+</details>
+
+<details>
+<summary><b>Phase 09 · Frameworks & SDKs</b> · 10 lessons · 0 live</summary>
+
+Now import the frameworks. The same loop in LangGraph, Agents SDKs, CrewAI, AutoGen, and when to skip them all.
+
+| # | Lesson | Status | Time |
+|---|--------|--------|------|
+| 09.01 | The same loop, ten frameworks | □ planned | 40 min |
+| 09.02 | LangGraph: state graphs | □ planned | 60 min |
+| 09.03 | OpenAI Agents SDK | □ planned | 50 min |
+| 09.04 | Claude Agent SDK | □ planned | 50 min |
+| 09.05 | CrewAI roles & crews | □ planned | 45 min |
+| 09.06 | AutoGen conversations | □ planned | 45 min |
+| 09.07 | LlamaIndex agents | □ planned | 45 min |
+| 09.08 | Pydantic AI typed agents | □ planned | 45 min |
+| 09.09 | Choosing (or skipping) a framework | □ planned | 35 min |
+| 09.10 | Porting between frameworks | □ planned | 45 min |
+
+[Phase overview →](phases/09-frameworks-and-sdks/README.md)
+
+</details>
+
+<details>
+<summary><b>Phase 10 · Coding & Computer-Use Agents</b> · 11 lessons · 0 live</summary>
+
+Agents that edit files, run tests, drive browsers and terminals. Ends with a mini coding agent of your own.
+
+| # | Lesson | Status | Time |
+|---|--------|--------|------|
+| 10.01 | Anatomy of a coding agent | □ planned | 45 min |
+| 10.02 | File read, edit & search tools | □ planned | 55 min |
+| 10.03 | Running code in a sandbox | □ planned | 55 min |
+| 10.04 | Test-driven agent loops | □ planned | 55 min |
+| 10.05 | Repository maps & context | □ planned | 50 min |
+| 10.06 | Skills and SKILL.md | □ planned | 45 min |
+| 10.07 | Browser agents | □ planned | 55 min |
+| 10.08 | Computer use: screenshots to clicks | □ planned | 60 min |
+| 10.09 | Terminal agents | □ planned | 50 min |
+| 10.10 | Long-horizon tasks | □ planned | 50 min |
+| 10.11 | Build a mini coding agent | □ planned | 90 min |
+
+[Phase overview →](phases/10-coding-and-computer-use/README.md)
+
+</details>
+
+<details>
+<summary><b>Phase 11 · Evaluation & Observability</b> · 10 lessons · 0 live</summary>
+
+Golden tasks, trajectory evals, careful LLM judges, OpenTelemetry traces, replay, and your own eval harness.
+
+| # | Lesson | Status | Time |
+|---|--------|--------|------|
+| 11.01 | Why agent evals are hard | □ planned | 35 min |
+| 11.02 | Golden tasks & datasets | □ planned | 45 min |
+| 11.03 | Trajectory evaluation | □ planned | 50 min |
+| 11.04 | LLM-as-judge, carefully | □ planned | 50 min |
+| 11.05 | Tool-call accuracy | □ planned | 40 min |
+| 11.06 | Tracing with OpenTelemetry | □ planned | 50 min |
+| 11.07 | Replay and regression | □ planned | 45 min |
+| 11.08 | Online metrics & feedback | □ planned | 40 min |
+| 11.09 | Benchmarks: SWE-bench to τ-bench | □ planned | 45 min |
+| 11.10 | Building an eval harness | □ planned | 70 min |
+
+[Phase overview →](phases/11-evaluation-and-observability/README.md)
+
+</details>
+
+<details>
+<summary><b>Phase 12 · Safety, Security & Guardrails</b> · 11 lessons · 0 live</summary>
+
+The agent threat model. Prompt injection, exfiltration, least privilege, sandboxes, permissions, red-teaming.
+
+| # | Lesson | Status | Time |
+|---|--------|--------|------|
+| 12.01 | The agent threat model | □ planned | 45 min |
+| 12.02 | Prompt injection, direct & indirect | □ planned | 55 min |
+| 12.03 | Data exfiltration paths | □ planned | 45 min |
+| 12.04 | Least-privilege tools | □ planned | 40 min |
+| 12.05 | Sandboxing with containers | □ planned | 55 min |
+| 12.06 | Permission systems | □ planned | 50 min |
+| 12.07 | Input & output guardrails | □ planned | 45 min |
+| 12.08 | Secrets and credentials | □ planned | 35 min |
+| 12.09 | Human-in-the-loop design | □ planned | 40 min |
+| 12.10 | Red-teaming your agent | □ planned | 55 min |
+| 12.11 | Audit logs | □ planned | 35 min |
+
+[Phase overview →](phases/12-safety-and-security/README.md)
+
+</details>
+
+<details>
+<summary><b>Phase 13 · Production Agents</b> · 10 lessons · 0 live</summary>
+
+Durable execution, queues, caching, routing, cost control, versioning, and incident playbooks.
+
+| # | Lesson | Status | Time |
+|---|--------|--------|------|
+| 13.01 | From notebook to service | □ planned | 45 min |
+| 13.02 | Durable execution | □ planned | 55 min |
+| 13.03 | Queues, workers & long jobs | □ planned | 50 min |
+| 13.04 | Prompt caching & latency | □ planned | 45 min |
+| 13.05 | Cost control at scale | □ planned | 40 min |
+| 13.06 | Model routing & fallbacks | □ planned | 45 min |
+| 13.07 | Versioning prompts and tools | □ planned | 40 min |
+| 13.08 | Deploying with Docker | □ planned | 45 min |
+| 13.09 | Rate limits & backpressure | □ planned | 40 min |
+| 13.10 | Incident playbooks | □ planned | 35 min |
+
+[Phase overview →](phases/13-production-agents/README.md)
+
+</details>
+
+<details>
+<summary><b>Phase 14 · Agent UX & Interfaces</b> · 8 lessons · 0 live</summary>
+
+Streaming step views, approvals and undo, voice, background agents, and the design of trust.
+
+| # | Lesson | Status | Time |
+|---|--------|--------|------|
+| 14.01 | Streaming UIs for agents | □ planned | 45 min |
+| 14.02 | Showing the work: step views | □ planned | 40 min |
+| 14.03 | Approvals & undo | □ planned | 40 min |
+| 14.04 | Chat is not the only interface | □ planned | 35 min |
+| 14.05 | Voice agents | □ planned | 55 min |
+| 14.06 | Background agents & notifications | □ planned | 40 min |
+| 14.07 | Generative UI | □ planned | 45 min |
+| 14.08 | Trust and explainability | □ planned | 35 min |
+
+[Phase overview →](phases/14-agent-ux/README.md)
+
+</details>
+
+<details>
+<summary><b>Phase 15 · Capstone: Your Own Agent Harness</b> · 8 lessons · 0 live</summary>
+
+Everything at once. A loop, tool registry, memory, MCP, subagents, permissions, and evals, shipped as a CLI.
+
+| # | Lesson | Status | Time |
+|---|--------|--------|------|
+| 15.01 | Why build a harness | □ planned | 35 min |
+| 15.02 | The core loop & tool registry | □ planned | 70 min |
+| 15.03 | Memory & context manager | □ planned | 70 min |
+| 15.04 | MCP client integration | □ planned | 60 min |
+| 15.05 | Subagents & delegation | □ planned | 60 min |
+| 15.06 | Permissions & sandbox | □ planned | 60 min |
+| 15.07 | Evals & traces | □ planned | 60 min |
+| 15.08 | Ship it: CLI + docs | □ planned | 60 min |
+
+[Phase overview →](phases/15-capstone-agent-harness/README.md)
+
+</details>
+
+<!-- CONTENTS:END -->
+
+## Contributing
+
+The curriculum is planned; most lessons still need writing. If you've built agents, you can help.
+
+1. Pick a planned lesson from the [roadmap](ROADMAP.md) and open an issue saying you're on it.
+2. Copy the structure in [LESSON_TEMPLATE.md](LESSON_TEMPLATE.md).
+3. Make the code run offline with a scripted model, add tests, write the quiz, and ship one artifact.
+4. Run `node scripts/build.mjs` and `python3 scripts/test_lessons.py`, then open a PR.
+
+Full guide: [CONTRIBUTING.md](CONTRIBUTING.md). Agents contributing on someone's behalf should read [AGENTS.md](AGENTS.md).
+
+## Maintainer
+
+<table>
+  <tr>
+    <td width="96"><img src="https://github.com/Ramakm.png?size=192" width="88" alt="Ramakrushna Mohapatra"></td>
+    <td>
+      <b>Ramakrushna Mohapatra</b><br>
+      Sr. Data Scientist · GenAI &amp; LLM engineer · Tech trainer · Founder of <a href="https://www.growtechie.in">GrowTechie</a><br>
+      <a href="https://x.com/techwith_ram">X @techwith_ram</a> ·
+      <a href="https://www.instagram.com/techwith.ram/">Instagram @techwith.ram</a> ·
+      <a href="https://www.threads.com/@techwith.ram">Threads</a> ·
+      <a href="https://medium.com/@techwithram">Medium</a> ·
+      <a href="https://github.com/Ramakm">GitHub</a> ·
+      <a href="https://www.ramakrushna.com/">ramakrushna.com</a>
+    </td>
+  </tr>
+</table>
+
+If this course helps you, star the repo and share it. It helps other people find it.
+
+## License
+
+[MIT](LICENSE) © 2026 Ramakrushna Mohapatra. Use it, fork it, teach with it.

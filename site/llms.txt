@@ -1,0 +1,252 @@
+# Agentic AI from Scratch
+
+> Build AI agents from a raw while-loop and an HTTP call, before a single framework gets imported. 16 phases, 163 lessons (4 live), Python and TypeScript, free and open source (MIT).
+
+Source: https://github.com/Ramakm/agentic-ai-from-scratch
+Site: https://ramakm.github.io/agentic-ai-from-scratch/
+Maintainer: Ramakrushna Mohapatra (https://x.com/techwith_ram, https://www.instagram.com/techwith.ram/, https://www.threads.com/@techwith.ram, https://medium.com/@techwithram, https://github.com/Ramakm, https://www.ramakrushna.com/)
+
+Install the tutor skills into a coding agent: npx skills add Ramakm/agentic-ai-from-scratch
+
+## Phase 00: Setup & Tooling
+
+A dev environment, local and hosted models, raw HTTP calls, streaming and tracing, all wired up before writing an agent.
+
+- 00.01 Your agent dev environment (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/00-setup-and-tooling/01-your-agent-dev-environment | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/00-setup-and-tooling/01-your-agent-dev-environment/docs/en.md
+- 00.02 Python & TypeScript for agents (60 min) [planned]
+- 00.03 Running local models with Ollama (40 min) [planned]
+- 00.04 API keys, providers & rate limits (30 min) [planned]
+- 00.05 Calling an LLM over raw HTTP (45 min) [planned]
+- 00.06 Streaming responses with SSE (40 min) [planned]
+- 00.07 Tracing from day one (35 min) [planned]
+- 00.08 Project layout for agent repos (30 min) [planned]
+
+## Phase 01: LLM Foundations for Agents
+
+What a model actually returns, how context windows fill, and how to force structured, parseable output.
+
+- 01.01 What an LLM actually returns (45 min) [planned]
+- 01.02 Tokens and the context window (50 min) [planned]
+- 01.03 Sampling: temperature, top-p, determinism (40 min) [planned]
+- 01.04 Chat templates and message roles (40 min) [planned]
+- 01.05 System prompts as contracts (35 min) [planned]
+- 01.06 Structured output & JSON mode (50 min) [planned]
+- 01.07 Parsing and validating with schemas (45 min) [planned]
+- 01.08 Token budgets & cost math (35 min) [planned]
+- 01.09 Model selection for agent work (40 min) [planned]
+- 01.10 Why capable models still fail (45 min) [planned]
+
+## Phase 02: Tool Use & Function Calling
+
+Turn text into action. Tool schemas, dispatchers, parallel calls, and errors fed back as observations.
+
+- 02.01 Text in, text out: the limit (30 min) [planned]
+- 02.02 Tool schemas from first principles (50 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/02-tool-use/02-tool-schemas-from-first-principles | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/02-tool-use/02-tool-schemas-from-first-principles/docs/en.md
+- 02.03 Writing a tool dispatcher (60 min) [planned]
+- 02.04 Parallel tool calls (45 min) [planned]
+- 02.05 Tool errors as observations (40 min) [planned]
+- 02.06 Designing tools models can use (50 min) [planned]
+- 02.07 Idempotency and side effects (40 min) [planned]
+- 02.08 Human approval gates (45 min) [planned]
+- 02.09 Tool results that fit the context (40 min) [planned]
+- 02.10 Native function calling across providers (50 min) [planned]
+- 02.11 Testing tools in isolation (40 min) [planned]
+
+## Phase 03: The Agent Loop
+
+A while-loop, a model, and a toolbox. ReAct, stop conditions, retries, interrupts, and the loop as a graph.
+
+- 03.01 The agent loop in 120 lines (60 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/03-the-agent-loop/01-the-agent-loop-in-120-lines | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/03-the-agent-loop/01-the-agent-loop-in-120-lines/docs/en.md
+- 03.02 ReAct: reason, act, observe (60 min) [planned]
+- 03.03 Stop conditions & max steps (35 min) [planned]
+- 03.04 Scratchpads and thought traces (40 min) [planned]
+- 03.05 Handling malformed actions (40 min) [planned]
+- 03.06 Retries, backoff & recovery (45 min) [planned]
+- 03.07 Streaming an agent's steps (45 min) [planned]
+- 03.08 Interrupts and resumption (50 min) [planned]
+- 03.09 State machines for agents (55 min) [planned]
+- 03.10 The loop as a graph (55 min) [planned]
+- 03.11 Cost and step budgets (35 min) [planned]
+- 03.12 Debugging a stuck loop (45 min) [planned]
+
+## Phase 04: Memory & Context Engineering
+
+Context is the program. Buffers, summaries, embeddings, a vector store by hand, and memory that stays clean.
+
+- 04.01 Context is the program (40 min) [planned]
+- 04.02 Conversation buffers & truncation (40 min) [planned]
+- 04.03 Summarization memory (45 min) [planned]
+- 04.04 Embeddings from scratch (60 min) [planned]
+- 04.05 A vector store in 80 lines (60 min) [planned]
+- 04.06 Episodic memory (50 min) [planned]
+- 04.07 Semantic & procedural memory (50 min) [planned]
+- 04.08 Memory writes: what to keep (45 min) [planned]
+- 04.09 Context compaction (45 min) [planned]
+- 04.10 Files as long-term memory (40 min) [planned]
+- 04.11 Memory poisoning & hygiene (40 min) [planned]
+
+## Phase 05: Retrieval & Agentic RAG
+
+Retrieval as a tool the agent decides to call. Hybrid search, reranking, rewriting, and self-correcting loops.
+
+- 05.01 Naive RAG and where it breaks (45 min) [planned]
+- 05.02 Chunking strategies (45 min) [planned]
+- 05.03 Hybrid search: BM25 + vectors (55 min) [planned]
+- 05.04 Reranking (40 min) [planned]
+- 05.05 Query rewriting & decomposition (45 min) [planned]
+- 05.06 Retrieval as a tool (45 min) [planned]
+- 05.07 Self-correcting RAG (55 min) [planned]
+- 05.08 Corrective RAG loops (50 min) [planned]
+- 05.09 Graph-based retrieval (55 min) [planned]
+- 05.10 Evaluating retrieval quality (45 min) [planned]
+
+## Phase 06: Planning & Reasoning
+
+Plan-and-execute, task trees, Tree of Thoughts, reflection, verifiers, and knowing when not to plan.
+
+- 06.01 Chain-of-thought for actions (40 min) [planned]
+- 06.02 Plan-and-execute (55 min) [planned]
+- 06.03 Task decomposition trees (50 min) [planned]
+- 06.04 Tree of Thoughts search (60 min) [planned]
+- 06.05 Reflection & self-critique (45 min) [planned]
+- 06.06 Reflexion: learning from failures (55 min) [planned]
+- 06.07 Verifiers and checkers (50 min) [planned]
+- 06.08 Replanning on surprise (45 min) [planned]
+- 06.09 Reasoning models in the loop (45 min) [planned]
+- 06.10 When not to plan (30 min) [planned]
+
+## Phase 07: Model Context Protocol
+
+MCP from the wire up. JSON-RPC over stdio, a server and a client by hand, transports, auth, and security.
+
+- 07.01 Why MCP exists (35 min) [planned]
+- 07.02 The protocol: JSON-RPC over stdio (50 min) [planned]
+- 07.03 Build an MCP server from scratch (60 min) [planned]
+- 07.04 Tools, resources & prompts (50 min) [planned]
+- 07.05 Build an MCP client (55 min) [planned]
+- 07.06 Streamable HTTP transport (50 min) [planned]
+- 07.07 Auth for remote servers (50 min) [planned]
+- 07.08 Sampling and elicitation (45 min) [planned]
+- 07.09 Composing many servers (45 min) [planned]
+- 07.10 Testing MCP servers (40 min) [planned]
+- 07.11 MCP security pitfalls (45 min) [planned]
+
+## Phase 08: Multi-Agent Systems
+
+Orchestrators, workers, handoffs, supervisors, blackboards, A2A, and the real cost of coordination.
+
+- 08.01 When one agent is not enough (35 min) [planned]
+- 08.02 Orchestrator–worker (55 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/08-multi-agent-systems/02-orchestrator-worker | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/08-multi-agent-systems/02-orchestrator-worker/docs/en.md
+- 08.03 Handoffs between agents (50 min) [planned]
+- 08.04 Supervisor hierarchies (50 min) [planned]
+- 08.05 Shared blackboards (45 min) [planned]
+- 08.06 Debate and critique (45 min) [planned]
+- 08.07 Agent-to-agent (A2A) protocol (55 min) [planned]
+- 08.08 Message passing & mailboxes (50 min) [planned]
+- 08.09 Parallel fan-out, fan-in (45 min) [planned]
+- 08.10 Role design & specialization (40 min) [planned]
+- 08.11 Failure modes of swarms (45 min) [planned]
+- 08.12 Cost of coordination (35 min) [planned]
+
+## Phase 09: Frameworks & SDKs
+
+Now import the frameworks. The same loop in LangGraph, Agents SDKs, CrewAI, AutoGen, and when to skip them all.
+
+- 09.01 The same loop, ten frameworks (40 min) [planned]
+- 09.02 LangGraph: state graphs (60 min) [planned]
+- 09.03 OpenAI Agents SDK (50 min) [planned]
+- 09.04 Claude Agent SDK (50 min) [planned]
+- 09.05 CrewAI roles & crews (45 min) [planned]
+- 09.06 AutoGen conversations (45 min) [planned]
+- 09.07 LlamaIndex agents (45 min) [planned]
+- 09.08 Pydantic AI typed agents (45 min) [planned]
+- 09.09 Choosing (or skipping) a framework (35 min) [planned]
+- 09.10 Porting between frameworks (45 min) [planned]
+
+## Phase 10: Coding & Computer-Use Agents
+
+Agents that edit files, run tests, drive browsers and terminals. Ends with a mini coding agent of your own.
+
+- 10.01 Anatomy of a coding agent (45 min) [planned]
+- 10.02 File read, edit & search tools (55 min) [planned]
+- 10.03 Running code in a sandbox (55 min) [planned]
+- 10.04 Test-driven agent loops (55 min) [planned]
+- 10.05 Repository maps & context (50 min) [planned]
+- 10.06 Skills and SKILL.md (45 min) [planned]
+- 10.07 Browser agents (55 min) [planned]
+- 10.08 Computer use: screenshots to clicks (60 min) [planned]
+- 10.09 Terminal agents (50 min) [planned]
+- 10.10 Long-horizon tasks (50 min) [planned]
+- 10.11 Build a mini coding agent (90 min) [planned]
+
+## Phase 11: Evaluation & Observability
+
+Golden tasks, trajectory evals, careful LLM judges, OpenTelemetry traces, replay, and your own eval harness.
+
+- 11.01 Why agent evals are hard (35 min) [planned]
+- 11.02 Golden tasks & datasets (45 min) [planned]
+- 11.03 Trajectory evaluation (50 min) [planned]
+- 11.04 LLM-as-judge, carefully (50 min) [planned]
+- 11.05 Tool-call accuracy (40 min) [planned]
+- 11.06 Tracing with OpenTelemetry (50 min) [planned]
+- 11.07 Replay and regression (45 min) [planned]
+- 11.08 Online metrics & feedback (40 min) [planned]
+- 11.09 Benchmarks: SWE-bench to τ-bench (45 min) [planned]
+- 11.10 Building an eval harness (70 min) [planned]
+
+## Phase 12: Safety, Security & Guardrails
+
+The agent threat model. Prompt injection, exfiltration, least privilege, sandboxes, permissions, red-teaming.
+
+- 12.01 The agent threat model (45 min) [planned]
+- 12.02 Prompt injection, direct & indirect (55 min) [planned]
+- 12.03 Data exfiltration paths (45 min) [planned]
+- 12.04 Least-privilege tools (40 min) [planned]
+- 12.05 Sandboxing with containers (55 min) [planned]
+- 12.06 Permission systems (50 min) [planned]
+- 12.07 Input & output guardrails (45 min) [planned]
+- 12.08 Secrets and credentials (35 min) [planned]
+- 12.09 Human-in-the-loop design (40 min) [planned]
+- 12.10 Red-teaming your agent (55 min) [planned]
+- 12.11 Audit logs (35 min) [planned]
+
+## Phase 13: Production Agents
+
+Durable execution, queues, caching, routing, cost control, versioning, and incident playbooks.
+
+- 13.01 From notebook to service (45 min) [planned]
+- 13.02 Durable execution (55 min) [planned]
+- 13.03 Queues, workers & long jobs (50 min) [planned]
+- 13.04 Prompt caching & latency (45 min) [planned]
+- 13.05 Cost control at scale (40 min) [planned]
+- 13.06 Model routing & fallbacks (45 min) [planned]
+- 13.07 Versioning prompts and tools (40 min) [planned]
+- 13.08 Deploying with Docker (45 min) [planned]
+- 13.09 Rate limits & backpressure (40 min) [planned]
+- 13.10 Incident playbooks (35 min) [planned]
+
+## Phase 14: Agent UX & Interfaces
+
+Streaming step views, approvals and undo, voice, background agents, and the design of trust.
+
+- 14.01 Streaming UIs for agents (45 min) [planned]
+- 14.02 Showing the work: step views (40 min) [planned]
+- 14.03 Approvals & undo (40 min) [planned]
+- 14.04 Chat is not the only interface (35 min) [planned]
+- 14.05 Voice agents (55 min) [planned]
+- 14.06 Background agents & notifications (40 min) [planned]
+- 14.07 Generative UI (45 min) [planned]
+- 14.08 Trust and explainability (35 min) [planned]
+
+## Phase 15: Capstone: Your Own Agent Harness
+
+Everything at once. A loop, tool registry, memory, MCP, subagents, permissions, and evals, shipped as a CLI.
+
+- 15.01 Why build a harness (35 min) [planned]
+- 15.02 The core loop & tool registry (70 min) [planned]
+- 15.03 Memory & context manager (70 min) [planned]
+- 15.04 MCP client integration (60 min) [planned]
+- 15.05 Subagents & delegation (60 min) [planned]
+- 15.06 Permissions & sandbox (60 min) [planned]
+- 15.07 Evals & traces (60 min) [planned]
+- 15.08 Ship it: CLI + docs (60 min) [planned]

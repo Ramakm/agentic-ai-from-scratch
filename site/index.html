@@ -25,14 +25,15 @@
 
   <header class="site-header">
     <div class="header-inner">
-      <a href="./" class="logo"><span class="logo-icon" aria-hidden="true"></span>AGENTS / FROM SCRATCH</a>
+      <a href="./" class="logo" aria-label="Agentic AI from Scratch home"><span class="logo-icon" aria-hidden="true"></span>AGENTS / FROM SCRATCH</a>
       <nav class="header-nav" id="headerNav" aria-label="Primary">
         <a href="#contents">Contents</a>
         <a href="#paths">Paths</a>
         <a href="#machines">Machines</a>
         <a href="#books">Books</a>
         <a href="#capstone">Capstone</a>
-        <a href="#" data-repo-link target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="#maintainer">About</a>
+        <a href="#" data-repo-link target="_blank" rel="noopener" class="header-github" aria-label="GitHub repository"><span data-icon="github" data-icon-size="15"></span><span class="star-count" data-stars hidden></span></a>
       </nav>
       <button class="icon-btn" type="button" id="searchToggle" aria-label="Search lessons (⌘K)" title="Search (⌘K)">
         <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M11 11l4 4" stroke="currentColor" stroke-width="1.5"/></svg>
@@ -49,35 +50,35 @@
       <p class="masthead-tagline reveal"><span data-lesson-count>163 lessons</span>. <span data-phase-count>16 phases</span>. Every agent built from a raw while-loop and an HTTP call before a single framework gets imported.</p>
       <p class="masthead-attribution reveal" style="--d:40ms">Maintained by <span data-maintainer>Ramakm</span> and contributors. Runs on your own machine, with local or hosted models.</p>
       <div class="masthead-cta reveal" style="--d:80ms">
-        <button class="btn btn--primary" type="button" data-open-phase="0" data-lesson="0">Start the Course</button>
+        <a class="btn btn--primary" href="#" data-open-phase="0" data-lesson="0" data-go>Start the Course</a>
         <a class="btn" href="#paths">Explore Learning Paths</a>
-        <a class="btn btn--quiet" href="#" data-repo-link target="_blank" rel="noopener">★ Star on GitHub</a>
-        <a class="btn btn--quiet" href="#contents">↓ Browse the curriculum</a>
+        <a class="btn btn--quiet" href="#" data-repo-link target="_blank" rel="noopener"><span data-icon="github" data-icon-size="14"></span>Star on GitHub<span class="btn-count" data-stars hidden></span></a>
+        <a class="btn btn--quiet" href="#" data-social-link="x" target="_blank" rel="noopener me"><span data-icon="x" data-icon-size="13"></span>Follow <span data-handle>@techwith_ram</span></a>
       </div>
 
       <nav class="start-box reveal" style="--d:100ms" aria-labelledby="startTitle">
         <p class="start-box-title" id="startTitle">Start where you are</p>
         <ul class="start-list">
-          <li><button class="start-row" type="button" data-open-phase="0" data-lesson="0">
+          <li><a class="start-row" href="#" data-open-phase="0" data-lesson="0" data-go>
             <span class="start-who">New to agents</span>
             <span class="start-lesson"><span class="start-phase">Phase 0</span>Your agent dev environment</span>
             <span class="start-time">45 min →</span>
-          </button></li>
-          <li><button class="start-row" type="button" data-open-phase="2" data-lesson="1">
+          </a></li>
+          <li><a class="start-row" href="#" data-open-phase="2" data-lesson="1" data-go>
             <span class="start-who">I've shipped LLM apps</span>
             <span class="start-lesson"><span class="start-phase">Phase 2</span>Tool schemas from first principles</span>
             <span class="start-time">50 min →</span>
-          </button></li>
-          <li><button class="start-row" type="button" data-open-phase="3" data-lesson="0">
+          </a></li>
+          <li><a class="start-row" href="#" data-open-phase="3" data-lesson="0" data-go>
             <span class="start-who">Build an agent from scratch</span>
             <span class="start-lesson"><span class="start-phase">Phase 3</span>The agent loop in 120 lines</span>
             <span class="start-time">60 min →</span>
-          </button></li>
-          <li><button class="start-row" type="button" data-open-phase="8" data-lesson="1">
+          </a></li>
+          <li><a class="start-row" href="#" data-open-phase="8" data-lesson="1" data-go>
             <span class="start-who">Go multi-agent</span>
             <span class="start-lesson"><span class="start-phase">Phase 8</span>Orchestrator–worker</span>
             <span class="start-time">55 min →</span>
-          </button></li>
+          </a></li>
         </ul>
         <a class="start-more" href="#contents">Browse all <span data-phase-count>16 phases</span> ↓</a>
       </nav>
@@ -87,7 +88,7 @@
           <span>Learn in your terminal</span>
           <button class="copy-chip" type="button" data-copy-target="installCmdText" aria-label="Copy the install command">copy</button>
         </div>
-        <pre><span id="installCmdText">npx skills add Ramakm/agentic-ai-from-scratch</span>
+        <pre><span id="installCmdText" data-install-cmd>npx skills add Ramakm/agentic-ai-from-scratch</span>
 <span class="p">&gt;</span> <span class="b">Use start-building to begin the course.</span></pre>
         <div class="terminal-agents" aria-label="Works with any coding agent">
           <span>Claude Code</span><span>Cursor</span><span>Codex</span><span>+ any SKILL.md agent</span>
@@ -151,16 +152,16 @@
           <p class="step-text">A warm-up on the last lesson, the next one taught section by section, a code review of your agent, and your progress saved.</p>
         </li>
       </ol>
-      <p class="section-foot">Agent stuck in a loop? <code>/debug-my-agent</code> reads your trace and links the lesson that fixes it. Commands are shown for Claude Code. In other agents, ask for the skill by name. <a href="#" data-repo-link target="_blank" rel="noopener">See every skill →</a></p>
+      <p class="section-foot">Agent stuck in a loop? <code>/debug-my-agent</code> reads your trace and links the lesson that fixes it. <code>/check-understanding</code> quizzes you on any phase. Commands are shown for Claude Code. In other agents, ask for the skill by name. <a href="#" data-repo-link="/tree/main/skills" target="_blank" rel="noopener">See every skill →</a></p>
     </section>
 
     <!-- ================= CURRICULUM ================= -->
     <section class="toc container" id="contents">
-      <div class="toc-title">Curriculum · <span data-phase-count>16 phases</span> · <span data-lesson-count>163 lessons</span></div>
-      <div class="toc-subtitle">Tap a phase to open its lessons. A lesson ships once its loop runs, its tools are tested, and its eval passes.</div>
+      <div class="toc-title">Curriculum · <span data-phase-count>16 phases</span> · <span data-lesson-count>163 lessons</span> · <span data-live-count>4</span> live</div>
+      <div class="toc-subtitle">Tap a phase to open its lessons. A lesson goes live once its docs, tested code, quiz, and shipped artifact are merged. New lessons land every week. <a href="#" data-repo-link="/blob/main/ROADMAP.md" target="_blank" rel="noopener">See the roadmap →</a></div>
       <div class="toc-legend" aria-hidden="true">
-        <span><i class="status complete"></i>Published</span>
-        <span><i class="status in-progress"></i>In progress</span>
+        <span><i class="status complete"></i>All live</span>
+        <span><i class="status in-progress"></i>Some live</span>
         <span><i class="status planned"></i>Planned</span>
       </div>
       <div class="phase-grid" id="phaseGrid"></div>
@@ -206,7 +207,7 @@ g.add_edge(<span class="k">"tools"</span>, <span class="k">"agent"</span>)</pre>
 <span class="k">✓</span> 1 skill installed</pre>
           </li>
         </ol>
-        <figcaption>Build the small version first, then see where the production tools do the same work. The example above is <a href="#" data-open-phase="3" data-lesson="0">The Agent Loop in 120 Lines</a> in Phase 3.</figcaption>
+        <figcaption>Build the small version first, then see where the production tools do the same work. The example above is <a href="#" data-open-phase="3" data-lesson="0" data-go>The Agent Loop in 120 Lines</a> in Phase 3.</figcaption>
       </figure>
     </section>
 
@@ -257,7 +258,7 @@ g.add_edge(<span class="k">"tools"</span>, <span class="k">"agent"</span>)</pre>
 
     <!-- ================= MACHINES ================= -->
     <div class="machine-row container" id="machines">
-      <div class="machine-row-title">Interactive machines · run one, then break it</div>
+      <div class="machine-row-title">Interactive machines · in the workshop · run one, then break it</div>
       <div class="machine-grid">
 
         <button class="machine reveal" type="button" data-open-phase="3" aria-labelledby="m1">
@@ -295,10 +296,10 @@ g.add_edge(<span class="k">"tools"</span>, <span class="k">"agent"</span>)</pre>
             <text x="12" y="190" class="sv-text-blue">FIG_LOOP · REACT</text>
           </svg>
           <div class="machine-copy">
-            <span class="eyebrow">FIG_LOOP · Interactive simulation</span>
+            <span class="eyebrow">FIG_LOOP · Interactive simulation · coming soon</span>
             <h3 id="m1">Inside an Agent Loop</h3>
             <p>An agent is a model in a while-loop. Run one task through it, cut the memory, break a tool, or remove the step budget, and watch which failure appears.</p>
-            <span class="machine-cta">Break the machine →</span>
+            <span class="machine-cta">Read the lessons behind it →</span>
           </div>
         </button>
 
@@ -332,10 +333,10 @@ g.add_edge(<span class="k">"tools"</span>, <span class="k">"agent"</span>)</pre>
             <text x="15" y="190" class="sv-text-blue">FIG_MCP · STDIO TRANSPORT</text>
           </svg>
           <div class="machine-copy">
-            <span class="eyebrow">FIG_MCP · Interactive simulation</span>
+            <span class="eyebrow">FIG_MCP · Interactive simulation · coming soon</span>
             <h3 id="m2">Inside an MCP Server</h3>
             <p>MCP is JSON-RPC over a pipe. Trace one tools/call from host to server and back, corrupt a schema, drop the initialize handshake, or inject a poisoned tool description.</p>
-            <span class="machine-cta">Break the machine →</span>
+            <span class="machine-cta">Read the lessons behind it →</span>
           </div>
         </button>
 
@@ -367,10 +368,10 @@ g.add_edge(<span class="k">"tools"</span>, <span class="k">"agent"</span>)</pre>
             <text x="23" y="192" class="sv-text-blue">FIG_MAS · HANDOFF</text>
           </svg>
           <div class="machine-copy">
-            <span class="eyebrow">FIG_MAS · Interactive simulation</span>
+            <span class="eyebrow">FIG_MAS · Interactive simulation · coming soon</span>
             <h3 id="m3">Inside a Multi-Agent Team</h3>
             <p>Three agents, one blackboard, one orchestrator. Route a task, drop a handoff, let two agents argue, and see where the tokens and the errors pile up.</p>
-            <span class="machine-cta">Break the machine →</span>
+            <span class="machine-cta">Read the lessons behind it →</span>
           </div>
         </button>
       </div>
@@ -379,9 +380,9 @@ g.add_edge(<span class="k">"tools"</span>, <span class="k">"agent"</span>)</pre>
     <!-- ================= BOOKS ================= -->
     <section class="books container" id="books">
       <div class="toc-title">The book edition · four volumes</div>
-      <div class="toc-subtitle">The course, compiled. EPUB and PDF built from the same lessons and attached to every GitHub release. The site stays the living edition, and every chapter links back here for the machines, quizzes, and code.</div>
+      <div class="toc-subtitle">The course, compiled. EPUB and PDF editions will be built from the same lessons and attached to GitHub releases. The site stays the living edition, and every chapter links back here for the machines, quizzes, and code.</div>
       <div class="books-grid" id="booksGrid"></div>
-      <div class="books-note">Links resolve to the newest <a href="#" data-repo-link="/releases" target="_blank" rel="noopener">GitHub release</a> · rebuilt by CI from the lessons on every release</div>
+      <div class="books-note">Volumes ship as their phases go live · <a href="#" data-repo-link="/releases" target="_blank" rel="noopener">watch releases</a> to get them first</div>
     </section>
 
     <!-- ================= CAPSTONE ================= -->
@@ -413,6 +414,28 @@ g.add_edge(<span class="k">"tools"</span>, <span class="k">"agent"</span>)</pre>
       </div>
     </section>
 
+    <!-- ================= MAINTAINER ================= -->
+    <section class="maintainer container" id="maintainer" aria-labelledby="maintainerTitle">
+      <div class="maintainer-grid">
+        <figure class="maintainer-photo">
+          <img data-maintainer-avatar src="https://github.com/Ramakm.png?size=240" alt="Ramakrushna Mohapatra" width="240" height="240" loading="lazy">
+          <figcaption>FIG_MNT · maintainer</figcaption>
+        </figure>
+        <div class="maintainer-copy">
+          <span class="eyebrow">Who's behind this</span>
+          <h2 id="maintainerTitle" data-maintainer>Ramakrushna Mohapatra</h2>
+          <p class="maintainer-role" data-maintainer-role>Sr. Data Scientist · GenAI &amp; LLM engineer · Tech trainer · Founder of GrowTechie</p>
+          <p>I build LLM systems for a living and teach them on <a href="#" data-social-link="x" target="_blank" rel="noopener me">X</a> and <a href="#" data-social-link="instagram" target="_blank" rel="noopener me">Instagram</a> as <strong>@techwith_ram</strong>. This course is the curriculum I wish I'd had: every agent pattern written by hand first, run on a laptop, and tested, before any framework gets a say.</p>
+          <p>Found a bug, want a lesson, or want to write one? Open an issue or say hi on any of these.</p>
+          <div class="maintainer-actions">
+            <a class="btn btn--primary" href="#" data-social-link="x" target="_blank" rel="noopener me"><span data-icon="x" data-icon-size="13"></span>Follow <span data-handle>@techwith_ram</span></a>
+            <a class="btn" href="#" data-repo-link="/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contribute a lesson</a>
+          </div>
+        </div>
+        <nav class="social-list" data-socials="list" aria-label="Maintainer's social profiles"></nav>
+      </div>
+    </section>
+
     <!-- ================= COLOPHON ================= -->
     <section class="colophon container">
       <div class="colophon-grid">
@@ -420,7 +443,7 @@ g.add_edge(<span class="k">"tools"</span>, <span class="k">"agent"</span>)</pre>
         <div>
           <p>The whole curriculum is on GitHub. Clone it, fork it, and work at your own pace. No paywall, no signup. Every lesson has runnable Python or TypeScript and works with local models through Ollama or with any hosted API.</p>
           <div class="colophon-cmd">
-            <code id="cloneCmdText">git clone https://github.com/Ramakm/agentic-ai-from-scratch.git</code>
+            <code id="cloneCmdText" data-clone-cmd>git clone https://github.com/Ramakm/agentic-ai-from-scratch.git</code>
             <button class="copy-chip" type="button" data-copy-target="cloneCmdText" aria-label="Copy clone command">copy</button>
           </div>
         </div>
@@ -430,7 +453,10 @@ g.add_edge(<span class="k">"tools"</span>, <span class="k">"agent"</span>)</pre>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© 2026 · open source · free forever</p>
+      <div class="footer-left">
+        <p>© 2026 · <span data-maintainer>Ramakrushna Mohapatra</span> · MIT · free forever</p>
+        <div class="footer-socials" data-socials="icons" aria-label="Social profiles"></div>
+      </div>
       <div class="footer-links">
         <a href="#" data-repo-link target="_blank" rel="noopener">GitHub</a>
         <a href="#contents">Contents</a>
@@ -438,7 +464,10 @@ g.add_edge(<span class="k">"tools"</span>, <span class="k">"agent"</span>)</pre>
         <a href="#machines">Machines</a>
         <a href="#books">Books</a>
         <a href="#capstone">Capstone</a>
-        <a href="#" data-repo-link="/issues/new" target="_blank" rel="noopener">Report</a>
+        <a href="#" data-repo-link="/blob/main/ROADMAP.md" target="_blank" rel="noopener">Roadmap</a>
+        <a href="#" data-repo-link="/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contribute</a>
+        <a href="llms.txt">llms.txt</a>
+        <a href="#" data-repo-link="/issues/new/choose" target="_blank" rel="noopener">Report</a>
       </div>
     </div>
   </footer>
@@ -457,22 +486,15 @@ g.add_edge(<span class="k">"tools"</span>, <span class="k">"agent"</span>)</pre>
       </div>
       <ul class="modal-lessons" id="modalLessons"></ul>
       <div class="modal-footer">
-        <span>Progress saved in this browser only</span>
+        <span>Progress saved in this browser only · <a id="modalRepo" href="#" target="_blank" rel="noopener">phase on GitHub ↗</a></span>
         <button class="link-btn" type="button" id="modalReset">Reset phase</button>
       </div>
     </div>
   </div>
 
-  <!-- command palette -->
-  <div class="overlay palette-overlay" id="paletteOverlay" aria-hidden="true">
-    <div class="palette" role="dialog" aria-modal="true" aria-label="Search lessons">
-      <input class="palette-input" id="paletteInput" type="text" placeholder="Search 163 lessons…" autocomplete="off" spellcheck="false" aria-controls="paletteList">
-      <ul class="palette-list" id="paletteList" role="listbox"></ul>
-      <div class="palette-foot"><span><kbd>↑</kbd> <kbd>↓</kbd> move</span><span><kbd>↵</kbd> open</span><span><kbd>esc</kbd> close</span></div>
-    </div>
-  </div>
 
   <script src="assets/data.js"></script>
+  <script src="assets/common.js"></script>
   <script src="assets/app.js"></script>
 </body>
 </html>

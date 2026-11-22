@@ -1,0 +1,78 @@
+{
+  "lesson": "02-tool-schemas-from-first-principles",
+  "title": "Tool Schemas from First Principles",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "When you give a model a tool, what does it actually receive?",
+      "options": [
+        "The function's source code",
+        "A name, a description, and a JSON Schema for the parameters",
+        "A compiled binary it can execute",
+        "Only the function name"
+      ],
+      "correct": 1,
+      "explanation": "The function body is invisible to the model. It decides when and how to call purely from the name, description, and schema."
+    },
+    {
+      "stage": "check",
+      "question": "In function_to_tool, what makes a parameter required?",
+      "options": [
+        "Its type is not Optional",
+        "It has no default value in the signature",
+        "It appears first in the signature",
+        "It has a description in the docstring"
+      ],
+      "correct": 1,
+      "explanation": "Required means no default. Optional[int] = None is optional because of the default, not because of Optional."
+    },
+    {
+      "stage": "check",
+      "question": "Why set additionalProperties to false?",
+      "options": [
+        "It makes the schema smaller",
+        "So invented arguments like 'seat' are rejected instead of silently ignored",
+        "Anthropic requires it for every tool",
+        "It disables nested objects"
+      ],
+      "correct": 1,
+      "explanation": "Without it, unknown keys pass validation and the model never learns the argument doesn't exist."
+    },
+    {
+      "stage": "check",
+      "question": "Why does the validator explicitly reject True for an integer field?",
+      "options": [
+        "JSON has no booleans",
+        "In Python, bool is a subclass of int, so isinstance(True, int) is True",
+        "Booleans are too large for integers",
+        "Models never send booleans"
+      ],
+      "correct": 1,
+      "explanation": "JSON Schema treats boolean and integer as distinct types, but Python's isinstance would accept True as an int."
+    },
+    {
+      "stage": "post",
+      "question": "The model keeps sending 'next friday' for a date. What's the cheapest effective fix?",
+      "options": [
+        "Fine-tune the model",
+        "Put the format in the parameter description, e.g. 'Departure date as YYYY-MM-DD', and return a specific validation error",
+        "Remove the date parameter",
+        "Increase the temperature"
+      ],
+      "correct": 1,
+      "explanation": "Descriptions are prompts. Stating the format, plus a precise error when it's wrong, fixes most argument-format problems."
+    },
+    {
+      "stage": "post",
+      "question": "Why return all validation problems at once instead of the first one?",
+      "options": [
+        "It's required by JSON Schema",
+        "So the model can fix every problem in a single retry, saving turns and tokens",
+        "It makes logs shorter",
+        "The first error is usually wrong"
+      ],
+      "correct": 1,
+      "explanation": "One error per turn means one retry per error. Reporting everything lets the model correct the whole call at once."
+    }
+  ]
+}

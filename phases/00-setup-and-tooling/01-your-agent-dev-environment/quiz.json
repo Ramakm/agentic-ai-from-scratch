@@ -1,0 +1,78 @@
+{
+  "lesson": "01-your-agent-dev-environment",
+  "title": "Your Agent Dev Environment",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Your agent gets 'connection refused' calling http://localhost:11434. What's the most likely cause?",
+      "options": [
+        "The model's context window is full",
+        "The Ollama server isn't running",
+        "Your API key expired",
+        "The prompt is too long"
+      ],
+      "correct": 1,
+      "explanation": "Port 11434 is the Ollama server. 'Connection refused' means nothing is listening, so start it with `ollama serve` or the desktop app."
+    },
+    {
+      "stage": "check",
+      "question": "Why does agent-doctor skip models like nomic-embed-text when choosing one to ping?",
+      "options": [
+        "They are too large",
+        "Embedding models turn text into vectors and cannot hold a conversation",
+        "They require an API key",
+        "They only work in TypeScript"
+      ],
+      "correct": 1,
+      "explanation": "Embedding models output vectors for search. Sending them a chat request fails or returns nothing useful."
+    },
+    {
+      "stage": "check",
+      "question": "What is the safe way for a diagnostic script to report API keys?",
+      "options": [
+        "Print the full key so you can verify it",
+        "Print the first and last four characters",
+        "Print only the names of the environment variables that are set",
+        "Write the keys to a log file"
+      ],
+      "correct": 2,
+      "explanation": "Report which keys exist, never their values. Terminal output and logs get shared, pasted, and committed."
+    },
+    {
+      "stage": "check",
+      "question": "Why does every lesson use the OpenAI-compatible /chat/completions format?",
+      "options": [
+        "OpenAI requires it by law",
+        "It's the only format that supports tools",
+        "Ollama, OpenAI, vLLM, LM Studio and others accept it, so switching providers is just a base-URL change",
+        "It is faster than other formats"
+      ],
+      "correct": 2,
+      "explanation": "One request shape works across local and hosted servers, which keeps lesson code provider-neutral."
+    },
+    {
+      "stage": "post",
+      "question": "You accidentally committed an API key and then deleted it in the next commit. What must you do?",
+      "options": [
+        "Nothing, it's deleted",
+        "Rotate (revoke and replace) the key, because it's still in git history",
+        "Make the repository private",
+        "Rename the environment variable"
+      ],
+      "correct": 1,
+      "explanation": "The key remains in history and may already be scraped. Revoking it is the only real fix."
+    },
+    {
+      "stage": "post",
+      "question": "Why do the checks take parameters like which=shutil.which and fetch=fetch_json?",
+      "options": [
+        "To make them run faster",
+        "So tests can pass in fake functions without patching libraries or needing Ollama installed",
+        "Python requires default arguments",
+        "To support Windows"
+      ],
+      "correct": 1,
+      "explanation": "Injecting dependencies with real defaults keeps production code simple and tests fast and deterministic."
+    }
+  ]
+}

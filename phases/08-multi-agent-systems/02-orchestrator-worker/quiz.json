@@ -1,0 +1,73 @@
+{
+  "lesson": "02-orchestrator-worker",
+  "title": "Orchestrator–Worker",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "What problem does splitting a task across workers solve that one agent struggles with?",
+      "options": [
+        "Models can't answer questions longer than one sentence",
+        "Independent subtasks can run in parallel, each in a small, focused context",
+        "It removes the need for any prompts",
+        "It makes every answer correct"
+      ],
+      "correct": 1,
+      "explanation": "Each worker gets only its subtask, so context stays focused, and independent work can happen at the same time."
+    },
+    {
+      "stage": "check",
+      "question": "The orchestrator returns a plan with role 'poet', which isn't in the allowed list. What does the lesson's code do?",
+      "options": [
+        "Runs it anyway with a default prompt",
+        "Crashes with a KeyError",
+        "Sends the rejection reason back to the orchestrator for one retry, then falls back to a single researcher",
+        "Silently drops that subtask"
+      ],
+      "correct": 2,
+      "explanation": "Validation errors become feedback for one repair attempt. If that fails too, the run degrades to a single worker instead of failing."
+    },
+    {
+      "stage": "check",
+      "question": "How many model calls does one run with 3 workers make?",
+      "options": ["3", "4", "5", "6"],
+      "correct": 2,
+      "explanation": "1 plan + 3 workers + 1 synthesis = 5 calls, before any retries."
+    },
+    {
+      "stage": "check",
+      "question": "One worker raises ConnectionError. What should the synthesizer receive?",
+      "options": [
+        "Nothing: hide the failure so the answer looks complete",
+        "The other workers' findings plus 'FAILED: ConnectionError…' for that worker",
+        "Only the error message",
+        "The run should stop before synthesis"
+      ],
+      "correct": 1,
+      "explanation": "Failures are findings. Telling the synthesizer lets it say what's missing instead of inventing that analysis."
+    },
+    {
+      "stage": "post",
+      "question": "Against local Ollama, the 'parallel' analyst timed out while the others succeeded. What's the main lesson?",
+      "options": [
+        "Thread pools don't work in Python",
+        "Real parallelism depends on the inference backend; a server that processes one request at a time queues your workers",
+        "Timeouts should be removed",
+        "The analyst role is broken"
+      ],
+      "correct": 1,
+      "explanation": "Your thread pool can submit requests in parallel, but the server decides whether it processes them in parallel."
+    },
+    {
+      "stage": "post",
+      "question": "When should you NOT use orchestrator–worker?",
+      "options": [
+        "When subtasks are independent",
+        "When the task is small or its steps depend tightly on each other, so the extra calls and tokens buy nothing",
+        "When you need a final summary",
+        "When using Python"
+      ],
+      "correct": 1,
+      "explanation": "Coordination costs calls and tokens. If work can't run independently, one good agent is cheaper and usually better."
+    }
+  ]
+}
