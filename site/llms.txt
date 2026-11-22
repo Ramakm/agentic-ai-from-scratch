@@ -4,7 +4,7 @@
 
 Source: https://github.com/Ramakm/agentic-ai-from-scratch
 Site: https://ramakm.github.io/agentic-ai-from-scratch/
-Maintainer: Ramakrushna Mohapatra (https://x.com/techwith_ram, https://www.instagram.com/techwith.ram/, https://www.threads.com/@techwith.ram, https://medium.com/@techwithram, https://github.com/Ramakm, https://www.ramakrushna.com/)
+Maintainer: Ramakrushna Mohapatra (https://www.linkedin.com/in/ramakrushnamohapatra, https://www.instagram.com/techwith.ram/, https://x.com/techwith_ram, https://github.com/Ramakm)
 
 Install the tutor skills into a coding agent: npx skills add Ramakm/agentic-ai-from-scratch
 

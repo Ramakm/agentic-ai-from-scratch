@@ -214,9 +214,7 @@
     var M = A.SITE.maintainer;
     return '<aside class="byline"><img src="' + M.avatar + '" alt="" width="56" height="56" loading="lazy">' +
       '<div><p class="eyebrow">Written by</p><p class="byline-name">' + esc(M.name) + '</p><p class="byline-role">' + esc(M.role) + '</p></div>' +
-      '<div class="byline-socials">' + M.socials.map(function (s) {
-        return '<a class="social-icon" href="' + s.url + '" target="_blank" rel="noopener me" aria-label="' + esc(s.label + ' ' + s.handle) + '" title="' + esc(s.label + ' ' + s.handle) + '">' + A.icon(s.id, 16) + '</a>';
-      }).join('') + '</div></aside>';
+      '<div class="byline-socials">' + A.socialLinks('social-link') + '</div></aside>';
   }
 
   function pager() {

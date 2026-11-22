@@ -13,6 +13,12 @@
 </p>
 
 <p align="center">
+  <a href="https://www.linkedin.com/in/ramakrushnamohapatra"><img src="assets/readme/icons/linkedin.svg" width="16" height="16" alt="LinkedIn"> ramakrushnamohapatra</a> &nbsp;·&nbsp;
+  <a href="https://www.instagram.com/techwith.ram/"><img src="assets/readme/icons/instagram.svg" width="16" height="16" alt="Instagram"> techwith.ram</a> &nbsp;·&nbsp;
+  <a href="https://x.com/techwith_ram"><img src="assets/readme/icons/x.svg" width="16" height="16" alt="X (Twitter)"> techwith_ram</a>
+</p>
+
+<p align="center">
   <a href="https://ramakm.github.io/agentic-ai-from-scratch/"><b>Website</b></a> ·
   <a href="phases/00-setup-and-tooling/01-your-agent-dev-environment/docs/en.md"><b>Start learning</b></a> ·
   <a href="#learning-paths"><b>Choose a path</b></a> ·
@@ -26,7 +32,6 @@
   <a href="ROADMAP.md"><img src="https://img.shields.io/badge/lessons-163-3553ff?style=flat-square&labelColor=fafaf5" alt="163 lessons"></a>
   <a href="https://github.com/Ramakm/agentic-ai-from-scratch/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/Ramakm/agentic-ai-from-scratch/ci.yml?branch=main&style=flat-square&labelColor=fafaf5&label=tests" alt="Tests"></a>
   <a href="https://github.com/Ramakm/agentic-ai-from-scratch/stargazers"><img src="https://img.shields.io/github/stars/Ramakm/agentic-ai-from-scratch?style=flat-square&labelColor=fafaf5&color=3553ff" alt="GitHub stars"></a>
-  <a href="https://x.com/techwith_ram"><img src="https://img.shields.io/badge/follow-@techwith__ram-1a1a1a?style=flat-square&logo=x&labelColor=fafaf5" alt="Follow @techwith_ram on X"></a>
 </p>
 
 Turn your coding agent into a tutor with one command:
@@ -506,12 +511,9 @@ Full guide: [CONTRIBUTING.md](CONTRIBUTING.md). Agents contributing on someone's
     <td>
       <b>Ramakrushna Mohapatra</b><br>
       Sr. Data Scientist · GenAI &amp; LLM engineer · Tech trainer · Founder of <a href="https://www.growtechie.in">GrowTechie</a><br>
-      <a href="https://x.com/techwith_ram">X @techwith_ram</a> ·
-      <a href="https://www.instagram.com/techwith.ram/">Instagram @techwith.ram</a> ·
-      <a href="https://www.threads.com/@techwith.ram">Threads</a> ·
-      <a href="https://medium.com/@techwithram">Medium</a> ·
-      <a href="https://github.com/Ramakm">GitHub</a> ·
-      <a href="https://www.ramakrushna.com/">ramakrushna.com</a>
+      <a href="https://www.linkedin.com/in/ramakrushnamohapatra"><img src="assets/readme/icons/linkedin.svg" width="16" height="16" alt="LinkedIn"> ramakrushnamohapatra</a> &nbsp;·&nbsp;
+      <a href="https://www.instagram.com/techwith.ram/"><img src="assets/readme/icons/instagram.svg" width="16" height="16" alt="Instagram"> techwith.ram</a> &nbsp;·&nbsp;
+      <a href="https://x.com/techwith_ram"><img src="assets/readme/icons/x.svg" width="16" height="16" alt="X (Twitter)"> techwith_ram</a>
     </td>
   </tr>
 </table>

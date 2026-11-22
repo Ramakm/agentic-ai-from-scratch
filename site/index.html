@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agentic AI from Scratch | Free Agentic AI Course</title>
   <meta name="description" content="A free, open-source course that builds AI agents from a raw while-loop and an HTTP call: tools, memory, planning, MCP, multi-agent systems, evals, and safety.">
-  <meta name="theme-color" content="#fafaf5">
+  <meta name="theme-color" content="#0a0d1a">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%233553ff'/%3E%3Crect x='4' y='4' width='8' height='8' fill='%23fafaf5'/%3E%3C/svg%3E">
   <script>
     (function () {
       var t = null;
       try { t = localStorage.getItem('aafs-theme'); } catch (e) {}
-      if (!t) t = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      if (t !== 'light' && t !== 'dark') t = 'dark';   /* dark is the default */
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
@@ -53,7 +53,7 @@
         <a class="btn btn--primary" href="#" data-open-phase="0" data-lesson="0" data-go>Start the Course</a>
         <a class="btn" href="#paths">Explore Learning Paths</a>
         <a class="btn btn--quiet" href="#" data-repo-link target="_blank" rel="noopener"><span data-icon="github" data-icon-size="14"></span>Star on GitHub<span class="btn-count" data-stars hidden></span></a>
-        <a class="btn btn--quiet" href="#" data-social-link="x" target="_blank" rel="noopener me"><span data-icon="x" data-icon-size="13"></span>Follow <span data-handle>@techwith_ram</span></a>
+        <a class="btn btn--quiet" href="#" data-social-link="x" target="_blank" rel="noopener me" aria-label="X (Twitter): techwith_ram"><span data-icon="x" data-icon-size="13"></span><span data-handle>techwith_ram</span></a>
       </div>
 
       <nav class="start-box reveal" style="--d:100ms" aria-labelledby="startTitle">
@@ -425,11 +425,10 @@ g.add_edge(<span class="k">"tools"</span>, <span class="k">"agent"</span>)</pre>
           <span class="eyebrow">Who's behind this</span>
           <h2 id="maintainerTitle" data-maintainer>Ramakrushna Mohapatra</h2>
           <p class="maintainer-role" data-maintainer-role>Sr. Data Scientist · GenAI &amp; LLM engineer · Tech trainer · Founder of GrowTechie</p>
-          <p>I build LLM systems for a living and teach them on <a href="#" data-social-link="x" target="_blank" rel="noopener me">X</a> and <a href="#" data-social-link="instagram" target="_blank" rel="noopener me">Instagram</a> as <strong>@techwith_ram</strong>. This course is the curriculum I wish I'd had: every agent pattern written by hand first, run on a laptop, and tested, before any framework gets a say.</p>
+          <p>I build LLM systems for a living and teach them on <a href="#" data-social-link="linkedin" target="_blank" rel="noopener me">LinkedIn</a>, <a href="#" data-social-link="instagram" target="_blank" rel="noopener me">Instagram</a> and <a href="#" data-social-link="x" target="_blank" rel="noopener me">X</a>. This course is the curriculum I wish I'd had: every agent pattern written by hand first, run on a laptop, and tested, before any framework gets a say.</p>
           <p>Found a bug, want a lesson, or want to write one? Open an issue or say hi on any of these.</p>
           <div class="maintainer-actions">
-            <a class="btn btn--primary" href="#" data-social-link="x" target="_blank" rel="noopener me"><span data-icon="x" data-icon-size="13"></span>Follow <span data-handle>@techwith_ram</span></a>
-            <a class="btn" href="#" data-repo-link="/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contribute a lesson</a>
+            <a class="btn btn--primary" href="#" data-repo-link="/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contribute a lesson</a>
           </div>
         </div>
         <nav class="social-list" data-socials="list" aria-label="Maintainer's social profiles"></nav>
@@ -455,7 +454,7 @@ g.add_edge(<span class="k">"tools"</span>, <span class="k">"agent"</span>)</pre>
     <div class="container footer-inner">
       <div class="footer-left">
         <p>© 2026 · <span data-maintainer>Ramakrushna Mohapatra</span> · MIT · free forever</p>
-        <div class="footer-socials" data-socials="icons" aria-label="Social profiles"></div>
+        <div class="footer-socials" data-socials="inline" aria-label="Social profiles"></div>
       </div>
       <div class="footer-links">
         <a href="#" data-repo-link target="_blank" rel="noopener">GitHub</a>

@@ -11,40 +11,28 @@ window.SITE = {
     "avatar": "https://github.com/Ramakm.png?size=240",
     "socials": [
       {
-        "id": "x",
-        "label": "X / Twitter",
-        "handle": "@techwith_ram",
-        "url": "https://x.com/techwith_ram"
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "handle": "ramakrushnamohapatra",
+        "url": "https://www.linkedin.com/in/ramakrushnamohapatra"
       },
       {
         "id": "instagram",
         "label": "Instagram",
-        "handle": "@techwith.ram",
+        "handle": "techwith.ram",
         "url": "https://www.instagram.com/techwith.ram/"
       },
       {
-        "id": "threads",
-        "label": "Threads",
-        "handle": "@techwith.ram",
-        "url": "https://www.threads.com/@techwith.ram"
-      },
-      {
-        "id": "medium",
-        "label": "Medium",
-        "handle": "@techwithram",
-        "url": "https://medium.com/@techwithram"
+        "id": "x",
+        "label": "X (Twitter)",
+        "handle": "techwith_ram",
+        "url": "https://x.com/techwith_ram"
       },
       {
         "id": "github",
         "label": "GitHub",
         "handle": "Ramakm",
         "url": "https://github.com/Ramakm"
-      },
-      {
-        "id": "web",
-        "label": "Website",
-        "handle": "ramakrushna.com",
-        "url": "https://www.ramakrushna.com/"
       }
     ]
   },

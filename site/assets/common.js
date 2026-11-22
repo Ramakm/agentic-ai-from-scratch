@@ -26,6 +26,7 @@
 
   /* ---------- icons ---------- */
   var ICONS = {
+    linkedin: '<path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/>',
     x: '<path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>',
     github: '<path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.82-.26.82-.58v-2.03c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.08-.74.09-.73.09-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.62-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.21.7.82.58A12 12 0 0 0 12 .3"/>',
     instagram: '<rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/>',
@@ -47,7 +48,7 @@
   fill('[data-maintainer]', function (el) { el.textContent = M.name; });
   fill('[data-maintainer-role]', function (el) { el.textContent = M.role; });
   fill('[data-maintainer-avatar]', function (el) { el.src = M.avatar; el.alt = M.name; });
-  fill('[data-handle]', function (el) { el.textContent = '@' + M.handle; });
+  fill('[data-handle]', function (el) { el.textContent = M.handle; });
   fill('[data-social-link]', function (el) {
     var s = M.socials.filter(function (x) { return x.id === el.getAttribute('data-social-link'); })[0];
     if (s) el.href = s.url;
@@ -57,16 +58,15 @@
   fill('[data-clone-cmd]', function (el) { el.textContent = 'git clone ' + REPO_URL + '.git'; });
   fill('[data-icon]', function (el) { el.insertAdjacentHTML('afterbegin', icon(el.getAttribute('data-icon'), el.getAttribute('data-icon-size'))); });
 
-  /* socials: data-socials="icons" (compact row) or "list" (icon + label + handle) */
-  fill('[data-socials]', function (el) {
-    var mode = el.getAttribute('data-socials');
-    el.innerHTML = M.socials.map(function (s) {
-      var label = s.label + ' ' + s.handle;
-      return mode === 'list'
-        ? '<a class="social-row" href="' + s.url + '" target="_blank" rel="noopener me">' + icon(s.id, 18) +
-          '<span class="social-label">' + esc(s.label) + '</span><span class="social-handle">' + esc(s.handle) + ' ↗</span></a>'
-        : '<a class="social-icon" href="' + s.url + '" target="_blank" rel="noopener me" aria-label="' + esc(label) + '" title="' + esc(label) + '">' + icon(s.id, 16) + '</a>';
+  /* socials: always icon + username, linked. data-socials="list" (boxed rows) or "inline" (footer/byline row) */
+  function socialLinks(cls) {
+    return M.socials.map(function (s) {
+      return '<a class="' + cls + '" href="' + s.url + '" target="_blank" rel="noopener me" aria-label="' + esc(s.label + ': ' + s.handle) + '" title="' + esc(s.label) + '">' +
+        icon(s.id, 16) + '<span class="social-handle">' + esc(s.handle) + '</span></a>';
     }).join('');
+  }
+  fill('[data-socials]', function (el) {
+    el.innerHTML = socialLinks(el.getAttribute('data-socials') === 'list' ? 'social-row' : 'social-link');
   });
 
   /* ---------- GitHub stars (cached for an hour) ---------- */
@@ -185,7 +185,7 @@
 
   window.AAFS = {
     SITE: SITE, PHASES: PHASES, ALL: ALL, REPO_URL: REPO_URL,
-    esc: esc, pad: pad, icon: icon, lessonHref: lessonHref, findLesson: findLesson,
+    esc: esc, pad: pad, icon: icon, socialLinks: socialLinks, lessonHref: lessonHref, findLesson: findLesson,
     isDone: isDone, setDone: setDone, doneCount: doneCount,
     openOverlay: openOverlay, closeOverlay: closeOverlay, openPhase: null,
   };

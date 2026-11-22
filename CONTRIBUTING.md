@@ -65,4 +65,8 @@ Generated files (don't edit by hand): `README.md` between the `CONTENTS` markers
 
 Be kind and assume good intent. See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
-Questions? Open a discussion or reach the maintainer on [X @techwith_ram](https://x.com/techwith_ram).
+Questions? Open a discussion or reach the maintainer:
+
+<a href="https://www.linkedin.com/in/ramakrushnamohapatra"><img src="assets/readme/icons/linkedin.svg" width="16" height="16" alt="LinkedIn"> ramakrushnamohapatra</a><br>
+<a href="https://www.instagram.com/techwith.ram/"><img src="assets/readme/icons/instagram.svg" width="16" height="16" alt="Instagram"> techwith.ram</a><br>
+<a href="https://x.com/techwith_ram"><img src="assets/readme/icons/x.svg" width="16" height="16" alt="X (Twitter)"> techwith_ram</a>
