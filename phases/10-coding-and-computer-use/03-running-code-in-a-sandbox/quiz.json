@@ -1,0 +1,78 @@
+{
+  "lesson": "03-running-code-in-a-sandbox",
+  "title": "Running Code in a Sandbox",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Your agent runs model-written code with subprocess.run(code, timeout=10). Which threat does that handle?",
+      "options": [
+        "Reading your API keys from the environment",
+        "Partly, a simple infinite loop; not secrets, output floods, disk filling, child processes or the network",
+        "All of them",
+        "Network exfiltration"
+      ],
+      "correct": 1,
+      "explanation": "A timeout is one layer. Secrets, output, files, children and network each need their own guard or isolation."
+    },
+    {
+      "stage": "check",
+      "question": "Why allow-list environment variables instead of deleting known secrets?",
+      "options": [
+        "It's faster",
+        "A deny-list misses secrets nobody named; an allow-list fails safe",
+        "Python requires it",
+        "Allow-lists are shorter"
+      ],
+      "correct": 1,
+      "explanation": "The day someone adds STRIPE_KEY, a deny-list leaks it; an allow-list never passed it."
+    },
+    {
+      "stage": "check",
+      "question": "With proc.kill() (parent only), a 2-second timeout took 6 seconds. Why?",
+      "options": [
+        "The machine was slow",
+        "The orphaned child kept the output pipe open, so communicate() waited until it exited",
+        "SIGKILL takes 4 seconds",
+        "The CPU limit fired"
+      ],
+      "correct": 1,
+      "explanation": "Kill the process group (start_new_session + killpg) so children die too and the pipe closes."
+    },
+    {
+      "stage": "check",
+      "question": "The file-size limit produced 'OSError: File too large' instead of killing the process. Why?",
+      "options": [
+        "The limit didn't work",
+        "Python ignores SIGXFSZ, so the oversized write fails with an exception instead",
+        "macOS doesn't support file limits",
+        "The disk was full"
+      ],
+      "correct": 1,
+      "explanation": "With the signal ignored, the write syscall returns EFBIG, which Python raises as OSError."
+    },
+    {
+      "stage": "post",
+      "question": "Which threats does this lesson's process-level guard NOT stop?",
+      "options": [
+        "Infinite loops",
+        "Reading host files the user can read, using the network, and privilege escalation",
+        "Output floods",
+        "Reading environment secrets"
+      ],
+      "correct": 1,
+      "explanation": "Those need isolation: only mount the task directory, --network none, a non-root user and dropped capabilities."
+    },
+    {
+      "stage": "post",
+      "question": "Why redact the sandbox's real path from output before the model sees it?",
+      "options": [
+        "Paths are long",
+        "Host paths reveal usernames and layout, and tempt the model to reach outside the workspace",
+        "Models can't read paths",
+        "It speeds up the run"
+      ],
+      "correct": 1,
+      "explanation": "Show the model what it needs (<sandbox>/snippet.py), not details of the host."
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+# Only for the optional with_crewai.py. main.py and the tests use the standard library.
+crewai>=1.0

@@ -1,0 +1,78 @@
+{
+  "lesson": "05-repository-maps-context",
+  "title": "Repository Maps & Context",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Why can't a coding agent just search for what it needs?",
+      "options": [
+        "Search tools are too slow",
+        "It can't search for code it doesn't know exists, and reading files one by one to get oriented eats context",
+        "Models can't use regex",
+        "Search is not allowed in repos"
+      ],
+      "correct": 1,
+      "explanation": "A map shows what exists and how it connects, so the agent knows where to look."
+    },
+    {
+      "stage": "check",
+      "question": "Why does the map show signatures instead of function bodies?",
+      "options": [
+        "Bodies are secret",
+        "Signatures say what's callable and how, at a fraction of the tokens; the agent reads bodies only where needed",
+        "ast can't read bodies",
+        "Bodies are always wrong"
+      ],
+      "correct": 1,
+      "explanation": "103 tokens covered five files' interfaces in the demo; bodies would cost far more."
+    },
+    {
+      "stage": "check",
+      "question": "What does an edge A → B mean in the lesson's graph?",
+      "options": [
+        "A and B are in the same folder",
+        "File A references a name that file B defines",
+        "B imports A",
+        "A is larger than B"
+      ],
+      "correct": 1,
+      "explanation": "Score flows from users to definers, so widely used code ranks high."
+    },
+    {
+      "stage": "check",
+      "question": "For the login task, models.py still ranked first. Why?",
+      "options": [
+        "A bug in PageRank",
+        "Every file uses models.py, so structure keeps it high; and 'log in' in the task didn't match 'login' in the code",
+        "models.py mentions passwords",
+        "The budget was too small"
+      ],
+      "correct": 1,
+      "explanation": "Structural centrality and crude word matching both limit task personalisation."
+    },
+    {
+      "stage": "post",
+      "question": "The rendered map would exceed the budget if the next file were added. What does render() do?",
+      "options": [
+        "Stops and returns nothing",
+        "Skips that file and keeps trying smaller ones that still fit",
+        "Truncates the file mid-signature",
+        "Ignores the budget"
+      ],
+      "correct": 1,
+      "explanation": "The map stays within budget while fitting as many high-ranked files as possible."
+    },
+    {
+      "stage": "post",
+      "question": "When is a precomputed repo map most useful compared with pure search-based exploration?",
+      "options": [
+        "Never",
+        "In the first steps on an unfamiliar repo, where orientation matters most; it costs a fixed token amount every turn",
+        "Only for repos with one file",
+        "Only when tests are failing"
+      ],
+      "correct": 1,
+      "explanation": "Maps front-load orientation; exploration spends turns instead. Many agents combine both."
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "lesson": "10-long-horizon-tasks",
+  "title": "Long-Horizon Tasks",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Why do long agent tasks fail even with a capable model?",
+      "options": [
+        "Models can't write code",
+        "One context window can't hold the whole history, and one process may not survive until the end",
+        "Tasks are always too easy",
+        "Tools stop working after an hour"
+      ],
+      "correct": 1,
+      "explanation": "Context limits and process lifetime are separate problems with a shared fix: state on disk."
+    },
+    {
+      "stage": "check",
+      "question": "Why does the todo file use write-temp-then-rename?",
+      "options": [
+        "It's faster",
+        "The rename is atomic, so a crash never leaves a half-written todo file",
+        "JSON requires it",
+        "To keep old versions"
+      ],
+      "correct": 1,
+      "explanation": "Readers see either the old file or the new one, never a corrupt mix."
+    },
+    {
+      "stage": "check",
+      "question": "A new session finds an item marked in_progress. What should it do first?",
+      "options": [
+        "Mark it done",
+        "Run its check: the previous session may have finished the edit or stopped halfway",
+        "Delete the file",
+        "Skip it"
+      ],
+      "correct": 1,
+      "explanation": "In-progress means unverified. Check, then fix or mark done."
+    },
+    {
+      "stage": "check",
+      "question": "Who decides when a session hands off?",
+      "options": [
+        "The model, when it notices its context is full",
+        "The harness, when the transcript passes the budget; the model then writes the note",
+        "The user",
+        "The operating system"
+      ],
+      "correct": 1,
+      "explanation": "The model can't see its own context size. The harness measures and tells it when."
+    },
+    {
+      "stage": "post",
+      "question": "Peak context per session stayed around 6,600 characters. What happens to a single unbounded session as the task grows?",
+      "options": [
+        "It stays the same",
+        "It keeps growing with every item (12,671 chars for 8 modules here), until quality drops or the window overflows",
+        "It shrinks",
+        "It's always cheaper"
+      ],
+      "correct": 1,
+      "explanation": "Bounded sessions keep cost and quality flat no matter how long the task is."
+    },
+    {
+      "stage": "post",
+      "question": "How does a handoff differ from in-place compaction?",
+      "options": [
+        "They're identical",
+        "Compaction summarises the transcript to keep one session going; a handoff ends the session and restarts from files, which also survives crashes",
+        "Handoff loses all progress",
+        "Compaction requires a new process"
+      ],
+      "correct": 1,
+      "explanation": "Files are the source of truth for handoffs, not a summary of a transcript."
+    }
+  ]
+}

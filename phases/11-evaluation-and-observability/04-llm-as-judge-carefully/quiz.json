@@ -1,0 +1,68 @@
+{
+  "lesson": "04-llm-as-judge-carefully",
+  "title": "LLM-as-Judge, Carefully",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Your LLM judge says the agent passes 85% of tasks. What don't you know yet?",
+      "options": [
+        "Nothing; 85% is the answer",
+        "Whether the judge agrees with humans, and which way it's wrong when it doesn't",
+        "The agent's latency",
+        "The model's name"
+      ],
+      "correct": 1,
+      "explanation": "An unmeasured judge is an unmeasured instrument. Calibrate it on human labels first."
+    },
+    {
+      "stage": "check",
+      "question": "On a set with 8 FAIL and 2 PASS labels, a judge that always says FAIL has what agreement and kappa?",
+      "options": ["80% and 0.8", "80% and 0.0", "20% and 0.0", "100% and 1.0"],
+      "correct": 1,
+      "explanation": "Kappa removes chance agreement; always-FAIL has no skill."
+    },
+    {
+      "stage": "check",
+      "question": "Why ask pairwise questions in both orders?",
+      "options": [
+        "To double the sample size",
+        "A judge that prefers whichever answer comes first will flip; only consistent preferences count",
+        "Models need two tries",
+        "To save tokens"
+      ],
+      "correct": 1,
+      "explanation": "Swapping exposes position bias. llama3.2 flipped on 4 of 6 pairs."
+    },
+    {
+      "stage": "check",
+      "question": "The judge returns 'The answer is pass.' twice. What does grade() record?",
+      "options": ["PASS", "FAIL", "ERROR, counted separately", "It crashes"],
+      "correct": 2,
+      "explanation": "Defaulting format failures to PASS or FAIL silently skews the score."
+    },
+    {
+      "stage": "post",
+      "question": "The real llama3.2 judge had 67% agreement and kappa 0.23, failing 4 of 5 good answers. What's the right conclusion?",
+      "options": [
+        "Good enough to gate releases",
+        "Not a usable instrument for this task yet; try a stronger judge, a sharper rubric or examples, and re-measure",
+        "The human labels are wrong",
+        "Use agreement and ignore kappa"
+      ],
+      "correct": 1,
+      "explanation": "A judge that fails good answers would block good agents and make every agent look bad."
+    },
+    {
+      "stage": "post",
+      "question": "A padded wrong answer passes while the short version fails. What does that show?",
+      "options": [
+        "The padded answer is better",
+        "Verbosity bias: the judge rewards length or politeness over correctness",
+        "The rubric is perfect",
+        "Position bias"
+      ],
+      "correct": 1,
+      "explanation": "Same facts, different length, different verdict: the judge is grading style."
+    }
+  ]
+}

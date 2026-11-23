@@ -1,0 +1,73 @@
+{
+  "lesson": "08-online-metrics-feedback",
+  "title": "Online Metrics & Feedback",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Why is thumbs-down rate a weak production metric on its own?",
+      "options": [
+        "Users always rate",
+        "Few users rate (about 6–7% here), and unhappy users rate more, so it's sparse and biased",
+        "Thumbs are hard to store",
+        "It measures latency"
+      ],
+      "correct": 1,
+      "explanation": "Both versions showed 55% thumbs-down while v2 was clearly worse on escalations."
+    },
+    {
+      "stage": "check",
+      "question": "Which signal revealed v2's problem across every conversation?",
+      "options": ["Thumbs-down rate", "Escalation rate (an implicit, behavioural signal)", "Tool error rate", "Cost"],
+      "correct": 1,
+      "explanation": "Implicit signals cover all conversations, not just the few that get rated."
+    },
+    {
+      "stage": "check",
+      "question": "Why does canary_check require both a minimum effect and p < 0.01?",
+      "options": [
+        "Either one alone is enough",
+        "Effect size alone alarms on noise; significance alone alarms on differences too small to matter at high traffic",
+        "To make alerts rarer for no reason",
+        "Because p-values are always wrong"
+      ],
+      "correct": 1,
+      "explanation": "You want differences that are both real and big enough to act on."
+    },
+    {
+      "stage": "check",
+      "question": "The 10% canary never alerted, though v2 was truly worse. What does that mean?",
+      "options": [
+        "v2 is fine",
+        "The canary was too small to detect a 3.5-point difference in 5 days; silence is not evidence of safety",
+        "The test is broken",
+        "Escalations don't matter"
+      ],
+      "correct": 1,
+      "explanation": "At 30% traffic the same problem alerted on the second day."
+    },
+    {
+      "stage": "post",
+      "question": "How should a human review queue be built?",
+      "options": [
+        "Only thumbs-down conversations",
+        "Flagged conversations from the new version first, plus a random slice of unrated ones",
+        "Random conversations only",
+        "The longest conversations"
+      ],
+      "correct": 1,
+      "explanation": "Most failures are never rated, so unrated samples catch what feedback misses."
+    },
+    {
+      "stage": "post",
+      "question": "Before rolling out a new agent version, what should you decide first?",
+      "options": [
+        "The dashboard colours",
+        "The smallest regression you must catch and how fast, then size the canary and duration to match",
+        "Whether to disable feedback",
+        "The number of tools"
+      ],
+      "correct": 1,
+      "explanation": "Detection limits come from traffic and time; plan them deliberately."
+    }
+  ]
+}

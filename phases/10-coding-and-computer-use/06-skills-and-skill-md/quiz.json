@@ -1,0 +1,73 @@
+{
+  "lesson": "06-skills-and-skill-md",
+  "title": "Skills and SKILL.md",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "You paste 20,000 tokens of runbooks and style guides into the system prompt. What's the main cost?",
+      "options": [
+        "None",
+        "Every request pays for all of it, and unrelated instructions get mixed up; most of it is irrelevant to any one task",
+        "The model refuses long prompts",
+        "It makes tools slower"
+      ],
+      "correct": 1,
+      "explanation": "Skills keep know-how available without being present: descriptions always, bodies only when needed."
+    },
+    {
+      "stage": "check",
+      "question": "What's always in the model's context in the lesson's design?",
+      "options": [
+        "Every SKILL.md body",
+        "Each skill's name and description (level 1)",
+        "All bundled files",
+        "Nothing"
+      ],
+      "correct": 1,
+      "explanation": "Level 1 is the catalog. Bodies (level 2) and files (level 3) load on demand."
+    },
+    {
+      "stage": "check",
+      "question": "Why does the validator warn on 'description: Helps with documents.'?",
+      "options": [
+        "It's too long",
+        "It doesn't say when to use the skill, and the description is all the model has to decide with",
+        "It contains a period",
+        "Descriptions must be in YAML blocks"
+      ],
+      "correct": 1,
+      "explanation": "A useful description states what the skill does and when to use it."
+    },
+    {
+      "stage": "check",
+      "question": "A skill folder is named pdf-report but its frontmatter says name: report-pdf. What does the validator say?",
+      "options": [
+        "Nothing",
+        "The name doesn't match its folder",
+        "The name is too long",
+        "The description is missing"
+      ],
+      "correct": 1,
+      "explanation": "The folder is the skill's identity; a mismatch causes confusing load and install behaviour."
+    },
+    {
+      "stage": "post",
+      "question": "The demo task used ~517 + 762 tokens of skill context. Loading all bodies would have cost about…",
+      "options": ["The same", "~4,352 tokens", "~100 tokens", "~50,000 tokens"],
+      "correct": 1,
+      "explanation": "Progressive disclosure saved most of the tokens, and the gap grows with every skill added."
+    },
+    {
+      "stage": "post",
+      "question": "How do skills and MCP servers relate?",
+      "options": [
+        "They are the same thing",
+        "MCP gives an agent capabilities (tools); a skill gives it know-how (how to do a task, possibly with those tools)",
+        "Skills replace MCP",
+        "MCP replaces skills"
+      ],
+      "correct": 1,
+      "explanation": "They complement each other: tools to act, skills to know how."
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+# Only for the optional with_llamaindex.py. main.py and the tests use the standard library.
+llama-index-core>=0.14

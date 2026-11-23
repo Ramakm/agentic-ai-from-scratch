@@ -1,0 +1,78 @@
+{
+  "lesson": "02-golden-tasks-datasets",
+  "title": "Golden Tasks & Datasets",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Your agent fails one task 100% of the time, before and after every change. What should you check first?",
+      "options": [
+        "The model's temperature",
+        "Whether the task's checker accepts its own reference answer",
+        "The agent's system prompt",
+        "Network latency"
+      ],
+      "correct": 1,
+      "explanation": "A checker that rejects correct answers fails every run silently. That's what the lint's reference check catches."
+    },
+    {
+      "stage": "check",
+      "question": "Why does every task carry known_bad answers?",
+      "options": [
+        "To train the agent",
+        "To prove the checker can fail; a checker that accepts a known-wrong answer is too loose",
+        "For documentation only",
+        "To make the dataset larger"
+      ],
+      "correct": 1,
+      "explanation": "The regex 'j' accepted 'Saturn, not jupiter'. known_bad answers expose that."
+    },
+    {
+      "stage": "check",
+      "question": "A dev task and a test task differ only by 'please' and 'because'. Why is that an error?",
+      "options": [
+        "Duplicate wording is ugly",
+        "It's leakage: tuning on dev effectively tunes on test, inflating the reported score",
+        "Tasks must be short",
+        "It isn't a problem"
+      ],
+      "correct": 1,
+      "explanation": "Near-duplicates across splits measure memory of dev, not skill on unseen tasks."
+    },
+    {
+      "stage": "check",
+      "question": "What should happen when a checker's type is misspelled ('exakt')?",
+      "options": [
+        "Default to pass",
+        "Raise an error, so the dataset lint reports a broken checker",
+        "Default to fail",
+        "Use an LLM judge"
+      ],
+      "correct": 1,
+      "explanation": "Silent defaults either inflate or deflate scores. Fail loudly."
+    },
+    {
+      "stage": "post",
+      "question": "The agent answers 'twenty-four vacation days' and the contains_all checker wants '24'. What's the right fix?",
+      "options": [
+        "Mark the agent as failing",
+        "Fix the checker (alternatives or a judge) and add the real answer as a second reference",
+        "Delete the task",
+        "Tell the agent to use digits"
+      ],
+      "correct": 1,
+      "explanation": "It's a false negative. Fix the measuring tool, and keep the lint as a guard."
+    },
+    {
+      "stage": "post",
+      "question": "How should a production failure become a golden task?",
+      "options": [
+        "Copy the agent's answer as the reference",
+        "Keep the user's input, write a correct reference and checker, and add the agent's real wrong answer as known_bad",
+        "Ignore production failures",
+        "Put it straight into the test split without review"
+      ],
+      "correct": 1,
+      "explanation": "The real wrong answer as known_bad guarantees that failure is caught if it returns."
+    }
+  ]
+}

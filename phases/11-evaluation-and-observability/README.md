@@ -3,20 +3,20 @@
 
 > Golden tasks, trajectory evals, careful LLM judges, OpenTelemetry traces, replay, and your own eval harness.
 
-**Status:** □ planned · **Lessons:** 0 of 10 live · **Time:** ~8 hours
+**Status:** ■ complete · **Lessons:** 10 of 10 live · **Time:** ~8 hours
 
 | # | Lesson | Type | Time |
 |---|--------|------|------|
-| 11.01 | Why agent evals are hard | planned | 35 min |
-| 11.02 | Golden tasks & datasets | planned | 45 min |
-| 11.03 | Trajectory evaluation | planned | 50 min |
-| 11.04 | LLM-as-judge, carefully | planned | 50 min |
-| 11.05 | Tool-call accuracy | planned | 40 min |
-| 11.06 | Tracing with OpenTelemetry | planned | 50 min |
-| 11.07 | Replay and regression | planned | 45 min |
-| 11.08 | Online metrics & feedback | planned | 40 min |
-| 11.09 | Benchmarks: SWE-bench to τ-bench | planned | 45 min |
-| 11.10 | Building an eval harness | planned | 70 min |
+| 11.01 | [Why agent evals are hard](01-why-agent-evals-are-hard/docs/en.md) | Learn | 35 min |
+| 11.02 | [Golden tasks & datasets](02-golden-tasks-datasets/docs/en.md) | Build | 45 min |
+| 11.03 | [Trajectory evaluation](03-trajectory-evaluation/docs/en.md) | Build | 50 min |
+| 11.04 | [LLM-as-judge, carefully](04-llm-as-judge-carefully/docs/en.md) | Build | 50 min |
+| 11.05 | [Tool-call accuracy](05-tool-call-accuracy/docs/en.md) | Build | 40 min |
+| 11.06 | [Tracing with OpenTelemetry](06-tracing-with-opentelemetry/docs/en.md) | Build | 50 min |
+| 11.07 | [Replay and regression](07-replay-and-regression/docs/en.md) | Build | 45 min |
+| 11.08 | [Online metrics & feedback](08-online-metrics-feedback/docs/en.md) | Build | 40 min |
+| 11.09 | [Benchmarks: SWE-bench to τ-bench](09-benchmarks-swe-bench-to-tau-bench/docs/en.md) | Learn | 45 min |
+| 11.10 | [Building an eval harness](10-building-an-eval-harness/docs/en.md) | Build | 70 min |
 
 Every live lesson folder has `docs/en.md`, runnable `code/` with tests, a `quiz.json`, and an artifact in `outputs/`.
 Want to write a planned lesson? See [CONTRIBUTING.md](../../CONTRIBUTING.md) and [LESSON_TEMPLATE.md](../../LESSON_TEMPLATE.md).

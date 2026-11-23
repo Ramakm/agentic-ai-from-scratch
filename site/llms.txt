@@ -1,6 +1,6 @@
 # Agentic AI from Scratch
 
-> Build AI agents from a raw while-loop and an HTTP call, before a single framework gets imported. 16 phases, 163 lessons (95 live), Python and TypeScript, free and open source (MIT).
+> Build AI agents from a raw while-loop and an HTTP call, before a single framework gets imported. 16 phases, 163 lessons (126 live), Python and TypeScript, free and open source (MIT).
 
 Source: https://github.com/Ramakm/agentic-ai-from-scratch
 Site: https://ramakm.github.io/agentic-ai-from-scratch/
@@ -152,47 +152,47 @@ Orchestrators, workers, handoffs, supervisors, blackboards, A2A, and the real co
 
 Now import the frameworks. The same loop in LangGraph, Agents SDKs, CrewAI, AutoGen, and when to skip them all.
 
-- 09.01 The same loop, ten frameworks (40 min) [planned]
-- 09.02 LangGraph: state graphs (60 min) [planned]
-- 09.03 OpenAI Agents SDK (50 min) [planned]
-- 09.04 Claude Agent SDK (50 min) [planned]
-- 09.05 CrewAI roles & crews (45 min) [planned]
-- 09.06 AutoGen conversations (45 min) [planned]
-- 09.07 LlamaIndex agents (45 min) [planned]
-- 09.08 Pydantic AI typed agents (45 min) [planned]
-- 09.09 Choosing (or skipping) a framework (35 min) [planned]
-- 09.10 Porting between frameworks (45 min) [planned]
+- 09.01 The same loop, ten frameworks (40 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/09-frameworks-and-sdks/01-the-same-loop-ten-frameworks | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/09-frameworks-and-sdks/01-the-same-loop-ten-frameworks/docs/en.md
+- 09.02 LangGraph: state graphs (60 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/09-frameworks-and-sdks/02-langgraph-state-graphs | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/09-frameworks-and-sdks/02-langgraph-state-graphs/docs/en.md
+- 09.03 OpenAI Agents SDK (50 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/09-frameworks-and-sdks/03-openai-agents-sdk | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/09-frameworks-and-sdks/03-openai-agents-sdk/docs/en.md
+- 09.04 Claude Agent SDK (50 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/09-frameworks-and-sdks/04-claude-agent-sdk | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/09-frameworks-and-sdks/04-claude-agent-sdk/docs/en.md
+- 09.05 CrewAI roles & crews (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/09-frameworks-and-sdks/05-crewai-roles-crews | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/09-frameworks-and-sdks/05-crewai-roles-crews/docs/en.md
+- 09.06 AutoGen conversations (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/09-frameworks-and-sdks/06-autogen-conversations | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/09-frameworks-and-sdks/06-autogen-conversations/docs/en.md
+- 09.07 LlamaIndex agents (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/09-frameworks-and-sdks/07-llamaindex-agents | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/09-frameworks-and-sdks/07-llamaindex-agents/docs/en.md
+- 09.08 Pydantic AI typed agents (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/09-frameworks-and-sdks/08-pydantic-ai-typed-agents | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/09-frameworks-and-sdks/08-pydantic-ai-typed-agents/docs/en.md
+- 09.09 Choosing (or skipping) a framework (35 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/09-frameworks-and-sdks/09-choosing-or-skipping-a-framework | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/09-frameworks-and-sdks/09-choosing-or-skipping-a-framework/docs/en.md
+- 09.10 Porting between frameworks (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/09-frameworks-and-sdks/10-porting-between-frameworks | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/09-frameworks-and-sdks/10-porting-between-frameworks/docs/en.md
 
 ## Phase 10: Coding & Computer-Use Agents
 
 Agents that edit files, run tests, drive browsers and terminals. Ends with a mini coding agent of your own.
 
-- 10.01 Anatomy of a coding agent (45 min) [planned]
-- 10.02 File read, edit & search tools (55 min) [planned]
-- 10.03 Running code in a sandbox (55 min) [planned]
-- 10.04 Test-driven agent loops (55 min) [planned]
-- 10.05 Repository maps & context (50 min) [planned]
-- 10.06 Skills and SKILL.md (45 min) [planned]
-- 10.07 Browser agents (55 min) [planned]
-- 10.08 Computer use: screenshots to clicks (60 min) [planned]
-- 10.09 Terminal agents (50 min) [planned]
-- 10.10 Long-horizon tasks (50 min) [planned]
-- 10.11 Build a mini coding agent (90 min) [planned]
+- 10.01 Anatomy of a coding agent (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/10-coding-and-computer-use/01-anatomy-of-a-coding-agent | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/10-coding-and-computer-use/01-anatomy-of-a-coding-agent/docs/en.md
+- 10.02 File read, edit & search tools (55 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/10-coding-and-computer-use/02-file-read-edit-search-tools | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/10-coding-and-computer-use/02-file-read-edit-search-tools/docs/en.md
+- 10.03 Running code in a sandbox (55 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/10-coding-and-computer-use/03-running-code-in-a-sandbox | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/10-coding-and-computer-use/03-running-code-in-a-sandbox/docs/en.md
+- 10.04 Test-driven agent loops (55 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/10-coding-and-computer-use/04-test-driven-agent-loops | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/10-coding-and-computer-use/04-test-driven-agent-loops/docs/en.md
+- 10.05 Repository maps & context (50 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/10-coding-and-computer-use/05-repository-maps-context | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/10-coding-and-computer-use/05-repository-maps-context/docs/en.md
+- 10.06 Skills and SKILL.md (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/10-coding-and-computer-use/06-skills-and-skill-md | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/10-coding-and-computer-use/06-skills-and-skill-md/docs/en.md
+- 10.07 Browser agents (55 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/10-coding-and-computer-use/07-browser-agents | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/10-coding-and-computer-use/07-browser-agents/docs/en.md
+- 10.08 Computer use: screenshots to clicks (60 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/10-coding-and-computer-use/08-computer-use-screenshots-to-clicks | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/10-coding-and-computer-use/08-computer-use-screenshots-to-clicks/docs/en.md
+- 10.09 Terminal agents (50 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/10-coding-and-computer-use/09-terminal-agents | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/10-coding-and-computer-use/09-terminal-agents/docs/en.md
+- 10.10 Long-horizon tasks (50 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/10-coding-and-computer-use/10-long-horizon-tasks | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/10-coding-and-computer-use/10-long-horizon-tasks/docs/en.md
+- 10.11 Build a mini coding agent (90 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/10-coding-and-computer-use/11-build-a-mini-coding-agent | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/10-coding-and-computer-use/11-build-a-mini-coding-agent/docs/en.md
 
 ## Phase 11: Evaluation & Observability
 
 Golden tasks, trajectory evals, careful LLM judges, OpenTelemetry traces, replay, and your own eval harness.
 
-- 11.01 Why agent evals are hard (35 min) [planned]
-- 11.02 Golden tasks & datasets (45 min) [planned]
-- 11.03 Trajectory evaluation (50 min) [planned]
-- 11.04 LLM-as-judge, carefully (50 min) [planned]
-- 11.05 Tool-call accuracy (40 min) [planned]
-- 11.06 Tracing with OpenTelemetry (50 min) [planned]
-- 11.07 Replay and regression (45 min) [planned]
-- 11.08 Online metrics & feedback (40 min) [planned]
-- 11.09 Benchmarks: SWE-bench to τ-bench (45 min) [planned]
-- 11.10 Building an eval harness (70 min) [planned]
+- 11.01 Why agent evals are hard (35 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/11-evaluation-and-observability/01-why-agent-evals-are-hard | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/11-evaluation-and-observability/01-why-agent-evals-are-hard/docs/en.md
+- 11.02 Golden tasks & datasets (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/11-evaluation-and-observability/02-golden-tasks-datasets | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/11-evaluation-and-observability/02-golden-tasks-datasets/docs/en.md
+- 11.03 Trajectory evaluation (50 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/11-evaluation-and-observability/03-trajectory-evaluation | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/11-evaluation-and-observability/03-trajectory-evaluation/docs/en.md
+- 11.04 LLM-as-judge, carefully (50 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/11-evaluation-and-observability/04-llm-as-judge-carefully | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/11-evaluation-and-observability/04-llm-as-judge-carefully/docs/en.md
+- 11.05 Tool-call accuracy (40 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/11-evaluation-and-observability/05-tool-call-accuracy | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/11-evaluation-and-observability/05-tool-call-accuracy/docs/en.md
+- 11.06 Tracing with OpenTelemetry (50 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/11-evaluation-and-observability/06-tracing-with-opentelemetry | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/11-evaluation-and-observability/06-tracing-with-opentelemetry/docs/en.md
+- 11.07 Replay and regression (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/11-evaluation-and-observability/07-replay-and-regression | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/11-evaluation-and-observability/07-replay-and-regression/docs/en.md
+- 11.08 Online metrics & feedback (40 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/11-evaluation-and-observability/08-online-metrics-feedback | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/11-evaluation-and-observability/08-online-metrics-feedback/docs/en.md
+- 11.09 Benchmarks: SWE-bench to τ-bench (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/11-evaluation-and-observability/09-benchmarks-swe-bench-to-tau-bench | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/11-evaluation-and-observability/09-benchmarks-swe-bench-to-tau-bench/docs/en.md
+- 11.10 Building an eval harness (70 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/11-evaluation-and-observability/10-building-an-eval-harness | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/11-evaluation-and-observability/10-building-an-eval-harness/docs/en.md
 
 ## Phase 12: Safety, Security & Guardrails
 

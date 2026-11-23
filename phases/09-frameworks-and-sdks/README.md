@@ -3,20 +3,20 @@
 
 > Now import the frameworks. The same loop in LangGraph, Agents SDKs, CrewAI, AutoGen, and when to skip them all.
 
-**Status:** □ planned · **Lessons:** 0 of 10 live · **Time:** ~8 hours
+**Status:** ■ complete · **Lessons:** 10 of 10 live · **Time:** ~8 hours
 
 | # | Lesson | Type | Time |
 |---|--------|------|------|
-| 09.01 | The same loop, ten frameworks | planned | 40 min |
-| 09.02 | LangGraph: state graphs | planned | 60 min |
-| 09.03 | OpenAI Agents SDK | planned | 50 min |
-| 09.04 | Claude Agent SDK | planned | 50 min |
-| 09.05 | CrewAI roles & crews | planned | 45 min |
-| 09.06 | AutoGen conversations | planned | 45 min |
-| 09.07 | LlamaIndex agents | planned | 45 min |
-| 09.08 | Pydantic AI typed agents | planned | 45 min |
-| 09.09 | Choosing (or skipping) a framework | planned | 35 min |
-| 09.10 | Porting between frameworks | planned | 45 min |
+| 09.01 | [The same loop, ten frameworks](01-the-same-loop-ten-frameworks/docs/en.md) | Learn | 40 min |
+| 09.02 | [LangGraph: state graphs](02-langgraph-state-graphs/docs/en.md) | Build | 60 min |
+| 09.03 | [OpenAI Agents SDK](03-openai-agents-sdk/docs/en.md) | Build | 50 min |
+| 09.04 | [Claude Agent SDK](04-claude-agent-sdk/docs/en.md) | Build | 50 min |
+| 09.05 | [CrewAI roles & crews](05-crewai-roles-crews/docs/en.md) | Build | 45 min |
+| 09.06 | [AutoGen conversations](06-autogen-conversations/docs/en.md) | Build | 45 min |
+| 09.07 | [LlamaIndex agents](07-llamaindex-agents/docs/en.md) | Build | 45 min |
+| 09.08 | [Pydantic AI typed agents](08-pydantic-ai-typed-agents/docs/en.md) | Build | 45 min |
+| 09.09 | [Choosing (or skipping) a framework](09-choosing-or-skipping-a-framework/docs/en.md) | Learn | 35 min |
+| 09.10 | [Porting between frameworks](10-porting-between-frameworks/docs/en.md) | Build | 45 min |
 
 Every live lesson folder has `docs/en.md`, runnable `code/` with tests, a `quiz.json`, and an artifact in `outputs/`.
 Want to write a planned lesson? See [CONTRIBUTING.md](../../CONTRIBUTING.md) and [LESSON_TEMPLATE.md](../../LESSON_TEMPLATE.md).

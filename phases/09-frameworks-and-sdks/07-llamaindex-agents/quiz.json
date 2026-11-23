@@ -1,0 +1,73 @@
+{
+  "lesson": "07-llamaindex-agents",
+  "title": "LlamaIndex Agents",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "One vector index mixes HR, IT and product docs, and HR questions retrieve IT rules. What does LlamaIndex suggest?",
+      "options": [
+        "A bigger embedding model",
+        "One index per knowledge base, each wrapped as a tool, and an agent that chooses which to ask",
+        "Delete the IT docs",
+        "Raise top_k to 100"
+      ],
+      "correct": 1,
+      "explanation": "Indexes as tools let the agent route by the tool descriptions."
+    },
+    {
+      "stage": "check",
+      "question": "The demo agent took 3 steps but made 4 model calls. Where was the fourth?",
+      "options": [
+        "A retry after a parse error",
+        "Inside the query engine, which asks a model to synthesise an answer from the retrieved chunks",
+        "The embedding model",
+        "The subtract tool"
+      ],
+      "correct": 1,
+      "explanation": "Each query engine call is its own retrieve-and-synthesise model call."
+    },
+    {
+      "stage": "check",
+      "question": "The model writes Action Input: {'a': 24, 'b': 9} with single quotes. How does the lesson's parser handle it?",
+      "options": [
+        "eval() it",
+        "json.loads fails, then ast.literal_eval parses it because it's a plain literal",
+        "Rejects it always",
+        "Replaces quotes with regex and hopes"
+      ],
+      "correct": 1,
+      "explanation": "literal_eval only accepts literals, so it can't run code. Never eval model output."
+    },
+    {
+      "stage": "check",
+      "question": "The model replies 'the answer is 15' with no Answer: or Action: line. What happens?",
+      "options": [
+        "The run crashes",
+        "The agent appends 'Observation: Error: Could not parse…' and asks the model again",
+        "The text is returned as the answer",
+        "The agent picks a random tool"
+      ],
+      "correct": 1,
+      "explanation": "Format errors are observations the model can correct, bounded by max_iterations."
+    },
+    {
+      "stage": "post",
+      "question": "How can you avoid the extra synthesis call per knowledge-base lookup?",
+      "options": [
+        "Use a larger model",
+        "Expose a tool that returns raw retrieved chunks with sources, and let the agent synthesise once at the end",
+        "Remove the agent",
+        "Set temperature to 0"
+      ],
+      "correct": 1,
+      "explanation": "A retriever-style tool skips the per-query answer call; the agent writes one answer from all the evidence."
+    },
+    {
+      "stage": "post",
+      "question": "Your model supports native function calling. Which LlamaIndex agent fits best?",
+      "options": ["ReActAgent", "FunctionAgent", "No agent", "A SummaryIndex"],
+      "correct": 1,
+      "explanation": "FunctionAgent uses the model's tool-calling API, so there's no text format to break."
+    }
+  ]
+}

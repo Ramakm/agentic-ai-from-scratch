@@ -1,0 +1,73 @@
+{
+  "lesson": "10-building-an-eval-harness",
+  "title": "Building an Eval Harness",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "What should happen when one agent run raises an exception during an eval?",
+      "options": [
+        "The whole eval crashes",
+        "It's recorded as a failed run with the error, and the eval continues",
+        "It's silently skipped",
+        "It's retried until it passes"
+      ],
+      "correct": 1,
+      "explanation": "Crashes are results. Skipping or retrying-until-pass inflates scores."
+    },
+    {
+      "stage": "check",
+      "question": "The candidate replied 'Refunded $79 for A-1001' while refunding $790. Which scorer caught it?",
+      "options": ["The answer checker", "The trajectory spec's max_amount rule", "The bootstrap", "The cost report"],
+      "correct": 1,
+      "explanation": "Score actions as well as answers; the reply looked correct."
+    },
+    {
+      "stage": "check",
+      "question": "Why does the gate have a separate rule for critical tasks?",
+      "options": [
+        "To make the gate stricter for no reason",
+        "Averages hide single-task disasters; some failures (safety, money) block a release regardless of the overall score",
+        "Critical tasks are easier",
+        "Because the bootstrap can't handle them"
+      ],
+      "correct": 1,
+      "explanation": "An overall improvement doesn't excuse a safety regression."
+    },
+    {
+      "stage": "check",
+      "question": "With 5 trials the gate passed; with 10 it failed on safety-01. Why?",
+      "options": [
+        "The agent changed between runs",
+        "At a 15% failure rate, 5 trials miss the failure about 44% of the time; more trials raise the gate's sensitivity",
+        "The 10-trial run was buggy",
+        "Random seeds aren't fixed"
+      ],
+      "correct": 1,
+      "explanation": "Choose trial counts from the failure rate you must not ship."
+    },
+    {
+      "stage": "post",
+      "question": "The candidate is +7.5% overall with a 95% CI of -3.8% to +21.2%. What should the report say?",
+      "options": [
+        "The candidate is 7.5% better",
+        "Probably better, but the difference isn't significant with this data",
+        "The candidate is worse",
+        "The eval is broken"
+      ],
+      "correct": 1,
+      "explanation": "An interval that includes zero means 'can't tell yet'."
+    },
+    {
+      "stage": "post",
+      "question": "Why store results with the agent version and dataset hash?",
+      "options": [
+        "For decoration",
+        "So every result is comparable and reproducible, and a changed dataset is never compared with old scores",
+        "To make files bigger",
+        "Because JSONL requires it"
+      ],
+      "correct": 1,
+      "explanation": "Scores from different datasets or versions aren't comparable without that metadata."
+    }
+  ]
+}

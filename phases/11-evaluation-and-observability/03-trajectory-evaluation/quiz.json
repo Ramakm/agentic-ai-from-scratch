@@ -1,0 +1,78 @@
+{
+  "lesson": "03-trajectory-evaluation",
+  "title": "Trajectory Evaluation",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Every refund run ends with 'Done, I've refunded your order.' Why isn't an answer-only eval enough?",
+      "options": [
+        "Answers are too short",
+        "The answer can be identical while the actions differ: wrong order, wrong amount, loops",
+        "Answers can't be graded",
+        "It is enough"
+      ],
+      "correct": 1,
+      "explanation": "What the agent did lives in the trajectory, especially for side effects."
+    },
+    {
+      "stage": "check",
+      "question": "The over-refund run ($790 on a $79 order) has edit distance 0 to the reference. Why?",
+      "options": [
+        "Edit distance is broken",
+        "It compares tool names only; the run used the same tools in the same order with a wrong argument",
+        "The reference is wrong",
+        "The amounts are rounded"
+      ],
+      "correct": 1,
+      "explanation": "Name-based metrics can't see arguments. Argument-aware matchers can."
+    },
+    {
+      "stage": "check",
+      "question": "The 'different but fine' run checks the policy before looking up the order. Which metrics fail it?",
+      "options": [
+        "Only the spec",
+        "Exact match and in-order, though the run is correct",
+        "None",
+        "Precision only"
+      ],
+      "correct": 1,
+      "explanation": "Strict reference matching punishes valid alternative paths."
+    },
+    {
+      "stage": "check",
+      "question": "When does the rule 'lookup_order before issue_refund' fire?",
+      "options": [
+        "Always",
+        "Only if issue_refund happens and no lookup_order came before it",
+        "Only if lookup_order is missing",
+        "Never"
+      ],
+      "correct": 1,
+      "explanation": "Ordering rules constrain the side effect; whether a refund was required is a separate rule."
+    },
+    {
+      "stage": "post",
+      "question": "Where should ordering constraints go in a trajectory spec?",
+      "options": [
+        "Between every pair of steps",
+        "Only around side effects and dependencies that matter (e.g. look up before refunding)",
+        "Nowhere",
+        "Only at the end"
+      ],
+      "correct": 1,
+      "explanation": "Constraining everything recreates exact match and its false failures."
+    },
+    {
+      "stage": "post",
+      "question": "An agent calls lookup_order with the same arguments four times after timeouts. Which signals catch it?",
+      "options": [
+        "Recall",
+        "Low precision and the repeated-identical-call rule",
+        "In-order match",
+        "Exact answer match"
+      ],
+      "correct": 1,
+      "explanation": "Recall stays 1.0 because the needed call happened; loops show up as extra calls and repeats."
+    }
+  ]
+}

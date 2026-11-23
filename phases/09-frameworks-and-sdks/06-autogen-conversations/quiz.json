@@ -1,0 +1,78 @@
+{
+  "lesson": "06-autogen-conversations",
+  "title": "AutoGen Conversations",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "A writer and critic chat until the critic says APPROVE. What's the risk?",
+      "options": [
+        "The writer becomes too fast",
+        "The critic may never say APPROVE, so the conversation never ends unless something else stops it",
+        "The model forgets its name",
+        "There's no risk"
+      ],
+      "correct": 1,
+      "explanation": "Conversations have no natural end. Pair the success condition with a budget."
+    },
+    {
+      "stage": "check",
+      "question": "What does TextMention('APPROVE') | MaxMessages(10) do?",
+      "options": [
+        "Stops only when both happen",
+        "Stops when either APPROVE is said or 10 messages are reached",
+        "Never stops",
+        "Stops after APPROVE is said 10 times"
+      ],
+      "correct": 1,
+      "explanation": "| is OR: success or budget, whichever comes first."
+    },
+    {
+      "stage": "check",
+      "question": "How does the critic see the writer's messages?",
+      "options": [
+        "As its own assistant messages",
+        "As user messages prefixed with 'writer:'",
+        "As system messages",
+        "It doesn't see them"
+      ],
+      "correct": 1,
+      "explanation": "Each agent's own messages are 'assistant'; everyone else's arrive as 'user' messages labelled with the speaker."
+    },
+    {
+      "stage": "check",
+      "question": "The selector model replies 'maybe planner or fx'. What happens?",
+      "options": [
+        "Both agents speak",
+        "The reply is rejected because it doesn't name exactly one eligible agent, and the selector is asked again",
+        "The first name wins",
+        "The team ends"
+      ],
+      "correct": 1,
+      "explanation": "Ambiguous picks are retried (up to max_selector_attempts, default 3), which costs extra model calls."
+    },
+    {
+      "stage": "post",
+      "question": "By default, what does an AutoGen AssistantAgent return after calling a tool?",
+      "options": [
+        "A prose summary from a second model call",
+        "The tool result itself as its message, without another model call",
+        "Nothing",
+        "An error"
+      ],
+      "correct": 1,
+      "explanation": "reflect_on_tool_use is off by default. Turn it on when other agents or humans need a readable summary."
+    },
+    {
+      "stage": "post",
+      "question": "You know the next speaker follows a fixed rule (fares after planner, fx after fares). What should you use?",
+      "options": [
+        "A bigger selector model",
+        "A selector_func (code) or round-robin, saving a model call per turn",
+        "More agents",
+        "Disable termination"
+      ],
+      "correct": 1,
+      "explanation": "Don't pay a model to make a decision code can make."
+    }
+  ]
+}

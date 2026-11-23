@@ -1,0 +1,78 @@
+{
+  "lesson": "09-terminal-agents",
+  "title": "Terminal Agents",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "An agent runs each command with a fresh subprocess.run(cmd, shell=True). What goes wrong with 'cd app' then 'ls'?",
+      "options": [
+        "Nothing",
+        "The cd happens in a shell that exits; the next command runs in the original directory",
+        "ls is not allowed",
+        "The commands run in parallel"
+      ],
+      "correct": 1,
+      "explanation": "A persistent shell keeps cwd and environment between commands."
+    },
+    {
+      "stage": "check",
+      "question": "Why is every command wrapped as '{ cmd\\n} < /dev/null'?",
+      "options": [
+        "To make it faster",
+        "So a command that reads stdin gets end-of-file instead of swallowing the agent's next commands",
+        "To hide output",
+        "Bash requires it"
+      ],
+      "correct": 1,
+      "explanation": "The shell's stdin is the agent's command pipe. Commands must not read from it."
+    },
+    {
+      "stage": "check",
+      "question": "How does the shell wrapper know a command finished and what its exit code was?",
+      "options": [
+        "It waits a fixed time",
+        "It prints a random end marker followed by $? and reads until the marker appears",
+        "bash sends a signal",
+        "It checks the process list"
+      ],
+      "correct": 1,
+      "explanation": "The unique marker separates commands' output and carries the exit code."
+    },
+    {
+      "stage": "check",
+      "question": "'ls && rm -rf ~' is one string. What does the policy do?",
+      "options": [
+        "Allows it because it starts with ls",
+        "Denies it: the whole command matches the recursive-delete-of-home pattern, and each segment is checked",
+        "Asks once",
+        "Runs only ls"
+      ],
+      "correct": 1,
+      "explanation": "Compound commands are checked as a whole and segment by segment."
+    },
+    {
+      "stage": "post",
+      "question": "'sleep 30' times out. What must the agent be told?",
+      "options": [
+        "Nothing; restart silently",
+        "That the shell was restarted, so the working directory and exported variables were reset",
+        "That the command succeeded",
+        "To retry the same command"
+      ],
+      "correct": 1,
+      "explanation": "A silent restart leaves the model with a wrong picture of its environment."
+    },
+    {
+      "stage": "post",
+      "question": "Why isn't a pattern-matching command policy enough on its own?",
+      "options": [
+        "Regex is slow",
+        "Shells can hide commands (encoding, eval, scripts), so policies catch the obvious; a container must be the real boundary",
+        "Policies are illegal",
+        "Models never run dangerous commands"
+      ],
+      "correct": 1,
+      "explanation": "Use the policy to reduce risk and noise, and isolation to bound the damage."
+    }
+  ]
+}

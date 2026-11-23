@@ -1,0 +1,78 @@
+{
+  "lesson": "05-tool-call-accuracy",
+  "title": "Tool-Call Accuracy",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "A tool-calling test set contains only requests where a tool is clearly needed. What failure can it never detect?",
+      "options": [
+        "Wrong argument values",
+        "Calling a tool when none was needed",
+        "Wrong tool choice",
+        "Schema errors"
+      ],
+      "correct": 1,
+      "explanation": "llama3.2 would have scored 100% selection on happy paths, yet called tools on 3 of 4 no-call requests."
+    },
+    {
+      "stage": "check",
+      "question": "Why score schema validity separately from argument values?",
+      "options": [
+        "They're the same thing",
+        "A value can be right ('250') but the wrong type (string vs number), which a strict API rejects",
+        "Schema validity is optional",
+        "To get a higher score"
+      ],
+      "correct": 1,
+      "explanation": "llama3.2 had 100% value accuracy but sent amounts as strings: different fixes for different failures."
+    },
+    {
+      "stage": "check",
+      "question": "Why does the checker normalise '1,200' and 'Paris'?",
+      "options": [
+        "To be lenient on everything",
+        "So formatting differences that don't matter (case, thousands separators) don't count as wrong values",
+        "Because APIs are case-insensitive",
+        "To hide errors"
+      ],
+      "correct": 1,
+      "explanation": "Normalise what doesn't matter; keep strict what does (like date formats an API requires)."
+    },
+    {
+      "stage": "check",
+      "question": "'Book a meeting with Priya' has no date. What's the expected behaviour?",
+      "options": [
+        "Call create_event with today's date",
+        "No tool call: ask for the missing date",
+        "Call search_docs",
+        "Call create_event with no date"
+      ],
+      "correct": 1,
+      "explanation": "Guessing required information creates wrong side effects. Ask first."
+    },
+    {
+      "stage": "post",
+      "question": "A model has 0 missed calls but 3 false calls. What's the most fitting fix?",
+      "options": [
+        "Add more tools",
+        "Tighten when-to-call instructions or add a router, and keep no-call cases in the eval",
+        "Coerce argument types",
+        "Raise the temperature"
+      ],
+      "correct": 1,
+      "explanation": "The failure is over-eager selection; fix selection, then measure it again."
+    },
+    {
+      "stage": "post",
+      "question": "The model wrote city='Bangalore' and the case expects 'bengaluru'. What should you decide?",
+      "options": [
+        "Always a model failure",
+        "Whether your API accepts both names; if so, the checker needs an alias list, otherwise it's a real failure",
+        "Delete the case",
+        "Always a checker bug"
+      ],
+      "correct": 1,
+      "explanation": "Ground truth depends on what the tool actually accepts."
+    }
+  ]
+}

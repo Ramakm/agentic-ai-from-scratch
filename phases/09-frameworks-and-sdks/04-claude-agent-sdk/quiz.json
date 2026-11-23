@@ -1,0 +1,73 @@
+{
+  "lesson": "04-claude-agent-sdk",
+  "title": "Claude Agent SDK",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "What does the Claude Agent SDK give you that a loop library like Pydantic AI doesn't?",
+      "options": [
+        "A different model API",
+        "A full harness: Claude Code's loop, built-in file and shell tools, sessions and permission system",
+        "A vector database",
+        "A web UI"
+      ],
+      "correct": 1,
+      "explanation": "The SDK runs Claude Code and streams its messages. You configure policy instead of writing the loop and tools."
+    },
+    {
+      "stage": "check",
+      "question": "Bash is in allowed_tools, and a PreToolUse hook denies 'rm -rf'. The model calls Bash('rm -rf build'). What happens?",
+      "options": [
+        "It runs, because Bash is allowed",
+        "The hook denies it; hooks are checked before allow rules",
+        "The SDK crashes",
+        "The user is asked"
+      ],
+      "correct": 1,
+      "explanation": "Hooks run first, so a pattern-specific deny beats a tool-wide allow."
+    },
+    {
+      "stage": "check",
+      "question": "You add a custom tool word_count to an SDK MCP server named 'docs'. What name goes in allowed_tools?",
+      "options": ["word_count", "docs.word_count", "mcp__docs__word_count", "tool:word_count"],
+      "correct": 2,
+      "explanation": "MCP tools are exposed as mcp__<server>__<tool>, and allow rules use that full name."
+    },
+    {
+      "stage": "check",
+      "question": "When is the can_use_tool callback asked?",
+      "options": [
+        "Before every tool call",
+        "Only when no hook, rule or permission mode already decided",
+        "Only for MCP tools",
+        "Never in default mode"
+      ],
+      "correct": 1,
+      "explanation": "It's the last layer. Rules and modes that decide first mean your callback is never consulted for those calls."
+    },
+    {
+      "stage": "post",
+      "question": "A denied tool call in this lesson comes back to the model as what?",
+      "options": [
+        "An exception that ends the run",
+        "A tool_result with is_error true and the denial reason, so the model can adapt and explain",
+        "Nothing; the call is silently skipped",
+        "A new user message"
+      ],
+      "correct": 1,
+      "explanation": "Denials are observations. The model saw 'blocked' and told the user it didn't delete build/."
+    },
+    {
+      "stage": "post",
+      "question": "When is permission_mode='bypassPermissions' reasonable?",
+      "options": [
+        "On a developer laptop with real credentials",
+        "Inside an isolated container or VM with nothing valuable to lose",
+        "Always, to save time",
+        "For production customer data"
+      ],
+      "correct": 1,
+      "explanation": "Bypass removes the safety layers. Only use it where the sandbox itself is the safety boundary."
+    }
+  ]
+}

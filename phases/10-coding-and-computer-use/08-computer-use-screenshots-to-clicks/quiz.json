@@ -1,0 +1,73 @@
+{
+  "lesson": "08-computer-use-screenshots-to-clicks",
+  "title": "Computer Use: Screenshots to Clicks",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "When do you need a screenshot-driven agent instead of a DOM-based browser agent?",
+      "options": [
+        "For every website",
+        "When there's no usable API or DOM: desktop apps, remote desktops, canvas apps",
+        "When the page has forms",
+        "Never"
+      ],
+      "correct": 1,
+      "explanation": "Pixels work everywhere; DOM snapshots are cheaper and more precise where they exist."
+    },
+    {
+      "stage": "check",
+      "question": "The model saw a 1280×800 screenshot and said click (560, 280). The screen is 2560×1600. Where should the click go?",
+      "options": ["(560, 280)", "(1120, 560)", "(280, 140)", "(2560, 1600)"],
+      "correct": 1,
+      "explanation": "Scale both axes by screen/screenshot size: 560 × 2 and 280 × 2."
+    },
+    {
+      "stage": "check",
+      "question": "Without scaling, what did the scripted model report?",
+      "options": [
+        "That it failed",
+        "Full success, while nothing was saved",
+        "An error",
+        "That the screen was blank"
+      ],
+      "correct": 1,
+      "explanation": "Final messages aren't evidence. The harness must check outcomes."
+    },
+    {
+      "stage": "check",
+      "question": "Why does every action return a fresh screenshot?",
+      "options": [
+        "It's required by PNG",
+        "So the model looks at what actually happened instead of assuming its action worked",
+        "To slow the agent down",
+        "To save tokens"
+      ],
+      "correct": 1,
+      "explanation": "Missed clicks often change nothing visible; the controller also says 'Nothing on screen changed' explicitly."
+    },
+    {
+      "stage": "post",
+      "question": "The model clicks 'Delete account' instead of 'Save'. What stopped the damage in the lesson?",
+      "options": [
+        "The model noticed",
+        "The widget is marked sensitive, so the controller asked for approval, which was declined",
+        "The screenshot was too small",
+        "Nothing"
+      ],
+      "correct": 1,
+      "explanation": "Mark irreversible regions and gate them in code, because adjacent buttons invite misclicks."
+    },
+    {
+      "stage": "post",
+      "question": "Where should you run a computer-use agent?",
+      "options": [
+        "On your own logged-in desktop",
+        "In a VM or container with a virtual display and no access to your personal accounts",
+        "On a production server",
+        "Anywhere; it's safe"
+      ],
+      "correct": 1,
+      "explanation": "Screen control is full user control. Isolate it like you'd isolate code execution."
+    }
+  ]
+}

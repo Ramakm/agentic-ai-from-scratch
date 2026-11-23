@@ -1,0 +1,78 @@
+{
+  "lesson": "07-replay-and-regression",
+  "title": "Replay and Regression",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "You refactored code between the model and the tools. Why is a live eval a poor way to check nothing changed?",
+      "options": [
+        "Live evals can't run tools",
+        "Model replies vary run to run, so small behaviour changes hide in noise, and it costs money and time per commit",
+        "Live evals are always wrong",
+        "Refactors never change behaviour"
+      ],
+      "correct": 1,
+      "explanation": "Hold the model's side fixed with replay to test your own code's behaviour."
+    },
+    {
+      "stage": "check",
+      "question": "What does strict replay check that lenient replay doesn't?",
+      "options": [
+        "Tool results",
+        "That every request sent to the model is identical to the recorded one",
+        "The final answer only",
+        "Latency"
+      ],
+      "correct": 1,
+      "explanation": "Adding one word to the system prompt was caught at model call 1."
+    },
+    {
+      "stage": "check",
+      "question": "During replay, the new code calls issue_refund with an amount that wasn't recorded. What happens?",
+      "options": [
+        "The real refund runs",
+        "The replay returns 'no recorded result' and the real tool never runs",
+        "The replay picks the closest recorded call",
+        "The test is skipped"
+      ],
+      "correct": 1,
+      "explanation": "That's both the safety property and the detection signal."
+    },
+    {
+      "stage": "check",
+      "question": "Lenient replay of the prompt edit reported 'same' on all tasks. What does that prove?",
+      "options": [
+        "The prompt change is safe",
+        "Only that your code behaves the same given the old replies; how the model reacts to the new prompt needs a live eval",
+        "The model ignored the prompt",
+        "Nothing ran"
+      ],
+      "correct": 1,
+      "explanation": "Replay can't show model behaviour changes, because the model's replies are fixed."
+    },
+    {
+      "stage": "post",
+      "question": "A-1001 diverged because 79.0 became 79. What should you take from that?",
+      "options": [
+        "Always a serious bug",
+        "Replay keys must normalise exactly as strictly as your tools do; decide whether int vs float matters to the real API",
+        "Ignore all numeric differences",
+        "Delete the cassette"
+      ],
+      "correct": 1,
+      "explanation": "Too strict a key creates false alarms; too loose a key misses real bugs like 25.5 → 26."
+    },
+    {
+      "stage": "post",
+      "question": "A behaviour change is intentional (new refund policy). What do you do with the cassettes?",
+      "options": [
+        "Delete the regression suite",
+        "Re-record them with the new version, review the trajectory diff, and commit the new cassettes",
+        "Switch to strict mode",
+        "Ignore the divergences forever"
+      ],
+      "correct": 1,
+      "explanation": "Cassettes encode expected behaviour; when expectations change, refresh them deliberately."
+    }
+  ]
+}

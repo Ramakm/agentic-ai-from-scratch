@@ -1,0 +1,78 @@
+{
+  "lesson": "10-porting-between-frameworks",
+  "title": "Porting Between Frameworks",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "When is a port from one agent framework to another done?",
+      "options": [
+        "When the new code compiles",
+        "When it makes the same tool calls with the same arguments on the same inputs as the old one",
+        "When the demo question gets a good answer",
+        "When the old code is deleted"
+      ],
+      "correct": 1,
+      "explanation": "Behaviour lives in the tool calls. Compile success and one good answer don't prove it."
+    },
+    {
+      "stage": "check",
+      "question": "In the camelCase bug, every tool call failed. What did the final answers show?",
+      "options": [
+        "The target's answer was an error",
+        "Both answers were identical, so an answer-only check would have passed the broken port",
+        "The target had no answer",
+        "The source failed too"
+      ],
+      "correct": 1,
+      "explanation": "Models can report success they didn't achieve. Compare trajectories, not just answers."
+    },
+    {
+      "stage": "check",
+      "question": "Why does the replay use follow_schema for the target run?",
+      "options": [
+        "To make the test pass",
+        "A real model reads the new schema and uses its parameter names, so the replay must too",
+        "To speed up the replay",
+        "To hide differences"
+      ],
+      "correct": 1,
+      "explanation": "Without it, the replay would keep sending the old names and miss the schema change."
+    },
+    {
+      "stage": "check",
+      "question": "The generated LangGraph code parsed with ast.parse but failed when imported. Why can that happen?",
+      "options": [
+        "ast.parse is broken",
+        "Parsing only checks syntax; undefined names and wrong imports appear only when the code is imported or run",
+        "LangGraph can't be imported",
+        "Generated code is always invalid"
+      ],
+      "correct": 1,
+      "explanation": "Syntax checks are a first gate. Import and run the generated code against the real library too."
+    },
+    {
+      "stage": "post",
+      "question": "Replay parity passed, but the target framework adds 'reply with JSON only' to the system prompt. What next?",
+      "options": [
+        "Ship it; parity passed",
+        "Run a small live evaluation, because replay can't show how a real model reacts to the extra instructions",
+        "Remove all instructions",
+        "Revert the port"
+      ],
+      "correct": 1,
+      "explanation": "Replay fixes the model's replies; only a live run shows behavioural changes from prompt differences."
+    },
+    {
+      "stage": "post",
+      "question": "LangGraph 1.x warns that create_react_agent moved to langchain.agents. What does this teach about ports?",
+      "options": [
+        "Never use LangGraph",
+        "APIs move between versions; pin versions and re-run parity after every framework upgrade",
+        "Warnings can always be ignored",
+        "Use the oldest version available"
+      ],
+      "correct": 1,
+      "explanation": "An upgrade is a small port. The same parity suite protects it."
+    }
+  ]
+}

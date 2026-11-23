@@ -1,0 +1,78 @@
+{
+  "lesson": "04-test-driven-agent-loops",
+  "title": "Test-Driven Agent Loops",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "An agent reaches green, but half its diff changes expected values in the test file. What happened?",
+      "options": [
+        "The tests were wrong",
+        "Reward hacking: it made the signal say success by editing the tests instead of fixing the code",
+        "A flaky test",
+        "Nothing unusual"
+      ],
+      "correct": 1,
+      "explanation": "Tests are the reward signal. If the agent can edit them, 'green' stops meaning 'fixed'."
+    },
+    {
+      "stage": "check",
+      "question": "Why use a custom runner that prints JSON?",
+      "options": [
+        "JSON is shorter than text",
+        "The harness can parse results reliably and give the model a compact list of test, location and error",
+        "unittest can't print text",
+        "Models can't read tracebacks"
+      ],
+      "correct": 1,
+      "explanation": "Structured results drive the loop (green, stuck) and keep the model's context small and clear."
+    },
+    {
+      "stage": "check",
+      "question": "The same two failures appear in rounds 2 and 3 with patience=2. What does the loop do?",
+      "options": [
+        "Keeps going until max_rounds",
+        "Stops with status 'stuck' and hands the history to a human",
+        "Edits the tests",
+        "Restarts from round 0"
+      ],
+      "correct": 1,
+      "explanation": "Repeating the same failures signals the agent is stuck; more rounds mostly cost tokens."
+    },
+    {
+      "stage": "check",
+      "question": "A correct fix still showed a failing test. What caused it in this lesson?",
+      "options": [
+        "A bug in unittest",
+        "Stale bytecode: two same-size edits in the same second, so Python loaded the old cached .pyc",
+        "The model's fix was wrong",
+        "The test was flaky"
+      ],
+      "correct": 1,
+      "explanation": ".pyc validation uses source size and mtime. Run agent tests with python -B."
+    },
+    {
+      "stage": "post",
+      "question": "An agent adds a regression test that passes both before and after its fix. What does it prove?",
+      "options": [
+        "That the fix works",
+        "Nothing about the bug: a test must fail on the old code to capture it",
+        "That the code is fast",
+        "That the old code was correct"
+      ],
+      "correct": 1,
+      "explanation": "Red first: run the new test against the unfixed code. It should fail."
+    },
+    {
+      "stage": "post",
+      "question": "The tool blocks writes to test files. Why also hash them every round?",
+      "options": [
+        "Hashing is required by Python",
+        "Tests can change by other routes (shell commands, generators); the hash check catches any route",
+        "To speed up tests",
+        "To compress the files"
+      ],
+      "correct": 1,
+      "explanation": "Defence in depth: the tool guard handles the common route, the hash check catches the rest."
+    }
+  ]
+}

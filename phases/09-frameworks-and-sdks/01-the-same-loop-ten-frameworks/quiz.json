@@ -1,0 +1,78 @@
+{
+  "lesson": "01-the-same-loop-ten-frameworks",
+  "title": "The Same Loop, Ten Frameworks",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "What do LangGraph, the OpenAI Agents SDK and CrewAI all have inside them?",
+      "options": [
+        "A different kind of model for each framework",
+        "A loop that calls the model, runs requested tools, appends results and repeats until a stop condition",
+        "A vector database",
+        "A built-in web browser"
+      ],
+      "correct": 1,
+      "explanation": "Every framework wraps the same model–tools loop. They differ in packaging: who owns the loop, how tools are declared, where state lives, how agents collaborate."
+    },
+    {
+      "stage": "check",
+      "question": "In the graph style, what replaced the raw loop's `if not reply.get('tool_calls'): break`?",
+      "options": [
+        "A try/except block",
+        "A routing function that sends the state to 'tools' or 'END'",
+        "A system prompt instruction",
+        "A larger max_turns value"
+      ],
+      "correct": 1,
+      "explanation": "The stop condition became a conditional edge. LangGraph's tools_condition is exactly this function."
+    },
+    {
+      "stage": "check",
+      "question": "In the declarative style, where does the loop live?",
+      "options": [
+        "In the Agent object",
+        "Inside Runner.run; the Agent is only configuration",
+        "In the tool functions",
+        "There is no loop"
+      ],
+      "correct": 1,
+      "explanation": "The Agent describes name, instructions and tools. The Runner owns the loop, which is how the Agents SDK, Pydantic AI and CrewAI are shaped."
+    },
+    {
+      "stage": "check",
+      "question": "The three styles are given the same scripted model replies. What does the test assert?",
+      "options": [
+        "The graph style is fastest",
+        "The three styles produce identical tool calls, results and final answer",
+        "Only the raw loop finishes",
+        "The declarative style uses fewer tokens"
+      ],
+      "correct": 1,
+      "explanation": "Style changes where code lives, not behaviour. Identical traces prove the three are the same agent."
+    },
+    {
+      "stage": "post",
+      "question": "You're evaluating a new framework. Which thing should you find first to avoid a runaway bill?",
+      "options": [
+        "Its logo and license",
+        "Its stop condition and turn budget (max_turns, recursion_limit, termination conditions)",
+        "How many GitHub stars it has",
+        "Whether it supports dark mode"
+      ],
+      "correct": 1,
+      "explanation": "An agent that never meets its stop condition keeps calling the model. Know the budget and where to set it before anything else."
+    },
+    {
+      "stage": "post",
+      "question": "A teammate says 'we need a framework because we need tool calling'. What's the best response?",
+      "options": [
+        "Agree: tool calling is impossible without a framework",
+        "Tool calling is a dispatcher and a loop you can write in ~100 lines; pick a framework for what it adds beyond that, such as durable state, tracing or multi-agent primitives",
+        "Frameworks don't support tool calling",
+        "Use two frameworks to be safe"
+      ],
+      "correct": 1,
+      "explanation": "You built tool calling in Phase 2 and 3. Frameworks earn their place through features like checkpoints, tracing and handoffs, which Lesson 9 weighs."
+    }
+  ]
+}

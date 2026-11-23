@@ -1,0 +1,73 @@
+{
+  "lesson": "02-langgraph-state-graphs",
+  "title": "LangGraph: State Graphs",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Your refund agent must wait hours for a human approval and survive a server restart. What does it need?",
+      "options": [
+        "A longer timeout on input()",
+        "State saved after every step, keyed by thread, so any process can resume from the last checkpoint",
+        "A bigger model",
+        "A second agent to approve refunds"
+      ],
+      "correct": 1,
+      "explanation": "Checkpoints make the pause durable. The process can exit and a new one resumes from the saved state and next node."
+    },
+    {
+      "stage": "check",
+      "question": "The tools node returns {'messages': [tool_result]}. Without a reducer on 'messages', what happens?",
+      "options": [
+        "The tool result is appended",
+        "The whole conversation is replaced by the single tool result",
+        "The graph raises an error",
+        "Nothing changes"
+      ],
+      "correct": 1,
+      "explanation": "The default merge overwrites the key. A reducer such as operator.add or add_messages tells the graph to append instead."
+    },
+    {
+      "stage": "check",
+      "question": "What does tools_condition return when the model's last message has no tool calls?",
+      "options": ["'tools'", "'model'", "END", "It raises"],
+      "correct": 2,
+      "explanation": "No tool calls means the model answered, so the graph ends. That's the raw loop's break written as a routing function."
+    },
+    {
+      "stage": "check",
+      "question": "How does invoke(None, config) know where to continue?",
+      "options": [
+        "It starts again from START",
+        "It loads the thread's latest checkpoint, which holds the state and the next node to run",
+        "It asks the model",
+        "It reads a global variable"
+      ],
+      "correct": 1,
+      "explanation": "Each checkpoint stores the full state plus the next node. That's why even a brand-new graph object can resume."
+    },
+    {
+      "stage": "post",
+      "question": "A graph loops between two nodes forever. What stops it?",
+      "options": [
+        "Nothing; it runs until the process is killed",
+        "The recursion_limit in the config, which raises GraphRecursionError when the step count reaches it",
+        "The checkpointer",
+        "The reducer"
+      ],
+      "correct": 1,
+      "explanation": "The step budget is the graph's stop condition of last resort. Defaults have changed between releases, so set it deliberately for your workflow."
+    },
+    {
+      "stage": "post",
+      "question": "When is LangGraph probably more than you need?",
+      "options": [
+        "A multi-step workflow with human approval and durable state",
+        "A single agent that answers in a few seconds with two tools and no need to pause or resume",
+        "An agent that must resume after crashes",
+        "A workflow with explicit branches you want to audit"
+      ],
+      "correct": 1,
+      "explanation": "Its strengths are durable state, interrupts and explicit control flow. Without those needs, a plain loop is simpler."
+    }
+  ]
+}

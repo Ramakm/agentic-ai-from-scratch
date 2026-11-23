@@ -1,0 +1,73 @@
+{
+  "lesson": "06-tracing-with-opentelemetry",
+  "title": "Tracing with OpenTelemetry",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "What does a trace give you that per-call log lines don't?",
+      "options": [
+        "Prettier output",
+        "All operations of one request linked by a shared trace ID, with parent-child structure and timings, across services",
+        "Faster agents",
+        "Lower cost"
+      ],
+      "correct": 1,
+      "explanation": "Logs are per moment; traces are per request, even across processes."
+    },
+    {
+      "stage": "check",
+      "question": "How does a new span know its parent in the lesson's tracer?",
+      "options": [
+        "It's passed explicitly every time",
+        "A contextvar holds the current span; a new span becomes its child",
+        "It guesses by time",
+        "It reads the log file"
+      ],
+      "correct": 1,
+      "explanation": "Context follows the call stack (and async tasks), so nesting is automatic."
+    },
+    {
+      "stage": "check",
+      "question": "Which attribute records the model's input tokens under the GenAI conventions?",
+      "options": ["llm.tokens.in", "gen_ai.usage.input_tokens", "tokens_prompt", "openai.usage.prompt"],
+      "correct": 1,
+      "explanation": "Standard names let any backend aggregate cost and usage across agents."
+    },
+    {
+      "stage": "check",
+      "question": "How did the price service's span join the agent's trace?",
+      "options": [
+        "Both used the same Python object",
+        "The agent sent a W3C traceparent header; the service parsed it and used it as the parent",
+        "By matching timestamps",
+        "It didn't"
+      ],
+      "correct": 1,
+      "explanation": "traceparent carries trace_id and span_id across process boundaries."
+    },
+    {
+      "stage": "post",
+      "question": "A tool raises KeyError. What should the trace show, and what should the agent see?",
+      "options": [
+        "Nothing; hide errors",
+        "The tool span has status ERROR with an exception event, and the agent gets the error as an observation",
+        "The whole trace is deleted",
+        "The agent crashes"
+      ],
+      "correct": 1,
+      "explanation": "Record it for people, return it to the model. In the demo the agent retried with 'pen'."
+    },
+    {
+      "stage": "post",
+      "question": "Why is capturing prompt and completion content off by default?",
+      "options": [
+        "It's too slow",
+        "Prompts and outputs can contain personal or sensitive data; capture it only by explicit choice and policy",
+        "Backends can't store text",
+        "The conventions forbid it entirely"
+      ],
+      "correct": 1,
+      "explanation": "Traces get shared widely; content capture is a privacy decision."
+    }
+  ]
+}

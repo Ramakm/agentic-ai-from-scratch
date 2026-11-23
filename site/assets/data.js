@@ -39,7 +39,7 @@ window.SITE = {
   "totals": {
     "phases": 16,
     "lessons": 163,
-    "published": 95,
+    "published": 126,
     "hours": 127
   }
 };
@@ -1079,88 +1079,108 @@ window.PHASES = [
   "id": "09-frameworks-and-sdks",
   "name": "Frameworks & SDKs",
   "desc": "Now import the frameworks. The same loop in LangGraph, Agents SDKs, CrewAI, AutoGen, and when to skip them all.",
-  "status": "planned",
-  "published": 0,
+  "status": "complete",
+  "published": 10,
   "lessons": [
    {
     "id": "01-the-same-loop-ten-frameworks",
     "title": "The same loop, ten frameworks",
     "minutes": 40,
     "path": "phases/09-frameworks-and-sdks/01-the-same-loop-ten-frameworks",
-    "type": "",
-    "num": "09.01"
+    "type": "Learn",
+    "num": "09.01",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "02-langgraph-state-graphs",
     "title": "LangGraph: state graphs",
     "minutes": 60,
     "path": "phases/09-frameworks-and-sdks/02-langgraph-state-graphs",
-    "type": "",
-    "num": "09.02"
+    "type": "Build",
+    "num": "09.02",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "03-openai-agents-sdk",
     "title": "OpenAI Agents SDK",
     "minutes": 50,
     "path": "phases/09-frameworks-and-sdks/03-openai-agents-sdk",
-    "type": "",
-    "num": "09.03"
+    "type": "Build",
+    "num": "09.03",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "04-claude-agent-sdk",
     "title": "Claude Agent SDK",
     "minutes": 50,
     "path": "phases/09-frameworks-and-sdks/04-claude-agent-sdk",
-    "type": "",
-    "num": "09.04"
+    "type": "Build",
+    "num": "09.04",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "05-crewai-roles-crews",
     "title": "CrewAI roles & crews",
     "minutes": 45,
     "path": "phases/09-frameworks-and-sdks/05-crewai-roles-crews",
-    "type": "",
-    "num": "09.05"
+    "type": "Build",
+    "num": "09.05",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "06-autogen-conversations",
     "title": "AutoGen conversations",
     "minutes": 45,
     "path": "phases/09-frameworks-and-sdks/06-autogen-conversations",
-    "type": "",
-    "num": "09.06"
+    "type": "Build",
+    "num": "09.06",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "07-llamaindex-agents",
     "title": "LlamaIndex agents",
     "minutes": 45,
     "path": "phases/09-frameworks-and-sdks/07-llamaindex-agents",
-    "type": "",
-    "num": "09.07"
+    "type": "Build",
+    "num": "09.07",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "08-pydantic-ai-typed-agents",
     "title": "Pydantic AI typed agents",
     "minutes": 45,
     "path": "phases/09-frameworks-and-sdks/08-pydantic-ai-typed-agents",
-    "type": "",
-    "num": "09.08"
+    "type": "Build",
+    "num": "09.08",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "09-choosing-or-skipping-a-framework",
     "title": "Choosing (or skipping) a framework",
     "minutes": 35,
     "path": "phases/09-frameworks-and-sdks/09-choosing-or-skipping-a-framework",
-    "type": "",
-    "num": "09.09"
+    "type": "Learn",
+    "num": "09.09",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "10-porting-between-frameworks",
     "title": "Porting between frameworks",
     "minutes": 45,
     "path": "phases/09-frameworks-and-sdks/10-porting-between-frameworks",
-    "type": "",
-    "num": "09.10"
+    "type": "Build",
+    "num": "09.10",
+    "published": true,
+    "hasQuiz": true
    }
   ]
  },
@@ -1168,96 +1188,118 @@ window.PHASES = [
   "id": "10-coding-and-computer-use",
   "name": "Coding & Computer-Use Agents",
   "desc": "Agents that edit files, run tests, drive browsers and terminals. Ends with a mini coding agent of your own.",
-  "status": "planned",
-  "published": 0,
+  "status": "complete",
+  "published": 11,
   "lessons": [
    {
     "id": "01-anatomy-of-a-coding-agent",
     "title": "Anatomy of a coding agent",
     "minutes": 45,
     "path": "phases/10-coding-and-computer-use/01-anatomy-of-a-coding-agent",
-    "type": "",
-    "num": "10.01"
+    "type": "Build",
+    "num": "10.01",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "02-file-read-edit-search-tools",
     "title": "File read, edit & search tools",
     "minutes": 55,
     "path": "phases/10-coding-and-computer-use/02-file-read-edit-search-tools",
-    "type": "",
-    "num": "10.02"
+    "type": "Build",
+    "num": "10.02",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "03-running-code-in-a-sandbox",
     "title": "Running code in a sandbox",
     "minutes": 55,
     "path": "phases/10-coding-and-computer-use/03-running-code-in-a-sandbox",
-    "type": "",
-    "num": "10.03"
+    "type": "Build",
+    "num": "10.03",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "04-test-driven-agent-loops",
     "title": "Test-driven agent loops",
     "minutes": 55,
     "path": "phases/10-coding-and-computer-use/04-test-driven-agent-loops",
-    "type": "",
-    "num": "10.04"
+    "type": "Build",
+    "num": "10.04",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "05-repository-maps-context",
     "title": "Repository maps & context",
     "minutes": 50,
     "path": "phases/10-coding-and-computer-use/05-repository-maps-context",
-    "type": "",
-    "num": "10.05"
+    "type": "Build",
+    "num": "10.05",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "06-skills-and-skill-md",
     "title": "Skills and SKILL.md",
     "minutes": 45,
     "path": "phases/10-coding-and-computer-use/06-skills-and-skill-md",
-    "type": "",
-    "num": "10.06"
+    "type": "Build",
+    "num": "10.06",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "07-browser-agents",
     "title": "Browser agents",
     "minutes": 55,
     "path": "phases/10-coding-and-computer-use/07-browser-agents",
-    "type": "",
-    "num": "10.07"
+    "type": "Build",
+    "num": "10.07",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "08-computer-use-screenshots-to-clicks",
     "title": "Computer use: screenshots to clicks",
     "minutes": 60,
     "path": "phases/10-coding-and-computer-use/08-computer-use-screenshots-to-clicks",
-    "type": "",
-    "num": "10.08"
+    "type": "Build",
+    "num": "10.08",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "09-terminal-agents",
     "title": "Terminal agents",
     "minutes": 50,
     "path": "phases/10-coding-and-computer-use/09-terminal-agents",
-    "type": "",
-    "num": "10.09"
+    "type": "Build",
+    "num": "10.09",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "10-long-horizon-tasks",
     "title": "Long-horizon tasks",
     "minutes": 50,
     "path": "phases/10-coding-and-computer-use/10-long-horizon-tasks",
-    "type": "",
-    "num": "10.10"
+    "type": "Build",
+    "num": "10.10",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "11-build-a-mini-coding-agent",
     "title": "Build a mini coding agent",
     "minutes": 90,
     "path": "phases/10-coding-and-computer-use/11-build-a-mini-coding-agent",
-    "type": "",
-    "num": "10.11"
+    "type": "Build",
+    "num": "10.11",
+    "published": true,
+    "hasQuiz": true
    }
   ]
  },
@@ -1265,88 +1307,108 @@ window.PHASES = [
   "id": "11-evaluation-and-observability",
   "name": "Evaluation & Observability",
   "desc": "Golden tasks, trajectory evals, careful LLM judges, OpenTelemetry traces, replay, and your own eval harness.",
-  "status": "planned",
-  "published": 0,
+  "status": "complete",
+  "published": 10,
   "lessons": [
    {
     "id": "01-why-agent-evals-are-hard",
     "title": "Why agent evals are hard",
     "minutes": 35,
     "path": "phases/11-evaluation-and-observability/01-why-agent-evals-are-hard",
-    "type": "",
-    "num": "11.01"
+    "type": "Learn",
+    "num": "11.01",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "02-golden-tasks-datasets",
     "title": "Golden tasks & datasets",
     "minutes": 45,
     "path": "phases/11-evaluation-and-observability/02-golden-tasks-datasets",
-    "type": "",
-    "num": "11.02"
+    "type": "Build",
+    "num": "11.02",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "03-trajectory-evaluation",
     "title": "Trajectory evaluation",
     "minutes": 50,
     "path": "phases/11-evaluation-and-observability/03-trajectory-evaluation",
-    "type": "",
-    "num": "11.03"
+    "type": "Build",
+    "num": "11.03",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "04-llm-as-judge-carefully",
     "title": "LLM-as-judge, carefully",
     "minutes": 50,
     "path": "phases/11-evaluation-and-observability/04-llm-as-judge-carefully",
-    "type": "",
-    "num": "11.04"
+    "type": "Build",
+    "num": "11.04",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "05-tool-call-accuracy",
     "title": "Tool-call accuracy",
     "minutes": 40,
     "path": "phases/11-evaluation-and-observability/05-tool-call-accuracy",
-    "type": "",
-    "num": "11.05"
+    "type": "Build",
+    "num": "11.05",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "06-tracing-with-opentelemetry",
     "title": "Tracing with OpenTelemetry",
     "minutes": 50,
     "path": "phases/11-evaluation-and-observability/06-tracing-with-opentelemetry",
-    "type": "",
-    "num": "11.06"
+    "type": "Build",
+    "num": "11.06",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "07-replay-and-regression",
     "title": "Replay and regression",
     "minutes": 45,
     "path": "phases/11-evaluation-and-observability/07-replay-and-regression",
-    "type": "",
-    "num": "11.07"
+    "type": "Build",
+    "num": "11.07",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "08-online-metrics-feedback",
     "title": "Online metrics & feedback",
     "minutes": 40,
     "path": "phases/11-evaluation-and-observability/08-online-metrics-feedback",
-    "type": "",
-    "num": "11.08"
+    "type": "Build",
+    "num": "11.08",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "09-benchmarks-swe-bench-to-tau-bench",
     "title": "Benchmarks: SWE-bench to τ-bench",
     "minutes": 45,
     "path": "phases/11-evaluation-and-observability/09-benchmarks-swe-bench-to-tau-bench",
-    "type": "",
-    "num": "11.09"
+    "type": "Learn",
+    "num": "11.09",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "10-building-an-eval-harness",
     "title": "Building an eval harness",
     "minutes": 70,
     "path": "phases/11-evaluation-and-observability/10-building-an-eval-harness",
-    "type": "",
-    "num": "11.10"
+    "type": "Build",
+    "num": "11.10",
+    "published": true,
+    "hasQuiz": true
    }
   ]
  },

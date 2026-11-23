@@ -1,0 +1,78 @@
+{
+  "lesson": "02-file-read-edit-search-tools",
+  "title": "File Read, Edit & Search Tools",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "An agent rewrites a whole 800-line file to change one line, and a function disappears. What's the root cause?",
+      "options": [
+        "The model is too small",
+        "The tool lets it overwrite whole files instead of making small exact edits to text it has read",
+        "Python files can't be edited by agents",
+        "The file was too short"
+      ],
+      "correct": 1,
+      "explanation": "Tool design decides how careful an agent can be. Exact, small edits keep unseen code safe."
+    },
+    {
+      "stage": "check",
+      "question": "The model calls edit_file on a file it hasn't read in this session. What does the lesson's tool do?",
+      "options": [
+        "Edits it anyway",
+        "Refuses with 'read <path> before editing it'",
+        "Reads it silently and edits",
+        "Deletes the file"
+      ],
+      "correct": 1,
+      "explanation": "Edits must be based on content the model has actually seen, and that hasn't changed since."
+    },
+    {
+      "stage": "check",
+      "question": "old='calc_total' appears twice in the file. What should the tool return?",
+      "options": [
+        "Replace the first one",
+        "An error listing the line numbers, suggesting more context or replace_all=true",
+        "Replace both silently",
+        "A generic 'ambiguous' error"
+      ],
+      "correct": 1,
+      "explanation": "The error tells the model exactly how to succeed on the next call."
+    },
+    {
+      "stage": "check",
+      "question": "A search returns 300 hits. What should the model see?",
+      "options": [
+        "All 300 lines",
+        "The first N hits plus '… M more matches. Narrow the pattern or the glob.'",
+        "Nothing",
+        "A random sample"
+      ],
+      "correct": 1,
+      "explanation": "Capping protects the context; reporting the hidden count tells the model to refine the search."
+    },
+    {
+      "stage": "post",
+      "question": "In the lesson's test, old='  return sum' unexpectedly succeeded and broke indentation. Why?",
+      "options": [
+        "Exact matching is buggy",
+        "Two spaces + 'return sum' is a substring of the real line's four-space version; a too-short old string matched mid-line",
+        "The file was read wrongly",
+        "Python ignores indentation"
+      ],
+      "correct": 1,
+      "explanation": "Exact match is necessary but not sufficient. Use whole lines in old, and read the returned diff."
+    },
+    {
+      "stage": "post",
+      "question": "Which is the best error when old isn't found but matches with different indentation?",
+      "options": [
+        "'not found'",
+        "'Line 1 matches if you ignore indentation: <the real line>. Copy whitespace exactly.'",
+        "'error 404'",
+        "Silently apply a fuzzy match"
+      ],
+      "correct": 1,
+      "explanation": "Show the real text and the fix. Silent fuzzy edits risk changing the wrong place."
+    }
+  ]
+}

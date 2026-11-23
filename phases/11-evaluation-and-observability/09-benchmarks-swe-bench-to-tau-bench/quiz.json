@@ -1,0 +1,73 @@
+{
+  "lesson": "09-benchmarks-swe-bench-to-tau-bench",
+  "title": "Benchmarks: SWE-bench to τ-bench",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Model A scores 70% on SWE-bench Verified in one blog post, model B 65% in another. What's the first question?",
+      "options": [
+        "Which model is cheaper",
+        "Were they run with the same harness, trials and metric? Scores across different scaffolds aren't comparable",
+        "Which blog is newer",
+        "Nothing; A is better"
+      ],
+      "correct": 1,
+      "explanation": "The harness, split and trial count change scores a lot."
+    },
+    {
+      "stage": "check",
+      "question": "A patch makes the FAIL_TO_PASS test pass but breaks another test. Is the instance resolved?",
+      "options": ["Yes", "No: all PASS_TO_PASS tests must still pass", "Partly", "Only on Verified"],
+      "correct": 1,
+      "explanation": "PASS_TO_PASS catches collateral damage."
+    },
+    {
+      "stage": "check",
+      "question": "Why does the SWE-bench harness restore the official tests before grading?",
+      "options": [
+        "To save disk space",
+        "So a patch that edits the tests can't make itself pass",
+        "Tests are slow",
+        "To run them twice"
+      ],
+      "correct": 1,
+      "explanation": "The grader, not the agent, owns the definition of success."
+    },
+    {
+      "stage": "check",
+      "question": "The agent says 'Your $40 refund will be processed' but never calls the refund tool. How does τ-bench-style grading score it?",
+      "options": [
+        "Pass: it said the right amount",
+        "Fail: the final database state doesn't match the expected one",
+        "Partial credit",
+        "It can't be graded"
+      ],
+      "correct": 1,
+      "explanation": "End-state grading ignores confident words and checks the world."
+    },
+    {
+      "stage": "post",
+      "question": "An agent refunds the right order but skipped the required user confirmation. What does end-state grading say?",
+      "options": [
+        "Fail",
+        "Pass, because the database is identical; process rules need trajectory checks",
+        "It crashes",
+        "Partial credit"
+      ],
+      "correct": 1,
+      "explanation": "Combine end-state grading with trajectory specs for policies about how, not just what."
+    },
+    {
+      "stage": "post",
+      "question": "pass^1 = 0.85 and pass^8 = 0.24. What does that tell a product owner?",
+      "options": [
+        "The agent is 85% reliable in every sense",
+        "Any single conversation usually works, but a run of eight conversations all working is unlikely",
+        "pass^8 is a bug",
+        "More trials make the agent worse"
+      ],
+      "correct": 1,
+      "explanation": "Reliability compounds; users experience every failure."
+    }
+  ]
+}

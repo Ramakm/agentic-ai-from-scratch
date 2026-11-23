@@ -1,0 +1,78 @@
+{
+  "lesson": "09-choosing-or-skipping-a-framework",
+  "title": "Choosing (or Skipping) a Framework",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "What's the best starting point for choosing an agent framework?",
+      "options": [
+        "The one with the most GitHub stars",
+        "A written list of your concrete needs, scored against options that include 'no framework'",
+        "Whatever the first prototype used",
+        "The newest release"
+      ],
+      "correct": 1,
+      "explanation": "Needs make the decision explicit and revisitable; 'no framework' is the baseline every option must beat."
+    },
+    {
+      "stage": "check",
+      "question": "Why are the capability scores in main.py called opinions?",
+      "options": [
+        "They are random",
+        "They are coarse judgments from Lessons 2–8, written down so a team can argue with specific numbers",
+        "They come from an official benchmark",
+        "They never change"
+      ],
+      "correct": 1,
+      "explanation": "Writing opinions down turns a vague debate into a specific disagreement you can resolve."
+    },
+    {
+      "stage": "check",
+      "question": "When does the tool recommend skipping the framework?",
+      "options": [
+        "Never",
+        "When the best framework beats the hand-rolled baseline by less than the margin",
+        "When there are more than two needs",
+        "When the project uses Python"
+      ],
+      "correct": 1,
+      "explanation": "A framework must clearly earn its dependency and learning cost."
+    },
+    {
+      "stage": "check",
+      "question": "The audit found api.py importing LangGraph's END and building its config dict. Why is that a problem?",
+      "options": [
+        "END is deprecated",
+        "The framework has leaked outside the agent module, so switching frameworks means editing more files",
+        "API files can't import anything",
+        "It makes the API slower"
+      ],
+      "correct": 1,
+      "explanation": "Keep framework code in one boundary module so the choice stays cheap to reverse."
+    },
+    {
+      "stage": "post",
+      "question": "You need one agent that returns validated JSON, and dependencies are tightly controlled. What's reasonable?",
+      "options": [
+        "Adopt three frameworks to compare in production",
+        "A hand-rolled validate-and-retry loop (like Lesson 8's) may be enough; adopt Pydantic AI if you need more of its features",
+        "Use the Claude Agent SDK because it has file tools",
+        "Avoid validation"
+      ],
+      "correct": 1,
+      "explanation": "A small, well-understood loop can meet a narrow need without new dependencies."
+    },
+    {
+      "stage": "post",
+      "question": "Where should framework imports live in a well-structured agent app?",
+      "options": [
+        "Everywhere, for convenience",
+        "Only in the agent wiring module; tools and API stay framework-free",
+        "Only in tests",
+        "In the database layer"
+      ],
+      "correct": 1,
+      "explanation": "Plain-function tools port to any framework, and the API talks to your interface, not framework types."
+    }
+  ]
+}

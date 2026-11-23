@@ -1,0 +1,78 @@
+{
+  "lesson": "03-openai-agents-sdk",
+  "title": "OpenAI Agents SDK",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "A single support agent with ten tools and a huge prompt keeps making mistakes. What does the Agents SDK suggest?",
+      "options": [
+        "Add more instructions to the same prompt",
+        "Split it into a triage agent and specialists, and hand off between them",
+        "Remove all tools",
+        "Use a smaller model"
+      ],
+      "correct": 1,
+      "explanation": "Handoffs let each specialist keep a focused prompt and toolset while the conversation moves between them."
+    },
+    {
+      "stage": "check",
+      "question": "How does the model trigger a handoff?",
+      "options": [
+        "By writing 'HANDOFF' in its reply",
+        "By calling a tool named transfer_to_<agent>; the Runner switches the active agent",
+        "The Runner picks an agent at random",
+        "By returning a special HTTP status"
+      ],
+      "correct": 1,
+      "explanation": "Handoffs are exposed as tools. The 'result' of calling one is that the next turn runs with the target agent's instructions and tools."
+    },
+    {
+      "stage": "check",
+      "question": "After a handoff, what does the specialist agent see?",
+      "options": [
+        "Only the last user message",
+        "Its own instructions plus the full conversation history so far",
+        "Nothing until the user writes again",
+        "The triage agent's instructions"
+      ],
+      "correct": 1,
+      "explanation": "The history carries over; the system instructions and tools switch to the new agent's."
+    },
+    {
+      "stage": "check",
+      "question": "In the real SDK, input guardrails default to run_in_parallel=True. What does that mean when one trips?",
+      "options": [
+        "No model call ever happens",
+        "The first model call may already have started (and cost money) before the run is aborted",
+        "The guardrail is skipped",
+        "The run continues and ignores the tripwire"
+      ],
+      "correct": 1,
+      "explanation": "Parallel guardrails save latency on good input. Set run_in_parallel=False when the check must complete before any model call."
+    },
+    {
+      "stage": "post",
+      "question": "Your output_type is a @dataclass and the SDK keeps raising 'Invalid JSON when parsing model output' on valid-looking JSON. What's a likely fix?",
+      "options": [
+        "Increase max_turns",
+        "Use a Pydantic BaseModel; the SDK wraps non-BaseModel types under a 'response' key",
+        "Disable guardrails",
+        "Switch to plain text output"
+      ],
+      "correct": 1,
+      "explanation": "In SDK 0.25.0 a dataclass output type is wrapped, so the expected JSON is {'response': {...}}. A BaseModel is used as the schema directly."
+    },
+    {
+      "stage": "post",
+      "question": "When should a specialist be an agent-as-tool rather than a handoff?",
+      "options": [
+        "When the specialist should take over the conversation",
+        "When the calling agent should stay in charge and use the specialist's result as one input",
+        "Never; handoffs are always better",
+        "When there's only one agent"
+      ],
+      "correct": 1,
+      "explanation": "Handoffs transfer control; agents-as-tools return a result to the caller, which is the orchestrator–worker shape."
+    }
+  ]
+}

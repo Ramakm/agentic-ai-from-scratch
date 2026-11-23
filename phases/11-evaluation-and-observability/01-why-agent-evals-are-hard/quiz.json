@@ -1,0 +1,68 @@
+{
+  "lesson": "01-why-agent-evals-are-hard",
+  "title": "Why Agent Evals Are Hard",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "You run a 50-task eval once: 66% before a change, 62% after. What can you conclude?",
+      "options": [
+        "The change made the agent worse",
+        "Very little: one run per task varies by several points with no change at all",
+        "The change made it better",
+        "The eval is broken"
+      ],
+      "correct": 1,
+      "explanation": "In the lesson, the same agent scored 62%–70% across five identical runs."
+    },
+    {
+      "stage": "check",
+      "question": "A task succeeded 7 of 10 times. What are pass@3 and pass^3 roughly?",
+      "options": ["0.70 and 0.70", "0.99 and 0.29", "0.29 and 0.99", "1.00 and 0.00"],
+      "correct": 1,
+      "explanation": "At least one of three almost always works; all three working happens under a third of the time."
+    },
+    {
+      "stage": "check",
+      "question": "Why compare agents with a paired bootstrap over tasks?",
+      "options": [
+        "It's faster than averaging",
+        "Both agents saw the same tasks, so pairing removes task-difficulty noise, and resampling tasks gives an interval on the difference",
+        "Bootstrap always says B is better",
+        "It needs fewer trials than any other method"
+      ],
+      "correct": 1,
+      "explanation": "The question is about the difference, so put the interval on the difference."
+    },
+    {
+      "stage": "check",
+      "question": "With 1 trial per task, the truly better agent B scored lower than A. What did the bootstrap say?",
+      "options": [
+        "A is better",
+        "Can't tell: the interval on the difference included zero",
+        "B is better",
+        "The agents are identical"
+      ],
+      "correct": 1,
+      "explanation": "An honest interval stops you from acting on noise."
+    },
+    {
+      "stage": "post",
+      "question": "Which metric fits a customer-support agent where every conversation must work?",
+      "options": ["pass@k", "pass^k", "Number of tool calls", "Average latency only"],
+      "correct": 1,
+      "explanation": "Users don't get best-of-k; reliability across attempts is what they feel."
+    },
+    {
+      "stage": "post",
+      "question": "An agent looks up prices in a different order than the reference but gets the right total. How should it be graded?",
+      "options": [
+        "Fail: the trajectory doesn't match exactly",
+        "Pass on outcome, with checks only on path constraints that matter (required or forbidden calls)",
+        "Ignore the run",
+        "Pass only if it's faster"
+      ],
+      "correct": 1,
+      "explanation": "Exact-path matching produces false failures; grade outcomes and constrain the path where it matters."
+    }
+  ]
+}

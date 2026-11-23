@@ -1,0 +1,3 @@
+# Only for the optional with_claude_agent_sdk.py. main.py and the tests use the standard library.
+# A full run also needs Claude Code installed and authenticated.
+claude-agent-sdk>=0.2

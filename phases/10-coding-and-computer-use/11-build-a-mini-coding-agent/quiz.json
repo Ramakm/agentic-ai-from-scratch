@@ -1,0 +1,73 @@
+{
+  "lesson": "11-build-a-mini-coding-agent",
+  "title": "Build a Mini Coding Agent",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Why does the mini agent work on a temporary copy of the repository?",
+      "options": [
+        "Copies are faster",
+        "So the original files are never modified; you review the diff and decide whether to apply it",
+        "Git requires it",
+        "Tests only run in temp folders"
+      ],
+      "correct": 1,
+      "explanation": "Isolation plus a diff turns the agent's work into something you review, like a pull request."
+    },
+    {
+      "stage": "check",
+      "question": "What does Workspace.verified require?",
+      "options": [
+        "The model saying 'done'",
+        "A passing test run, no edits after it, and no changed test files",
+        "Any test run",
+        "An empty diff"
+      ],
+      "correct": 1,
+      "explanation": "All three are facts the harness observes; none depend on the model's message."
+    },
+    {
+      "stage": "check",
+      "question": "The repo map first ranked tests/ above inventory/. Why, and what fixed it?",
+      "options": [
+        "Alphabetical order; renaming fixed it",
+        "The task said 'test suite', so test files matched task words; sorting source files before tests fixed it",
+        "Tests are larger files",
+        "The map was random"
+      ],
+      "correct": 1,
+      "explanation": "Word overlap is crude. Source code is usually what the agent needs to see first."
+    },
+    {
+      "stage": "check",
+      "question": "A shell command appends to a test file and the user approved it. What status does the run get?",
+      "options": ["verified", "tampered", "budget", "stuck"],
+      "correct": 1,
+      "explanation": "The hash check catches test changes through any route, approved or not."
+    },
+    {
+      "stage": "post",
+      "question": "llama3.2 (3B) answered with 'Here's the corrected code: …' but never called edit_file. What did the harness report?",
+      "options": [
+        "verified",
+        "unverified, with an empty diff",
+        "tampered",
+        "An exception"
+      ],
+      "correct": 1,
+      "explanation": "A fix described in prose isn't a fix. The diff and test evidence decide the status."
+    },
+    {
+      "stage": "post",
+      "question": "The model called run_tests with an argument the tool doesn't take. What happened, and why is that the right behaviour?",
+      "options": [
+        "The agent crashed, which is correct",
+        "The TypeError came back as an observation, so the model could retry without the argument",
+        "The argument was silently ignored",
+        "The run was marked tampered"
+      ],
+      "correct": 1,
+      "explanation": "Errors are observations. In run 1 the model retried correctly on the next step."
+    }
+  ]
+}

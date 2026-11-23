@@ -1,0 +1,78 @@
+{
+  "lesson": "08-pydantic-ai-typed-agents",
+  "title": "Pydantic AI Typed Agents",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Your agent's JSON output sometimes refunds more than the order total. Validation alone would reject it. What's better?",
+      "options": [
+        "Crash and alert a human every time",
+        "Send the violation back to the model as a precise message and let it retry, with a bounded retry count",
+        "Accept it and fix it later",
+        "Lower the temperature"
+      ],
+      "correct": 1,
+      "explanation": "Errors are observations. A clear message plus a retry limit usually gets a valid answer on the next call."
+    },
+    {
+      "stage": "check",
+      "question": "How does a Pydantic AI agent deliver a structured output?",
+      "options": [
+        "It prints JSON in a text reply",
+        "The model calls a final_result tool whose arguments are validated against the output type",
+        "It writes to a file",
+        "Through a system prompt"
+      ],
+      "correct": 1,
+      "explanation": "Output is a tool call, so the same validate-and-retry machinery handles tools and output."
+    },
+    {
+      "stage": "check",
+      "question": "Why do tools take a RunContext instead of reading a global database client?",
+      "options": [
+        "It's faster",
+        "Dependencies are injected per run, so tests can pass fakes and production can pass real clients",
+        "Globals are not allowed in Python",
+        "The model needs to see the database"
+      ],
+      "correct": 1,
+      "explanation": "ctx.deps carries services into tools without globals, and ctx isn't part of the schema the model sees."
+    },
+    {
+      "stage": "check",
+      "question": "The model replies with plain text, but output_type is RefundDecision. What happens?",
+      "options": [
+        "The text is returned",
+        "It gets a retry message asking it to answer with a tool call",
+        "The run ends with None",
+        "The text is parsed with regex"
+      ],
+      "correct": 1,
+      "explanation": "Plain text isn't a valid typed answer, so it counts as an output retry."
+    },
+    {
+      "stage": "post",
+      "question": "With the default retries=1, the model returns an invalid final_result twice in a row. What happens?",
+      "options": [
+        "It retries forever",
+        "UnexpectedModelBehavior is raised after the retry limit is exceeded",
+        "The invalid output is returned",
+        "The agent switches models"
+      ],
+      "correct": 1,
+      "explanation": "One retry is allowed; a second failure exceeds the limit and raises."
+    },
+    {
+      "stage": "post",
+      "question": "Why should validation report all field errors at once?",
+      "options": [
+        "It looks nicer",
+        "The model can fix every problem in one retry instead of spending one call per field",
+        "Pydantic requires it",
+        "It reduces token usage of the system prompt"
+      ],
+      "correct": 1,
+      "explanation": "Each retry is a model call. One complete error message saves calls and retries."
+    }
+  ]
+}

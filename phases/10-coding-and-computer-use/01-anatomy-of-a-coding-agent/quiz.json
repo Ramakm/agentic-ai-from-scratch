@@ -1,0 +1,73 @@
+{
+  "lesson": "01-anatomy-of-a-coding-agent",
+  "title": "Anatomy of a Coding Agent",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "An agent edits a file and replies 'Fixed! Tests should pass now.' What do you know?",
+      "options": [
+        "The tests pass",
+        "Nothing yet: only a test run after the last edit is evidence",
+        "The code is correct but untested code is fine",
+        "The model ran the tests"
+      ],
+      "correct": 1,
+      "explanation": "Models describe success fluently. Verification must come from a check the harness observes."
+    },
+    {
+      "stage": "check",
+      "question": "The agent runs tests (PASSED), then edits README.md, then answers. Is the run verified in the lesson's code?",
+      "options": [
+        "Yes, the tests passed",
+        "No: every successful edit invalidates earlier test results",
+        "Yes, README edits don't count",
+        "Only if the model says so"
+      ],
+      "correct": 1,
+      "explanation": "The rule is simple and strict: the last test run must come after the last edit."
+    },
+    {
+      "stage": "check",
+      "question": "Where is edit approval enforced in main.py?",
+      "options": [
+        "In the system prompt",
+        "Inside the edit_file tool, before the file is written",
+        "In the model",
+        "After the run finishes"
+      ],
+      "correct": 1,
+      "explanation": "Prompts ask; code enforces. A declined edit returns an error observation."
+    },
+    {
+      "stage": "check",
+      "question": "Why does the scripted agent run the tests before reading any code?",
+      "options": [
+        "To waste a step",
+        "To reproduce the failure first, so it knows what 'fixed' will look like",
+        "Tests must always run first or the harness errors",
+        "To warm up the cache"
+      ],
+      "correct": 1,
+      "explanation": "Reproducing first turns 'the tests fail' into a concrete error, and gives a baseline for the fix."
+    },
+    {
+      "stage": "post",
+      "question": "Which part of a coding agent is the path jail?",
+      "options": ["Context", "Tools / permissions: it refuses paths outside the repo", "Verification", "The model"],
+      "correct": 1,
+      "explanation": "Resolving and checking every path keeps a confused or manipulated model inside the repository."
+    },
+    {
+      "stage": "post",
+      "question": "You're reviewing a coding agent setup. Which gap is most dangerous?",
+      "options": [
+        "The system prompt is short",
+        "Completion is decided by the model's final message instead of a test run checked by the harness",
+        "It uses line numbers in file reads",
+        "It lists files at the start"
+      ],
+      "correct": 1,
+      "explanation": "Without enforced verification, every 'done' is a claim."
+    }
+  ]
+}

@@ -3,21 +3,21 @@
 
 > Agents that edit files, run tests, drive browsers and terminals. Ends with a mini coding agent of your own.
 
-**Status:** □ planned · **Lessons:** 0 of 11 live · **Time:** ~10 hours
+**Status:** ■ complete · **Lessons:** 11 of 11 live · **Time:** ~10 hours
 
 | # | Lesson | Type | Time |
 |---|--------|------|------|
-| 10.01 | Anatomy of a coding agent | planned | 45 min |
-| 10.02 | File read, edit & search tools | planned | 55 min |
-| 10.03 | Running code in a sandbox | planned | 55 min |
-| 10.04 | Test-driven agent loops | planned | 55 min |
-| 10.05 | Repository maps & context | planned | 50 min |
-| 10.06 | Skills and SKILL.md | planned | 45 min |
-| 10.07 | Browser agents | planned | 55 min |
-| 10.08 | Computer use: screenshots to clicks | planned | 60 min |
-| 10.09 | Terminal agents | planned | 50 min |
-| 10.10 | Long-horizon tasks | planned | 50 min |
-| 10.11 | Build a mini coding agent | planned | 90 min |
+| 10.01 | [Anatomy of a coding agent](01-anatomy-of-a-coding-agent/docs/en.md) | Build | 45 min |
+| 10.02 | [File read, edit & search tools](02-file-read-edit-search-tools/docs/en.md) | Build | 55 min |
+| 10.03 | [Running code in a sandbox](03-running-code-in-a-sandbox/docs/en.md) | Build | 55 min |
+| 10.04 | [Test-driven agent loops](04-test-driven-agent-loops/docs/en.md) | Build | 55 min |
+| 10.05 | [Repository maps & context](05-repository-maps-context/docs/en.md) | Build | 50 min |
+| 10.06 | [Skills and SKILL.md](06-skills-and-skill-md/docs/en.md) | Build | 45 min |
+| 10.07 | [Browser agents](07-browser-agents/docs/en.md) | Build | 55 min |
+| 10.08 | [Computer use: screenshots to clicks](08-computer-use-screenshots-to-clicks/docs/en.md) | Build | 60 min |
+| 10.09 | [Terminal agents](09-terminal-agents/docs/en.md) | Build | 50 min |
+| 10.10 | [Long-horizon tasks](10-long-horizon-tasks/docs/en.md) | Build | 50 min |
+| 10.11 | [Build a mini coding agent](11-build-a-mini-coding-agent/docs/en.md) | Build | 90 min |
 
 Every live lesson folder has `docs/en.md`, runnable `code/` with tests, a `quiz.json`, and an artifact in `outputs/`.
 Want to write a planned lesson? See [CONTRIBUTING.md](../../CONTRIBUTING.md) and [LESSON_TEMPLATE.md](../../LESSON_TEMPLATE.md).
