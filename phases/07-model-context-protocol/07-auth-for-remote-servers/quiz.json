@@ -1,0 +1,24 @@
+{
+  "lesson": "07-auth-for-remote-servers",
+  "title": "Auth for Remote Servers",
+  "questions": [
+    {"stage": "pre", "question": "A client has never seen a remote MCP server before and gets a 401. How does it learn where to get a token?",
+     "options": ["It asks the user to paste an API key", "The WWW-Authenticate header points to the server's Protected Resource Metadata, which names its authorization servers", "It guesses /oauth/token", "It retries without auth"],
+     "correct": 1, "explanation": "Discovery chain: 401 -> resource_metadata -> authorization_servers -> AS metadata."},
+    {"stage": "check", "question": "An attacker intercepts an authorization code. What stops them redeeming it?",
+     "options": ["The state parameter", "PKCE: the token endpoint requires the verifier whose SHA-256 the client sent at the start", "The scope", "HTTPS alone"],
+     "correct": 1, "explanation": "Without the verifier, the code is useless."},
+    {"stage": "check", "question": "A valid, unexpired token minted for the calendar API is sent to the notes MCP server. What should happen?",
+     "options": ["Accept it; the signature is valid", "Reject with 401: the token's audience isn't this server", "Accept read-only calls", "Forward it to the calendar"],
+     "correct": 1, "explanation": "Servers must only accept tokens issued for them (RFC 8707 audience)."},
+    {"stage": "check", "question": "The client holds notes:read and gets 403 insufficient_scope with scope=\"notes:write\". What scopes should it request?",
+     "options": ["notes:write only", "notes:read notes:write (the union)", "Every scope the server supports", "None; give up"],
+     "correct": 1, "explanation": "Requesting only the challenged scope would lose permissions the client already needed."},
+    {"stage": "post", "question": "Why is forwarding the user's token from the MCP server to a downstream API forbidden?",
+     "options": ["It's slower", "The server becomes a confused deputy: it bypasses the downstream API's controls and breaks the audit trail", "Tokens can't be copied", "OAuth doesn't allow headers"],
+     "correct": 1, "explanation": "The server must get its own token for the downstream API."},
+    {"stage": "post", "question": "How should a local stdio MCP server get credentials?",
+     "options": ["The full OAuth flow on every call", "From the environment (it runs as the user on the user's machine)", "From the model", "From the tool arguments"],
+     "correct": 1, "explanation": "The MCP authorization spec covers HTTP transports; stdio servers use environment credentials."}
+  ]
+}

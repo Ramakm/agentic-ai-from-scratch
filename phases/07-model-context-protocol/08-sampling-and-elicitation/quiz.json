@@ -1,0 +1,24 @@
+{
+  "lesson": "08-sampling-and-elicitation",
+  "title": "Sampling and Elicitation",
+  "questions": [
+    {"stage": "pre", "question": "A booking tool needs the number of attendees, which the model didn't provide. What's the best behaviour?",
+     "options": ["Guess a number", "Ask the user for it, then finish the booking", "Return a protocol error", "Book with zero attendees"],
+     "correct": 1, "explanation": "Only the user knows; an error invites the model to invent one."},
+    {"stage": "check", "question": "In 2026-07-28, how does a server ask the user a question in the middle of tools/call?",
+     "options": ["It sends its own elicitation/create request to the client", "It returns resultType input_required with inputRequests and requestState; the client retries with inputResponses", "It opens a GET stream", "It can't"],
+     "correct": 1, "explanation": "Multi Round-Trip Requests replaced server-initiated requests."},
+    {"stage": "check", "question": "What must the client do with requestState?",
+     "options": ["Parse it to show the user", "Echo it back exactly on the retry, without reading or changing it", "Drop it", "Sign it"],
+     "correct": 1, "explanation": "It's opaque to the client and meaningful only to the server."},
+    {"stage": "check", "question": "A server needs the user to sign in to a third-party service. Which elicitation mode?",
+     "options": ["Form, with a password field", "URL: credentials go to the provider's page, never through the client", "Sampling", "A tool argument"],
+     "correct": 1, "explanation": "Form mode must never collect secrets."},
+    {"stage": "post", "question": "A valid, unexpired requestState for the same user and request is submitted twice. What stops a double booking?",
+     "options": ["The HMAC signature", "A server-side single-use check (a nonce or idempotency key)", "The expiry", "The request id"],
+     "correct": 1, "explanation": "Signatures and bindings limit replay; only server-side state guarantees at-most-once."},
+    {"stage": "post", "question": "Why is sampling deprecated, and what replaces it?",
+     "options": ["It was too fast; nothing replaces it", "Servers spent the user's model quota on prompts the user didn't write, with weak review; servers should call a model provider directly", "Models can't return text", "It moved to tools/list"],
+     "correct": 1, "explanation": "Suggested migration: integrate directly with LLM provider APIs."}
+  ]
+}

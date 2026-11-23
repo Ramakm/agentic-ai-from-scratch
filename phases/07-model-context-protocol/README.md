@@ -3,21 +3,21 @@
 
 > MCP from the wire up. JSON-RPC over stdio, a server and a client by hand, transports, auth, and security.
 
-**Status:** □ planned · **Lessons:** 0 of 11 live · **Time:** ~9 hours
+**Status:** ■ complete · **Lessons:** 11 of 11 live · **Time:** ~9 hours
 
 | # | Lesson | Type | Time |
 |---|--------|------|------|
-| 07.01 | Why MCP exists | planned | 35 min |
-| 07.02 | The protocol: JSON-RPC over stdio | planned | 50 min |
-| 07.03 | Build an MCP server from scratch | planned | 60 min |
-| 07.04 | Tools, resources & prompts | planned | 50 min |
-| 07.05 | Build an MCP client | planned | 55 min |
-| 07.06 | Streamable HTTP transport | planned | 50 min |
-| 07.07 | Auth for remote servers | planned | 50 min |
-| 07.08 | Sampling and elicitation | planned | 45 min |
-| 07.09 | Composing many servers | planned | 45 min |
-| 07.10 | Testing MCP servers | planned | 40 min |
-| 07.11 | MCP security pitfalls | planned | 45 min |
+| 07.01 | [Why MCP exists](01-why-mcp-exists/docs/en.md) | Build | 35 min |
+| 07.02 | [The protocol: JSON-RPC over stdio](02-the-protocol-json-rpc-over-stdio/docs/en.md) | Build | 50 min |
+| 07.03 | [Build an MCP server from scratch](03-build-an-mcp-server-from-scratch/docs/en.md) | Build | 60 min |
+| 07.04 | [Tools, resources & prompts](04-tools-resources-prompts/docs/en.md) | Build | 50 min |
+| 07.05 | [Build an MCP client](05-build-an-mcp-client/docs/en.md) | Build | 55 min |
+| 07.06 | [Streamable HTTP transport](06-streamable-http-transport/docs/en.md) | Build | 50 min |
+| 07.07 | [Auth for remote servers](07-auth-for-remote-servers/docs/en.md) | Build | 50 min |
+| 07.08 | [Sampling and elicitation](08-sampling-and-elicitation/docs/en.md) | Build | 45 min |
+| 07.09 | [Composing many servers](09-composing-many-servers/docs/en.md) | Build | 45 min |
+| 07.10 | [Testing MCP servers](10-testing-mcp-servers/docs/en.md) | Build | 40 min |
+| 07.11 | [MCP security pitfalls](11-mcp-security-pitfalls/docs/en.md) | Build | 45 min |
 
 Every live lesson folder has `docs/en.md`, runnable `code/` with tests, a `quiz.json`, and an artifact in `outputs/`.
 Want to write a planned lesson? See [CONTRIBUTING.md](../../CONTRIBUTING.md) and [LESSON_TEMPLATE.md](../../LESSON_TEMPLATE.md).

@@ -39,7 +39,7 @@ window.SITE = {
   "totals": {
     "phases": 16,
     "lessons": 163,
-    "published": 73,
+    "published": 84,
     "hours": 127
   }
 };
@@ -831,96 +831,118 @@ window.PHASES = [
   "id": "07-model-context-protocol",
   "name": "Model Context Protocol",
   "desc": "MCP from the wire up. JSON-RPC over stdio, a server and a client by hand, transports, auth, and security.",
-  "status": "planned",
-  "published": 0,
+  "status": "complete",
+  "published": 11,
   "lessons": [
    {
     "id": "01-why-mcp-exists",
     "title": "Why MCP exists",
     "minutes": 35,
     "path": "phases/07-model-context-protocol/01-why-mcp-exists",
-    "type": "",
-    "num": "07.01"
+    "type": "Build",
+    "num": "07.01",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "02-the-protocol-json-rpc-over-stdio",
     "title": "The protocol: JSON-RPC over stdio",
     "minutes": 50,
     "path": "phases/07-model-context-protocol/02-the-protocol-json-rpc-over-stdio",
-    "type": "",
-    "num": "07.02"
+    "type": "Build",
+    "num": "07.02",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "03-build-an-mcp-server-from-scratch",
     "title": "Build an MCP server from scratch",
     "minutes": 60,
     "path": "phases/07-model-context-protocol/03-build-an-mcp-server-from-scratch",
-    "type": "",
-    "num": "07.03"
+    "type": "Build",
+    "num": "07.03",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "04-tools-resources-prompts",
     "title": "Tools, resources & prompts",
     "minutes": 50,
     "path": "phases/07-model-context-protocol/04-tools-resources-prompts",
-    "type": "",
-    "num": "07.04"
+    "type": "Build",
+    "num": "07.04",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "05-build-an-mcp-client",
     "title": "Build an MCP client",
     "minutes": 55,
     "path": "phases/07-model-context-protocol/05-build-an-mcp-client",
-    "type": "",
-    "num": "07.05"
+    "type": "Build",
+    "num": "07.05",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "06-streamable-http-transport",
     "title": "Streamable HTTP transport",
     "minutes": 50,
     "path": "phases/07-model-context-protocol/06-streamable-http-transport",
-    "type": "",
-    "num": "07.06"
+    "type": "Build",
+    "num": "07.06",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "07-auth-for-remote-servers",
     "title": "Auth for remote servers",
     "minutes": 50,
     "path": "phases/07-model-context-protocol/07-auth-for-remote-servers",
-    "type": "",
-    "num": "07.07"
+    "type": "Build",
+    "num": "07.07",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "08-sampling-and-elicitation",
     "title": "Sampling and elicitation",
     "minutes": 45,
     "path": "phases/07-model-context-protocol/08-sampling-and-elicitation",
-    "type": "",
-    "num": "07.08"
+    "type": "Build",
+    "num": "07.08",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "09-composing-many-servers",
     "title": "Composing many servers",
     "minutes": 45,
     "path": "phases/07-model-context-protocol/09-composing-many-servers",
-    "type": "",
-    "num": "07.09"
+    "type": "Build",
+    "num": "07.09",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "10-testing-mcp-servers",
     "title": "Testing MCP servers",
     "minutes": 40,
     "path": "phases/07-model-context-protocol/10-testing-mcp-servers",
-    "type": "",
-    "num": "07.10"
+    "type": "Build",
+    "num": "07.10",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "11-mcp-security-pitfalls",
     "title": "MCP security pitfalls",
     "minutes": 45,
     "path": "phases/07-model-context-protocol/11-mcp-security-pitfalls",
-    "type": "",
-    "num": "07.11"
+    "type": "Build",
+    "num": "07.11",
+    "published": true,
+    "hasQuiz": true
    }
   ]
  },

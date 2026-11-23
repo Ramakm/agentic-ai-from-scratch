@@ -1,0 +1,24 @@
+{
+  "lesson": "01-why-mcp-exists",
+  "title": "Why MCP Exists",
+  "questions": [
+    {"stage": "pre", "question": "Ten agent hosts each want to use fifty services, and every pair needs its own glue code. How many adapters is that?",
+     "options": ["60", "500", "50", "10"],
+     "correct": 1, "explanation": "Hosts × services. A shared protocol turns it into hosts + services = 60."},
+    {"stage": "check", "question": "In MCP, what is the host?",
+     "options": ["The machine the server runs on", "The user-facing application that owns the model, the conversation and the approval UI", "A cloud registry of servers", "The JSON-RPC library"],
+     "correct": 1, "explanation": "The host contains one MCP client per server it connects to."},
+    {"stage": "check", "question": "Which primitive is controlled by the model?",
+     "options": ["Prompts", "Tools", "Resources", "Capabilities"],
+     "correct": 1, "explanation": "Tools are called when the model chooses; resources are attached by the application; prompts are picked by the user."},
+    {"stage": "check", "question": "The tickets server adds a tool. What has to change in the hosts?",
+     "options": ["Each host's adapter for tickets", "Nothing: hosts list tools again and see it", "Only the IDE", "The protocol version"],
+     "correct": 1, "explanation": "Discovery via tools/list is what lets servers grow without host edits."},
+    {"stage": "post", "question": "Which of these does MCP leave to the host?",
+     "options": ["The shape of tool results", "Whether a tool call needs the user's approval", "How tools are listed", "The error format"],
+     "correct": 1, "explanation": "MCP standardises discovery, invocation, results and errors; model, prompting, loop and approval UI stay in the host."},
+    {"stage": "post", "question": "A tool ran but the ticket didn't exist. How should that come back?",
+     "options": ["A JSON-RPC error", "A normal result with isError: true, so the model sees it as an observation", "An HTTP 500", "An empty result"],
+     "correct": 1, "explanation": "Protocol errors are for requests the server couldn't process (unknown tool or method)."}
+  ]
+}

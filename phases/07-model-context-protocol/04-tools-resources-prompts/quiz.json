@@ -1,0 +1,24 @@
+{
+  "lesson": "04-tools-resources-prompts",
+  "title": "Tools, Resources & Prompts",
+  "questions": [
+    {"stage": "pre", "question": "An IDE always wants the currently open file in the model's context. What's the best way to provide it?",
+     "options": ["A read_file tool the model must remember to call", "A resource the application attaches itself", "A prompt", "Paste it into the system prompt by hand"],
+     "correct": 1, "explanation": "Context the application already knows it needs is a resource; no model turn required."},
+    {"stage": "check", "question": "Who controls when a prompt is used?",
+     "options": ["The model", "The user, usually by picking it like a slash command", "The server", "The application, automatically"],
+     "correct": 1, "explanation": "Tools: model. Resources: application. Prompts: user."},
+    {"stage": "check", "question": "Why does the sandbox check call realpath before comparing paths?",
+     "options": ["To make paths shorter", "It resolves '..' and follows symlinks, so the check sees where the file really is", "realpath percent-decodes the URI", "It's faster than abspath"],
+     "correct": 1, "explanation": "Without it, a symlink inside the folder can point anywhere."},
+    {"stage": "check", "question": "Why does the server answer 'Resource not found' for a path outside the folder, instead of 'Access denied'?",
+     "options": ["It's shorter", "So a caller can't probe which files exist outside the folder", "The spec has no access-denied code", "To save a round trip"],
+     "correct": 1, "explanation": "Different errors for 'exists but forbidden' and 'missing' leak information."},
+    {"stage": "post", "question": "A search tool finds 40 matching pages. What does returning resource_link blocks buy you?",
+     "options": ["Nothing; return all 40 pages", "A small result with pointers; only the pages that are needed get read", "Faster search", "Pages are cached by the server"],
+     "correct": 1, "explanation": "It keeps tool results within the context budget (Phase 2 · Lesson 9)."},
+    {"stage": "post", "question": "A resources/read result has cacheScope 'private'. What must a multi-user host do?",
+     "options": ["Never cache it", "Key the cached copy per user so one user's data is never served to another", "Cache it for everyone", "Ignore ttlMs"],
+     "correct": 1, "explanation": "Public results can be shared across users; private ones can't."}
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "lesson": "02-the-protocol-json-rpc-over-stdio",
+  "title": "The Protocol: JSON-RPC over stdio",
+  "questions": [
+    {"stage": "pre", "question": "Two processes share a pipe, which is just a stream of bytes. What does MCP's stdio transport use to mark where one message ends?",
+     "options": ["A Content-Length header", "A newline: each message is one line of JSON", "A null byte", "A fixed 4 KB block"],
+     "correct": 1, "explanation": "JSON escapes newlines inside strings, so a message never contains a raw one."},
+    {"stage": "check", "question": "Which message never gets a reply?",
+     "options": ["A request with a string id", "A notification (a method with no id)", "A request for an unknown method", "A request with invalid params"],
+     "correct": 1, "explanation": "Requests always get a result or an error; notifications never do."},
+    {"stage": "check", "question": "A client sends a request with no _meta in params to a 2026-07-28 server. What comes back?",
+     "options": ["-32601 Method not found", "-32602 Invalid params", "-32700 Parse error", "A normal result"],
+     "correct": 1, "explanation": "protocolVersion and clientCapabilities in _meta are required on every request."},
+    {"stage": "check", "question": "The client sent id 6 then id 7, and the response for 7 arrived first. What should the client do?",
+     "options": ["Treat it as a protocol error", "Match each response to its request by id", "Assume 7's response belongs to 6", "Resend 6"],
+     "correct": 1, "explanation": "Out-of-order responses are normal; the id is the correlation."},
+    {"stage": "post", "question": "Why could the server act on the cancel while slow_count was still running?",
+     "options": ["Cancels jump the queue in the pipe", "The work ran on its own thread, so the reader loop kept reading lines", "The OS interrupted it", "The client killed the process"],
+     "correct": 1, "explanation": "A server that blocks its reader on long work can't see the cancel until the work is done."},
+    {"stage": "post", "question": "A Python stdio server works in your tests but hosts keep dropping it. A library it uses prints a warning on startup. Most likely cause?",
+     "options": ["The protocol version", "The warning goes to stdout and corrupts the message stream", "stderr is full", "Newlines in tool descriptions"],
+     "correct": 1, "explanation": "Stdout is the protocol channel; every log line must go to stderr."}
+  ]
+}
