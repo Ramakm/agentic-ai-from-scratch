@@ -99,11 +99,47 @@
     syncTheme();
   });
 
-  /* ---------- mobile menu ---------- */
-  var nav = document.getElementById('headerNav'), menuBtn = document.getElementById('menuToggle');
-  if (nav && menuBtn) {
-    menuBtn.addEventListener('click', function () { menuBtn.setAttribute('aria-expanded', nav.classList.toggle('open')); });
-    nav.addEventListener('click', function (e) { if (e.target.closest('a')) { nav.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); } });
+  /* ---------- site menu (hamburger, every page and width) ---------- */
+  /* [label, href, external]. Only things that exist: no placeholder pages. */
+  var MENU = [
+    ['How to learn', './#tutor'],
+    ['How lessons work', './#how'],
+    ['Skills', REPO_URL + '/tree/main/skills', 1],
+    ['Contents', './#contents'],
+    ['Learning paths', './#paths'],
+    ['Roadmap', REPO_URL + '/blob/main/ROADMAP.md', 1],
+    ['Machines', './#machines'],
+    ['Books', './#books'],
+    ['Capstone', './#capstone'],
+    ['Curriculum index', 'llms.txt'],
+    ["What's new", REPO_URL + '/commits/main', 1],
+    ['Contribute', REPO_URL + '/blob/main/CONTRIBUTING.md', 1],
+    ['Report an issue', REPO_URL + '/issues/new/choose', 1],
+    ['GitHub', REPO_URL, 1],
+    ['About', './#maintainer']
+  ];
+  var menuBtn = document.getElementById('menuToggle');
+  if (menuBtn) {
+    var menu = document.createElement('nav');
+    menu.className = 'site-menu'; menu.id = 'siteMenu'; menu.hidden = true;
+    menu.setAttribute('aria-label', 'Site menu');
+    var live = ALL.filter(function (l) { return l.published; }), done = live.filter(isDone).length;
+    menu.innerHTML = MENU.map(function (m) {
+      return '<a href="' + esc(m[1]) + '"' + (m[2] ? ' target="_blank" rel="noopener"' : '') + '>' + esc(m[0]) +
+        (m[2] ? '<span class="site-menu-ext" aria-hidden="true">↗</span>' : '') + '</a>';
+    }).join('') +
+      '<p class="site-menu-progress">My progress · ' + done + ' of ' + live.length + ' live lessons done</p>';
+    menuBtn.setAttribute('aria-controls', 'siteMenu');
+    menuBtn.parentNode.appendChild(menu);
+    var setMenu = function (open) {
+      menu.hidden = !open;
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.classList.toggle('is-open', open);
+    };
+    menuBtn.addEventListener('click', function (e) { e.stopPropagation(); setMenu(menu.hidden); });
+    menu.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+    document.addEventListener('click', function (e) { if (!menu.hidden && !menu.contains(e.target)) setMenu(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !menu.hidden) { setMenu(false); menuBtn.focus(); } });
   }
 
   /* ---------- copy chips ---------- */
