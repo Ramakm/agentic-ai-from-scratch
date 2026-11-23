@@ -1,0 +1,24 @@
+{
+  "lesson": "05-build-an-mcp-client",
+  "title": "Build an MCP Client",
+  "questions": [
+    {"stage": "pre", "question": "A host's config lists one server written last week and one written two years ago. How does the client know which protocol each speaks?",
+     "options": ["The config file says", "It probes: send server/discover, and fall back to the legacy initialize handshake if the answer isn't a modern one", "It tries both and keeps the faster", "It can't; the user must upgrade the old server"],
+     "correct": 1, "explanation": "Era detection is the client's job."},
+    {"stage": "check", "question": "server/discover comes back with error -32022 and data.supported = ['2026-07-28']. What does that tell the client?",
+     "options": ["It's a legacy server", "It's a modern server that doesn't support the requested version; pick one from data.supported", "The tool doesn't exist", "The server crashed"],
+     "correct": 1, "explanation": "-32022 is a modern error, so the server is modern."},
+    {"stage": "check", "question": "Why does the client pop the request id from its pending map in a finally block?",
+     "options": ["To save memory only", "So a response arriving after the timeout finds no waiter and is dropped", "So ids can be reused immediately", "The spec requires it"],
+     "correct": 1, "explanation": "Late responses must not be mistaken for answers to newer requests."},
+    {"stage": "check", "question": "A tools/call times out. What should the agent loop see?",
+     "options": ["An exception that stops the conversation", "An error observation like 'Tool call failed: timed out', so the model can choose another step", "Nothing", "The previous tool's result"],
+     "correct": 1, "explanation": "All failure kinds become observations; one slow server shouldn't end the conversation."},
+    {"stage": "post", "question": "Your client reads only the first page of tools/list. What goes wrong?",
+     "options": ["Nothing", "Tools on later pages silently never reach the model", "The server errors", "Calls get slower"],
+     "correct": 1, "explanation": "Always follow nextCursor until it's absent."},
+    {"stage": "post", "question": "What's the trade-off in choosing the server/discover probe timeout?",
+     "options": ["None", "Too long delays startup with legacy servers that ignore unknown requests; too short misclassifies slow modern servers", "Longer is always safer", "It only affects HTTP"],
+     "correct": 1, "explanation": "Half a second to a few seconds is typical."}
+  ]
+}

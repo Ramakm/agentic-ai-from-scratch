@@ -1,0 +1,24 @@
+{
+  "lesson": "08-message-passing-mailboxes",
+  "title": "Message Passing and Mailboxes",
+  "questions": [
+    {"stage": "pre", "question": "An agent sends a request and gets no reply. What can't it know?",
+     "options": ["Which agent it sent to", "Whether the request was lost or only the reply was", "The time", "Its own state"],
+     "correct": 1, "explanation": "That uncertainty is why resends need idempotent receivers."},
+    {"stage": "check", "question": "Why does the planner resend with the same message id instead of a new one?",
+     "options": ["It's faster", "So the receiver can recognise a resend and skip work it already did", "Ids are expensive", "The bus requires it"],
+     "correct": 1, "explanation": "Same id + dedupe = exactly-once effect."},
+    {"stage": "check", "question": "Without dedupe, billing charged 53 times for 40 jobs. Name one way a double charge happened.",
+     "options": ["The planner sent 53 jobs", "Billing charged, the reply was dropped, the planner resent, and billing charged again", "Billing crashed", "Correlation ids collided"],
+     "correct": 1, "explanation": "Lost replies cause resends of work that already happened."},
+    {"stage": "check", "question": "What does a bounded mailbox force you to decide?",
+     "options": ["Which model to use", "Whether a producer waits or gets rejected when the mailbox is full", "How many actors to run", "Nothing"],
+     "correct": 1, "explanation": "Unbounded mailboxes hide that decision until memory or latency blows up."},
+    {"stage": "post", "question": "A message crashes its handler every time. What should happen?",
+     "options": ["Retry forever", "Retry a few times, then move it to a dead-letter queue so other messages keep flowing", "Delete it silently", "Restart the system"],
+     "correct": 1, "explanation": "A poison message must not block or vanish."},
+    {"stage": "post", "question": "You move to a message broker with redelivery and dead-letter queues. What do you still have to build?",
+     "options": ["Nothing", "Idempotent handlers", "Mailboxes", "Correlation ids are no longer needed"],
+     "correct": 1, "explanation": "Brokers redeliver; only your code can make redelivery safe."}
+  ]
+}

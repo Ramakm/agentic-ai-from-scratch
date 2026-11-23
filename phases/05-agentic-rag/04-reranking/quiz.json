@@ -1,0 +1,24 @@
+{
+  "lesson": "04-reranking",
+  "title": "Reranking",
+  "questions": [
+    {"stage": "pre", "question": "Why can a first-stage vector retriever rank a chunk about toasters above the right chunk about kettles?",
+     "options": ["The vectors are corrupted", "It compares one query vector with one chunk vector and never reads the two together, so similar-looking chunks score alike", "Kettles are rare words", "It sorts alphabetically"],
+     "correct": 1, "explanation": "That separation is what makes it fast, and what a reranker fixes."},
+    {"stage": "check", "question": "What does a cross-encoder do differently from a bi-encoder?",
+     "options": ["It uses more dimensions", "It reads the query and the passage in one input and outputs a single relevance score", "It retrieves from the whole corpus", "It summarises passages"],
+     "correct": 1, "explanation": "Seeing both at once lets it use word order, negation and what actually answers the question."},
+    {"stage": "check", "question": "For the faulty-kettle question, reranking the top 3 could not find the right chunk. Why?",
+     "options": ["The reranker was broken", "The right chunk was 7th in stage 1, outside the pool: the recall ceiling", "It was a near-duplicate", "The question was ambiguous"],
+     "correct": 1, "explanation": "A reranker can only reorder what the first stage returned."},
+    {"stage": "check", "question": "Why did reranking the top 8 score lower than reranking the top 3 offline?",
+     "options": ["Eight is too many for any reranker", "The larger pool added near-duplicates that the lexical reranker preferred over the right chunk", "The ceiling dropped", "Stage 1 changed"],
+     "correct": 1, "explanation": "A larger pool raises the ceiling and adds distractors; an imperfect reranker can lose more than it gains."},
+    {"stage": "post", "question": "You rerank the top 50 with an LLM grader for every question. What cost should you expect?",
+     "options": ["About the same as retrieval", "About 50 model calls per question, which dominates cost and latency", "One extra call", "Nothing; reranking is free"],
+     "correct": 1, "explanation": "Pointwise LLM grading is one call per candidate; dedicated cross-encoders or listwise prompts reduce it."},
+    {"stage": "post", "question": "How should you choose the candidate pool size?",
+     "options": ["Always 100", "Measure the recall ceiling and precision@1 at several sizes with your reranker, and weigh the extra calls", "Use the smallest possible, 1", "Copy the framework default"],
+     "correct": 1, "explanation": "The best size depends on your first stage, your reranker's mistakes, and your budget."}
+  ]
+}

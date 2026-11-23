@@ -1,0 +1,24 @@
+{
+  "lesson": "09-graph-based-retrieval",
+  "title": "Graph-Based Retrieval",
+  "questions": [
+    {"stage": "pre", "question": "Why does vector search struggle with 'Who should I page if a checkout dependency breaks?'",
+     "options": ["The question is too long", "The answer is a chain of facts, and the later links ('Mina Shah leads the warehouse team') don't resemble the question", "Vector search can't handle names", "The index is too small"],
+     "correct": 1, "explanation": "Similarity finds text that looks like the question; a graph finds text connected to it."},
+    {"stage": "check", "question": "What does a triple store?",
+     "options": ["A whole document", "One fact as (subject, relation, object)", "A vector and its id", "A question and its answer"],
+     "correct": 1, "explanation": "e.g. (mina shah, leads, warehouse team)."},
+    {"stage": "check", "question": "Why is each triple indexed under both of its nodes?",
+     "options": ["To save memory", "So walks go in both directions: from a service you can reach the team that owns it", "Graphs require it", "To dedupe triples"],
+     "correct": 1, "explanation": "Questions often need edges in the reverse direction from how they were written."},
+    {"stage": "check", "question": "How many hops did the paging question need to get all six facts, and what did that cost?",
+     "options": ["One hop, two lines", "Three hops, 12 lines: almost the whole graph, including irrelevant teams", "Two hops, no extra cost", "It never found them"],
+     "correct": 1, "explanation": "Each hop adds every neighbour of every node reached; filtering relations keeps it manageable."},
+    {"stage": "post", "question": "'The payments team meets on Tuesdays' produced no triple. What does this illustrate?",
+     "options": ["A bug in Python", "Extraction loses information that fits no relation, so keep source ids to get back to the original text", "Graphs can't store dates", "The sentence was wrong"],
+     "correct": 1, "explanation": "A graph is a lossy view of the text."},
+    {"stage": "post", "question": "When is graph retrieval worth the cost of building the graph?",
+     "options": ["Always", "When important questions follow chains of relations (ownership, dependencies, reporting lines) that similarity search misses", "Never; vectors are enough", "Only for small corpora"],
+     "correct": 1, "explanation": "For one-hop questions it added nothing in this lesson."}
+  ]
+}

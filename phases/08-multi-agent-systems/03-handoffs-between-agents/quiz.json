@@ -1,0 +1,24 @@
+{
+  "lesson": "03-handoffs-between-agents",
+  "title": "Handoffs Between Agents",
+  "questions": [
+    {"stage": "pre", "question": "You're transferred to a second support person, who asks for your account number again. What went wrong?",
+     "options": ["The second person was slow", "What the first person learned didn't travel with the transfer", "You called the wrong number", "Nothing; it's normal"],
+     "correct": 1, "explanation": "Agents fail the same way when a handoff carries too little."},
+    {"stage": "check", "question": "How is a handoff different from delegating to a worker in orchestrator-worker?",
+     "options": ["It's faster", "The receiving agent takes over the conversation with the user; control doesn't automatically return", "It runs in parallel", "It uses a different model"],
+     "correct": 1, "explanation": "Workers report back; a handoff passes the conversation on."},
+    {"stage": "check", "question": "In the summary run, why did the tech agent ask for the app version even though the user had given it?",
+     "options": ["The tool failed", "The previous agent's summary left it out, and the tech agent saw only the summary", "The user changed versions", "The tech agent ignores summaries"],
+     "correct": 1, "explanation": "Whatever a summary omits is gone for the next agent."},
+    {"stage": "check", "question": "With 15 earlier small-talk turns, why did full-history specialists read over five times more?",
+     "options": ["They made more calls", "Full history carries every earlier turn, relevant or not, to every agent that takes over", "Summaries got longer", "The payload grew"],
+     "correct": 1, "explanation": "Full history grows with the conversation; a payload doesn't."},
+    {"stage": "post", "question": "Billing and tech keep transferring an 'invoice page error' to each other. What should the system do?",
+     "options": ["Let them continue until one accepts", "Detect the ping-pong and escalate to a human with the history", "Pick one at random", "End the conversation"],
+     "correct": 1, "explanation": "Guards turn an endless loop into one clear escalation."},
+    {"stage": "post", "question": "What's the main cost of the structured-payload policy?",
+     "options": ["It's slow", "You have to design the schema, and facts outside it are lost", "It leaks private data", "It needs more agents"],
+     "correct": 1, "explanation": "It's complete for what you planned for, and blind to what you didn't."}
+  ]
+}

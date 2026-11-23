@@ -1,0 +1,24 @@
+{
+  "lesson": "01-naive-rag-and-where-it-breaks",
+  "title": "Naive RAG and Where It Breaks",
+  "questions": [
+    {"stage": "pre", "question": "What does retrieval-augmented generation (RAG) do?",
+     "options": ["Fine-tunes the model on your documents", "Finds relevant text and puts it in the prompt so the model answers from it", "Compresses the model", "Caches previous answers"],
+     "correct": 1, "explanation": "The model's weights don't change; its context does (Phase 4 · Lesson 1)."},
+    {"stage": "check", "question": "Both refund policies were retrieved, and the answer used the superseded 2024 one. What kind of failure is this?",
+     "options": ["A retrieval failure: the right document was missing", "A reading failure: the right text arrived, but the context contradicted itself and the wrong part won", "A chunking failure", "A tokenizer failure"],
+     "correct": 1, "explanation": "Retrieval found the current policy; the conflict happened when reading the context."},
+    {"stage": "check", "question": "Why did the answer say 'Luis Fe'?",
+     "options": ["The model made a typo", "Fixed-size chunking cut the name across two chunks, and only the first was retrieved", "The embedding model truncated it", "The name is not in the corpus"],
+     "correct": 1, "explanation": "Chunk boundaries decide which facts stay together. Lesson 2 fixes this."},
+    {"stage": "check", "question": "Why does the multi-hop question fail even though both needed facts are in the corpus?",
+     "options": ["The corpus is too small", "One retrieval with the original question fetches chunks that look like the question, which only covers the first hop", "The model can't do two steps", "k is too large"],
+     "correct": 1, "explanation": "The second fact (who is Dana's deputy) only becomes searchable after the first is known."},
+    {"stage": "post", "question": "A user asks about a student discount that doesn't exist. Why does naive RAG still answer?",
+     "options": ["It has a bug", "Top-k always returns k chunks, and a naive prompt doesn't make 'not in the context' an acceptable answer", "The embedding is wrong", "Students are in the training data"],
+     "correct": 1, "explanation": "Retrieval never returns 'nothing'. Thresholds and self-checking (Lessons 7 and 8) handle this."},
+    {"stage": "post", "question": "Your RAG bot gives a wrong answer. What should you check first?",
+     "options": ["Switch to a bigger model", "The retrieved chunks: was the right text there at all?", "The temperature", "The UI"],
+     "correct": 1, "explanation": "That single check tells you whether to fix retrieval or reading."}
+  ]
+}

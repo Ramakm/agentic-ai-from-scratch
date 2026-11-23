@@ -1,0 +1,24 @@
+{
+  "lesson": "07-agent-to-agent-a2a-protocol",
+  "title": "Agent-to-Agent (A2A) Protocol",
+  "questions": [
+    {"stage": "pre", "question": "Your agent wants to delegate to a partner company's booking agent. It can't see their code, model or prompts. What does it need?",
+     "options": ["Their source code", "A protocol for discovering the agent and tracking delegated tasks through to results", "A shared database", "The same model"],
+     "correct": 1, "explanation": "A2A is built for opaque agents owned by someone else."},
+    {"stage": "check", "question": "Where does a client find an A2A agent's skills and endpoint?",
+     "options": ["In tools/list", "In the Agent Card at /.well-known/agent-card.json", "In a DNS record", "By sending a test message"],
+     "correct": 1, "explanation": "The card lists supportedInterfaces, capabilities and skills."},
+    {"stage": "check", "question": "The task comes back in TASK_STATE_INPUT_REQUIRED. What does the client do next?",
+     "options": ["Start a new task", "Send another message with the same taskId and contextId carrying the answer", "Call CancelTask", "Poll GetTask until it completes"],
+     "correct": 1, "explanation": "The task is paused, waiting for the client."},
+    {"stage": "check", "question": "Why send the budget as a data part rather than text?",
+     "options": ["Text parts are deprecated", "Structured JSON needs no parsing, so the remote agent can't misread it", "Data parts are smaller", "It's required"],
+     "correct": 1, "explanation": "Use data parts for values, text parts for people."},
+    {"stage": "post", "question": "A request is well-formed but asks for something the agent doesn't do. How should it respond?",
+     "options": ["JSON-RPC error -32601", "A task in TASK_STATE_REJECTED with a message explaining why", "HTTP 404", "No response"],
+     "correct": 1, "explanation": "Declining a task isn't a protocol error."},
+    {"stage": "post", "question": "How do MCP and A2A relate?",
+     "options": ["A2A replaces MCP", "MCP connects an agent to tools; A2A connects agents to agents; a remote agent can use MCP internally", "They're the same protocol", "MCP is for remote agents only"],
+     "correct": 1, "explanation": "They compose rather than compete."}
+  ]
+}

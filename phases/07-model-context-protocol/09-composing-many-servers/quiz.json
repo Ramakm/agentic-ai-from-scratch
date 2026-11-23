@@ -1,0 +1,24 @@
+{
+  "lesson": "09-composing-many-servers",
+  "title": "Composing Many Servers",
+  "questions": [
+    {"stage": "pre", "question": "Two connected servers both expose a tool named search. What goes wrong if the host flattens all tools into one list?",
+     "options": ["Nothing", "One of them is hidden or the model calls the wrong one", "Both run every time", "The servers merge"],
+     "correct": 1, "explanation": "Namespacing (server__tool) makes every exposed name unique."},
+    {"stage": "check", "question": "Why does the hub use two underscores, as in files__search, rather than files/search?",
+     "options": ["Style", "Tool names must stick to letters, digits, _, - and ., and many model APIs are stricter", "Slashes are slower", "The spec requires __"],
+     "correct": 1, "explanation": "The exposed name has to be valid for both MCP and the model's tool format."},
+    {"stage": "check", "question": "Fifteen tools from six servers cost about 850 tokens per turn. What does per-task selection buy?",
+     "options": ["Nothing; models handle any number of tools", "Less context spent and fewer similar tools for the model to confuse", "Faster servers", "Fewer servers to run"],
+     "correct": 1, "explanation": "Here it went from 15 tools to the 6 the task needed."},
+    {"stage": "check", "question": "The calendar server is slow. How does the hub stop it holding up a files call made in the same turn?",
+     "options": ["It doesn't", "Calls to different servers run in parallel, each with its own timeout; a timeout becomes an error observation", "It kills the calendar", "It retries files"],
+     "correct": 1, "explanation": "Separate processes, separate readers, separate deadlines."},
+    {"stage": "post", "question": "A server crashes on every call. What should the host do?",
+     "options": ["Restart it forever", "Remove its tools, keep the others working, restart a limited number of times, then leave it down and report why", "Stop the agent", "Ignore it"],
+     "correct": 1, "explanation": "A restart budget avoids endless crash loops."},
+    {"stage": "post", "question": "Results from many servers now share one model context. What new risk does that create?",
+     "options": ["Higher latency only", "Text returned by one server can steer the model's calls to another server", "Servers read each other's memory", "None"],
+     "correct": 1, "explanation": "Cross-server injection is covered in Lesson 11."}
+  ]
+}

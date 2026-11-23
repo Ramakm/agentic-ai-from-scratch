@@ -1,0 +1,24 @@
+{
+  "lesson": "10-when-not-to-plan",
+  "title": "When Not to Plan",
+  "questions": [
+    {"stage": "pre", "question": "A user asks 'What's the difference between a list and a tuple?' What's the lightest approach?",
+     "options": ["Plan-and-execute", "A direct answer: one model call, no tools", "A ReAct loop", "Tree of Thoughts"],
+     "correct": 1, "explanation": "Planning here only adds a call and latency."},
+    {"stage": "check", "question": "Why does 'Why is checkout slow since this morning?' route to a ReAct loop?",
+     "options": ["It's urgent", "Its path isn't known in advance: each finding decides the next step, so a fixed plan would be a guess", "It needs approval", "It's checkable"],
+     "correct": 1, "explanation": "Investigations and research are the classic unknown-path tasks."},
+    {"stage": "check", "question": "Why does 'path not known' take precedence over 'irreversible' in the router?",
+     "options": ["Irreversible steps don't matter", "You can't validate and approve a plan you can't write; risky steps get approval inside the loop instead", "It's alphabetical", "ReAct is cheaper"],
+     "correct": 1, "explanation": "Approval moves to the specific risky steps (Phase 2 · Lesson 8)."},
+    {"stage": "check", "question": "On the six tasks a fixed plan can do, why did 'always plan' use more calls than routing?",
+     "options": ["Its plans were wrong", "It planned even tasks with nothing to plan (a question, an email summary), adding a call each", "It retried", "It used ReAct inside"],
+     "correct": 1, "explanation": "That's the planning tax on simple requests."},
+    {"stage": "post", "question": "A misrouted task shows up in your logs. What does the router's reason list help you find?",
+     "options": ["The user's intent", "Which property (tools, steps, known path, irreversible, checkable) was mislabelled", "The model's temperature", "Nothing"],
+     "correct": 1, "explanation": "Rules with reasons make routing mistakes diagnosable."},
+    {"stage": "post", "question": "Which property is hardest for a model to label from the request alone?",
+     "options": ["Needs tools", "Whether the path is known in advance", "Whether it mentions a name", "Its length"],
+     "correct": 1, "explanation": "It depends on the domain: 'release' is predictable, 'why is it slow' isn't, and requests don't say so."}
+  ]
+}

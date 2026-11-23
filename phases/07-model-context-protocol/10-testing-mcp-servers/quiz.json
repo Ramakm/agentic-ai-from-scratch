@@ -1,0 +1,24 @@
+{
+  "lesson": "10-testing-mcp-servers",
+  "title": "Testing MCP Servers",
+  "questions": [
+    {"stage": "pre", "question": "Every tool function in your server passes its unit tests, but hosts keep dropping the server. What kind of testing is missing?",
+     "options": ["More unit tests", "Black-box tests of the running server as a protocol participant", "Load testing", "Model evals"],
+     "correct": 1, "explanation": "Banners on stdout, wrong id types and crashes on bad input aren't visible to function-level tests."},
+    {"stage": "check", "question": "The server answers request id 4242 with id \"4242\". Why is that a failure?",
+     "options": ["It isn't", "The client matches responses by id; a string doesn't equal the integer it sent, so the response is never matched", "Strings are slower", "JSON can't carry integers"],
+     "correct": 1, "explanation": "The response must echo the id exactly, type included."},
+    {"stage": "check", "question": "Why is MCP fuzzing schema-guided and seeded rather than random bytes?",
+     "options": ["Random bytes are illegal", "Models send mostly-valid JSON with typical mistakes; seeds make every failure reproducible", "Schemas make it faster", "Seeds hide bugs"],
+     "correct": 1, "explanation": "The goal is the inputs real clients produce, and failures you can replay."},
+    {"stage": "check", "question": "Which change to a tool is breaking?",
+     "options": ["Adding an optional parameter", "Making an existing optional parameter required", "Adding a new tool", "Fixing a typo in a title"],
+     "correct": 1, "explanation": "Calls that omitted it were valid yesterday and fail today."},
+    {"stage": "post", "question": "A release only changes a tool's description. The snapshot diff marks it 'review'. Why not 'ok'?",
+     "options": ["Descriptions are part of the schema", "A description is a prompt; changing it can change how models use the tool", "It's a breaking change", "Reviews are always required"],
+     "correct": 1, "explanation": "No client code breaks, but model behaviour can."},
+    {"stage": "post", "question": "The harness says 'exits within 2s when stdin closes: FAIL'. What's the likely cause?",
+     "options": ["Slow tools", "A non-daemon thread or blocking loop keeps the process alive after input ends", "Wrong protocol version", "stdout junk"],
+     "correct": 1, "explanation": "Hosts then have to kill it, or zombie processes pile up."}
+  ]
+}

@@ -3,20 +3,20 @@
 
 > Plan-and-execute, task trees, Tree of Thoughts, reflection, verifiers, and knowing when not to plan.
 
-**Status:** □ planned · **Lessons:** 0 of 10 live · **Time:** ~8 hours
+**Status:** ■ complete · **Lessons:** 10 of 10 live · **Time:** ~8 hours
 
 | # | Lesson | Type | Time |
 |---|--------|------|------|
-| 06.01 | Chain-of-thought for actions | planned | 40 min |
-| 06.02 | Plan-and-execute | planned | 55 min |
-| 06.03 | Task decomposition trees | planned | 50 min |
-| 06.04 | Tree of Thoughts search | planned | 60 min |
-| 06.05 | Reflection & self-critique | planned | 45 min |
-| 06.06 | Reflexion: learning from failures | planned | 55 min |
-| 06.07 | Verifiers and checkers | planned | 50 min |
-| 06.08 | Replanning on surprise | planned | 45 min |
-| 06.09 | Reasoning models in the loop | planned | 45 min |
-| 06.10 | When not to plan | planned | 30 min |
+| 06.01 | [Chain-of-thought for actions](01-chain-of-thought-for-actions/docs/en.md) | Build | 40 min |
+| 06.02 | [Plan-and-execute](02-plan-and-execute/docs/en.md) | Build | 55 min |
+| 06.03 | [Task decomposition trees](03-task-decomposition-trees/docs/en.md) | Build | 50 min |
+| 06.04 | [Tree of Thoughts search](04-tree-of-thoughts-search/docs/en.md) | Build | 60 min |
+| 06.05 | [Reflection & self-critique](05-reflection-self-critique/docs/en.md) | Build | 45 min |
+| 06.06 | [Reflexion: learning from failures](06-reflexion-learning-from-failures/docs/en.md) | Build | 55 min |
+| 06.07 | [Verifiers and checkers](07-verifiers-and-checkers/docs/en.md) | Build | 50 min |
+| 06.08 | [Replanning on surprise](08-replanning-on-surprise/docs/en.md) | Build | 45 min |
+| 06.09 | [Reasoning models in the loop](09-reasoning-models-in-the-loop/docs/en.md) | Build | 45 min |
+| 06.10 | [When not to plan](10-when-not-to-plan/docs/en.md) | Build | 30 min |
 
 Every live lesson folder has `docs/en.md`, runnable `code/` with tests, a `quiz.json`, and an artifact in `outputs/`.
 Want to write a planned lesson? See [CONTRIBUTING.md](../../CONTRIBUTING.md) and [LESSON_TEMPLATE.md](../../LESSON_TEMPLATE.md).

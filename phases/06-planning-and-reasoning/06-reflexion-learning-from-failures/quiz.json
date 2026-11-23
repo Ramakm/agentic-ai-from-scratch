@@ -1,0 +1,24 @@
+{
+  "lesson": "06-reflexion-learning-from-failures",
+  "title": "Reflexion: Learning from Failures",
+  "questions": [
+    {"stage": "pre", "question": "An agent retries with only the latest test failure. What typically happens over several attempts?",
+     "options": ["It improves every time", "It fixes the latest problem and forgets earlier fixes, so scores oscillate", "It stops after one attempt", "It always solves the task"],
+     "correct": 1, "explanation": "Retry went 2 -> 5 -> 4 -> 5 of 7 and never solved it."},
+    {"stage": "check", "question": "What does each Reflexion attempt see?",
+     "options": ["Only the spec", "The spec plus every reflection written so far in this task", "The newest error only", "Other tasks' episodes"],
+     "correct": 1, "explanation": "Accumulated lessons are what made the scores climb 2, 5, 6, 7."},
+    {"stage": "check", "question": "Why does evaluate() run candidate code in a separate interpreter with -I and a timeout?",
+     "options": ["It's faster", "Generated code is untrusted; a crash, infinite loop or side effect must not affect the agent's own process", "Python requires it", "To use more cores"],
+     "correct": 1, "explanation": "Never exec generated code in your own process; Phase 10 adds real sandboxes."},
+    {"stage": "check", "question": "Where does the verdict in Reflexion come from?",
+     "options": ["The model's opinion of its code", "An external evaluator: here, unit tests", "The user", "A random check"],
+     "correct": 1, "explanation": "As in Lesson 5, external signal is what makes self-improvement work."},
+    {"stage": "post", "question": "A model writes reflections like 'be more careful next time'. What's the likely effect?",
+     "options": ["Big improvement", "Little: vague reflections give the next attempt nothing specific to change", "The tests change", "It speeds up"],
+     "correct": 1, "explanation": "Useful reflections name the failing case and the change."},
+    {"stage": "post", "question": "How does Reflexion differ from episodic memory?",
+     "options": ["They are the same", "Reflexion keeps lessons across attempts at one task; episodic memory keeps episodes across many tasks and retrieves the relevant few", "Episodic memory uses tests", "Reflexion uses embeddings"],
+     "correct": 1, "explanation": "Different scope, different retrieval."}
+  ]
+}

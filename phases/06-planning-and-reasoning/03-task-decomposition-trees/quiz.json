@@ -1,0 +1,24 @@
+{
+  "lesson": "03-task-decomposition-trees",
+  "title": "Task Decomposition Trees",
+  "questions": [
+    {"stage": "pre", "question": "Why does a flat plan struggle with 'book Lakeside, or the Old Mill if it's full'?",
+     "options": ["Flat plans can't call tools", "A list commits to one option; the alternative needs replanning unless the plan can express 'any one of these'", "It is too long", "Hotels can't be planned"],
+     "correct": 1, "explanation": "An OR node writes the alternative into the plan."},
+    {"stage": "check", "question": "How do AND and OR nodes run their children?",
+     "options": ["Both run all children", "AND stops at the first failing child; OR stops at the first successful child", "AND runs in parallel, OR in sequence", "Randomly"],
+     "correct": 1, "explanation": "That short-circuiting is what makes fallbacks and early failure work."},
+    {"stage": "check", "question": "What happens at max_depth?",
+     "options": ["The tree is truncated silently", "The node must be a primitive tool call; if it isn't, building fails loudly", "Depth resets", "The model is called again"],
+     "correct": 1, "explanation": "It stops endless refinement and vague leaves."},
+    {"stage": "check", "question": "Why did 'check_venue' come before 'book_venue' inside each venue branch?",
+     "options": ["Alphabetical order", "Checking first means a failing branch makes no booking that would have to be undone", "Tools require it", "It's cheaper"],
+     "correct": 1, "explanation": "Put the step most likely to fail first inside an AND."},
+    {"stage": "post", "question": "With both venues full, what did the run book?",
+     "options": ["Three trains and the agenda", "Nothing: the venue step failed first and the root AND stopped", "One venue", "Everything except the venue"],
+     "correct": 1, "explanation": "Statuses were failed, pending, pending: nothing after the failure ran."},
+    {"stage": "post", "question": "What does building a 13-node tree cost?",
+     "options": ["One model call", "13 decomposer calls, one per node, each small and individually checkable", "Nothing", "One call per leaf only"],
+     "correct": 1, "explanation": "The node budget caps it; that is the price of asking one question per node."}
+  ]
+}

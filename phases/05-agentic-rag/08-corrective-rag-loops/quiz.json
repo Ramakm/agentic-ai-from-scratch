@@ -1,0 +1,24 @@
+{
+  "lesson": "08-corrective-rag-loops",
+  "title": "Corrective RAG Loops",
+  "questions": [
+    {"stage": "pre", "question": "What does plain RAG do with whatever retrieval returns?",
+     "options": ["Grades it first", "Sends it straight to the model, whether or not it is relevant", "Discards low scores", "Searches again"],
+     "correct": 1, "explanation": "Corrective RAG adds a grading step between retrieval and generation."},
+    {"stage": "check", "question": "What does the system do when retrieval is graded 'incorrect'?",
+     "options": ["Answers anyway", "Discards it, rewrites the query and searches again, then tries the next source", "Asks the user to rephrase", "Uses the second-best chunk"],
+     "correct": 1, "explanation": "Each verdict maps to a corrective action, within a budget."},
+    {"stage": "check", "question": "Why did refinement drop the 2024 refund policy?",
+     "options": ["It scored lower", "It was marked superseded and a current version was also retrieved", "It was too long", "It had no numbers"],
+     "correct": 1, "explanation": "If the superseded version were all you had, it would be kept and the answer should say it may be outdated."},
+    {"stage": "check", "question": "With a lower threshold of 0.3, the parental leave question was graded ambiguous. What went wrong?",
+     "options": ["Nothing", "The loop answered a parental leave question with the annual leave policy, because one shared word made weak evidence look usable", "It searched forever", "It crashed"],
+     "correct": 1, "explanation": "Thresholds must be set from hard cases like unanswerable questions, not easy ones."},
+    {"stage": "post", "question": "For the VPN question, the handbook rewrite was wasted. What would avoid it?",
+     "options": ["More rewrites", "Routing the question to the right source first (IT topics to the IT wiki)", "A bigger k", "Removing the handbook"],
+     "correct": 1, "explanation": "The query was fine; it was in the wrong place."},
+    {"stage": "post", "question": "Your corrective loop falls back to web search. What must you add?",
+     "options": ["Nothing", "Source labels in the answer and trust rules, since web text is untrusted and shouldn't silently override your documents", "A bigger model", "More rewrites"],
+     "correct": 1, "explanation": "External text brings prompt-injection and accuracy risks (Phase 4 · Lesson 11)."}
+  ]
+}

@@ -3,20 +3,20 @@
 
 > Retrieval as a tool the agent decides to call. Hybrid search, reranking, rewriting, and self-correcting loops.
 
-**Status:** □ planned · **Lessons:** 0 of 10 live · **Time:** ~8 hours
+**Status:** ■ complete · **Lessons:** 10 of 10 live · **Time:** ~8 hours
 
 | # | Lesson | Type | Time |
 |---|--------|------|------|
-| 05.01 | Naive RAG and where it breaks | planned | 45 min |
-| 05.02 | Chunking strategies | planned | 45 min |
-| 05.03 | Hybrid search: BM25 + vectors | planned | 55 min |
-| 05.04 | Reranking | planned | 40 min |
-| 05.05 | Query rewriting & decomposition | planned | 45 min |
-| 05.06 | Retrieval as a tool | planned | 45 min |
-| 05.07 | Self-correcting RAG | planned | 55 min |
-| 05.08 | Corrective RAG loops | planned | 50 min |
-| 05.09 | Graph-based retrieval | planned | 55 min |
-| 05.10 | Evaluating retrieval quality | planned | 45 min |
+| 05.01 | [Naive RAG and where it breaks](01-naive-rag-and-where-it-breaks/docs/en.md) | Build | 45 min |
+| 05.02 | [Chunking strategies](02-chunking-strategies/docs/en.md) | Build | 45 min |
+| 05.03 | [Hybrid search: BM25 + vectors](03-hybrid-search-bm25-vectors/docs/en.md) | Build | 55 min |
+| 05.04 | [Reranking](04-reranking/docs/en.md) | Build | 40 min |
+| 05.05 | [Query rewriting & decomposition](05-query-rewriting-decomposition/docs/en.md) | Build | 45 min |
+| 05.06 | [Retrieval as a tool](06-retrieval-as-a-tool/docs/en.md) | Build | 45 min |
+| 05.07 | [Self-correcting RAG](07-self-correcting-rag/docs/en.md) | Build | 55 min |
+| 05.08 | [Corrective RAG loops](08-corrective-rag-loops/docs/en.md) | Build | 50 min |
+| 05.09 | [Graph-based retrieval](09-graph-based-retrieval/docs/en.md) | Build | 55 min |
+| 05.10 | [Evaluating retrieval quality](10-evaluating-retrieval-quality/docs/en.md) | Build | 45 min |
 
 Every live lesson folder has `docs/en.md`, runnable `code/` with tests, a `quiz.json`, and an artifact in `outputs/`.
 Want to write a planned lesson? See [CONTRIBUTING.md](../../CONTRIBUTING.md) and [LESSON_TEMPLATE.md](../../LESSON_TEMPLATE.md).

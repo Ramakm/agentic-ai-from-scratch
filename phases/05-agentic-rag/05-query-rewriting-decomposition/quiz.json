@@ -1,0 +1,24 @@
+{
+  "lesson": "05-query-rewriting-decomposition",
+  "title": "Query Rewriting & Decomposition",
+  "questions": [
+    {"stage": "pre", "question": "Why does searching with the user's exact question often work poorly?",
+     "options": ["Questions are too short", "Users write chatty questions in their own words, while documents state answers in other words", "Retrievers can't handle question marks", "Embeddings ignore questions"],
+     "correct": 1, "explanation": "A step that rewrites the question into the documents' vocabulary closes that gap."},
+    {"stage": "check", "question": "What does HyDE search with?",
+     "options": ["The question", "A model-written hypothetical answer, which tends to be closer to the real answer in embedding space", "The previous answer", "Random variants"],
+     "correct": 1, "explanation": "You search with the guess, then answer only from what you actually retrieved."},
+    {"stage": "check", "question": "Why must the steps of a decomposed multi-hop question run in order?",
+     "options": ["To save tokens", "A later step's query needs an earlier step's answer (Dana Okafor) before it can be written", "The model requires it", "RRF needs ordered input"],
+     "correct": 1, "explanation": "'Who is the deputy of {answer}?' only becomes a useful search after step 1 is answered."},
+    {"stage": "check", "question": "Multi-query found the right sentence with one variant but still missed it after fusion. Why?",
+     "options": ["RRF is broken", "Most variants returned the same generic sentences, and fusion rewards agreement, so they outvoted the single good hit", "The variants were empty", "k was wrong"],
+     "correct": 1, "explanation": "More phrasings help only if they disagree with each other in useful ways."},
+    {"stage": "post", "question": "Every query transformation adds what cost?",
+     "options": ["None", "At least one model call before retrieval, adding latency the user waits for", "A new vector index", "Retraining the embedder"],
+     "correct": 1, "explanation": "Decomposition adds one search and usually one model call per step."},
+    {"stage": "post", "question": "Rewrite and HyDE also found the multi-hop answer in this small corpus. Why is decomposition still the reliable choice for multi-hop questions?",
+     "options": ["It is cheaper", "Their wording happened to match the second hop; with several similar facts (many deputies), only substituting the first answer pins down the right one", "It uses BM25", "It needs no model"],
+     "correct": 1, "explanation": "Getting lucky on a small corpus isn't the same as being correct by construction."}
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "lesson": "02-chunking-strategies",
+  "title": "Chunking Strategies",
+  "questions": [
+    {"stage": "pre", "question": "Why can chunking alone make a fact impossible to retrieve correctly?",
+     "options": ["Chunks are encrypted", "If a fact is cut across two chunks, no retriever can return it whole in one chunk", "Chunks are always too small for embeddings", "Chunking deletes text"],
+     "correct": 1, "explanation": "Every later step works on chunks; a split fact can only be found in halves."},
+    {"stage": "check", "question": "Fixed + overlap kept every fact intact but found the whole fact for only 4 of 7 questions. Why?",
+     "options": ["Overlap deletes facts", "The extra overlapping half-chunks compete with the good chunks in ranking", "Overlap breaks embeddings", "It used fewer chunks"],
+     "correct": 1, "explanation": "Overlap mainly improves 'facts intact'; it adds near-duplicate chunks that can outrank the best one."},
+    {"stage": "check", "question": "Which question did only 'sections + path' answer, and why?",
+     "options": ["The Paris question, because it is the longest", "The 'most cities' hotel limit: its section text never mentions hotels or cities; only the heading path does", "The password question, because of numbers", "None; they tied"],
+     "correct": 1, "explanation": "Short sections often rely on their headings for meaning. The path puts that meaning into the chunk."},
+    {"stage": "check", "question": "What do the two measures 'facts intact' and 'top-1 has fact' each tell you?",
+     "options": ["The same thing twice", "Whether the chunker kept facts whole at all, and whether retrieval then finds a chunk with the whole fact", "Speed and cost", "Recall and precision of the model"],
+     "correct": 1, "explanation": "The first measures the chunker alone; the second measures chunker and retriever together."},
+    {"stage": "post", "question": "You're indexing PDFs. What should happen before chunking?",
+     "options": ["Nothing; chunk the raw text", "Parse the structure (headings, tables, lists) so the chunker can cut on it", "Translate to English", "Remove all numbers"],
+     "correct": 1, "explanation": "Plain text extracted from a PDF has already lost the headings a structure-aware chunker needs."},
+    {"stage": "post", "question": "A teammate sets chunk size to 500 tokens 'because the tutorial did'. What do you suggest?",
+     "options": ["Keep it", "Try several sizes and strategies on real questions from your corpus and pick by facts intact and retrieval hits", "Always use 100 tokens", "Use one chunk per document"],
+     "correct": 1, "explanation": "The right size depends on how long your facts and sections are. Measure."}
+  ]
+}

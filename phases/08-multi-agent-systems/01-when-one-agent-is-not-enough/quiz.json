@@ -1,0 +1,24 @@
+{
+  "lesson": "01-when-one-agent-is-not-enough",
+  "title": "When One Agent Is Not Enough",
+  "questions": [
+    {"stage": "pre", "question": "An agent keeps choosing the wrong one of several similar tools. What should you try before splitting it into several agents?",
+     "options": ["Add a second agent to check it", "Improve tool names and descriptions, or select fewer tools per task", "Raise the temperature", "Add more tools"],
+     "correct": 1, "explanation": "Most tool-choice errors are description problems, which splitting doesn't fix."},
+    {"stage": "check", "question": "With vague domain descriptions, the router design scored worse than one agent. Why?",
+     "options": ["Specialists are weaker", "Requests routed to the wrong specialist can't be recovered; the router added its own errors", "It used fewer tokens", "The tools changed"],
+     "correct": 1, "explanation": "Overall accuracy is roughly router accuracy times specialist accuracy."},
+    {"stage": "check", "question": "Why did three workers read fewer tokens in total than one agent doing all three research threads?",
+     "options": ["Workers use a cheaper model", "Each model call re-reads its context; workers never re-read the other threads' results", "Summaries are free", "Workers skip the brief"],
+     "correct": 1, "explanation": "In one window, every later call pays for every earlier result."},
+    {"stage": "check", "question": "A task has one long thread whose context exceeds the window, with no independent parts. What's the better fix?",
+     "options": ["Orchestrator-worker", "Compress or summarise the context within one agent", "A debate", "A hierarchy"],
+     "correct": 1, "explanation": "Splitting needs separable work; otherwise you just add handoffs."},
+    {"stage": "post", "question": "Which pressure justifies separate agents even when tools and context are small?",
+     "options": ["Wanting faster answers", "Parts that need different trust levels, like reading untrusted email and sending payments", "Having two developers", "Using two models"],
+     "correct": 1, "explanation": "Isolation keeps untrusted input from steering dangerous tools."},
+    {"stage": "post", "question": "Anthropic reported its multi-agent research system used about 15 times the tokens of a chat. What does that suggest about the toy's 71,600 vs 166,600 result?",
+     "options": ["Multi-agent is always cheaper", "Splitting saves tokens per unit of work, but teams usually do more work, so total cost often rises", "The toy is wrong", "Tokens don't matter"],
+     "correct": 1, "explanation": "Budget for the extra work, not just the per-call savings."}
+  ]
+}

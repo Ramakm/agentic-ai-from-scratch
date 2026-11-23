@@ -1,0 +1,24 @@
+{
+  "lesson": "09-parallel-fan-out-fan-in",
+  "title": "Parallel Fan-Out, Fan-In",
+  "questions": [
+    {"stage": "pre", "question": "You start 24 model calls at once with an API key that allows 8 in flight. What happens?",
+     "options": ["It's three times faster than 8 workers", "Most extra requests get 429 errors and retries; it's no faster and makes many more calls", "The API queues them for free", "The batch fails"],
+     "correct": 1, "explanation": "Here: 98 calls and 74 rejections, finishing slightly later than 8 workers."},
+    {"stage": "check", "question": "With 8 workers, most documents take under 6 s but the batch took 44 s. Why?",
+     "options": ["Rate limits", "A few very slow calls (the tail) set the finish time", "The synthesiser was slow", "Sequential execution"],
+     "correct": 1, "explanation": "Wait-for-all means wait-for-the-slowest."},
+    {"stage": "check", "question": "What does a hedged request do?",
+     "options": ["Cancels slow requests", "Sends a duplicate of a request that's slower than usual and takes whichever answer arrives first", "Retries on error", "Lowers the temperature"],
+     "correct": 1, "explanation": "It removed most of the tail here for 3 extra calls, keeping all 24 results."},
+    {"stage": "check", "question": "A per-task timeout and a hedge both finished in about 24 s. What's the difference?",
+     "options": ["None", "The timeout lost 3 documents; hedging kept all 24 at the cost of 3 extra calls", "Hedging was slower", "Timeouts make more calls"],
+     "correct": 1, "explanation": "Choose by how much a missing item costs."},
+    {"stage": "post", "question": "24 summaries of 600 tokens don't fit an 8,000-token synthesiser. What's the fix?",
+     "options": ["Truncate the list", "Reduce in groups (a tree): summarise groups first, then combine the group summaries", "Use a smaller font", "Drop half the documents"],
+     "correct": 1, "explanation": "Keep levels few; each one can lose detail."},
+    {"stage": "post", "question": "One document in the batch is corrupt and raises an error. What should fan_out return?",
+     "options": ["Raise, failing the whole batch", "All other results, plus an error entry for that item so the synthesiser can say what's missing", "Nothing", "A retry loop forever"],
+     "correct": 1, "explanation": "Per-item isolation turns one failure into one gap."}
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "lesson": "05-shared-blackboards",
+  "title": "Shared Blackboards",
+  "questions": [
+    {"stage": "pre", "question": "In an investigation, nobody knows in advance which checks will be needed. What makes a fixed orchestrator plan awkward here?",
+     "options": ["Orchestrators are slow", "The next step depends on what earlier steps find, so the plan would have to be rewritten constantly", "Plans can't be JSON", "There are too few agents"],
+     "correct": 1, "explanation": "A blackboard lets the order of work emerge from the data."},
+    {"stage": "check", "question": "How does an agent on a blackboard decide when to act?",
+     "options": ["The orchestrator tells it", "Its trigger checks the board for entries it can use", "It runs every cycle", "Another agent calls it"],
+     "correct": 1, "explanation": "Agents don't call each other; they react to the board."},
+    {"stage": "check", "question": "Adding deploy_watcher changed the conclusion from 'pool exhausted' to 'bad deploy leaks connections'. What code changed in the other agents?",
+     "options": ["The hypothesizer and decider", "None; the new agent's entries gave existing agents more to work with", "The control loop", "The tester"],
+     "correct": 1, "explanation": "Extensibility without rewiring is the pattern's main strength."},
+    {"stage": "check", "question": "Two agents read version 1 of an entry and both write changes. With blind writes, what happens?",
+     "options": ["Both changes merge", "The second write silently erases the first (a lost update)", "Both fail", "The board locks forever"],
+     "correct": 1, "explanation": "Versioned writes turn the second write into a conflict that's retried on fresh data."},
+    {"stage": "post", "question": "Why does every entry carry based_on links?",
+     "options": ["For faster search", "So any conclusion can be traced back to observed facts and who posted them", "To save space", "The control loop needs them"],
+     "correct": 1, "explanation": "With many writers, provenance is how you tell evidence from invention."},
+    {"stage": "post", "question": "What's the main risk of a blackboard compared with an orchestrator?",
+     "options": ["It can't scale", "The order of work is harder to predict, and without stop conditions agents can keep acting forever", "It needs one model per agent", "It can't run in parallel"],
+     "correct": 1, "explanation": "Design the control loop's stop conditions as carefully as the entry types."}
+  ]
+}

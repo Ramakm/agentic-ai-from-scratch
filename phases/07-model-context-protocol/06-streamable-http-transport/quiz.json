@@ -1,0 +1,24 @@
+{
+  "lesson": "06-streamable-http-transport",
+  "title": "Streamable HTTP Transport",
+  "questions": [
+    {"stage": "pre", "question": "A company wants one MCP server that many users' IDEs can reach. Why doesn't stdio work for that?",
+     "options": ["stdio is too slow", "stdio means each host spawns the server as its own child process; a shared service needs a network endpoint", "stdio can't carry JSON", "stdio has no error codes"],
+     "correct": 1, "explanation": "Remote servers use Streamable HTTP."},
+    {"stage": "check", "question": "The Mcp-Name header says search_docs but the body calls run_query. What must the server do?",
+     "options": ["Use the body", "Reject with 400 and error -32020 (HeaderMismatch)", "Use the header", "Run both"],
+     "correct": 1, "explanation": "If gateways route on headers and servers act on bodies, a mismatch is an attack."},
+    {"stage": "check", "question": "How does a client cancel a streaming request over Streamable HTTP?",
+     "options": ["POST notifications/cancelled", "Close the response stream", "Send DELETE", "Wait for a timeout"],
+     "correct": 1, "explanation": "notifications/cancelled is for stdio; on HTTP, closing the stream is the cancel."},
+    {"stage": "check", "question": "A tool name contains 'é'. How does it go in the Mcp-Name header?",
+     "options": ["As-is", "As =?base64?<UTF-8 bytes in Base64>?=", "Percent-encoded", "It's left out"],
+     "correct": 1, "explanation": "Header values must be visible ASCII; the sentinel format carries anything else safely."},
+    {"stage": "post", "question": "Why can eight requests go round-robin across two server instances with no shared storage?",
+     "options": ["The instances sync state", "Every request carries everything needed (version, capabilities, arguments); there are no sessions", "The load balancer pins clients", "Only reads were sent"],
+     "correct": 1, "explanation": "Stateless requests can land anywhere. Cross-call state uses explicit handles in tool arguments."},
+    {"stage": "post", "question": "A local MCP server listens on 0.0.0.0 and doesn't check Origin. What's the risk?",
+     "options": ["None on a laptop", "Other machines on the network, and web pages via DNS rebinding, can call its tools", "Higher latency", "It can't use SSE"],
+     "correct": 1, "explanation": "Bind to 127.0.0.1, validate Origin, and authenticate."}
+  ]
+}

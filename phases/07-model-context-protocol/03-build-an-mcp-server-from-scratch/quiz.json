@@ -1,0 +1,24 @@
+{
+  "lesson": "03-build-an-mcp-server-from-scratch",
+  "title": "Build an MCP Server from Scratch",
+  "questions": [
+    {"stage": "pre", "question": "A tool's hand-written JSON Schema and its function signature disagree after a code change. What's the most reliable fix?",
+     "options": ["Review schemas in code review", "Generate the schema from the function's type hints", "Remove the schema", "Let the model guess"],
+     "correct": 1, "explanation": "If one is generated from the other they can't drift."},
+    {"stage": "check", "question": "The model calls add_note with tags as a string instead of an array. What should the server return?",
+     "options": ["JSON-RPC error -32602", "A result with isError: true listing the problem, so the model can fix it", "Nothing", "A result with isError: false"],
+     "correct": 1, "explanation": "Invalid arguments are tool execution errors the model can correct."},
+    {"stage": "check", "question": "A handler raises an unexpected RuntimeError. What does the model see?",
+     "options": ["The full traceback", "A generic 'failed with an internal error' result; the traceback goes to stderr", "A JSON-RPC -32603 error", "The connection closes"],
+     "correct": 1, "explanation": "Tracebacks leak paths and internals and don't help the model."},
+    {"stage": "check", "question": "When should a server return a JSON-RPC error instead of an isError result?",
+     "options": ["Whenever anything goes wrong", "When the request can't be processed: unknown method or tool, missing _meta, unsupported version", "When the user lacks permission", "When the tool is slow"],
+     "correct": 1, "explanation": "Protocol errors are about the request; tool errors are about running the tool."},
+    {"stage": "post", "question": "A server marks its delete_everything tool with readOnlyHint: true. What should a host do with that?",
+     "options": ["Trust it and skip approval", "Treat annotations from untrusted servers as hints only; decide approval by its own policy", "Reject the server", "Ask the model"],
+     "correct": 1, "explanation": "Annotations are claims by the server, not guarantees."},
+    {"stage": "post", "question": "Why does tools/list return tools in a deterministic order?",
+     "options": ["The spec requires alphabetical order", "So clients can cache it and the model's prompt stays the same between calls", "To make pagination faster", "It doesn't matter"],
+     "correct": 1, "explanation": "Stable lists are cacheable, and stable prompts keep model behaviour (and prompt caches) stable."}
+  ]
+}

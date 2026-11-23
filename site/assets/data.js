@@ -39,7 +39,7 @@ window.SITE = {
   "totals": {
     "phases": 16,
     "lessons": 163,
-    "published": 53,
+    "published": 95,
     "hours": 127
   }
 };
@@ -613,88 +613,108 @@ window.PHASES = [
   "id": "05-agentic-rag",
   "name": "Retrieval & Agentic RAG",
   "desc": "Retrieval as a tool the agent decides to call. Hybrid search, reranking, rewriting, and self-correcting loops.",
-  "status": "planned",
-  "published": 0,
+  "status": "complete",
+  "published": 10,
   "lessons": [
    {
     "id": "01-naive-rag-and-where-it-breaks",
     "title": "Naive RAG and where it breaks",
     "minutes": 45,
     "path": "phases/05-agentic-rag/01-naive-rag-and-where-it-breaks",
-    "type": "",
-    "num": "05.01"
+    "type": "Build",
+    "num": "05.01",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "02-chunking-strategies",
     "title": "Chunking strategies",
     "minutes": 45,
     "path": "phases/05-agentic-rag/02-chunking-strategies",
-    "type": "",
-    "num": "05.02"
+    "type": "Build",
+    "num": "05.02",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "03-hybrid-search-bm25-vectors",
     "title": "Hybrid search: BM25 + vectors",
     "minutes": 55,
     "path": "phases/05-agentic-rag/03-hybrid-search-bm25-vectors",
-    "type": "",
-    "num": "05.03"
+    "type": "Build",
+    "num": "05.03",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "04-reranking",
     "title": "Reranking",
     "minutes": 40,
     "path": "phases/05-agentic-rag/04-reranking",
-    "type": "",
-    "num": "05.04"
+    "type": "Build",
+    "num": "05.04",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "05-query-rewriting-decomposition",
     "title": "Query rewriting & decomposition",
     "minutes": 45,
     "path": "phases/05-agentic-rag/05-query-rewriting-decomposition",
-    "type": "",
-    "num": "05.05"
+    "type": "Build",
+    "num": "05.05",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "06-retrieval-as-a-tool",
     "title": "Retrieval as a tool",
     "minutes": 45,
     "path": "phases/05-agentic-rag/06-retrieval-as-a-tool",
-    "type": "",
-    "num": "05.06"
+    "type": "Build",
+    "num": "05.06",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "07-self-correcting-rag",
     "title": "Self-correcting RAG",
     "minutes": 55,
     "path": "phases/05-agentic-rag/07-self-correcting-rag",
-    "type": "",
-    "num": "05.07"
+    "type": "Build",
+    "num": "05.07",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "08-corrective-rag-loops",
     "title": "Corrective RAG loops",
     "minutes": 50,
     "path": "phases/05-agentic-rag/08-corrective-rag-loops",
-    "type": "",
-    "num": "05.08"
+    "type": "Build",
+    "num": "05.08",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "09-graph-based-retrieval",
     "title": "Graph-based retrieval",
     "minutes": 55,
     "path": "phases/05-agentic-rag/09-graph-based-retrieval",
-    "type": "",
-    "num": "05.09"
+    "type": "Build",
+    "num": "05.09",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "10-evaluating-retrieval-quality",
     "title": "Evaluating retrieval quality",
     "minutes": 45,
     "path": "phases/05-agentic-rag/10-evaluating-retrieval-quality",
-    "type": "",
-    "num": "05.10"
+    "type": "Build",
+    "num": "05.10",
+    "published": true,
+    "hasQuiz": true
    }
   ]
  },
@@ -702,88 +722,108 @@ window.PHASES = [
   "id": "06-planning-and-reasoning",
   "name": "Planning & Reasoning",
   "desc": "Plan-and-execute, task trees, Tree of Thoughts, reflection, verifiers, and knowing when not to plan.",
-  "status": "planned",
-  "published": 0,
+  "status": "complete",
+  "published": 10,
   "lessons": [
    {
     "id": "01-chain-of-thought-for-actions",
     "title": "Chain-of-thought for actions",
     "minutes": 40,
     "path": "phases/06-planning-and-reasoning/01-chain-of-thought-for-actions",
-    "type": "",
-    "num": "06.01"
+    "type": "Build",
+    "num": "06.01",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "02-plan-and-execute",
     "title": "Plan-and-execute",
     "minutes": 55,
     "path": "phases/06-planning-and-reasoning/02-plan-and-execute",
-    "type": "",
-    "num": "06.02"
+    "type": "Build",
+    "num": "06.02",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "03-task-decomposition-trees",
     "title": "Task decomposition trees",
     "minutes": 50,
     "path": "phases/06-planning-and-reasoning/03-task-decomposition-trees",
-    "type": "",
-    "num": "06.03"
+    "type": "Build",
+    "num": "06.03",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "04-tree-of-thoughts-search",
     "title": "Tree of Thoughts search",
     "minutes": 60,
     "path": "phases/06-planning-and-reasoning/04-tree-of-thoughts-search",
-    "type": "",
-    "num": "06.04"
+    "type": "Build",
+    "num": "06.04",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "05-reflection-self-critique",
     "title": "Reflection & self-critique",
     "minutes": 45,
     "path": "phases/06-planning-and-reasoning/05-reflection-self-critique",
-    "type": "",
-    "num": "06.05"
+    "type": "Build",
+    "num": "06.05",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "06-reflexion-learning-from-failures",
     "title": "Reflexion: learning from failures",
     "minutes": 55,
     "path": "phases/06-planning-and-reasoning/06-reflexion-learning-from-failures",
-    "type": "",
-    "num": "06.06"
+    "type": "Build",
+    "num": "06.06",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "07-verifiers-and-checkers",
     "title": "Verifiers and checkers",
     "minutes": 50,
     "path": "phases/06-planning-and-reasoning/07-verifiers-and-checkers",
-    "type": "",
-    "num": "06.07"
+    "type": "Build",
+    "num": "06.07",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "08-replanning-on-surprise",
     "title": "Replanning on surprise",
     "minutes": 45,
     "path": "phases/06-planning-and-reasoning/08-replanning-on-surprise",
-    "type": "",
-    "num": "06.08"
+    "type": "Build",
+    "num": "06.08",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "09-reasoning-models-in-the-loop",
     "title": "Reasoning models in the loop",
     "minutes": 45,
     "path": "phases/06-planning-and-reasoning/09-reasoning-models-in-the-loop",
-    "type": "",
-    "num": "06.09"
+    "type": "Build",
+    "num": "06.09",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "10-when-not-to-plan",
     "title": "When not to plan",
     "minutes": 30,
     "path": "phases/06-planning-and-reasoning/10-when-not-to-plan",
-    "type": "",
-    "num": "06.10"
+    "type": "Build",
+    "num": "06.10",
+    "published": true,
+    "hasQuiz": true
    }
   ]
  },
@@ -791,96 +831,118 @@ window.PHASES = [
   "id": "07-model-context-protocol",
   "name": "Model Context Protocol",
   "desc": "MCP from the wire up. JSON-RPC over stdio, a server and a client by hand, transports, auth, and security.",
-  "status": "planned",
-  "published": 0,
+  "status": "complete",
+  "published": 11,
   "lessons": [
    {
     "id": "01-why-mcp-exists",
     "title": "Why MCP exists",
     "minutes": 35,
     "path": "phases/07-model-context-protocol/01-why-mcp-exists",
-    "type": "",
-    "num": "07.01"
+    "type": "Build",
+    "num": "07.01",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "02-the-protocol-json-rpc-over-stdio",
     "title": "The protocol: JSON-RPC over stdio",
     "minutes": 50,
     "path": "phases/07-model-context-protocol/02-the-protocol-json-rpc-over-stdio",
-    "type": "",
-    "num": "07.02"
+    "type": "Build",
+    "num": "07.02",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "03-build-an-mcp-server-from-scratch",
     "title": "Build an MCP server from scratch",
     "minutes": 60,
     "path": "phases/07-model-context-protocol/03-build-an-mcp-server-from-scratch",
-    "type": "",
-    "num": "07.03"
+    "type": "Build",
+    "num": "07.03",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "04-tools-resources-prompts",
     "title": "Tools, resources & prompts",
     "minutes": 50,
     "path": "phases/07-model-context-protocol/04-tools-resources-prompts",
-    "type": "",
-    "num": "07.04"
+    "type": "Build",
+    "num": "07.04",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "05-build-an-mcp-client",
     "title": "Build an MCP client",
     "minutes": 55,
     "path": "phases/07-model-context-protocol/05-build-an-mcp-client",
-    "type": "",
-    "num": "07.05"
+    "type": "Build",
+    "num": "07.05",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "06-streamable-http-transport",
     "title": "Streamable HTTP transport",
     "minutes": 50,
     "path": "phases/07-model-context-protocol/06-streamable-http-transport",
-    "type": "",
-    "num": "07.06"
+    "type": "Build",
+    "num": "07.06",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "07-auth-for-remote-servers",
     "title": "Auth for remote servers",
     "minutes": 50,
     "path": "phases/07-model-context-protocol/07-auth-for-remote-servers",
-    "type": "",
-    "num": "07.07"
+    "type": "Build",
+    "num": "07.07",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "08-sampling-and-elicitation",
     "title": "Sampling and elicitation",
     "minutes": 45,
     "path": "phases/07-model-context-protocol/08-sampling-and-elicitation",
-    "type": "",
-    "num": "07.08"
+    "type": "Build",
+    "num": "07.08",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "09-composing-many-servers",
     "title": "Composing many servers",
     "minutes": 45,
     "path": "phases/07-model-context-protocol/09-composing-many-servers",
-    "type": "",
-    "num": "07.09"
+    "type": "Build",
+    "num": "07.09",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "10-testing-mcp-servers",
     "title": "Testing MCP servers",
     "minutes": 40,
     "path": "phases/07-model-context-protocol/10-testing-mcp-servers",
-    "type": "",
-    "num": "07.10"
+    "type": "Build",
+    "num": "07.10",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "11-mcp-security-pitfalls",
     "title": "MCP security pitfalls",
     "minutes": 45,
     "path": "phases/07-model-context-protocol/11-mcp-security-pitfalls",
-    "type": "",
-    "num": "07.11"
+    "type": "Build",
+    "num": "07.11",
+    "published": true,
+    "hasQuiz": true
    }
   ]
  },
@@ -888,16 +950,18 @@ window.PHASES = [
   "id": "08-multi-agent-systems",
   "name": "Multi-Agent Systems",
   "desc": "Orchestrators, workers, handoffs, supervisors, blackboards, A2A, and the real cost of coordination.",
-  "status": "in-progress",
-  "published": 1,
+  "status": "complete",
+  "published": 12,
   "lessons": [
    {
     "id": "01-when-one-agent-is-not-enough",
     "title": "When one agent is not enough",
     "minutes": 35,
     "path": "phases/08-multi-agent-systems/01-when-one-agent-is-not-enough",
-    "type": "",
-    "num": "08.01"
+    "type": "Build",
+    "num": "08.01",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "02-orchestrator-worker",
@@ -914,80 +978,100 @@ window.PHASES = [
     "title": "Handoffs between agents",
     "minutes": 50,
     "path": "phases/08-multi-agent-systems/03-handoffs-between-agents",
-    "type": "",
-    "num": "08.03"
+    "type": "Build",
+    "num": "08.03",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "04-supervisor-hierarchies",
     "title": "Supervisor hierarchies",
     "minutes": 50,
     "path": "phases/08-multi-agent-systems/04-supervisor-hierarchies",
-    "type": "",
-    "num": "08.04"
+    "type": "Build",
+    "num": "08.04",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "05-shared-blackboards",
     "title": "Shared blackboards",
     "minutes": 45,
     "path": "phases/08-multi-agent-systems/05-shared-blackboards",
-    "type": "",
-    "num": "08.05"
+    "type": "Build",
+    "num": "08.05",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "06-debate-and-critique",
     "title": "Debate and critique",
     "minutes": 45,
     "path": "phases/08-multi-agent-systems/06-debate-and-critique",
-    "type": "",
-    "num": "08.06"
+    "type": "Build",
+    "num": "08.06",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "07-agent-to-agent-a2a-protocol",
     "title": "Agent-to-agent (A2A) protocol",
     "minutes": 55,
     "path": "phases/08-multi-agent-systems/07-agent-to-agent-a2a-protocol",
-    "type": "",
-    "num": "08.07"
+    "type": "Build",
+    "num": "08.07",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "08-message-passing-mailboxes",
     "title": "Message passing & mailboxes",
     "minutes": 50,
     "path": "phases/08-multi-agent-systems/08-message-passing-mailboxes",
-    "type": "",
-    "num": "08.08"
+    "type": "Build",
+    "num": "08.08",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "09-parallel-fan-out-fan-in",
     "title": "Parallel fan-out, fan-in",
     "minutes": 45,
     "path": "phases/08-multi-agent-systems/09-parallel-fan-out-fan-in",
-    "type": "",
-    "num": "08.09"
+    "type": "Build",
+    "num": "08.09",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "10-role-design-specialization",
     "title": "Role design & specialization",
     "minutes": 40,
     "path": "phases/08-multi-agent-systems/10-role-design-specialization",
-    "type": "",
-    "num": "08.10"
+    "type": "Build",
+    "num": "08.10",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "11-failure-modes-of-swarms",
     "title": "Failure modes of swarms",
     "minutes": 45,
     "path": "phases/08-multi-agent-systems/11-failure-modes-of-swarms",
-    "type": "",
-    "num": "08.11"
+    "type": "Build",
+    "num": "08.11",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "12-cost-of-coordination",
     "title": "Cost of coordination",
     "minutes": 35,
     "path": "phases/08-multi-agent-systems/12-cost-of-coordination",
-    "type": "",
-    "num": "08.12"
+    "type": "Build",
+    "num": "08.12",
+    "published": true,
+    "hasQuiz": true
    }
   ]
  },

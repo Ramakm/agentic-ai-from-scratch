@@ -1,0 +1,24 @@
+{
+  "lesson": "12-cost-of-coordination",
+  "title": "The Cost of Coordination",
+  "questions": [
+    {"stage": "pre", "question": "Anthropic reported multi-agent systems used about 15 times the tokens of a chat. What does that tell you about your own task?",
+     "options": ["Multi-agent is always too expensive", "Little on its own: you need your task's bill per pattern and your measured success rates", "Use 15 agents", "Tokens don't matter"],
+     "correct": 1, "explanation": "Decisions need your numbers, not averages."},
+    {"stage": "check", "question": "Without caching, why did the single agent read more input than the orchestrator?",
+     "options": ["It had a longer system prompt", "Each call re-read every earlier search result in its growing context", "It used more tools", "It ran in parallel"],
+     "correct": 1, "explanation": "Workers never re-read each other's results."},
+    {"stage": "check", "question": "With prompt caching, the single agent became the cheapest. Why?",
+     "options": ["It made fewer calls", "Its growing context is one long reusable prefix, which caching discounts heavily", "Caching is free", "Workers can't use caching"],
+     "correct": 1, "explanation": "Many short contexts have less to reuse."},
+    {"stage": "check", "question": "Parallel workers cut latency only from 51 s to 43 s. Why not by two thirds?",
+     "options": ["Workers are slow", "Planning and synthesis still run in sequence on the critical path", "Rate limits", "Caching slows it down"],
+     "correct": 1, "explanation": "Latency is the sum over stages, not over calls."},
+    {"stage": "post", "question": "A pattern raises success from 70% to 85% and costs $0.022 more per task. When does it pay?",
+     "options": ["Always", "When a successful task is worth more than about $0.022 / 0.15 = $0.147", "Never", "When the task is worth $0.022"],
+     "correct": 1, "explanation": "V > extra cost / extra success rate."},
+    {"stage": "post", "question": "Most of the workers' coordination tokens were the system prompt re-read on every call. What's the cheapest fix?",
+     "options": ["More workers", "Trim shared instructions and cache them", "A bigger model", "Remove the lead"],
+     "correct": 1, "explanation": "It's saved on every call by every agent."}
+  ]
+}

@@ -1,6 +1,6 @@
 # Agentic AI from Scratch
 
-> Build AI agents from a raw while-loop and an HTTP call, before a single framework gets imported. 16 phases, 163 lessons (53 live), Python and TypeScript, free and open source (MIT).
+> Build AI agents from a raw while-loop and an HTTP call, before a single framework gets imported. 16 phases, 163 lessons (95 live), Python and TypeScript, free and open source (MIT).
 
 Source: https://github.com/Ramakm/agentic-ai-from-scratch
 Site: https://ramakm.github.io/agentic-ai-from-scratch/
@@ -89,64 +89,64 @@ Context is the program. Buffers, summaries, embeddings, a vector store by hand, 
 
 Retrieval as a tool the agent decides to call. Hybrid search, reranking, rewriting, and self-correcting loops.
 
-- 05.01 Naive RAG and where it breaks (45 min) [planned]
-- 05.02 Chunking strategies (45 min) [planned]
-- 05.03 Hybrid search: BM25 + vectors (55 min) [planned]
-- 05.04 Reranking (40 min) [planned]
-- 05.05 Query rewriting & decomposition (45 min) [planned]
-- 05.06 Retrieval as a tool (45 min) [planned]
-- 05.07 Self-correcting RAG (55 min) [planned]
-- 05.08 Corrective RAG loops (50 min) [planned]
-- 05.09 Graph-based retrieval (55 min) [planned]
-- 05.10 Evaluating retrieval quality (45 min) [planned]
+- 05.01 Naive RAG and where it breaks (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/05-agentic-rag/01-naive-rag-and-where-it-breaks | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/05-agentic-rag/01-naive-rag-and-where-it-breaks/docs/en.md
+- 05.02 Chunking strategies (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/05-agentic-rag/02-chunking-strategies | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/05-agentic-rag/02-chunking-strategies/docs/en.md
+- 05.03 Hybrid search: BM25 + vectors (55 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/05-agentic-rag/03-hybrid-search-bm25-vectors | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/05-agentic-rag/03-hybrid-search-bm25-vectors/docs/en.md
+- 05.04 Reranking (40 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/05-agentic-rag/04-reranking | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/05-agentic-rag/04-reranking/docs/en.md
+- 05.05 Query rewriting & decomposition (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/05-agentic-rag/05-query-rewriting-decomposition | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/05-agentic-rag/05-query-rewriting-decomposition/docs/en.md
+- 05.06 Retrieval as a tool (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/05-agentic-rag/06-retrieval-as-a-tool | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/05-agentic-rag/06-retrieval-as-a-tool/docs/en.md
+- 05.07 Self-correcting RAG (55 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/05-agentic-rag/07-self-correcting-rag | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/05-agentic-rag/07-self-correcting-rag/docs/en.md
+- 05.08 Corrective RAG loops (50 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/05-agentic-rag/08-corrective-rag-loops | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/05-agentic-rag/08-corrective-rag-loops/docs/en.md
+- 05.09 Graph-based retrieval (55 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/05-agentic-rag/09-graph-based-retrieval | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/05-agentic-rag/09-graph-based-retrieval/docs/en.md
+- 05.10 Evaluating retrieval quality (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/05-agentic-rag/10-evaluating-retrieval-quality | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/05-agentic-rag/10-evaluating-retrieval-quality/docs/en.md
 
 ## Phase 06: Planning & Reasoning
 
 Plan-and-execute, task trees, Tree of Thoughts, reflection, verifiers, and knowing when not to plan.
 
-- 06.01 Chain-of-thought for actions (40 min) [planned]
-- 06.02 Plan-and-execute (55 min) [planned]
-- 06.03 Task decomposition trees (50 min) [planned]
-- 06.04 Tree of Thoughts search (60 min) [planned]
-- 06.05 Reflection & self-critique (45 min) [planned]
-- 06.06 Reflexion: learning from failures (55 min) [planned]
-- 06.07 Verifiers and checkers (50 min) [planned]
-- 06.08 Replanning on surprise (45 min) [planned]
-- 06.09 Reasoning models in the loop (45 min) [planned]
-- 06.10 When not to plan (30 min) [planned]
+- 06.01 Chain-of-thought for actions (40 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/06-planning-and-reasoning/01-chain-of-thought-for-actions | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/06-planning-and-reasoning/01-chain-of-thought-for-actions/docs/en.md
+- 06.02 Plan-and-execute (55 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/06-planning-and-reasoning/02-plan-and-execute | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/06-planning-and-reasoning/02-plan-and-execute/docs/en.md
+- 06.03 Task decomposition trees (50 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/06-planning-and-reasoning/03-task-decomposition-trees | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/06-planning-and-reasoning/03-task-decomposition-trees/docs/en.md
+- 06.04 Tree of Thoughts search (60 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/06-planning-and-reasoning/04-tree-of-thoughts-search | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/06-planning-and-reasoning/04-tree-of-thoughts-search/docs/en.md
+- 06.05 Reflection & self-critique (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/06-planning-and-reasoning/05-reflection-self-critique | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/06-planning-and-reasoning/05-reflection-self-critique/docs/en.md
+- 06.06 Reflexion: learning from failures (55 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/06-planning-and-reasoning/06-reflexion-learning-from-failures | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/06-planning-and-reasoning/06-reflexion-learning-from-failures/docs/en.md
+- 06.07 Verifiers and checkers (50 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/06-planning-and-reasoning/07-verifiers-and-checkers | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/06-planning-and-reasoning/07-verifiers-and-checkers/docs/en.md
+- 06.08 Replanning on surprise (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/06-planning-and-reasoning/08-replanning-on-surprise | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/06-planning-and-reasoning/08-replanning-on-surprise/docs/en.md
+- 06.09 Reasoning models in the loop (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/06-planning-and-reasoning/09-reasoning-models-in-the-loop | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/06-planning-and-reasoning/09-reasoning-models-in-the-loop/docs/en.md
+- 06.10 When not to plan (30 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/06-planning-and-reasoning/10-when-not-to-plan | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/06-planning-and-reasoning/10-when-not-to-plan/docs/en.md
 
 ## Phase 07: Model Context Protocol
 
 MCP from the wire up. JSON-RPC over stdio, a server and a client by hand, transports, auth, and security.
 
-- 07.01 Why MCP exists (35 min) [planned]
-- 07.02 The protocol: JSON-RPC over stdio (50 min) [planned]
-- 07.03 Build an MCP server from scratch (60 min) [planned]
-- 07.04 Tools, resources & prompts (50 min) [planned]
-- 07.05 Build an MCP client (55 min) [planned]
-- 07.06 Streamable HTTP transport (50 min) [planned]
-- 07.07 Auth for remote servers (50 min) [planned]
-- 07.08 Sampling and elicitation (45 min) [planned]
-- 07.09 Composing many servers (45 min) [planned]
-- 07.10 Testing MCP servers (40 min) [planned]
-- 07.11 MCP security pitfalls (45 min) [planned]
+- 07.01 Why MCP exists (35 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/07-model-context-protocol/01-why-mcp-exists | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/07-model-context-protocol/01-why-mcp-exists/docs/en.md
+- 07.02 The protocol: JSON-RPC over stdio (50 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/07-model-context-protocol/02-the-protocol-json-rpc-over-stdio | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/07-model-context-protocol/02-the-protocol-json-rpc-over-stdio/docs/en.md
+- 07.03 Build an MCP server from scratch (60 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/07-model-context-protocol/03-build-an-mcp-server-from-scratch | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/07-model-context-protocol/03-build-an-mcp-server-from-scratch/docs/en.md
+- 07.04 Tools, resources & prompts (50 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/07-model-context-protocol/04-tools-resources-prompts | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/07-model-context-protocol/04-tools-resources-prompts/docs/en.md
+- 07.05 Build an MCP client (55 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/07-model-context-protocol/05-build-an-mcp-client | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/07-model-context-protocol/05-build-an-mcp-client/docs/en.md
+- 07.06 Streamable HTTP transport (50 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/07-model-context-protocol/06-streamable-http-transport | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/07-model-context-protocol/06-streamable-http-transport/docs/en.md
+- 07.07 Auth for remote servers (50 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/07-model-context-protocol/07-auth-for-remote-servers | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/07-model-context-protocol/07-auth-for-remote-servers/docs/en.md
+- 07.08 Sampling and elicitation (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/07-model-context-protocol/08-sampling-and-elicitation | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/07-model-context-protocol/08-sampling-and-elicitation/docs/en.md
+- 07.09 Composing many servers (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/07-model-context-protocol/09-composing-many-servers | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/07-model-context-protocol/09-composing-many-servers/docs/en.md
+- 07.10 Testing MCP servers (40 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/07-model-context-protocol/10-testing-mcp-servers | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/07-model-context-protocol/10-testing-mcp-servers/docs/en.md
+- 07.11 MCP security pitfalls (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/07-model-context-protocol/11-mcp-security-pitfalls | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/07-model-context-protocol/11-mcp-security-pitfalls/docs/en.md
 
 ## Phase 08: Multi-Agent Systems
 
 Orchestrators, workers, handoffs, supervisors, blackboards, A2A, and the real cost of coordination.
 
-- 08.01 When one agent is not enough (35 min) [planned]
+- 08.01 When one agent is not enough (35 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/08-multi-agent-systems/01-when-one-agent-is-not-enough | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/08-multi-agent-systems/01-when-one-agent-is-not-enough/docs/en.md
 - 08.02 Orchestrator–worker (55 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/08-multi-agent-systems/02-orchestrator-worker | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/08-multi-agent-systems/02-orchestrator-worker/docs/en.md
-- 08.03 Handoffs between agents (50 min) [planned]
-- 08.04 Supervisor hierarchies (50 min) [planned]
-- 08.05 Shared blackboards (45 min) [planned]
-- 08.06 Debate and critique (45 min) [planned]
-- 08.07 Agent-to-agent (A2A) protocol (55 min) [planned]
-- 08.08 Message passing & mailboxes (50 min) [planned]
-- 08.09 Parallel fan-out, fan-in (45 min) [planned]
-- 08.10 Role design & specialization (40 min) [planned]
-- 08.11 Failure modes of swarms (45 min) [planned]
-- 08.12 Cost of coordination (35 min) [planned]
+- 08.03 Handoffs between agents (50 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/08-multi-agent-systems/03-handoffs-between-agents | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/08-multi-agent-systems/03-handoffs-between-agents/docs/en.md
+- 08.04 Supervisor hierarchies (50 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/08-multi-agent-systems/04-supervisor-hierarchies | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/08-multi-agent-systems/04-supervisor-hierarchies/docs/en.md
+- 08.05 Shared blackboards (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/08-multi-agent-systems/05-shared-blackboards | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/08-multi-agent-systems/05-shared-blackboards/docs/en.md
+- 08.06 Debate and critique (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/08-multi-agent-systems/06-debate-and-critique | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/08-multi-agent-systems/06-debate-and-critique/docs/en.md
+- 08.07 Agent-to-agent (A2A) protocol (55 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/08-multi-agent-systems/07-agent-to-agent-a2a-protocol | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/08-multi-agent-systems/07-agent-to-agent-a2a-protocol/docs/en.md
+- 08.08 Message passing & mailboxes (50 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/08-multi-agent-systems/08-message-passing-mailboxes | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/08-multi-agent-systems/08-message-passing-mailboxes/docs/en.md
+- 08.09 Parallel fan-out, fan-in (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/08-multi-agent-systems/09-parallel-fan-out-fan-in | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/08-multi-agent-systems/09-parallel-fan-out-fan-in/docs/en.md
+- 08.10 Role design & specialization (40 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/08-multi-agent-systems/10-role-design-specialization | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/08-multi-agent-systems/10-role-design-specialization/docs/en.md
+- 08.11 Failure modes of swarms (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/08-multi-agent-systems/11-failure-modes-of-swarms | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/08-multi-agent-systems/11-failure-modes-of-swarms/docs/en.md
+- 08.12 Cost of coordination (35 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/08-multi-agent-systems/12-cost-of-coordination | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/08-multi-agent-systems/12-cost-of-coordination/docs/en.md
 
 ## Phase 09: Frameworks & SDKs
 

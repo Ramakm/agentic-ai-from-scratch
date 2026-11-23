@@ -1,0 +1,24 @@
+{
+  "lesson": "01-chain-of-thought-for-actions",
+  "title": "Chain-of-Thought for Actions",
+  "questions": [
+    {"stage": "pre", "question": "Asked for 'the cheapest train arriving before 10:00', an agent books the cheapest train, which arrives at 10:25. What went wrong?",
+     "options": ["The search tool failed", "It applied the most salient criterion and dropped the constraint", "The train data was wrong", "Booking failed"],
+     "correct": 1, "explanation": "Writing out the constraints before acting is meant to prevent exactly this."},
+    {"stage": "check", "question": "What does the thought–action consistency check compare?",
+     "options": ["The thought with the user's request", "The train id named last in the thought with the id in the book() call", "Two thoughts", "The reply with the thought"],
+     "correct": 1, "explanation": "Nothing forces the action to follow the reasoning; the check makes the gap visible."},
+    {"stage": "check", "question": "In task 3, the thought chose T7 and the call booked T6, which meets every constraint. Which check caught it?",
+     "options": ["The constraint check", "Only the consistency check", "The leak check", "None"],
+     "correct": 1, "explanation": "A valid but wrong action passes constraint checks; the mismatch with its own reasoning doesn't."},
+    {"stage": "check", "question": "Where should the agent's thoughts go?",
+     "options": ["In the user's reply", "In traces and logs, not in the user-facing reply", "Nowhere; delete them", "In the tool arguments only"],
+     "correct": 1, "explanation": "They explain decisions when debugging; users get the answer."},
+    {"stage": "post", "question": "What does a visible thought before every tool call cost?",
+     "options": ["Nothing", "Extra output tokens and latency on every step, even when there's nothing to reason about", "A second model", "Accuracy"],
+     "correct": 1, "explanation": "Task 2 had no constraints, and the thought still cost characters."},
+    {"stage": "post", "question": "How should you decide whether 'think then act' helps your agent?",
+     "options": ["Assume it always helps", "Run both styles on the same tasks several times and compare correctness, violations, consistency and cost", "Ask the model", "Use the larger prompt"],
+     "correct": 1, "explanation": "The benefit depends on model and task; measure it."}
+  ]
+}
