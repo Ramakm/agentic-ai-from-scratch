@@ -1,0 +1,24 @@
+{
+  "lesson": "04-tree-of-thoughts-search",
+  "title": "Tree of Thoughts Search",
+  "questions": [
+    {"stage": "pre", "question": "Why does generating an answer token by token resemble greedy search?",
+     "options": ["It is fast", "Each step is committed to and never taken back, so an early wrong step can't be undone", "It uses a beam", "It evaluates every option"],
+     "correct": 1, "explanation": "Tree of Thoughts makes alternatives and backtracking explicit."},
+    {"stage": "check", "question": "What are the four pieces of a thought search?",
+     "options": ["Prompt, model, temperature, output", "State, proposer of next steps, evaluator of states, goal test", "Tools, memory, planner, executor", "Query, index, reranker, reader"],
+     "correct": 1, "explanation": "Swap any piece (e.g. a model as evaluator) and the search code stays the same."},
+    {"stage": "check", "question": "Greedy solved 0/10 puzzles. Why?",
+     "options": ["The puzzles were unsolvable", "It followed the weak evaluator's first choice every time, and that choice was always a dead end", "It ran out of budget", "It had a bug"],
+     "correct": 1, "explanation": "Greedy trusts the evaluator completely; a weak evaluator sinks it."},
+    {"stage": "check", "question": "Why did DFS solve all ten puzzles with fewer calls than beam 20?",
+     "options": ["It used a better evaluator", "It used the evaluator only to order and prune children, and backtracked from dead ends instead of keeping many paths open", "It skipped evaluation", "It used fractions"],
+     "correct": 1, "explanation": "Backtracking recovers from bad orderings; width pays for every kept state at every level."},
+    {"stage": "post", "question": "With a model as evaluator, DFS took about 267 evaluator calls per puzzle. What does that imply?",
+     "options": ["Search is always worth it", "Search suits problems where correctness matters more than many model calls and a good evaluator exists; most requests can't afford it", "Use greedy always", "Evaluators are free"],
+     "correct": 1, "explanation": "The strategy is also the budget."},
+    {"stage": "post", "question": "Why does the lesson use Fraction instead of float?",
+     "options": ["Speed", "So steps like 8/3 stay exact; with floats 8/(3-8/3) is 23.99999999999999 and fails the goal test", "Fractions are required by Python", "For readability"],
+     "correct": 1, "explanation": "An exact goal test needs exact arithmetic."}
+  ]
+}

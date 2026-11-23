@@ -39,7 +39,7 @@ window.SITE = {
   "totals": {
     "phases": 16,
     "lessons": 163,
-    "published": 63,
+    "published": 73,
     "hours": 127
   }
 };
@@ -722,88 +722,108 @@ window.PHASES = [
   "id": "06-planning-and-reasoning",
   "name": "Planning & Reasoning",
   "desc": "Plan-and-execute, task trees, Tree of Thoughts, reflection, verifiers, and knowing when not to plan.",
-  "status": "planned",
-  "published": 0,
+  "status": "complete",
+  "published": 10,
   "lessons": [
    {
     "id": "01-chain-of-thought-for-actions",
     "title": "Chain-of-thought for actions",
     "minutes": 40,
     "path": "phases/06-planning-and-reasoning/01-chain-of-thought-for-actions",
-    "type": "",
-    "num": "06.01"
+    "type": "Build",
+    "num": "06.01",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "02-plan-and-execute",
     "title": "Plan-and-execute",
     "minutes": 55,
     "path": "phases/06-planning-and-reasoning/02-plan-and-execute",
-    "type": "",
-    "num": "06.02"
+    "type": "Build",
+    "num": "06.02",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "03-task-decomposition-trees",
     "title": "Task decomposition trees",
     "minutes": 50,
     "path": "phases/06-planning-and-reasoning/03-task-decomposition-trees",
-    "type": "",
-    "num": "06.03"
+    "type": "Build",
+    "num": "06.03",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "04-tree-of-thoughts-search",
     "title": "Tree of Thoughts search",
     "minutes": 60,
     "path": "phases/06-planning-and-reasoning/04-tree-of-thoughts-search",
-    "type": "",
-    "num": "06.04"
+    "type": "Build",
+    "num": "06.04",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "05-reflection-self-critique",
     "title": "Reflection & self-critique",
     "minutes": 45,
     "path": "phases/06-planning-and-reasoning/05-reflection-self-critique",
-    "type": "",
-    "num": "06.05"
+    "type": "Build",
+    "num": "06.05",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "06-reflexion-learning-from-failures",
     "title": "Reflexion: learning from failures",
     "minutes": 55,
     "path": "phases/06-planning-and-reasoning/06-reflexion-learning-from-failures",
-    "type": "",
-    "num": "06.06"
+    "type": "Build",
+    "num": "06.06",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "07-verifiers-and-checkers",
     "title": "Verifiers and checkers",
     "minutes": 50,
     "path": "phases/06-planning-and-reasoning/07-verifiers-and-checkers",
-    "type": "",
-    "num": "06.07"
+    "type": "Build",
+    "num": "06.07",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "08-replanning-on-surprise",
     "title": "Replanning on surprise",
     "minutes": 45,
     "path": "phases/06-planning-and-reasoning/08-replanning-on-surprise",
-    "type": "",
-    "num": "06.08"
+    "type": "Build",
+    "num": "06.08",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "09-reasoning-models-in-the-loop",
     "title": "Reasoning models in the loop",
     "minutes": 45,
     "path": "phases/06-planning-and-reasoning/09-reasoning-models-in-the-loop",
-    "type": "",
-    "num": "06.09"
+    "type": "Build",
+    "num": "06.09",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "10-when-not-to-plan",
     "title": "When not to plan",
     "minutes": 30,
     "path": "phases/06-planning-and-reasoning/10-when-not-to-plan",
-    "type": "",
-    "num": "06.10"
+    "type": "Build",
+    "num": "06.10",
+    "published": true,
+    "hasQuiz": true
    }
   ]
  },

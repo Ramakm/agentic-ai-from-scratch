@@ -1,0 +1,24 @@
+{
+  "lesson": "05-reflection-self-critique",
+  "title": "Reflection & Self-Critique",
+  "questions": [
+    {"stage": "pre", "question": "What often happens when a model is asked to 'review your answer and improve it' with no external feedback?",
+     "options": ["It always fixes every problem", "It mostly approves its own work or changes style, and can even change right answers to wrong ones", "It refuses", "It asks the user"],
+     "correct": 1, "explanation": "Huang et al. (2023) found intrinsic self-correction rarely helps reasoning without external signal."},
+    {"stage": "check", "question": "What made the rubric critic effective?",
+     "options": ["It was more polite", "It turned the brief into code checks and listed exactly which requirements failed", "It used a bigger model", "It ran more rounds"],
+     "correct": 1, "explanation": "Specific, complete, checkable feedback gives the reviser something concrete to fix."},
+    {"stage": "check", "question": "Round 1 of the rubric loop fixed five problems. What new problem did it create?",
+     "options": ["A banned word", "The blurb went over the 40-word limit after adding the missing facts", "It removed the price", "None"],
+     "correct": 1, "explanation": "That's a regression: fixing items one at a time without re-checking the whole brief."},
+    {"stage": "check", "question": "Why does kind() treat 'too long: 43 words' and 'too long: 45 words' as one problem?",
+     "options": ["To hide problems", "So a blurb that stays too long isn't counted as a new regression every round", "To save memory", "Because numbers don't matter"],
+     "correct": 1, "explanation": "Regressions should count new kinds of problem, not changing numbers."},
+    {"stage": "post", "question": "The final blurb passed every check but read mechanically. What does that tell you?",
+     "options": ["The rubric is wrong", "A rubric checks requirements, not quality; quality needs a person or a judge with its own criteria", "Readability doesn't matter", "Use no critic"],
+     "correct": 1, "explanation": "Checks guarantee what they check, and nothing else."},
+    {"stage": "post", "question": "How do you decide whether a critique loop is worth its calls?",
+     "options": ["Always add one", "Track requirements met per round; if rounds don't move the score, the loop is only cost", "Count the words", "Ask the model"],
+     "correct": 1, "explanation": "The self-critique round cost a call and moved the score from 4/9 to 4/9."}
+  ]
+}

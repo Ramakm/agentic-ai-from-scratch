@@ -1,0 +1,24 @@
+{
+  "lesson": "02-plan-and-execute",
+  "title": "Plan-and-Execute",
+  "questions": [
+    {"stage": "pre", "question": "How many model calls does a ReAct agent need for a six-step task?",
+     "options": ["One", "About one per step, plus one to finish: seven here", "Two", "Six times six"],
+     "correct": 1, "explanation": "Each step is chosen by a model call that re-reads the history."},
+    {"stage": "check", "question": "What does the dry run check?",
+     "options": ["That tools respond quickly", "Each step's preconditions against what earlier steps provide, unknown tools, plan length, and whether the goal is reached", "The model's confidence", "JSON syntax only"],
+     "correct": 1, "explanation": "It simulates facts only, so it has no side effects."},
+    {"stage": "check", "question": "The first plan published before writing the changelog. When was this caught?",
+     "options": ["After publishing", "Before anything ran, by the dry run", "By the user", "Never"],
+     "correct": 1, "explanation": "Catching it before execution is the point of validating plans."},
+    {"stage": "check", "question": "What happens to the dry run's problems?",
+     "options": ["They are logged and ignored", "They go back to the planner as feedback for one repair; if it still fails, the run stops safely", "The executor fixes them", "They are shown to the user only"],
+     "correct": 1, "explanation": "Specific problems give the planner something concrete to fix."},
+    {"stage": "post", "question": "What is ReAct's real advantage over plan-and-execute?",
+     "options": ["Fewer calls", "It looks at the actual state before every step, so it adapts to surprises", "It is always more accurate", "It needs no tools"],
+     "correct": 1, "explanation": "Plan-and-execute needs replanning (Lesson 8) to adapt."},
+    {"stage": "post", "question": "When is plan-and-execute the better choice?",
+     "options": ["For exploratory research", "For predictable multi-step tasks, especially costly-to-undo ones where a plan can be validated and approved first", "Never", "Only for one-step tasks"],
+     "correct": 1, "explanation": "Releases, migrations and onboarding flows fit; open-ended investigation doesn't."}
+  ]
+}

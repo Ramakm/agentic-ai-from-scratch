@@ -1,0 +1,24 @@
+{
+  "lesson": "07-verifiers-and-checkers",
+  "title": "Verifiers and Checkers",
+  "questions": [
+    {"stage": "pre", "question": "When is 'sample several answers and check them' a good strategy?",
+     "options": ["Never", "When checking an answer is cheaper and more reliable than producing it", "Only for creative writing", "When the model is perfect"],
+     "correct": 1, "explanation": "Scheduling, code with tests, SQL and plans all fit this shape."},
+    {"stage": "check", "question": "Why did majority vote get worse as N grew?",
+     "options": ["The simulation was broken", "The time-zone mistake was the single most common answer, so more samples made it win more reliably", "Ties were broken badly", "Valid answers were rare"],
+     "correct": 1, "explanation": "Voting amplifies systematic errors; it only helps when errors are scattered."},
+    {"stage": "check", "question": "With an exact checker and per-sample success p, what is the chance at least one of N samples is valid?",
+     "options": ["p × N", "1 − (1 − p)^N", "p^N", "N / p"],
+     "correct": 1, "explanation": "With p = 0.35 and N = 10: 98.7%, matching the simulation's 98.2%."},
+    {"stage": "check", "question": "Why did the judged strategy plateau near 66%?",
+     "options": ["Too few samples", "The judge wrongly accepts invalid answers 30% of the time, and more samples don't remove that", "The checker was wrong", "Valid slots ran out"],
+     "correct": 1, "explanation": "An imperfect verifier sets a ceiling; measure its false-accept rate."},
+    {"stage": "post", "question": "Why does verify() return reasons instead of True/False?",
+     "options": ["Style", "So the same checker can give feedback to a reviser or planner, and say why a slot fails", "Booleans are slow", "To log more"],
+     "correct": 1, "explanation": "Reasons connect verification to repair (Lessons 2 and 5)."},
+    {"stage": "post", "question": "The offline proposer's error rates were chosen by the author. What does that mean for the table?",
+     "options": ["The numbers are measurements of a model", "The table shows the mechanism under stated assumptions; your model's rates must be measured (e.g. with --live)", "It is wrong", "Nothing"],
+     "correct": 1, "explanation": "A simulation shows effects; it doesn't measure any real model."}
+  ]
+}

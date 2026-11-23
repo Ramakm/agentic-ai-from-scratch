@@ -1,6 +1,6 @@
 # Agentic AI from Scratch
 
-> Build AI agents from a raw while-loop and an HTTP call, before a single framework gets imported. 16 phases, 163 lessons (63 live), Python and TypeScript, free and open source (MIT).
+> Build AI agents from a raw while-loop and an HTTP call, before a single framework gets imported. 16 phases, 163 lessons (73 live), Python and TypeScript, free and open source (MIT).
 
 Source: https://github.com/Ramakm/agentic-ai-from-scratch
 Site: https://ramakm.github.io/agentic-ai-from-scratch/
@@ -104,16 +104,16 @@ Retrieval as a tool the agent decides to call. Hybrid search, reranking, rewriti
 
 Plan-and-execute, task trees, Tree of Thoughts, reflection, verifiers, and knowing when not to plan.
 
-- 06.01 Chain-of-thought for actions (40 min) [planned]
-- 06.02 Plan-and-execute (55 min) [planned]
-- 06.03 Task decomposition trees (50 min) [planned]
-- 06.04 Tree of Thoughts search (60 min) [planned]
-- 06.05 Reflection & self-critique (45 min) [planned]
-- 06.06 Reflexion: learning from failures (55 min) [planned]
-- 06.07 Verifiers and checkers (50 min) [planned]
-- 06.08 Replanning on surprise (45 min) [planned]
-- 06.09 Reasoning models in the loop (45 min) [planned]
-- 06.10 When not to plan (30 min) [planned]
+- 06.01 Chain-of-thought for actions (40 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/06-planning-and-reasoning/01-chain-of-thought-for-actions | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/06-planning-and-reasoning/01-chain-of-thought-for-actions/docs/en.md
+- 06.02 Plan-and-execute (55 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/06-planning-and-reasoning/02-plan-and-execute | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/06-planning-and-reasoning/02-plan-and-execute/docs/en.md
+- 06.03 Task decomposition trees (50 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/06-planning-and-reasoning/03-task-decomposition-trees | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/06-planning-and-reasoning/03-task-decomposition-trees/docs/en.md
+- 06.04 Tree of Thoughts search (60 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/06-planning-and-reasoning/04-tree-of-thoughts-search | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/06-planning-and-reasoning/04-tree-of-thoughts-search/docs/en.md
+- 06.05 Reflection & self-critique (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/06-planning-and-reasoning/05-reflection-self-critique | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/06-planning-and-reasoning/05-reflection-self-critique/docs/en.md
+- 06.06 Reflexion: learning from failures (55 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/06-planning-and-reasoning/06-reflexion-learning-from-failures | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/06-planning-and-reasoning/06-reflexion-learning-from-failures/docs/en.md
+- 06.07 Verifiers and checkers (50 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/06-planning-and-reasoning/07-verifiers-and-checkers | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/06-planning-and-reasoning/07-verifiers-and-checkers/docs/en.md
+- 06.08 Replanning on surprise (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/06-planning-and-reasoning/08-replanning-on-surprise | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/06-planning-and-reasoning/08-replanning-on-surprise/docs/en.md
+- 06.09 Reasoning models in the loop (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/06-planning-and-reasoning/09-reasoning-models-in-the-loop | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/06-planning-and-reasoning/09-reasoning-models-in-the-loop/docs/en.md
+- 06.10 When not to plan (30 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/06-planning-and-reasoning/10-when-not-to-plan | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/06-planning-and-reasoning/10-when-not-to-plan/docs/en.md
 
 ## Phase 07: Model Context Protocol
 

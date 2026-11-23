@@ -1,0 +1,24 @@
+{
+  "lesson": "09-reasoning-models-in-the-loop",
+  "title": "Reasoning Models in the Loop",
+  "questions": [
+    {"stage": "pre", "question": "What do you pay for with a reasoning model that you don't see in its answer?",
+     "options": ["Nothing extra", "Hidden reasoning tokens, billed as output, and much higher latency", "Input tokens only", "A subscription"],
+     "correct": 1, "explanation": "The thinking happens before the answer, and it is billed."},
+    {"stage": "check", "question": "Under the lesson's assumptions, why does 'all reasoning' still fail about half the time?",
+     "options": ["The reasoning model is bad at hard steps", "Sixteen easy steps at 98% each compound to about 72% before the hard steps", "It times out", "It costs too much"],
+     "correct": 1, "explanation": "Run success is the product of step success; easy steps matter."},
+    {"stage": "check", "question": "How does the escalate policy work?",
+     "options": ["Always uses both models", "Fast model first; if a checker rejects the output, retry that step with the reasoning model", "Reasoning model first, fast as fallback", "Random choice"],
+     "correct": 1, "explanation": "It pays for the expensive model only where a cheap attempt was caught failing."},
+    {"stage": "check", "question": "What happens to escalation if the checker catches nothing?",
+     "options": ["It still helps", "It collapses to 'all fast': no failure is detected, so no step escalates", "It becomes 'all reasoning'", "It crashes"],
+     "correct": 1, "explanation": "Escalation is only as good as the checker behind it."},
+    {"stage": "post", "question": "The offline table's prices and success rates are assumptions. What should you do before relying on it?",
+     "options": ["Nothing", "Measure your fast and reasoning models on checkable tasks (e.g. with --live) and replace the profiles", "Use bigger numbers", "Ignore costs"],
+     "correct": 1, "explanation": "The calculation is general; the numbers must be yours."},
+    {"stage": "post", "question": "Your agent uses extended thinking with tool calls. What must you do with the reasoning content?",
+     "options": ["Edit it to remove mistakes", "Follow the provider's rules: e.g. pass back the latest thinking blocks unchanged when continuing after a tool call", "Always delete it", "Show it to the user"],
+     "correct": 1, "explanation": "Some APIs require reasoning blocks to be returned exactly as received."}
+  ]
+}

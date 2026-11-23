@@ -1,0 +1,24 @@
+{
+  "lesson": "08-replanning-on-surprise",
+  "title": "Replanning on Surprise",
+  "questions": [
+    {"stage": "pre", "question": "A plan assumed the registry token was valid. Publishing fails because it expired. What is the underlying problem?",
+     "options": ["The tool is broken", "The agent's belief about the world was wrong, and the plan was built on it", "The model is too small", "Publishing is impossible"],
+     "correct": 1, "explanation": "Every surprise is a gap between belief and world."},
+    {"stage": "check", "question": "Why did 'restart' fail on the expired-token surprise?",
+     "options": ["It ran out of tokens", "It replanned from the original belief, assumed the token was valid again, and repeated the same failure", "It stopped immediately", "It skipped publishing"],
+     "correct": 1, "explanation": "Replanning only helps if the planner learns from what happened."},
+    {"stage": "check", "question": "What does update_belief() do with 'error: publish needs ['token_valid']'?",
+     "options": ["Nothing", "Removes token_valid from the belief, so the next plan includes refresh_token", "Adds published", "Stops the run"],
+     "correct": 1, "explanation": "Specific error messages are what make belief updates possible."},
+    {"stage": "check", "question": "Why is a failing run_tests retried once before replanning?",
+     "options": ["Tests are cheap", "A flaky test is a transient failure; retrying is cheaper than a planner call and usually enough", "Replanning can't handle tests", "It's required"],
+     "correct": 1, "explanation": "Classify failures: transient -> retry, lasting -> replan."},
+    {"stage": "post", "question": "Why must bump_version refuse to run twice?",
+     "options": ["Speed", "Repeating it would ship 1.6.0 and skip a release number; non-idempotent steps need guards when plans can repeat", "Version numbers are cached", "It doesn't matter"],
+     "correct": 1, "explanation": "Replanning and restarting both risk repeating side effects."},
+    {"stage": "post", "question": "With all three surprises, what did replanning add that wasn't in the original plan?",
+     "options": ["A second bump", "refresh_token, after learning the token wasn't valid", "A second notify", "Nothing"],
+     "correct": 1, "explanation": "Replanning from the updated belief can add steps, not just reorder them."}
+  ]
+}
