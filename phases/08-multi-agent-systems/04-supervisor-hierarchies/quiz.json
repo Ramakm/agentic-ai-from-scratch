@@ -1,0 +1,24 @@
+{
+  "lesson": "04-supervisor-hierarchies",
+  "title": "Supervisor Hierarchies",
+  "questions": [
+    {"stage": "pre", "question": "One supervisor manages nine workers and reads all nine reports before answering. What grows fastest as you add workers?",
+     "options": ["The number of tools", "The supervisor's context, filled with other agents' output", "The model's speed", "The number of users"],
+     "correct": 1, "explanation": "Each report lands in the supervisor's context."},
+    {"stage": "check", "question": "In this lesson, what did the two-level design improve over the flat one?",
+     "options": ["Routing accuracy: 12/12 vs 9/12", "The top supervisor's context: about 1,100 tokens instead of about 9,500", "Fewer calls", "Lower latency"],
+     "correct": 1, "explanation": "Both routed perfectly; the hierarchy kept the top context small, at the cost of calls and depth."},
+    {"stage": "check", "question": "Why does adding a level add latency even though workers run in parallel?",
+     "options": ["Leads are slower models", "Levels run in sequence: top plans, leads plan, workers work, leads summarise, top writes", "Parallelism is disabled", "Summaries are long"],
+     "correct": 1, "explanation": "Depth is the number of sequential calls on the critical path."},
+    {"stage": "check", "question": "The deployer fails twice. What should the operations lead do?",
+     "options": ["Retry until it works", "Escalate a short summary to the top, which decides whether to hold the release", "Skip it silently", "Deploy to production instead"],
+     "correct": 1, "explanation": "Escalate to the lowest level with the authority to decide."},
+    {"stage": "post", "question": "Without a reserve, the tests were skipped while 12 operations calls went unused. What's the lesson?",
+     "options": ["Give engineering everything", "Don't allocate the whole budget up front; keep a reserve or reclaim unused budget", "Use fewer teams", "Budgets don't matter"],
+     "correct": 1, "explanation": "Same total, worse outcome, because the money was in the wrong place."},
+    {"stage": "post", "question": "When is a hierarchy not worth it?",
+     "options": ["When there are many workers", "When the top supervisor's context and decisions fit comfortably in a flat design; extra levels then only add calls and latency", "When budgets are tight", "When tasks fail"],
+     "correct": 1, "explanation": "A level has to earn its cost."}
+  ]
+}

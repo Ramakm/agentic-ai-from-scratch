@@ -1,0 +1,24 @@
+{
+  "lesson": "06-debate-and-critique",
+  "title": "Debate and Critique",
+  "questions": [
+    {"stage": "pre", "question": "Three copies of the same model vote on an answer. When does the vote fail to help?",
+     "options": ["When the model is large", "When the copies tend to make the same mistake, so wrong answers form a majority", "When questions are short", "Never"],
+     "correct": 1, "explanation": "Voting relies on mistakes scattering; correlated errors defeat it."},
+    {"stage": "check", "question": "Why does the simulation use common random numbers?",
+     "options": ["To make it faster", "So every strategy starts from identical first answers, and differences come from the strategy rather than luck", "To make agents agree", "To hide errors"],
+     "correct": 1, "explanation": "A paired comparison removes noise between strategies."},
+    {"stage": "check", "question": "Debate matched voting's accuracy here at three times the calls. Why didn't it do better?",
+     "options": ["Too few rounds", "Agents could only adopt each other's answers; nobody brought new evidence or a better argument", "The model was too weak", "Debate always fails"],
+     "correct": 1, "explanation": "Without new information, debate converges where a vote would."},
+    {"stage": "check", "question": "A critic catches 50% of errors but objects to 40% of right answers. What happens?",
+     "options": ["Accuracy rises", "It breaks about as many right answers as it fixes wrong ones", "Nothing", "It always helps on hard questions"],
+     "correct": 1, "explanation": "Every false alarm risks a right answer being redone wrong."},
+    {"stage": "post", "question": "What gave the biggest gain with the fewest model calls?",
+     "options": ["Debate", "A checker with a tool that recomputes the answer", "A vote of 3", "A critic without tools"],
+     "correct": 1, "explanation": "Evidence beats opinions, and it only triggers redos when the answer is actually wrong."},
+    {"stage": "post", "question": "You must use model-based voting on a task with no tool check. How can you reduce correlated errors?",
+     "options": ["Use more copies of the same prompt", "Use different models, prompts or tools for each voter", "Lower the temperature to 0", "Add a debate round"],
+     "correct": 1, "explanation": "Diversity is what makes votes independent."}
+  ]
+}

@@ -39,7 +39,7 @@ window.SITE = {
   "totals": {
     "phases": 16,
     "lessons": 163,
-    "published": 84,
+    "published": 95,
     "hours": 127
   }
 };
@@ -950,16 +950,18 @@ window.PHASES = [
   "id": "08-multi-agent-systems",
   "name": "Multi-Agent Systems",
   "desc": "Orchestrators, workers, handoffs, supervisors, blackboards, A2A, and the real cost of coordination.",
-  "status": "in-progress",
-  "published": 1,
+  "status": "complete",
+  "published": 12,
   "lessons": [
    {
     "id": "01-when-one-agent-is-not-enough",
     "title": "When one agent is not enough",
     "minutes": 35,
     "path": "phases/08-multi-agent-systems/01-when-one-agent-is-not-enough",
-    "type": "",
-    "num": "08.01"
+    "type": "Build",
+    "num": "08.01",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "02-orchestrator-worker",
@@ -976,80 +978,100 @@ window.PHASES = [
     "title": "Handoffs between agents",
     "minutes": 50,
     "path": "phases/08-multi-agent-systems/03-handoffs-between-agents",
-    "type": "",
-    "num": "08.03"
+    "type": "Build",
+    "num": "08.03",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "04-supervisor-hierarchies",
     "title": "Supervisor hierarchies",
     "minutes": 50,
     "path": "phases/08-multi-agent-systems/04-supervisor-hierarchies",
-    "type": "",
-    "num": "08.04"
+    "type": "Build",
+    "num": "08.04",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "05-shared-blackboards",
     "title": "Shared blackboards",
     "minutes": 45,
     "path": "phases/08-multi-agent-systems/05-shared-blackboards",
-    "type": "",
-    "num": "08.05"
+    "type": "Build",
+    "num": "08.05",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "06-debate-and-critique",
     "title": "Debate and critique",
     "minutes": 45,
     "path": "phases/08-multi-agent-systems/06-debate-and-critique",
-    "type": "",
-    "num": "08.06"
+    "type": "Build",
+    "num": "08.06",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "07-agent-to-agent-a2a-protocol",
     "title": "Agent-to-agent (A2A) protocol",
     "minutes": 55,
     "path": "phases/08-multi-agent-systems/07-agent-to-agent-a2a-protocol",
-    "type": "",
-    "num": "08.07"
+    "type": "Build",
+    "num": "08.07",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "08-message-passing-mailboxes",
     "title": "Message passing & mailboxes",
     "minutes": 50,
     "path": "phases/08-multi-agent-systems/08-message-passing-mailboxes",
-    "type": "",
-    "num": "08.08"
+    "type": "Build",
+    "num": "08.08",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "09-parallel-fan-out-fan-in",
     "title": "Parallel fan-out, fan-in",
     "minutes": 45,
     "path": "phases/08-multi-agent-systems/09-parallel-fan-out-fan-in",
-    "type": "",
-    "num": "08.09"
+    "type": "Build",
+    "num": "08.09",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "10-role-design-specialization",
     "title": "Role design & specialization",
     "minutes": 40,
     "path": "phases/08-multi-agent-systems/10-role-design-specialization",
-    "type": "",
-    "num": "08.10"
+    "type": "Build",
+    "num": "08.10",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "11-failure-modes-of-swarms",
     "title": "Failure modes of swarms",
     "minutes": 45,
     "path": "phases/08-multi-agent-systems/11-failure-modes-of-swarms",
-    "type": "",
-    "num": "08.11"
+    "type": "Build",
+    "num": "08.11",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "12-cost-of-coordination",
     "title": "Cost of coordination",
     "minutes": 35,
     "path": "phases/08-multi-agent-systems/12-cost-of-coordination",
-    "type": "",
-    "num": "08.12"
+    "type": "Build",
+    "num": "08.12",
+    "published": true,
+    "hasQuiz": true
    }
   ]
  },

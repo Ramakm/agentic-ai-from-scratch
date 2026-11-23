@@ -1,0 +1,24 @@
+{
+  "lesson": "11-failure-modes-of-swarms",
+  "title": "Failure Modes of Swarms",
+  "questions": [
+    {"stage": "pre", "question": "Three agents each believe the next one owns a task, so they keep passing it on. Why won't a prompt like 'don't delegate in circles' fix it?",
+     "options": ["Prompts are ignored", "Each agent is acting reasonably; the failure is in the system, so it needs a runtime rule like a hop limit", "The model is too small", "It will fix it"],
+     "correct": 1, "explanation": "System failures need system guards."},
+    {"stage": "check", "question": "Two workers both start at the top of the same subtask list. What guard prevents the duplicate work?",
+     "options": ["A budget", "Claiming (locking or leasing) a subtask before starting it", "A hop limit", "A verifier"],
+     "correct": 1, "explanation": "One owner per subtask; a lease releases claims of crashed workers."},
+    {"stage": "check", "question": "Each agent splits its task between two helpers, five levels deep. How many calls did one request cost?",
+     "options": ["10", "63", "6", "32"],
+     "correct": 1, "explanation": "1+2+4+8+16+32. A per-request budget caps it."},
+    {"stage": "check", "question": "Why is an invented fact worse in a pipeline than in a single agent?",
+     "options": ["It isn't", "Later agents build on it, so it ends up looking well-supported in the final report", "Pipelines are slower", "It's deleted at handoff"],
+     "correct": 1, "explanation": "Requiring sources at handoffs stops it at the first boundary."},
+    {"stage": "post", "question": "An agent reports 'All done!' and the run ends; the tests never ran. Which guard was missing?",
+     "options": ["Hop limit", "Verifying completion against acceptance criteria before ending", "Wait timeout", "Task claims"],
+     "correct": 1, "explanation": "'Done' is a claim to check, not a fact."},
+    {"stage": "post", "question": "The writer waits for review notes; the reviewer waits for a draft. What's the runtime fix, and the design-time fix?",
+     "options": ["Restart both", "A wait timeout with a fallback; and lint roles for mutual dependencies before running", "More agents", "A bigger model"],
+     "correct": 1, "explanation": "Timeouts break deadlocks; design reviews prevent them."}
+  ]
+}

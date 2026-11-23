@@ -1,0 +1,24 @@
+{
+  "lesson": "10-role-design-specialization",
+  "title": "Role Design and Specialization",
+  "questions": [
+    {"stage": "pre", "question": "'You are a meticulous, world-class editor.' What's missing from this role definition?",
+     "options": ["Nothing", "What it receives, what it must return, which tools it may use, and when it's done", "A name", "More adjectives"],
+     "correct": 1, "explanation": "A persona sets a tone; a spec sets a contract."},
+    {"stage": "check", "question": "Both the writer and the editor can produce the draft. Why is that a problem?",
+     "options": ["It's slower", "Nobody knows which version is current, and each can undo the other's work", "Editors can't write", "It uses more tokens"],
+     "correct": 1, "explanation": "One owner per artifact; the editor returns notes instead."},
+    {"stage": "check", "question": "The publisher needs 'approval' but no role produces it. What was the fix?",
+     "options": ["Tell the publisher to skip approval", "Add a fact_checker role that owns the approval artifact", "Let the writer approve", "Remove the publisher"],
+     "correct": 1, "explanation": "Missing inputs are fixed in the team design, not with more instructions."},
+    {"stage": "check", "question": "Why generate system prompts from specs instead of writing them by hand?",
+     "options": ["Generated prompts are shorter", "They stay in sync with the team and tell each role who uses its output", "Models prefer them", "It's required by frameworks"],
+     "correct": 1, "explanation": "Change the team once; every affected prompt updates."},
+    {"stage": "post", "question": "The specs pass lint, but at runtime the editor rewrote the draft anyway. What catches that?",
+     "options": ["Nothing", "A contract check of each role's output against its spec at the handoff", "A longer prompt", "A bigger model"],
+     "correct": 1, "explanation": "Models can ignore specs; validate outputs before the next role uses them."},
+    {"stage": "post", "question": "What makes a specialist agent better than a generalist?",
+     "options": ["Being told it's an expert", "A narrower context, fewer tools, and a checkable output", "A different temperature", "A longer backstory"],
+     "correct": 1, "explanation": "Specialize by information and permission, not by adjective."}
+  ]
+}

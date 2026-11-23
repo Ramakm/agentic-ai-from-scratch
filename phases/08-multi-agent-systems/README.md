@@ -3,22 +3,22 @@
 
 > Orchestrators, workers, handoffs, supervisors, blackboards, A2A, and the real cost of coordination.
 
-**Status:** ◩ in progress · **Lessons:** 1 of 12 live · **Time:** ~9 hours
+**Status:** ■ complete · **Lessons:** 12 of 12 live · **Time:** ~9 hours
 
 | # | Lesson | Type | Time |
 |---|--------|------|------|
-| 08.01 | When one agent is not enough | planned | 35 min |
+| 08.01 | [When one agent is not enough](01-when-one-agent-is-not-enough/docs/en.md) | Build | 35 min |
 | 08.02 | [Orchestrator–worker](02-orchestrator-worker/docs/en.md) | Build | 55 min |
-| 08.03 | Handoffs between agents | planned | 50 min |
-| 08.04 | Supervisor hierarchies | planned | 50 min |
-| 08.05 | Shared blackboards | planned | 45 min |
-| 08.06 | Debate and critique | planned | 45 min |
-| 08.07 | Agent-to-agent (A2A) protocol | planned | 55 min |
-| 08.08 | Message passing & mailboxes | planned | 50 min |
-| 08.09 | Parallel fan-out, fan-in | planned | 45 min |
-| 08.10 | Role design & specialization | planned | 40 min |
-| 08.11 | Failure modes of swarms | planned | 45 min |
-| 08.12 | Cost of coordination | planned | 35 min |
+| 08.03 | [Handoffs between agents](03-handoffs-between-agents/docs/en.md) | Build | 50 min |
+| 08.04 | [Supervisor hierarchies](04-supervisor-hierarchies/docs/en.md) | Build | 50 min |
+| 08.05 | [Shared blackboards](05-shared-blackboards/docs/en.md) | Build | 45 min |
+| 08.06 | [Debate and critique](06-debate-and-critique/docs/en.md) | Build | 45 min |
+| 08.07 | [Agent-to-agent (A2A) protocol](07-agent-to-agent-a2a-protocol/docs/en.md) | Build | 55 min |
+| 08.08 | [Message passing & mailboxes](08-message-passing-mailboxes/docs/en.md) | Build | 50 min |
+| 08.09 | [Parallel fan-out, fan-in](09-parallel-fan-out-fan-in/docs/en.md) | Build | 45 min |
+| 08.10 | [Role design & specialization](10-role-design-specialization/docs/en.md) | Build | 40 min |
+| 08.11 | [Failure modes of swarms](11-failure-modes-of-swarms/docs/en.md) | Build | 45 min |
+| 08.12 | [Cost of coordination](12-cost-of-coordination/docs/en.md) | Build | 35 min |
 
 Every live lesson folder has `docs/en.md`, runnable `code/` with tests, a `quiz.json`, and an artifact in `outputs/`.
 Want to write a planned lesson? See [CONTRIBUTING.md](../../CONTRIBUTING.md) and [LESSON_TEMPLATE.md](../../LESSON_TEMPLATE.md).
