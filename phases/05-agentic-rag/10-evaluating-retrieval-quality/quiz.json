@@ -1,0 +1,24 @@
+{
+  "lesson": "10-evaluating-retrieval-quality",
+  "title": "Evaluating Retrieval Quality",
+  "questions": [
+    {"stage": "pre", "question": "Why aren't a few hand-picked example questions enough to choose a retriever?",
+     "options": ["They take too long to run", "They tend to favour the technique being shown, and a handful can't separate a real improvement from luck", "Retrievers can't answer examples", "They need a model call each"],
+     "correct": 1, "explanation": "A labelled set, metrics and a significance check replace impressions with evidence."},
+    {"stage": "check", "question": "What do graded relevance labels (2 = answers, 1 = related) let a metric reward?",
+     "options": ["Speed", "Putting the answering document above merely related ones", "Shorter documents", "More results"],
+     "correct": 1, "explanation": "nDCG uses the grades; swapping a related doc above the answer lowers it."},
+    {"stage": "check", "question": "Why look at per-kind rows before the 'all' row?",
+     "options": ["They are bigger numbers", "The average hides where retrievers fail; here all the differences were in paraphrase queries", "The 'all' row is wrong", "Per-kind rows are faster"],
+     "correct": 1, "explanation": "If your users mostly paraphrase, the overall average overstates every system."},
+    {"stage": "check", "question": "Why was precision@3 low for every retriever?",
+     "options": ["All retrievers are bad", "Most queries have only one or two relevant documents, so even a perfect ranking can't fill three slots with relevant ones", "k was too small", "A bug"],
+     "correct": 1, "explanation": "Compare precision between systems, not against 1.0."},
+    {"stage": "post", "question": "Hybrid beat BM25 by +0.042 nDCG with a 95% interval of [+0.000, +0.123]. What should you conclude?",
+     "options": ["Hybrid is definitely better", "This test set can't tell them apart yet; label more queries before claiming a win", "BM25 is better", "The metric is broken"],
+     "correct": 1, "explanation": "An interval that reaches 0 means the difference could be noise from 16 queries."},
+    {"stage": "post", "question": "What does 'paired' mean in the paired bootstrap?",
+     "options": ["Two bootstraps are run", "Both systems are always scored on the same resampled queries, removing variation from some queries being harder", "Queries are paired with documents", "It uses two seeds"],
+     "correct": 1, "explanation": "Comparing on the same queries makes small, consistent differences detectable."}
+  ]
+}

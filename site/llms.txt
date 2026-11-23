@@ -1,6 +1,6 @@
 # Agentic AI from Scratch
 
-> Build AI agents from a raw while-loop and an HTTP call, before a single framework gets imported. 16 phases, 163 lessons (53 live), Python and TypeScript, free and open source (MIT).
+> Build AI agents from a raw while-loop and an HTTP call, before a single framework gets imported. 16 phases, 163 lessons (63 live), Python and TypeScript, free and open source (MIT).
 
 Source: https://github.com/Ramakm/agentic-ai-from-scratch
 Site: https://ramakm.github.io/agentic-ai-from-scratch/
@@ -89,16 +89,16 @@ Context is the program. Buffers, summaries, embeddings, a vector store by hand, 
 
 Retrieval as a tool the agent decides to call. Hybrid search, reranking, rewriting, and self-correcting loops.
 
-- 05.01 Naive RAG and where it breaks (45 min) [planned]
-- 05.02 Chunking strategies (45 min) [planned]
-- 05.03 Hybrid search: BM25 + vectors (55 min) [planned]
-- 05.04 Reranking (40 min) [planned]
-- 05.05 Query rewriting & decomposition (45 min) [planned]
-- 05.06 Retrieval as a tool (45 min) [planned]
-- 05.07 Self-correcting RAG (55 min) [planned]
-- 05.08 Corrective RAG loops (50 min) [planned]
-- 05.09 Graph-based retrieval (55 min) [planned]
-- 05.10 Evaluating retrieval quality (45 min) [planned]
+- 05.01 Naive RAG and where it breaks (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/05-agentic-rag/01-naive-rag-and-where-it-breaks | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/05-agentic-rag/01-naive-rag-and-where-it-breaks/docs/en.md
+- 05.02 Chunking strategies (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/05-agentic-rag/02-chunking-strategies | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/05-agentic-rag/02-chunking-strategies/docs/en.md
+- 05.03 Hybrid search: BM25 + vectors (55 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/05-agentic-rag/03-hybrid-search-bm25-vectors | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/05-agentic-rag/03-hybrid-search-bm25-vectors/docs/en.md
+- 05.04 Reranking (40 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/05-agentic-rag/04-reranking | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/05-agentic-rag/04-reranking/docs/en.md
+- 05.05 Query rewriting & decomposition (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/05-agentic-rag/05-query-rewriting-decomposition | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/05-agentic-rag/05-query-rewriting-decomposition/docs/en.md
+- 05.06 Retrieval as a tool (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/05-agentic-rag/06-retrieval-as-a-tool | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/05-agentic-rag/06-retrieval-as-a-tool/docs/en.md
+- 05.07 Self-correcting RAG (55 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/05-agentic-rag/07-self-correcting-rag | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/05-agentic-rag/07-self-correcting-rag/docs/en.md
+- 05.08 Corrective RAG loops (50 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/05-agentic-rag/08-corrective-rag-loops | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/05-agentic-rag/08-corrective-rag-loops/docs/en.md
+- 05.09 Graph-based retrieval (55 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/05-agentic-rag/09-graph-based-retrieval | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/05-agentic-rag/09-graph-based-retrieval/docs/en.md
+- 05.10 Evaluating retrieval quality (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/05-agentic-rag/10-evaluating-retrieval-quality | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/05-agentic-rag/10-evaluating-retrieval-quality/docs/en.md
 
 ## Phase 06: Planning & Reasoning
 

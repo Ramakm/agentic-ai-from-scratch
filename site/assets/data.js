@@ -39,7 +39,7 @@ window.SITE = {
   "totals": {
     "phases": 16,
     "lessons": 163,
-    "published": 53,
+    "published": 63,
     "hours": 127
   }
 };
@@ -613,88 +613,108 @@ window.PHASES = [
   "id": "05-agentic-rag",
   "name": "Retrieval & Agentic RAG",
   "desc": "Retrieval as a tool the agent decides to call. Hybrid search, reranking, rewriting, and self-correcting loops.",
-  "status": "planned",
-  "published": 0,
+  "status": "complete",
+  "published": 10,
   "lessons": [
    {
     "id": "01-naive-rag-and-where-it-breaks",
     "title": "Naive RAG and where it breaks",
     "minutes": 45,
     "path": "phases/05-agentic-rag/01-naive-rag-and-where-it-breaks",
-    "type": "",
-    "num": "05.01"
+    "type": "Build",
+    "num": "05.01",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "02-chunking-strategies",
     "title": "Chunking strategies",
     "minutes": 45,
     "path": "phases/05-agentic-rag/02-chunking-strategies",
-    "type": "",
-    "num": "05.02"
+    "type": "Build",
+    "num": "05.02",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "03-hybrid-search-bm25-vectors",
     "title": "Hybrid search: BM25 + vectors",
     "minutes": 55,
     "path": "phases/05-agentic-rag/03-hybrid-search-bm25-vectors",
-    "type": "",
-    "num": "05.03"
+    "type": "Build",
+    "num": "05.03",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "04-reranking",
     "title": "Reranking",
     "minutes": 40,
     "path": "phases/05-agentic-rag/04-reranking",
-    "type": "",
-    "num": "05.04"
+    "type": "Build",
+    "num": "05.04",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "05-query-rewriting-decomposition",
     "title": "Query rewriting & decomposition",
     "minutes": 45,
     "path": "phases/05-agentic-rag/05-query-rewriting-decomposition",
-    "type": "",
-    "num": "05.05"
+    "type": "Build",
+    "num": "05.05",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "06-retrieval-as-a-tool",
     "title": "Retrieval as a tool",
     "minutes": 45,
     "path": "phases/05-agentic-rag/06-retrieval-as-a-tool",
-    "type": "",
-    "num": "05.06"
+    "type": "Build",
+    "num": "05.06",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "07-self-correcting-rag",
     "title": "Self-correcting RAG",
     "minutes": 55,
     "path": "phases/05-agentic-rag/07-self-correcting-rag",
-    "type": "",
-    "num": "05.07"
+    "type": "Build",
+    "num": "05.07",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "08-corrective-rag-loops",
     "title": "Corrective RAG loops",
     "minutes": 50,
     "path": "phases/05-agentic-rag/08-corrective-rag-loops",
-    "type": "",
-    "num": "05.08"
+    "type": "Build",
+    "num": "05.08",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "09-graph-based-retrieval",
     "title": "Graph-based retrieval",
     "minutes": 55,
     "path": "phases/05-agentic-rag/09-graph-based-retrieval",
-    "type": "",
-    "num": "05.09"
+    "type": "Build",
+    "num": "05.09",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "10-evaluating-retrieval-quality",
     "title": "Evaluating retrieval quality",
     "minutes": 45,
     "path": "phases/05-agentic-rag/10-evaluating-retrieval-quality",
-    "type": "",
-    "num": "05.10"
+    "type": "Build",
+    "num": "05.10",
+    "published": true,
+    "hasQuiz": true
    }
   ]
  },

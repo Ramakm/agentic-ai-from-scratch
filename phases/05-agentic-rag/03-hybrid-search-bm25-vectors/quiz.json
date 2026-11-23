@@ -1,0 +1,24 @@
+{
+  "lesson": "03-hybrid-search-bm25-vectors",
+  "title": "Hybrid Search: BM25 + Vectors",
+  "questions": [
+    {"stage": "pre", "question": "A user searches 'ERR-4012'. Which retrieval method is most likely to rank the right article first?",
+     "options": ["Dense vector search, because it understands meaning", "Keyword search such as BM25, because the exact rare token matches", "Neither can", "Random ranking"],
+     "correct": 1, "explanation": "Identifiers are exact strings; many embedders treat similar codes as nearly identical."},
+    {"stage": "check", "question": "What does IDF do in BM25?",
+     "options": ["Penalises long documents", "Makes rare terms count much more than common ones", "Limits how much repeated terms count", "Normalises vectors"],
+     "correct": 1, "explanation": "ERR-4012 appears in one document, so matching it is strong evidence; 'account' appears in many."},
+    {"stage": "check", "question": "Why does reciprocal rank fusion use ranks instead of adding the two scores?",
+     "options": ["Ranks are faster to compute", "BM25 and cosine scores have different, unrelated scales, so adding them weights one side arbitrarily", "Scores are always wrong", "It is required by vector databases"],
+     "correct": 1, "explanation": "1/(k + rank) puts both rankings on the same footing."},
+    {"stage": "check", "question": "Why was 'rrf, zeros kept' worse than vector search alone?",
+     "options": ["RRF is a bad method", "Documents with BM25 score 0 still got ranks, and those arbitrary ranks voted in the fusion", "The vector side was disabled", "k was too small"],
+     "correct": 1, "explanation": "A zero-score document is not a weak match; it is not a match. Drop it before fusing."},
+    {"stage": "post", "question": "'how do I get a refund' found nothing with BM25 although an article says 'refunds'. What is missing?",
+     "options": ["IDF", "Stemming or normalising word forms, so refund and refunds count as the same term", "A larger k1", "Vector search"],
+     "correct": 1, "explanation": "Without stemming, exact-term matching misses plural and other word forms."},
+    {"stage": "post", "question": "How should you show that hybrid search helps on your data?",
+     "options": ["Trust that it always helps", "Label queries by kind (identifiers vs paraphrases), and report each side and the fusion per kind", "Count documents", "Measure latency only"],
+     "correct": 1, "explanation": "Hybrid helps exactly when the two sides fail on different queries; per-kind results show whether they do."}
+  ]
+}

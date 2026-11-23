@@ -1,0 +1,24 @@
+{
+  "lesson": "07-self-correcting-rag",
+  "title": "Self-Correcting RAG",
+  "questions": [
+    {"stage": "pre", "question": "The right chunk was retrieved, and the answer still says 'refunds take 3 days' when the chunk says 5. What kind of failure is this?",
+     "options": ["A retrieval failure", "A reading (generation) failure: the answer isn't grounded in the text it was given", "A chunking failure", "An embedding failure"],
+     "correct": 1, "explanation": "Retrieval worked; the answer changed the fact. That's what answer checks catch."},
+    {"stage": "check", "question": "Why does the checker have a separate check for numbers?",
+     "options": ["Numbers are easy to tokenize", "Changed figures (days, prices, limits) matter most and are never a paraphrase, so any number missing from the cited chunk is a problem", "Models can't write numbers", "To save time"],
+     "correct": 1, "explanation": "'3' versus '5' is always wrong; word overlap alone might let it through."},
+    {"stage": "check", "question": "What happens after the revision cap is reached and the answer still fails?",
+     "options": ["The unverified answer is returned anyway", "Only verified sentences are returned, with a note that something couldn't be verified", "The system loops forever", "It returns an error page"],
+     "correct": 1, "explanation": "A shorter true answer beats a longer one containing an invented discount."},
+    {"stage": "check", "question": "What do revisions receive as feedback?",
+     "options": ["'Try again'", "The specific failing sentences and why each failed (changed number, uncited, unsupported, non-retrieved citation)", "The full chunk list again only", "Nothing"],
+     "correct": 1, "explanation": "Specific feedback gives the model something concrete to fix."},
+    {"stage": "post", "question": "The first version of the checker rejected the answer 'No. Damage from dropping is not covered [warranty#1].' Why does that matter?",
+     "options": ["It doesn't", "A checker that rejects true answers wastes revisions and can delete the real answer; checkers need their own tests, including true answers", "The answer was wrong", "Citations aren't needed"],
+     "correct": 1, "explanation": "Too strict is as costly as too loose."},
+    {"stage": "post", "question": "Why run code checks before (or instead of) a model judge?",
+     "options": ["Code is always more accurate", "They are free, deterministic and testable; a model judge can then be reserved for the uncertain sentences", "Model judges can't read citations", "Regulations require it"],
+     "correct": 1, "explanation": "Use cheap checks first and spend model calls only where they're needed."}
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "lesson": "06-retrieval-as-a-tool",
+  "title": "Retrieval as a Tool",
+  "questions": [
+    {"stage": "pre", "question": "A user says 'Thanks, that's all!' to a RAG pipeline. What does an always-retrieve pipeline do?",
+     "options": ["Nothing", "Searches the documents anyway and answers with whatever ranks first", "Ends the session", "Asks a follow-up"],
+     "correct": 1, "explanation": "A fixed pipeline can't decide that a message needs no search."},
+    {"stage": "check", "question": "Why does search_docs return an explicit 'No results above 0.35' message instead of the top 3 chunks?",
+     "options": ["To save tokens only", "So 'nothing relevant' is an observation the model can act on, instead of irrelevant chunks it feels obliged to use", "Because the API requires it", "To hide scores"],
+     "correct": 1, "explanation": "It's how the agent got the undocumented question right."},
+    {"stage": "check", "question": "How did the agent answer the multi-hop question?",
+     "options": ["It knew the answer", "It searched, read the name Dana Okafor in the result, and searched again for her deputy", "It read every document", "It used a larger k"],
+     "correct": 1, "explanation": "The second query was written from the first result: what a pipeline can't do."},
+    {"stage": "check", "question": "Why do search results show chunk ids and scores to the model?",
+     "options": ["Decoration", "Ids make answers citable and checkable; scores let the model see a weak match is weak", "Models require numbers", "To rank tools"],
+     "correct": 1, "explanation": "A tool's output is written for its reader, and the reader here is a model."},
+    {"stage": "post", "question": "What new failure does an agent with a retrieval tool introduce?",
+     "options": ["None", "It may not search when it should (answering from memory), or search in circles until the step limit", "It can't cite", "It always searches twice"],
+     "correct": 1, "explanation": "Flexibility moves the decision into the model, and the model can decide wrongly."},
+    {"stage": "post", "question": "What does the agent's flexibility cost compared with a pipeline?",
+     "options": ["Nothing", "One model call per step, so more calls and more variable latency, especially for multi-hop questions", "A new index", "Lower accuracy on simple questions"],
+     "correct": 1, "explanation": "A two-hop answer took three model calls; a pipeline always takes one."}
+  ]
+}
