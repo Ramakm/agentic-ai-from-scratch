@@ -1,6 +1,6 @@
 # Agentic AI from Scratch
 
-> Build AI agents from a raw while-loop and an HTTP call, before a single framework gets imported. 16 phases, 163 lessons (42 live), Python and TypeScript, free and open source (MIT).
+> Build AI agents from a raw while-loop and an HTTP call, before a single framework gets imported. 16 phases, 163 lessons (45 live), Python and TypeScript, free and open source (MIT).
 
 Source: https://github.com/Ramakm/agentic-ai-from-scratch
 Site: https://ramakm.github.io/agentic-ai-from-scratch/
@@ -73,9 +73,9 @@ A while-loop, a model, and a toolbox. ReAct, stop conditions, retries, interrupt
 
 Context is the program. Buffers, summaries, embeddings, a vector store by hand, and memory that stays clean.
 
-- 04.01 Context is the program (40 min) [planned]
-- 04.02 Conversation buffers & truncation (40 min) [planned]
-- 04.03 Summarization memory (45 min) [planned]
+- 04.01 Context is the program (40 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/04-memory-and-context/01-context-is-the-program | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/04-memory-and-context/01-context-is-the-program/docs/en.md
+- 04.02 Conversation buffers & truncation (40 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/04-memory-and-context/02-conversation-buffers-truncation | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/04-memory-and-context/02-conversation-buffers-truncation/docs/en.md
+- 04.03 Summarization memory (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/04-memory-and-context/03-summarization-memory | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/04-memory-and-context/03-summarization-memory/docs/en.md
 - 04.04 Embeddings from scratch (60 min) [planned]
 - 04.05 A vector store in 80 lines (60 min) [planned]
 - 04.06 Episodic memory (50 min) [planned]

@@ -1,0 +1,78 @@
+{
+  "lesson": "01-context-is-the-program",
+  "title": "Context is the Program",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "A user told your agent about an allergy in yesterday's session. Today the agent ignores it. What is the most likely cause?",
+      "options": [
+        "The model forgot it overnight",
+        "Yesterday's conversation is not in today's context window, so the model never saw it",
+        "The temperature was too high",
+        "The model refuses to discuss allergies"
+      ],
+      "correct": 1,
+      "explanation": "A model has no memory between calls. It only knows what your code puts into the current window."
+    },
+    {
+      "stage": "check",
+      "question": "In the ContextBuilder, what is the difference between a section's priority and its order?",
+      "options": [
+        "They are the same thing",
+        "Priority decides what survives a tight budget; order decides where the section sits in the prompt",
+        "Order decides what survives; priority decides the position",
+        "Priority sets the temperature for that section"
+      ],
+      "correct": 1,
+      "explanation": "They are separate on purpose: the most important section is not always the one that should come first."
+    },
+    {
+      "stage": "check",
+      "question": "At the very tight budget, the customer memory survived but the answer was still wrong. Why?",
+      "options": [
+        "The memory was placed too early",
+        "The product facts were dropped, so the model knew about the allergy but not which kettle contains nickel",
+        "The task was dropped",
+        "The token estimate was wrong"
+      ],
+      "correct": 1,
+      "explanation": "A constraint is only useful together with the facts it depends on. Dropping sections independently separated them."
+    },
+    {
+      "stage": "check",
+      "question": "What does 'lost in the middle' refer to?",
+      "options": [
+        "Agents that stop halfway through a task",
+        "Facts in the middle of a long context are used less reliably than facts near the start or the end",
+        "Tokens lost when a prompt is truncated",
+        "Messages dropped by a network proxy"
+      ],
+      "correct": 1,
+      "explanation": "Liu et al. (2023) measured this; it is why position, not just inclusion, matters."
+    },
+    {
+      "stage": "post",
+      "question": "Your agent gives a strange answer in production. What should you look at first?",
+      "options": [
+        "The model's weights",
+        "The exact messages that were sent on that call, including what the context builder dropped",
+        "The user's browser",
+        "The average latency"
+      ],
+      "correct": 1,
+      "explanation": "The answer is a function of the window. Log the kept and dropped sections so you can see what the model saw."
+    },
+    {
+      "stage": "post",
+      "question": "Which statement best describes 'memory' in an LLM agent?",
+      "options": [
+        "A special layer inside the model that stores facts",
+        "Text that your code stored earlier and puts back into the context window",
+        "The model's training data",
+        "The KV cache of the inference server"
+      ],
+      "correct": 1,
+      "explanation": "Every memory technique is a write path into a store and a read path back into the prompt."
+    }
+  ]
+}

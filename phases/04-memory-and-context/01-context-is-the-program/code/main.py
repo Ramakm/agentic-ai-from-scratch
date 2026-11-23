@@ -1,10 +1,10 @@
 """Context is the program: the model's behaviour is a function of exactly what you put in the window.
 
-A ContextBuilder assembles named sections (system, memory, retrieved docs, history, task), each with a
-priority and an order, and fits them into a token budget by dropping the least important first.
+A ContextBuilder assembles named sections (instructions, memory, retrieved facts, filler, task), each
+with a priority and an order, and fits them into a token budget by dropping the least important first.
 
-    python3 main.py             # offline: one request assembled under three budgets
-    python3 main.py --live 3    # live: the same question with different contexts; what changes the answer?
+    python3 main.py             # offline: one request assembled four ways, answered by a scripted model
+    python3 main.py --live 3    # live: the same four contexts, 3 runs each, against a real model
 """
 from __future__ import annotations
 
@@ -13,6 +13,7 @@ import os
 import sys
 import urllib.request
 from dataclasses import dataclass, field
+from typing import Callable
 
 # ---------------------------------------------------------------- the builder
 
@@ -57,11 +58,13 @@ class ContextBuilder:
 
 # ---------------------------------------------------------------- one request, many possible contexts
 
+
 SYSTEM = "You are the assistant for Acme, a kitchenware store. Answer in one or two sentences."
-MEMORY = "Customer profile: Priya Shah. Prefers replies in Hindi-English mix is NOT wanted; plain English. " \
-         "Allergic to nickel: never recommend nickel-plated or stainless steel that contains nickel."
-POLICY = "Returns: unused items within 30 days. Cast-iron and ceramic cookware have no nickel. " \
-         "The Nordic kettle is stainless steel (contains nickel). The Copper kettle is copper with a tin lining (no nickel)."
+MEMORY = ("Customer profile: Priya Shah. Prefers plain English. "
+          "Allergic to nickel: never recommend stainless steel or nickel-plated items.")
+POLICY = ("Returns: unused items within 30 days. Cast-iron and ceramic cookware contain no nickel. "
+          "The Nordic kettle is stainless steel (contains nickel). "
+          "The Copper kettle is copper with a tin lining (no nickel).")
 FILLER = "\n".join(f"Catalogue line {i}: product {1000 + i}, standard description, in stock." for i in range(60))
 TASK = "Which of your kettles would you recommend for me, the Nordic or the Copper one?"
 
@@ -78,45 +81,68 @@ def assemble(budget: int, include_memory: bool = True, memory_last: bool = False
 
 
 def judge(answer: str) -> str:
+    """Classify an answer: which kettle, and does it give the nickel reason?"""
     a = answer.lower()
-    if "copper" in a and "nordic" not in a.split("copper")[0][-40:] and "nickel" in a:
-        return "copper, says why"
-    if "copper" in a:
-        return "copper"
-    if "nordic" in a:
-        return "nordic"
-    return "other"
+    named = sorted((a.index(k), k) for k in ("copper", "nordic") if k in a)
+    if not named:
+        return "other"
+    pick = named[0][1]    # when both are named, the recommendation is usually the one mentioned first
+    return f"{pick}, says why" if pick == "copper" and "nickel" in a else pick
 
-# ---------------------------------------------------------------- live
+# ---------------------------------------------------------------- models
 
-
-def ask(messages: list[dict]) -> str:
-    base, model = os.environ.get("OLLAMA_URL", "http://localhost:11434"), os.environ.get("AGENT_MODEL", "llama3.2")
-    body = {"model": model, "messages": messages, "stream": False, "options": {"temperature": 0.7, "num_ctx": 8192}}
-    req = urllib.request.Request(base + "/api/chat", data=json.dumps(body).encode(), headers={"Content-Type": "application/json"})
-    return json.load(urllib.request.urlopen(req, timeout=120))["message"]["content"]
+LLM = Callable[[list[dict]], str]
 
 
-def live(runs: int) -> None:
-    variants = {
-        "no memory": dict(budget=4000, include_memory=False),
-        "memory, early": dict(budget=4000),
-        "memory, last (near the question)": dict(budget=4000, memory_last=True),
-        "memory, tight budget (catalogue dropped)": dict(budget=200),
-    }
-    for label, kw in variants.items():
+def scripted(messages: list[dict]) -> str:
+    """A stand-in model that can only use what is in its context. It is deterministic on purpose:
+    the point is that the answer is a pure function of the window, which is also true of a real model."""
+    window = " ".join(m["content"] for m in messages).lower()
+    if "allergic to nickel" in window and "copper kettle is copper" in window:
+        return "I'd recommend the Copper kettle: it has no nickel, and the Nordic is stainless steel."
+    if "nordic kettle is stainless" in window:
+        return "The Nordic kettle is a solid stainless-steel choice."
+    return "Both are popular; the Nordic kettle is our best seller."
+
+
+def openai_compatible(base_url: str, model: str, api_key: str = "", temperature: float = 0.7) -> LLM:
+    def call(messages: list[dict]) -> str:
+        body = {"model": model, "messages": messages, "temperature": temperature}
+        req = urllib.request.Request(base_url.rstrip("/") + "/chat/completions", data=json.dumps(body).encode(),
+                                     headers={"Content-Type": "application/json",
+                                              "Authorization": f"Bearer {api_key or 'none'}"})
+        with urllib.request.urlopen(req, timeout=120) as resp:
+            return json.load(resp)["choices"][0]["message"]["content"] or ""
+    return call
+
+
+VARIANTS = {
+    "no memory": dict(budget=4000, include_memory=False),
+    "memory, early": dict(budget=4000),
+    "memory, last (near the question)": dict(budget=4000, memory_last=True),
+    "tight budget (catalogue dropped)": dict(budget=200),
+    "very tight budget": dict(budget=90),
+}
+
+
+def compare(llm: LLM, runs: int = 1) -> list[tuple[str, dict, list[str]]]:
+    rows = []
+    for label, kw in VARIANTS.items():
         messages, report = assemble(**kw)
-        verdicts = [judge(ask(messages)) for _ in range(runs)]
-        print(f"{label:42} ~{report['used']:4} tokens  dropped={report['dropped'] or '-'}  answers={verdicts}")
+        rows.append((label, report, [judge(llm(messages)) for _ in range(runs)]))
+    return rows
 
 
 if __name__ == "__main__":
     if "--live" in sys.argv:
         i = sys.argv.index("--live")
-        live(int(sys.argv[i + 1]) if len(sys.argv) > i + 1 else 3)
-        sys.exit()
-    for budget in (4000, 400, 120):
-        _, report = assemble(budget)
-        print(f"budget {budget:5}: {json.dumps(report)}")
-    messages, _ = assemble(400)
-    print("\nwhat the model receives at budget 400:\n" + messages[0]["content"] + "\n\n[user] " + messages[1]["content"])
+        runs = int(sys.argv[i + 1]) if len(sys.argv) > i + 1 else 3
+        llm = openai_compatible(os.environ.get("AGENT_BASE_URL", "http://localhost:11434/v1"),
+                                os.environ.get("AGENT_MODEL", "llama3.2"), os.environ.get("AGENT_API_KEY", ""))
+    else:
+        runs, llm = 1, scripted
+    for label, report, verdicts in compare(llm, runs):
+        print(f"{label:34} ~{report['used']:4} tokens  dropped={report['dropped'] or '-'}  answers={verdicts}")
+    messages, _ = assemble(200)
+    print("\nwhat the model receives at budget 200:\n[system]\n" + messages[0]["content"] + "\n\n[user] "
+          + messages[1]["content"])

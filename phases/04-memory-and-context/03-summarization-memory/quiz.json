@@ -1,0 +1,78 @@
+{
+  "lesson": "03-summarization-memory",
+  "title": "Summarization Memory",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "A user mentions their diet at turn 5 of a 40-turn chat. A token window keeps the last 300 tokens. What happens to the diet?",
+      "options": [
+        "It stays because it is important",
+        "It is dropped with the other old messages, unless something else keeps it",
+        "The model remembers it anyway",
+        "It moves to the end of the history"
+      ],
+      "correct": 1,
+      "explanation": "A window keeps only the newest messages. Summaries and long-term memory exist to keep facts like this."
+    },
+    {
+      "stage": "check",
+      "question": "What does one 'fold' of the summary buffer do?",
+      "options": [
+        "Deletes the oldest message",
+        "Passes the previous summary plus the oldest messages to the summarizer and replaces the summary with its output",
+        "Compresses tokens with gzip",
+        "Moves the summary to a database"
+      ],
+      "correct": 1,
+      "explanation": "Each fold is one summarizer call, usually a model call you pay for."
+    },
+    {
+      "stage": "check",
+      "question": "The 600-character notes summary kept every planted fact. Why is it still a problem?",
+      "options": [
+        "It used too many tokens",
+        "It kept the old budget next to the new one, so the model has to guess which is current",
+        "It lost the user's name",
+        "It contains the assistant's messages"
+      ],
+      "correct": 1,
+      "explanation": "Append-only summaries keep stale facts. A recall score alone would have called this a success."
+    },
+    {
+      "stage": "check",
+      "question": "What is the main advantage of a structured summary with named slots?",
+      "options": [
+        "It never needs a model",
+        "Each slot has one current value, so updates replace old values and missing facts are visible",
+        "It is always shorter",
+        "It keeps every message verbatim"
+      ],
+      "correct": 1,
+      "explanation": "The cost is choosing slots in advance; facts that fit no slot are lost."
+    },
+    {
+      "stage": "post",
+      "question": "How should you test a summarization memory?",
+      "options": [
+        "Read a few summaries and check they look fluent",
+        "Plant facts (including an update) in a long test conversation and check which current facts are in the final context",
+        "Measure the summary's length only",
+        "Ask the model if it remembers"
+      ],
+      "correct": 1,
+      "explanation": "Summaries fail silently and still read well. Planted facts make the failure measurable."
+    },
+    {
+      "stage": "post",
+      "question": "After several folds, the summary says 'staying at a hotel in the old town' instead of 'the Alfama hotel'. What is this called?",
+      "options": [
+        "Squeeze-out",
+        "Drift: each rewrite paraphrases the previous summary and details blur",
+        "Tokenization",
+        "Prompt injection"
+      ],
+      "correct": 1,
+      "explanation": "Repeated rewriting loses precision. Keeping exact values in slots reduces drift."
+    }
+  ]
+}

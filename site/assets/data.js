@@ -39,7 +39,7 @@ window.SITE = {
   "totals": {
     "phases": 16,
     "lessons": 163,
-    "published": 42,
+    "published": 45,
     "hours": 127
   }
 };
@@ -494,32 +494,38 @@ window.PHASES = [
   "id": "04-memory-and-context",
   "name": "Memory & Context Engineering",
   "desc": "Context is the program. Buffers, summaries, embeddings, a vector store by hand, and memory that stays clean.",
-  "status": "planned",
-  "published": 0,
+  "status": "in-progress",
+  "published": 3,
   "lessons": [
    {
     "id": "01-context-is-the-program",
     "title": "Context is the program",
     "minutes": 40,
     "path": "phases/04-memory-and-context/01-context-is-the-program",
-    "type": "",
-    "num": "04.01"
+    "type": "Build",
+    "num": "04.01",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "02-conversation-buffers-truncation",
     "title": "Conversation buffers & truncation",
     "minutes": 40,
     "path": "phases/04-memory-and-context/02-conversation-buffers-truncation",
-    "type": "",
-    "num": "04.02"
+    "type": "Build",
+    "num": "04.02",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "03-summarization-memory",
     "title": "Summarization memory",
     "minutes": 45,
     "path": "phases/04-memory-and-context/03-summarization-memory",
-    "type": "",
-    "num": "04.03"
+    "type": "Build",
+    "num": "04.03",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "04-embeddings-from-scratch",
