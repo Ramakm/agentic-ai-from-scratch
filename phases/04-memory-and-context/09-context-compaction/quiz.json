@@ -1,0 +1,78 @@
+{
+  "lesson": "09-context-compaction",
+  "title": "Context Compaction",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "A debugging agent has read ten files and a long log. Most of its 14,000-token history is file contents it looked at once. What is the risk of simply cutting it down?",
+      "options": [
+        "There is no risk; old file contents are never needed",
+        "It may fit afterwards but have lost the few specific facts (a port, a file:line) the next step depends on",
+        "The model will refuse to continue",
+        "Tokens will be counted twice"
+      ],
+      "correct": 1,
+      "explanation": "'It fits' is not success. Recall of the needed facts is."
+    },
+    {
+      "stage": "check",
+      "question": "What does clearing old tool results keep?",
+      "options": [
+        "Nothing from the old steps",
+        "Every tool call (what was done) plus a stub saying how big the result was; the newest results stay in full",
+        "Only the system prompt",
+        "A summary written by the model"
+      ],
+      "correct": 1,
+      "explanation": "The model can see what it did and call the tool again if it needs the output."
+    },
+    {
+      "stage": "check",
+      "question": "The offline handoff note kept 'dates.py:88' but lost the port 5433. Why?",
+      "options": [
+        "The port was in a newer step",
+        "The agent had written the crash location down with note(), but nobody wrote down the port, and the note writer didn't extract it",
+        "Ports are filtered out",
+        "The note was too long"
+      ],
+      "correct": 1,
+      "explanation": "A note keeps only what its writer chose to write. Agents that take notes as they go lose less."
+    },
+    {
+      "stage": "check",
+      "question": "Why does the order 'clear, then write a note' lose facts?",
+      "options": [
+        "It doesn't; order is irrelevant",
+        "The note writer then sees stubs instead of results, so it can't copy values that clearing removed",
+        "Clearing deletes the system prompt",
+        "Notes can't be written after clearing"
+      ],
+      "correct": 1,
+      "explanation": "Write the note from the full history first, then clear what the note covers."
+    },
+    {
+      "stage": "post",
+      "question": "auto_compact with clear_first=True fitted the window after clearing and stopped. What went wrong?",
+      "options": [
+        "Nothing: it fitted",
+        "It chose the free option, fitted, and lost every needed fact; size was the only check",
+        "It wrote too many notes",
+        "It made the request invalid"
+      ],
+      "correct": 1,
+      "explanation": "Automatic compaction should be tested on recall of planted facts, not only on size."
+    },
+    {
+      "stage": "post",
+      "question": "A handoff note says the database port is 5432; the config says 5433. What is the lesson?",
+      "options": [
+        "Notes are always reliable",
+        "A model-written note can change specific values; ask it to copy values exactly, and test notes against the original run",
+        "Use a smaller model",
+        "Ports don't matter"
+      ],
+      "correct": 1,
+      "explanation": "5432 is the PostgreSQL default, so a model may 'correct' the real value toward it. Paraphrased values are wrong values."
+    }
+  ]
+}

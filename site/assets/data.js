@@ -39,7 +39,7 @@ window.SITE = {
   "totals": {
     "phases": 16,
     "lessons": 163,
-    "published": 49,
+    "published": 53,
     "hours": 127
   }
 };
@@ -494,8 +494,8 @@ window.PHASES = [
   "id": "04-memory-and-context",
   "name": "Memory & Context Engineering",
   "desc": "Context is the program. Buffers, summaries, embeddings, a vector store by hand, and memory that stays clean.",
-  "status": "in-progress",
-  "published": 7,
+  "status": "complete",
+  "published": 11,
   "lessons": [
    {
     "id": "01-context-is-the-program",
@@ -572,32 +572,40 @@ window.PHASES = [
     "title": "Memory writes: what to keep",
     "minutes": 45,
     "path": "phases/04-memory-and-context/08-memory-writes-what-to-keep",
-    "type": "",
-    "num": "04.08"
+    "type": "Build",
+    "num": "04.08",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "09-context-compaction",
     "title": "Context compaction",
     "minutes": 45,
     "path": "phases/04-memory-and-context/09-context-compaction",
-    "type": "",
-    "num": "04.09"
+    "type": "Build",
+    "num": "04.09",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "10-files-as-long-term-memory",
     "title": "Files as long-term memory",
     "minutes": 40,
     "path": "phases/04-memory-and-context/10-files-as-long-term-memory",
-    "type": "",
-    "num": "04.10"
+    "type": "Build",
+    "num": "04.10",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "11-memory-poisoning-hygiene",
     "title": "Memory poisoning & hygiene",
     "minutes": 40,
     "path": "phases/04-memory-and-context/11-memory-poisoning-hygiene",
-    "type": "",
-    "num": "04.11"
+    "type": "Build",
+    "num": "04.11",
+    "published": true,
+    "hasQuiz": true
    }
   ]
  },
