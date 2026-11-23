@@ -1,0 +1,24 @@
+{
+  "lesson": "09-tool-results-that-fit-the-context",
+  "title": "Tool Results That Fit the Context",
+  "questions": [
+    {"stage": "pre", "question": "Why does a large tool result cost more than its own tokens?",
+     "options": ["It doesn't", "It stays in the history and is re-sent on every later step", "Providers charge double for tools", "JSON is billed specially"],
+     "correct": 1, "explanation": "Phase 3 · Lesson 11: history is re-sent every step."},
+    {"stage": "check", "question": "Why should a paged result include a total?",
+     "options": ["To look complete", "So the model doesn't count the visible rows when asked 'how many'", "It's required by JSON", "To make it longer"],
+     "correct": 1, "explanation": "The table shape answered '10 teapots' because it saw 10 rows."},
+    {"stage": "check", "question": "Which shape answered all 4 questions correctly?",
+     "options": ["raw", "top: the count and the first row after filtering and sorting", "fields", "page"],
+     "correct": 1, "explanation": "4/4 at about 151 tokens, against 1/4 at about 9,200 for raw."},
+    {"stage": "check", "question": "Why push filtering, sorting and counting into the tool?",
+     "options": ["To save the model work it often gets wrong, and to cut tokens", "Tools are faster at everything", "Models can't sort", "It's more secure"],
+     "correct": 0, "explanation": "Code does it exactly; the model misread even short sorted tables."},
+    {"stage": "post", "question": "Answers reported rupee prices in dollars. Why?",
+     "options": ["A currency bug in Ollama", "Field selection dropped 'currency', so the model made one up", "The model prefers dollars", "The catalogue was in dollars"],
+     "correct": 1, "explanation": "Keep units when you project fields."},
+    {"stage": "post", "question": "The unsorted page 'passed' the most-expensive-pan question. What should you check?",
+     "options": ["Nothing; a pass is a pass", "Why it passed: the right row happened to be on the first page", "The temperature", "The token count"],
+     "correct": 1, "explanation": "Lucky passes hide broken designs."}
+  ]
+}

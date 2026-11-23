@@ -3,21 +3,21 @@
 
 > Turn text into action. Tool schemas, dispatchers, parallel calls, and errors fed back as observations.
 
-**Status:** ◩ in progress · **Lessons:** 1 of 11 live · **Time:** ~8 hours
+**Status:** ■ complete · **Lessons:** 11 of 11 live · **Time:** ~8 hours
 
 | # | Lesson | Type | Time |
 |---|--------|------|------|
-| 02.01 | Text in, text out: the limit | planned | 30 min |
+| 02.01 | [Text in, text out: the limit](01-text-in-text-out-the-limit/docs/en.md) | Learn | 30 min |
 | 02.02 | [Tool schemas from first principles](02-tool-schemas-from-first-principles/docs/en.md) | Build | 50 min |
-| 02.03 | Writing a tool dispatcher | planned | 60 min |
-| 02.04 | Parallel tool calls | planned | 45 min |
-| 02.05 | Tool errors as observations | planned | 40 min |
-| 02.06 | Designing tools models can use | planned | 50 min |
-| 02.07 | Idempotency and side effects | planned | 40 min |
-| 02.08 | Human approval gates | planned | 45 min |
-| 02.09 | Tool results that fit the context | planned | 40 min |
-| 02.10 | Native function calling across providers | planned | 50 min |
-| 02.11 | Testing tools in isolation | planned | 40 min |
+| 02.03 | [Writing a tool dispatcher](03-writing-a-tool-dispatcher/docs/en.md) | Build | 60 min |
+| 02.04 | [Parallel tool calls](04-parallel-tool-calls/docs/en.md) | Build | 45 min |
+| 02.05 | [Tool errors as observations](05-tool-errors-as-observations/docs/en.md) | Build | 40 min |
+| 02.06 | [Designing tools models can use](06-designing-tools-models-can-use/docs/en.md) | Build | 50 min |
+| 02.07 | [Idempotency and side effects](07-idempotency-and-side-effects/docs/en.md) | Build | 40 min |
+| 02.08 | [Human approval gates](08-human-approval-gates/docs/en.md) | Build | 45 min |
+| 02.09 | [Tool results that fit the context](09-tool-results-that-fit-the-context/docs/en.md) | Build | 40 min |
+| 02.10 | [Native function calling across providers](10-native-function-calling-across-providers/docs/en.md) | Build | 50 min |
+| 02.11 | [Testing tools in isolation](11-testing-tools-in-isolation/docs/en.md) | Build | 40 min |
 
 Every live lesson folder has `docs/en.md`, runnable `code/` with tests, a `quiz.json`, and an artifact in `outputs/`.
 Want to write a planned lesson? See [CONTRIBUTING.md](../../CONTRIBUTING.md) and [LESSON_TEMPLATE.md](../../LESSON_TEMPLATE.md).

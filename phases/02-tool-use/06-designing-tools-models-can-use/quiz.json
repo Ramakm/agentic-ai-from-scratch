@@ -1,0 +1,24 @@
+{
+  "lesson": "06-designing-tools-models-can-use",
+  "title": "Designing Tools Models Can Use",
+  "questions": [
+    {"stage": "pre", "question": "Why is db_query(table, where) hard for a model to use well?",
+     "options": ["It's too slow", "It requires knowledge not in the prompt: table names, column links, status codes, query syntax", "Models can't read SQL", "It has too few parameters"],
+     "correct": 1, "explanation": "Generic tools push your backend's internals onto the model."},
+    {"stage": "check", "question": "Which parameter is best for a model-facing order lookup?",
+     "options": ["cid (internal customer id)", "customer_email (something the user can supply)", "row_offset", "table_name"],
+     "correct": 1, "explanation": "Resolve internal ids inside the tool."},
+    {"stage": "check", "question": "What does accepting '1002', '#1002' and 'a1002' as order ids buy you?",
+     "options": ["Nothing", "Fewer failed calls: the tool resolves what people actually type", "Security", "Smaller schemas"],
+     "correct": 1, "explanation": "Forgiving inputs remove a whole class of errors the model can't reliably fix (Lesson 5)."},
+    {"stage": "check", "question": "Why enforce 'only processing orders can be cancelled' inside cancel_order?",
+     "options": ["To slow the model down", "So no model mistake can break the rule; the tool refuses with a clear error", "The model would forget otherwise", "It's required by JSON Schema"],
+     "correct": 1, "explanation": "Rules in prompts are suggestions; rules in tools are guarantees."},
+    {"stage": "post", "question": "The generic toolset's single passing answer said the order 'is currently: Shipped. The shipping carrier is USPS'. What was it?",
+     "options": ["A grounded answer", "A guess after every tool call had failed, which happened to be right", "A tool result", "A cached answer"],
+     "correct": 1, "explanation": "Grounded, the generic toolset scored 0/12."},
+    {"stage": "post", "question": "db_update returned '1 row updated' and the model told the user the order was cancelled. What actually happened?",
+     "options": ["The order was cancelled", "A meaningless new field was written; the order was still processing", "The update failed with an error", "The order was deleted"],
+     "correct": 1, "explanation": "Flexible write tools can report success for actions that didn't achieve the intent."}
+  ]
+}

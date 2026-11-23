@@ -1,0 +1,24 @@
+{
+  "lesson": "08-human-approval-gates",
+  "title": "Human Approval Gates",
+  "questions": [
+    {"stage": "pre", "question": "What should a policy do with a tool call to a tool it doesn't know?",
+     "options": ["Run it", "Deny it", "Ask the model", "Ignore it"],
+     "correct": 1, "explanation": "Deny by default: unknown means unreviewed."},
+    {"stage": "check", "question": "Why may argument rules only make a decision stricter?",
+     "options": ["It's faster", "So adding a rule can never open a hole that the tier closed", "JSON requires it", "Humans prefer it"],
+     "correct": 1, "explanation": "Escalate-only rules are easy to reason about."},
+    {"stage": "check", "question": "What must an approval card include for a refund?",
+     "options": ["Only the amount", "The user's request, the exact arguments, why it was escalated, and context like the order total", "The model's name", "Nothing; approvers know"],
+     "correct": 1, "explanation": "Without the order total, 'refund 2400' can't be judged."},
+    {"stage": "check", "question": "What does the model receive while a call waits for a person?",
+     "options": ["The tool's result", "waiting_for_approval with reasons, and an instruction not to call it again", "An error to retry", "Nothing"],
+     "correct": 1, "explanation": "Otherwise models retry or tell users the action is done."},
+    {"stage": "post", "question": "Under 'approve anything over 100', what slipped through live?",
+     "options": ["Nothing", "A refund of 1 for a full 80 refund, and a refund of 80 on a 2,400 order", "The account deletion", "The 5,000 refund"],
+     "correct": 1, "explanation": "Small and wrong is still wrong. The partial-refund rule caught both."},
+    {"stage": "post", "question": "The model refunded exactly 80, the example value in the parameter description. What's the lesson?",
+     "options": ["Remove all descriptions", "Example values can be copied as real values; choose obviously illustrative examples", "Models can't read descriptions", "Use bigger numbers"],
+     "correct": 1, "explanation": "Examples help format, but small models may copy them verbatim."}
+  ]
+}

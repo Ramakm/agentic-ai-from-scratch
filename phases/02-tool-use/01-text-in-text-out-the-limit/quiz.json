@@ -1,0 +1,24 @@
+{
+  "lesson": "01-text-in-text-out-the-limit",
+  "title": "Text In, Text Out: The Limit",
+  "questions": [
+    {"stage": "pre", "question": "Without tools, llama3.2 replied 'The support ticket ID is #TS-001.' What actually happened?",
+     "options": ["A ticket was created", "Nothing: the model generated likely text that claims an action", "The ticket system failed", "The model called a hidden tool"],
+     "correct": 1, "explanation": "A model only outputs text. Claims of actions without a tool call are inventions."},
+    {"stage": "check", "question": "Which of these needs a tool rather than a better model?",
+     "options": ["Summarising a paragraph you provided", "Today's date", "Translating a sentence", "Rewriting text politely"],
+     "correct": 1, "explanation": "Fresh data isn't in the weights or the prompt."},
+    {"stage": "check", "question": "In one tool round trip, what does the model return on the first turn?",
+     "options": ["The final answer", "A tool call: the tool's name and arguments", "The tool's result", "Nothing"],
+     "correct": 1, "explanation": "Your code runs the tool, then the model answers from the result on the next turn."},
+    {"stage": "check", "question": "In the live run, how often did llama3.2 choose the right tool?",
+     "options": ["Never", "Every time (6/6)", "Half the time", "Only for actions"],
+     "correct": 1, "explanation": "Choosing was easy; the failures came after the tool returned."},
+    {"stage": "post", "question": "With no tools in the final request, the model said 'The status I provided earlier was fictional.' Why?",
+     "options": ["The tool returned fiction", "llama3.2's template only adds 'use the tool output' guidance when tools are in the request, so it misread the result", "The model was too small", "The order didn't exist"],
+     "correct": 1, "explanation": "Sending the tool definitions on the final turn too raised the score from 3/6 to 5/6."},
+    {"stage": "post", "question": "Evaluating the action question in two conditions created two tickets. What does that imply?",
+     "options": ["The tool is buggy", "Tests and evals of side-effecting tools have real effects; use fakes, sandboxes or idempotency", "Tickets are cheap", "Only run evals once"],
+     "correct": 1, "explanation": "Lessons 7 and 11 cover making side effects safe to test."}
+  ]
+}

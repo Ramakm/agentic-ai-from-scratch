@@ -3,20 +3,20 @@
 
 > What a model actually returns, how context windows fill, and how to force structured, parseable output.
 
-**Status:** □ planned · **Lessons:** 0 of 10 live · **Time:** ~7 hours
+**Status:** ■ complete · **Lessons:** 10 of 10 live · **Time:** ~7 hours
 
 | # | Lesson | Type | Time |
 |---|--------|------|------|
-| 01.01 | What an LLM actually returns | planned | 45 min |
-| 01.02 | Tokens and the context window | planned | 50 min |
-| 01.03 | Sampling: temperature, top-p, determinism | planned | 40 min |
-| 01.04 | Chat templates and message roles | planned | 40 min |
-| 01.05 | System prompts as contracts | planned | 35 min |
-| 01.06 | Structured output & JSON mode | planned | 50 min |
-| 01.07 | Parsing and validating with schemas | planned | 45 min |
-| 01.08 | Token budgets & cost math | planned | 35 min |
-| 01.09 | Model selection for agent work | planned | 40 min |
-| 01.10 | Why capable models still fail | planned | 45 min |
+| 01.01 | [What an LLM actually returns](01-what-an-llm-actually-returns/docs/en.md) | Learn | 45 min |
+| 01.02 | [Tokens and the context window](02-tokens-and-the-context-window/docs/en.md) | Build | 50 min |
+| 01.03 | [Sampling: temperature, top-p, determinism](03-sampling-temperature-top-p-determinism/docs/en.md) | Build | 40 min |
+| 01.04 | [Chat templates and message roles](04-chat-templates-and-message-roles/docs/en.md) | Build | 40 min |
+| 01.05 | [System prompts as contracts](05-system-prompts-as-contracts/docs/en.md) | Build | 35 min |
+| 01.06 | [Structured output & JSON mode](06-structured-output-json-mode/docs/en.md) | Build | 50 min |
+| 01.07 | [Parsing and validating with schemas](07-parsing-and-validating-with-schemas/docs/en.md) | Build | 45 min |
+| 01.08 | [Token budgets & cost math](08-token-budgets-cost-math/docs/en.md) | Build | 35 min |
+| 01.09 | [Model selection for agent work](09-model-selection-for-agent-work/docs/en.md) | Build | 40 min |
+| 01.10 | [Why capable models still fail](10-why-capable-models-still-fail/docs/en.md) | Learn | 45 min |
 
 Every live lesson folder has `docs/en.md`, runnable `code/` with tests, a `quiz.json`, and an artifact in `outputs/`.
 Want to write a planned lesson? See [CONTRIBUTING.md](../../CONTRIBUTING.md) and [LESSON_TEMPLATE.md](../../LESSON_TEMPLATE.md).

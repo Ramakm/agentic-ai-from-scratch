@@ -1,0 +1,24 @@
+{
+  "lesson": "03-writing-a-tool-dispatcher",
+  "title": "Writing a Tool Dispatcher",
+  "questions": [
+    {"stage": "pre", "question": "Why put tool execution in one dispatcher instead of in each tool?",
+     "options": ["It's faster", "Every tool then gets the same handling for unknown names, bad arguments, timeouts and errors", "Tools can't validate", "Models require it"],
+     "correct": 1, "explanation": "One code path means consistent behaviour and one place to fix bugs."},
+    {"stage": "check", "question": "Why does the registry reject a second tool with the same name?",
+     "options": ["Names must be short", "A silent overwrite would send calls to the wrong function", "JSON can't hold duplicates", "For speed"],
+     "correct": 1, "explanation": "Duplicate names are a bug that only shows up as wrong behaviour."},
+    {"stage": "check", "question": "A thread-pool timeout fires. What happens to the tool's thread?",
+     "options": ["It's killed", "It keeps running in the background; the dispatcher just stops waiting", "Python restarts", "The result is cached"],
+     "correct": 1, "explanation": "Threads can't be killed in Python. Use a subprocess when a tool must really stop."},
+    {"stage": "check", "question": "Why do hooks run after validation but before execution?",
+     "options": ["Order doesn't matter", "Permission checks see clean arguments, and a denied call never runs", "Hooks are slow", "To log errors"],
+     "correct": 1, "explanation": "send_email to an outside address was blocked before anything was sent."},
+    {"stage": "post", "question": "Live, strict validation rejected 4 of 6 calls. What were the errors?",
+     "options": ["Wrong tools", "Numbers sent as strings and null for an optional parameter", "Unknown tools", "Timeouts"],
+     "correct": 1, "explanation": "The values were right; only the types were off."},
+    {"stage": "post", "question": "Which coercion is NOT safe?",
+     "options": ["\"250\" -> 250 for a number", "\"ten\" -> 10 for an integer", "null on an optional parameter -> use the default", "\"10\" -> 10 for an integer"],
+     "correct": 1, "explanation": "Interpreting words is a guess. Reject it with a clear message instead."}
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "lesson": "07-idempotency-and-side-effects",
+  "title": "Idempotency and Side Effects",
+  "questions": [
+    {"stage": "pre", "question": "Which tool is idempotent?",
+     "options": ["add_item('mug', 1)", "set_quantity('mug', 2)", "send_email(...)", "charge_card(...)"],
+     "correct": 1, "explanation": "Setting a target state twice leaves the same state."},
+    {"stage": "check", "question": "With 30% duplicate delivery, how many of 100 carts did add_item get wrong?",
+     "options": ["0", "27", "100", "3"],
+     "correct": 1, "explanation": "Every duplicate added 2 more mugs. set_quantity and request ids got 0 wrong."},
+    {"stage": "check", "question": "What does a request id let a tool do?",
+     "options": ["Run faster", "Recognise a repeated request and return the first result without acting again", "Skip validation", "Encrypt data"],
+     "correct": 1, "explanation": "Appends and sends become safe to retry."},
+    {"stage": "check", "question": "Why tie the preview token to the cart's version?",
+     "options": ["For logging", "So a commit fails if the cart changed after the preview, instead of clearing things the user never saw", "Tokens need numbers", "To make it longer"],
+     "correct": 1, "explanation": "The person (or model) approved a specific state; the commit must apply to that state."},
+    {"stage": "post", "question": "Replaying llama3.2's own calls changed the cart in 2/3 add-only runs and 0/3 set runs. What does that show?",
+     "options": ["The model is fine", "State-based tool design makes real retries harmless, even with the model's real calls", "Set tools are slower", "Replays never happen"],
+     "correct": 1, "explanation": "The design, not the model, decided whether the repeat did damage."},
+    {"stage": "post", "question": "The cart accepted a product named '{\"type\":\"string\",\"description\":\"mug\"}'. What's missing?",
+     "options": ["Idempotency", "Input validation: write tools should reject values that can't be real", "A bigger model", "Parallel calls"],
+     "correct": 1, "explanation": "Idempotency stops duplicates; validation stops wrong writes."}
+  ]
+}

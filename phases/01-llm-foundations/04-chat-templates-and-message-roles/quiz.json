@@ -1,0 +1,24 @@
+{
+  "lesson": "04-chat-templates-and-message-roles",
+  "title": "Chat Templates and Message Roles",
+  "questions": [
+    {"stage": "pre", "question": "What does the model actually receive when you send a list of chat messages?",
+     "options": ["The JSON list", "One string with special tokens, rendered by the model's chat template", "Only the last message", "A summary"],
+     "correct": 1, "explanation": "The server renders messages into the exact text format the model was trained on."},
+    {"stage": "check", "question": "In llama3.2's template, what role header do tool results get?",
+     "options": ["tool", "ipython", "function", "system"],
+     "correct": 1, "explanation": "Llama 3 was trained with tool output under the ipython role."},
+    {"stage": "check", "question": "Where does llama3.2's template put tool definitions?",
+     "options": ["In the system message on every turn", "Only inside the final user message", "After every message", "Nowhere; they're sent separately"],
+     "correct": 1, "explanation": "So after a tool result, the last message isn't a user message, and the model sees no tools."},
+    {"stage": "check", "question": "How did the lesson verify the hand-rendered template?",
+     "options": ["By reading it carefully", "By sending it in raw mode and comparing token counts and outputs with /api/chat", "By asking the model", "By counting characters"],
+     "correct": 1, "explanation": "Same tokens in and same output at temperature 0 is strong evidence of an exact match."},
+    {"stage": "post", "question": "The tool case was 6 tokens off even though the template was copied exactly. What does that show?",
+     "options": ["The tokenizer is random", "Servers can transform input (e.g. how tool definitions are serialised) outside the template", "The model ignores tools", "Raw mode is broken"],
+     "correct": 1, "explanation": "The template only said {{ . }}; the formatting of tools happened in the server's code."},
+    {"stage": "post", "question": "What does prefill mean?",
+     "options": ["Caching the prompt", "Writing the start of the assistant's reply yourself so the model continues from it", "Filling the context window", "Pre-loading the model"],
+     "correct": 1, "explanation": "Ending the prompt with '{\"city\": \"' made the model reply 'Tokyo\"}'."}
+  ]
+}

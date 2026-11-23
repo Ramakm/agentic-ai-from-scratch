@@ -1,0 +1,24 @@
+{
+  "lesson": "08-token-budgets-cost-math",
+  "title": "Token Budgets & Cost Math",
+  "questions": [
+    {"stage": "pre", "question": "In an 8-step agent run, which usually costs more in total: input or output tokens?",
+     "options": ["Output", "Input: every step re-sends the system prompt, tools and growing history", "They're always equal", "Neither costs anything"],
+     "correct": 1, "explanation": "The example run had 39,600 input tokens versus 960 output."},
+    {"stage": "check", "question": "Why does prefix caching suit agents so well?",
+     "options": ["Agents use fewer tokens", "Each step's prompt begins with the whole previous prompt, so most input is a repeat", "Caching makes the model smarter", "Providers require it"],
+     "correct": 1, "explanation": "In the example it cut the run's cost by 74%."},
+    {"stage": "check", "question": "What does the latency model 'overhead + input/prefill + output/decode' leave out?",
+     "options": ["Nothing important", "Variation from load and caching: real requests differed from predictions by up to 12%", "Output tokens", "Input tokens"],
+     "correct": 1, "explanation": "It's a planning model; measured speeds moved between runs."},
+    {"stage": "check", "question": "Going from 8 to 16 steps in the example roughly did what to the cost?",
+     "options": ["Doubled it", "Nearly tripled it", "Halved it", "Nothing"],
+     "correct": 1, "explanation": "History growth makes total input grow faster than the step count."},
+    {"stage": "post", "question": "A 3,000-token prompt must be answered within 5 seconds on the measured local setup. What helps?",
+     "options": ["Lowering max_tokens", "Shortening or caching the prompt (or faster hardware): prefill alone takes ~15 s", "Raising temperature", "Nothing can help"],
+     "correct": 1, "explanation": "max_tokens only limits decode time; prefill was the bottleneck."},
+    {"stage": "post", "question": "Why should you avoid changing num_ctx between requests to a local Ollama model?",
+     "options": ["It changes the answers", "It reloads the model, adding seconds of load time", "It's not allowed", "It deletes the cache file"],
+     "correct": 1, "explanation": "Measured: 1.5–2.6 s of load_duration each time the size changed."}
+  ]
+}

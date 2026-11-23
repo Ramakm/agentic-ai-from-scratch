@@ -1,0 +1,24 @@
+{
+  "lesson": "03-sampling-temperature-top-p-determinism",
+  "title": "Sampling: Temperature, Top-p, Determinism",
+  "questions": [
+    {"stage": "pre", "question": "What does raising the temperature do to the next-token distribution?",
+     "options": ["Makes the model smarter", "Flattens it, so less likely tokens are chosen more often", "Sharpens it toward the top token", "Removes rare tokens"],
+     "correct": 1, "explanation": "Scores are divided by the temperature before softmax; dividing by more than 1 shrinks the gaps."},
+    {"stage": "check", "question": "With top_p = 0.9, which tokens can be sampled?",
+     "options": ["The top 90% of the vocabulary", "The smallest set of most likely tokens whose probabilities add up to at least 0.9", "Tokens with probability above 0.9", "The top 9 tokens"],
+     "correct": 1, "explanation": "The nucleus adapts: when the model is confident, it may be one or two tokens."},
+    {"stage": "check", "question": "Which setting suits an agent's tool-call step?",
+     "options": ["Temperature 1.5 for creativity", "Temperature 0 (or very low): there's one right call", "top_k 1000", "Any setting works the same"],
+     "correct": 1, "explanation": "Randomness in tool selection or JSON only adds failures."},
+    {"stage": "check", "question": "In the live run, temperature 0.8 with seed 42 produced how many distinct taglines in 10 runs?",
+     "options": ["9", "1", "10", "0"],
+     "correct": 1, "explanation": "A seed fixes the random draws, so sampling becomes repeatable while still not greedy."},
+    {"stage": "post", "question": "Identical temperature-0 requests returned 89.0976% and 88.8210% for the same token. What caused it?",
+     "options": ["A bug in the model", "A cached prompt is computed in a different floating-point order than a fresh one", "Temperature 0 is random", "Network errors"],
+     "correct": 1, "explanation": "Fresh runs and cache hits each gave one exact value. Floating-point addition isn't perfectly associative."},
+    {"stage": "post", "question": "Why should evals of a temperature-0 agent still run each case several times?",
+     "options": ["To use more tokens", "Small numerical differences can flip near-tied tokens, so behaviour can vary between runs", "Temperature 0 doesn't exist", "Providers require it"],
+     "correct": 1, "explanation": "Determinism is best effort. Measure rates, not single runs."}
+  ]
+}

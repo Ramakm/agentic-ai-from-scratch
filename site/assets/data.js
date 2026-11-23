@@ -39,7 +39,7 @@ window.SITE = {
   "totals": {
     "phases": 16,
     "lessons": 163,
-    "published": 22,
+    "published": 42,
     "hours": 127
   }
 };
@@ -137,88 +137,108 @@ window.PHASES = [
   "id": "01-llm-foundations",
   "name": "LLM Foundations for Agents",
   "desc": "What a model actually returns, how context windows fill, and how to force structured, parseable output.",
-  "status": "planned",
-  "published": 0,
+  "status": "complete",
+  "published": 10,
   "lessons": [
    {
     "id": "01-what-an-llm-actually-returns",
     "title": "What an LLM actually returns",
     "minutes": 45,
     "path": "phases/01-llm-foundations/01-what-an-llm-actually-returns",
-    "type": "",
-    "num": "01.01"
+    "type": "Learn",
+    "num": "01.01",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "02-tokens-and-the-context-window",
     "title": "Tokens and the context window",
     "minutes": 50,
     "path": "phases/01-llm-foundations/02-tokens-and-the-context-window",
-    "type": "",
-    "num": "01.02"
+    "type": "Build",
+    "num": "01.02",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "03-sampling-temperature-top-p-determinism",
     "title": "Sampling: temperature, top-p, determinism",
     "minutes": 40,
     "path": "phases/01-llm-foundations/03-sampling-temperature-top-p-determinism",
-    "type": "",
-    "num": "01.03"
+    "type": "Build",
+    "num": "01.03",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "04-chat-templates-and-message-roles",
     "title": "Chat templates and message roles",
     "minutes": 40,
     "path": "phases/01-llm-foundations/04-chat-templates-and-message-roles",
-    "type": "",
-    "num": "01.04"
+    "type": "Build",
+    "num": "01.04",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "05-system-prompts-as-contracts",
     "title": "System prompts as contracts",
     "minutes": 35,
     "path": "phases/01-llm-foundations/05-system-prompts-as-contracts",
-    "type": "",
-    "num": "01.05"
+    "type": "Build",
+    "num": "01.05",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "06-structured-output-json-mode",
     "title": "Structured output & JSON mode",
     "minutes": 50,
     "path": "phases/01-llm-foundations/06-structured-output-json-mode",
-    "type": "",
-    "num": "01.06"
+    "type": "Build",
+    "num": "01.06",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "07-parsing-and-validating-with-schemas",
     "title": "Parsing and validating with schemas",
     "minutes": 45,
     "path": "phases/01-llm-foundations/07-parsing-and-validating-with-schemas",
-    "type": "",
-    "num": "01.07"
+    "type": "Build",
+    "num": "01.07",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "08-token-budgets-cost-math",
     "title": "Token budgets & cost math",
     "minutes": 35,
     "path": "phases/01-llm-foundations/08-token-budgets-cost-math",
-    "type": "",
-    "num": "01.08"
+    "type": "Build",
+    "num": "01.08",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "09-model-selection-for-agent-work",
     "title": "Model selection for agent work",
     "minutes": 40,
     "path": "phases/01-llm-foundations/09-model-selection-for-agent-work",
-    "type": "",
-    "num": "01.09"
+    "type": "Build",
+    "num": "01.09",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "10-why-capable-models-still-fail",
     "title": "Why capable models still fail",
     "minutes": 45,
     "path": "phases/01-llm-foundations/10-why-capable-models-still-fail",
-    "type": "",
-    "num": "01.10"
+    "type": "Learn",
+    "num": "01.10",
+    "published": true,
+    "hasQuiz": true
    }
   ]
  },
@@ -226,16 +246,18 @@ window.PHASES = [
   "id": "02-tool-use",
   "name": "Tool Use & Function Calling",
   "desc": "Turn text into action. Tool schemas, dispatchers, parallel calls, and errors fed back as observations.",
-  "status": "in-progress",
-  "published": 1,
+  "status": "complete",
+  "published": 11,
   "lessons": [
    {
     "id": "01-text-in-text-out-the-limit",
     "title": "Text in, text out: the limit",
     "minutes": 30,
     "path": "phases/02-tool-use/01-text-in-text-out-the-limit",
-    "type": "",
-    "num": "02.01"
+    "type": "Learn",
+    "num": "02.01",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "02-tool-schemas-from-first-principles",
@@ -252,72 +274,90 @@ window.PHASES = [
     "title": "Writing a tool dispatcher",
     "minutes": 60,
     "path": "phases/02-tool-use/03-writing-a-tool-dispatcher",
-    "type": "",
-    "num": "02.03"
+    "type": "Build",
+    "num": "02.03",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "04-parallel-tool-calls",
     "title": "Parallel tool calls",
     "minutes": 45,
     "path": "phases/02-tool-use/04-parallel-tool-calls",
-    "type": "",
-    "num": "02.04"
+    "type": "Build",
+    "num": "02.04",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "05-tool-errors-as-observations",
     "title": "Tool errors as observations",
     "minutes": 40,
     "path": "phases/02-tool-use/05-tool-errors-as-observations",
-    "type": "",
-    "num": "02.05"
+    "type": "Build",
+    "num": "02.05",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "06-designing-tools-models-can-use",
     "title": "Designing tools models can use",
     "minutes": 50,
     "path": "phases/02-tool-use/06-designing-tools-models-can-use",
-    "type": "",
-    "num": "02.06"
+    "type": "Build",
+    "num": "02.06",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "07-idempotency-and-side-effects",
     "title": "Idempotency and side effects",
     "minutes": 40,
     "path": "phases/02-tool-use/07-idempotency-and-side-effects",
-    "type": "",
-    "num": "02.07"
+    "type": "Build",
+    "num": "02.07",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "08-human-approval-gates",
     "title": "Human approval gates",
     "minutes": 45,
     "path": "phases/02-tool-use/08-human-approval-gates",
-    "type": "",
-    "num": "02.08"
+    "type": "Build",
+    "num": "02.08",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "09-tool-results-that-fit-the-context",
     "title": "Tool results that fit the context",
     "minutes": 40,
     "path": "phases/02-tool-use/09-tool-results-that-fit-the-context",
-    "type": "",
-    "num": "02.09"
+    "type": "Build",
+    "num": "02.09",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "10-native-function-calling-across-providers",
     "title": "Native function calling across providers",
     "minutes": 50,
     "path": "phases/02-tool-use/10-native-function-calling-across-providers",
-    "type": "",
-    "num": "02.10"
+    "type": "Build",
+    "num": "02.10",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "11-testing-tools-in-isolation",
     "title": "Testing tools in isolation",
     "minutes": 40,
     "path": "phases/02-tool-use/11-testing-tools-in-isolation",
-    "type": "",
-    "num": "02.11"
+    "type": "Build",
+    "num": "02.11",
+    "published": true,
+    "hasQuiz": true
    }
   ]
  },

@@ -1,0 +1,24 @@
+{
+  "lesson": "05-tool-errors-as-observations",
+  "title": "Tool Errors as Observations",
+  "questions": [
+    {"stage": "pre", "question": "Why is a raw Python traceback a poor tool error observation?",
+     "options": ["It's too short", "It's written for developers, not the model, and leaks internals like file paths", "Models can't read text", "It's always correct"],
+     "correct": 1, "explanation": "The model needs what went wrong and what to send instead, not a stack."},
+    {"stage": "check", "question": "Which errors should be marked retryable?",
+     "options": ["All of them", "Transient ones like rate limits and timeouts, where the same call can succeed later", "Invalid input", "Not found"],
+     "correct": 1, "explanation": "Retrying a bad input just fails again."},
+    {"stage": "check", "question": "What does did_you_mean add over a general hint?",
+     "options": ["Nothing", "The exact corrected value, computed by the tool", "A stack trace", "A retry"],
+     "correct": 1, "explanation": "A rule like 'ids look like A-1001' asks the model to infer the fix; did_you_mean gives it."},
+    {"stage": "check", "question": "Why did every style score 3/3 on the rate-limited scenario?",
+     "options": ["Rate limits are easy to understand", "The model's default after an error is to repeat the same call, which happens to be the right fix here", "The hint was perfect", "The API was fast"],
+     "correct": 1, "explanation": "A pass on a retryable error doesn't prove the message helped."},
+    {"stage": "post", "question": "Live, which scenario did the exact style fix that the others couldn't?",
+     "options": ["Wrong id format", "Renamed city (Bombay -> Mumbai)", "Vague date", "None"],
+     "correct": 1, "explanation": "3/3 with did_you_mean, 0/3 with a general rule or less."},
+    {"stage": "post", "question": "Even with did_you_mean 2026-11-27, the model resent 'this Friday'. What's the design lesson?",
+     "options": ["Remove the hint", "When the tool can resolve the input unambiguously, let the tool accept it and report what it resolved to", "Use tracebacks", "Retry more"],
+     "correct": 1, "explanation": "Better messages fixed one case in five for this model; tool design can fix more."}
+  ]
+}

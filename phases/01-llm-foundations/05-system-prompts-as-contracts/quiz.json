@@ -1,0 +1,24 @@
+{
+  "lesson": "05-system-prompts-as-contracts",
+  "title": "System Prompts as Contracts",
+  "questions": [
+    {"stage": "pre", "question": "Why is 'Be helpful and concise' a weak system prompt rule?",
+     "options": ["It's too short", "It can't be tested: there's no clear pass or fail", "Models ignore adjectives", "It's too polite"],
+     "correct": 1, "explanation": "A rule you can't check can't be enforced or regression-tested."},
+    {"stage": "check", "question": "Which is the most testable version of a length rule?",
+     "options": ["Be brief", "Keep every reply under 60 words", "Don't ramble", "Use short sentences"],
+     "correct": 1, "explanation": "It maps directly to a check: len(reply.split()) < 60."},
+    {"stage": "check", "question": "Why give the exact out-of-scope reply in the prompt?",
+     "options": ["To save tokens", "So refusals are consistent and an automatic check can recognise them", "Models need examples of rudeness", "It's required by the API"],
+     "correct": 1, "explanation": "An exact string makes both 'refused correctly' and 'refused wrongly' measurable."},
+    {"stage": "check", "question": "The first live run scored 75/75. What did reading the replies reveal?",
+     "options": ["The model was perfect", "The checks missed an invented '24-48 hours' and an in-scope question being refused", "The model leaked the prompt", "The replies were empty"],
+     "correct": 1, "explanation": "A perfect score from unread outputs usually means weak checks."},
+    {"stage": "post", "question": "The contract prompt refused an in-scope returns question in 4 of 5 runs. What is this called?",
+     "options": ["Prompt injection", "Over-refusal", "Truncation", "Hallucination"],
+     "correct": 1, "explanation": "Tight scopes can make models decline things they're allowed to do. Test for it explicitly."},
+    {"stage": "post", "question": "On the checks both prompts could pass, the vague prompt scored 77/105 and the contract 100/105. What's the next step?",
+     "options": ["Ship the contract as is", "Fix the over-refusal (e.g. an in-scope example), then re-run the whole suite to catch regressions", "Go back to the vague prompt", "Raise the temperature"],
+     "correct": 1, "explanation": "One edit at a time, re-run everything, keep the scores."}
+  ]
+}

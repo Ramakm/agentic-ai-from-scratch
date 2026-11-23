@@ -1,0 +1,24 @@
+{
+  "lesson": "07-parsing-and-validating-with-schemas",
+  "title": "Parsing and Validating with Schemas",
+  "questions": [
+    {"stage": "pre", "question": "A receipt's JSON matches the schema. What can still be wrong?",
+     "options": ["Nothing", "Values that are each valid but inconsistent, like a total that doesn't match the items", "The JSON syntax", "The field names"],
+     "correct": 1, "explanation": "Schemas check each field; cross-field rules check that they fit together."},
+    {"stage": "check", "question": "Why include a path like $.items[1].qty in every error?",
+     "options": ["It looks professional", "In nested data it pinpoints the problem for you and for the model that has to fix it", "JSON requires it", "To save tokens"],
+     "correct": 1, "explanation": "'expected integer' alone doesn't say which of many fields is wrong."},
+    {"stage": "check", "question": "What does from_dict do that validate doesn't?",
+     "options": ["Nothing", "Builds typed objects (dataclasses) from the dict, following type hints, so the rest of the program uses real types", "Calls the model", "Fixes errors"],
+     "correct": 1, "explanation": "It's the 'parse, don't validate' step: you end up with a Receipt, not a dict."},
+    {"stage": "check", "question": "In the repair loop, what goes back to the model after a failed attempt?",
+     "options": ["Just 'try again'", "Its own reply plus the specific list of errors, asking for corrected JSON", "The schema only", "Nothing; it starts over"],
+     "correct": 1, "explanation": "Specific errors let the model fix exactly what's wrong."},
+    {"stage": "post", "question": "Live, llama3.2 was valid on the first try 9/15 times and within three attempts 15/15. What fixed most first-try failures?",
+     "options": ["Higher temperature", "Error messages quoting the date pattern and the bad value ('03.11.2026')", "A bigger model", "Removing the date field"],
+     "correct": 1, "explanation": "The model had copied dates as written; one specific error message got them converted."},
+    {"stage": "post", "question": "'Bäckerei Münler' passed every check but was wrong. What does that teach?",
+     "options": ["The validator is broken", "Validation catches inconsistency, not every error; labelled data or review catches the rest", "German isn't supported", "Use a schema for names"],
+     "correct": 1, "explanation": "No rule knew the correct name. Measure against gold answers, and turn misses into new checks."}
+  ]
+}

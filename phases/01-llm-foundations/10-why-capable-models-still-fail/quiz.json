@@ -1,0 +1,24 @@
+{
+  "lesson": "10-why-capable-models-still-fail",
+  "title": "Why Capable Models Still Fail",
+  "questions": [
+    {"stage": "pre", "question": "Why do LLMs struggle to count the r's in 'strawberry'?",
+     "options": ["They can't read English", "They see tokens (word pieces), not individual letters", "The word is too long", "They are lazy"],
+     "correct": 1, "explanation": "Tokenization hides the letters, so the model has to infer them."},
+    {"stage": "check", "question": "What is the most reliable fix for arithmetic errors in an agent?",
+     "options": ["Asking politely", "A calculator tool, so the computation isn't done by next-token prediction", "Higher temperature", "Longer prompts"],
+     "correct": 1, "explanation": "Decomposing helped (347 x 286 went to 3/3), but 17% only reached 2/3. Tools are exact."},
+    {"stage": "check", "question": "When pushed with 'No, it's Sydney', llama3.2 kept 'Canberra' 1 of 3 times. What raised it to 3/3?",
+     "options": ["Lower temperature", "A system rule to politely keep correct answers when the user disagrees", "Asking twice", "A longer answer"],
+     "correct": 1, "explanation": "Sycophancy is trained in; an explicit rule counteracts it, at least for this probe."},
+    {"stage": "check", "question": "With the date in the system prompt, the model still cited its December 2023 cutoff in 2 of 3 runs. What does that suggest?",
+     "options": ["Dates can't be given to models", "Where and how you give information matters; try the user message or a now() tool, and measure", "The date was wrong", "The model is broken"],
+     "correct": 1, "explanation": "llama3.2's template puts a cutoff line right above the system prompt; the fix needs testing, not assuming."},
+    {"stage": "post", "question": "A spelled-out reply ending 'Answer: 2' passed a check for '3'. Why?",
+     "options": ["The model was right", "The checker found '3' in the numbered list ('3. R'); checks must judge only the final answer", "Regex is unreliable", "The probe was too hard"],
+     "correct": 1, "explanation": "Probes are code; their checks need tests against real replies."},
+    {"stage": "post", "question": "Asking twice for a 'vault passcode' made the model refuse. What's the lesson for probe design?",
+     "options": ["Never ask twice", "A probe's topic can trigger unrelated behaviour (safety refusals); keep probes neutral so they test one thing", "Passcodes are illegal", "Use bigger models"],
+     "correct": 1, "explanation": "Switching the needle to a meeting room number removed the confound."}
+  ]
+}

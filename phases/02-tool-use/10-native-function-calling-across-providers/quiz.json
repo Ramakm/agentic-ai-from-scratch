@@ -1,0 +1,24 @@
+{
+  "lesson": "10-native-function-calling-across-providers",
+  "title": "Native Function Calling Across Providers",
+  "questions": [
+    {"stage": "pre", "question": "In which three places does tool calling differ between providers?",
+     "options": ["Model size, price, speed", "Declaring tools, reading the model's calls, and sending results back", "Temperature, top_p, seed", "Authentication only"],
+     "correct": 1, "explanation": "An adapter needs exactly those three methods."},
+    {"stage": "check", "question": "In OpenAI Chat Completions, what type are a tool call's arguments?",
+     "options": ["A JSON object", "A string containing JSON, which you must parse", "A list", "Always empty"],
+     "correct": 1, "explanation": "Anthropic and Gemini send an object; OpenAI sends a string."},
+    {"stage": "check", "question": "With Anthropic, how are the results of three tool calls from one turn sent back?",
+     "options": ["Three separate tool messages", "One user message containing three tool_result blocks", "One assistant message", "Only the first result"],
+     "correct": 1, "explanation": "Splitting them breaks the user/assistant alternation."},
+    {"stage": "check", "question": "A Gemini functionCall arrives without an id. How is its result matched?",
+     "options": ["It can't be", "By the function name in functionResponse", "By position only", "By timestamp"],
+     "correct": 1, "explanation": "The adapter generates an internal id, and sends the name back."},
+    {"stage": "post", "question": "Why does parse() keep the assistant message exactly as the provider sent it?",
+     "options": ["To save memory", "Rebuilding it can drop fields the provider requires on the next request", "For logging", "It doesn't matter"],
+     "correct": 1, "explanation": "Anthropic, for example, expects its tool_use blocks back unchanged."},
+    {"stage": "post", "question": "Live, llama3.2 through Ollama's native API and its OpenAI-compatible API gave:",
+     "options": ["Different calls and answers", "The same call and the same final answer, each through its own adapter", "An error on one of them", "No tool calls"],
+     "correct": 1, "explanation": "Same model, two wire formats, one neutral layer."}
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "lesson": "02-tokens-and-the-context-window",
+  "title": "Tokens and the Context Window",
+  "questions": [
+    {"stage": "pre", "question": "What is a token?",
+     "options": ["Always one word", "A vocabulary entry: a learned byte sequence, often a word piece with its leading space", "One character", "One byte"],
+     "correct": 1, "explanation": "Tokenizers learn chunks of bytes. Common words are one token; rare ones are several."},
+    {"stage": "check", "question": "In BPE training, what becomes the next new token?",
+     "options": ["A random pair", "The most frequent adjacent pair of existing tokens in the training text", "The longest word", "The rarest byte"],
+     "correct": 1, "explanation": "Frequent sequences get merged first, so they end up as single tokens."},
+    {"stage": "check", "question": "Why can byte-level BPE encode any text, including emoji?",
+     "options": ["It has every emoji in its vocabulary", "All 256 bytes are base tokens, so anything unlearned falls back to bytes", "It skips unknown characters", "It converts text to ASCII"],
+     "correct": 1, "explanation": "Nothing is ever out of vocabulary; unfamiliar text just costs more tokens."},
+    {"stage": "check", "question": "What does pre-tokenization prevent?",
+     "options": ["Slow training", "Merges that cross word boundaries, like learning whole sentences as one token", "Unicode errors", "Large vocabularies"],
+     "correct": 1, "explanation": "Splitting into word-sized chunks first keeps merges inside words."},
+    {"stage": "post", "question": "With llama3.2's tokenizer, English prose was 5.2 characters per token and Hindi 1.8. What does that mean for an agent?",
+     "options": ["Nothing", "Hindi conversations fill the context window and cost about 3x as much for the same length", "Hindi is processed faster", "The model can't read Hindi"],
+     "correct": 1, "explanation": "Token cost per character varies widely by script and content type."},
+    {"stage": "post", "question": "A model has an 8,192-token window. System is 600 tokens, tools 900, and you reserve 1,024 for output. How much is left for history?",
+     "options": ["8,192", "5,668", "7,592", "6,268"],
+     "correct": 1, "explanation": "8,192 - 600 - 900 - 1,024 = 5,668. Output must fit in the same window as the input."}
+  ]
+}

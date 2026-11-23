@@ -1,6 +1,6 @@
 # Agentic AI from Scratch
 
-> Build AI agents from a raw while-loop and an HTTP call, before a single framework gets imported. 16 phases, 163 lessons (22 live), Python and TypeScript, free and open source (MIT).
+> Build AI agents from a raw while-loop and an HTTP call, before a single framework gets imported. 16 phases, 163 lessons (42 live), Python and TypeScript, free and open source (MIT).
 
 Source: https://github.com/Ramakm/agentic-ai-from-scratch
 Site: https://ramakm.github.io/agentic-ai-from-scratch/
@@ -25,32 +25,32 @@ A dev environment, local and hosted models, raw HTTP calls, streaming and tracin
 
 What a model actually returns, how context windows fill, and how to force structured, parseable output.
 
-- 01.01 What an LLM actually returns (45 min) [planned]
-- 01.02 Tokens and the context window (50 min) [planned]
-- 01.03 Sampling: temperature, top-p, determinism (40 min) [planned]
-- 01.04 Chat templates and message roles (40 min) [planned]
-- 01.05 System prompts as contracts (35 min) [planned]
-- 01.06 Structured output & JSON mode (50 min) [planned]
-- 01.07 Parsing and validating with schemas (45 min) [planned]
-- 01.08 Token budgets & cost math (35 min) [planned]
-- 01.09 Model selection for agent work (40 min) [planned]
-- 01.10 Why capable models still fail (45 min) [planned]
+- 01.01 What an LLM actually returns (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/01-llm-foundations/01-what-an-llm-actually-returns | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/01-llm-foundations/01-what-an-llm-actually-returns/docs/en.md
+- 01.02 Tokens and the context window (50 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/01-llm-foundations/02-tokens-and-the-context-window | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/01-llm-foundations/02-tokens-and-the-context-window/docs/en.md
+- 01.03 Sampling: temperature, top-p, determinism (40 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/01-llm-foundations/03-sampling-temperature-top-p-determinism | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/01-llm-foundations/03-sampling-temperature-top-p-determinism/docs/en.md
+- 01.04 Chat templates and message roles (40 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/01-llm-foundations/04-chat-templates-and-message-roles | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/01-llm-foundations/04-chat-templates-and-message-roles/docs/en.md
+- 01.05 System prompts as contracts (35 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/01-llm-foundations/05-system-prompts-as-contracts | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/01-llm-foundations/05-system-prompts-as-contracts/docs/en.md
+- 01.06 Structured output & JSON mode (50 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/01-llm-foundations/06-structured-output-json-mode | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/01-llm-foundations/06-structured-output-json-mode/docs/en.md
+- 01.07 Parsing and validating with schemas (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/01-llm-foundations/07-parsing-and-validating-with-schemas | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/01-llm-foundations/07-parsing-and-validating-with-schemas/docs/en.md
+- 01.08 Token budgets & cost math (35 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/01-llm-foundations/08-token-budgets-cost-math | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/01-llm-foundations/08-token-budgets-cost-math/docs/en.md
+- 01.09 Model selection for agent work (40 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/01-llm-foundations/09-model-selection-for-agent-work | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/01-llm-foundations/09-model-selection-for-agent-work/docs/en.md
+- 01.10 Why capable models still fail (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/01-llm-foundations/10-why-capable-models-still-fail | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/01-llm-foundations/10-why-capable-models-still-fail/docs/en.md
 
 ## Phase 02: Tool Use & Function Calling
 
 Turn text into action. Tool schemas, dispatchers, parallel calls, and errors fed back as observations.
 
-- 02.01 Text in, text out: the limit (30 min) [planned]
+- 02.01 Text in, text out: the limit (30 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/02-tool-use/01-text-in-text-out-the-limit | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/02-tool-use/01-text-in-text-out-the-limit/docs/en.md
 - 02.02 Tool schemas from first principles (50 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/02-tool-use/02-tool-schemas-from-first-principles | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/02-tool-use/02-tool-schemas-from-first-principles/docs/en.md
-- 02.03 Writing a tool dispatcher (60 min) [planned]
-- 02.04 Parallel tool calls (45 min) [planned]
-- 02.05 Tool errors as observations (40 min) [planned]
-- 02.06 Designing tools models can use (50 min) [planned]
-- 02.07 Idempotency and side effects (40 min) [planned]
-- 02.08 Human approval gates (45 min) [planned]
-- 02.09 Tool results that fit the context (40 min) [planned]
-- 02.10 Native function calling across providers (50 min) [planned]
-- 02.11 Testing tools in isolation (40 min) [planned]
+- 02.03 Writing a tool dispatcher (60 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/02-tool-use/03-writing-a-tool-dispatcher | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/02-tool-use/03-writing-a-tool-dispatcher/docs/en.md
+- 02.04 Parallel tool calls (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/02-tool-use/04-parallel-tool-calls | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/02-tool-use/04-parallel-tool-calls/docs/en.md
+- 02.05 Tool errors as observations (40 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/02-tool-use/05-tool-errors-as-observations | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/02-tool-use/05-tool-errors-as-observations/docs/en.md
+- 02.06 Designing tools models can use (50 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/02-tool-use/06-designing-tools-models-can-use | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/02-tool-use/06-designing-tools-models-can-use/docs/en.md
+- 02.07 Idempotency and side effects (40 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/02-tool-use/07-idempotency-and-side-effects | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/02-tool-use/07-idempotency-and-side-effects/docs/en.md
+- 02.08 Human approval gates (45 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/02-tool-use/08-human-approval-gates | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/02-tool-use/08-human-approval-gates/docs/en.md
+- 02.09 Tool results that fit the context (40 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/02-tool-use/09-tool-results-that-fit-the-context | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/02-tool-use/09-tool-results-that-fit-the-context/docs/en.md
+- 02.10 Native function calling across providers (50 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/02-tool-use/10-native-function-calling-across-providers | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/02-tool-use/10-native-function-calling-across-providers/docs/en.md
+- 02.11 Testing tools in isolation (40 min): https://ramakm.github.io/agentic-ai-from-scratch/lesson.html?path=phases/02-tool-use/11-testing-tools-in-isolation | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/02-tool-use/11-testing-tools-in-isolation/docs/en.md
 
 ## Phase 03: The Agent Loop
 

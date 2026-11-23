@@ -1,0 +1,24 @@
+{
+  "lesson": "04-parallel-tool-calls",
+  "title": "Parallel Tool Calls",
+  "questions": [
+    {"stage": "pre", "question": "Five independent lookups take 300 ms each. Roughly how long do they take run in parallel?",
+     "options": ["1.5 s", "About 0.3 s", "0 s", "3 s"],
+     "correct": 1, "explanation": "Measured: 1.52 s sequential, 0.31 s with threads or asyncio."},
+    {"stage": "check", "question": "Why must results be matched by tool_call_id?",
+     "options": ["For logging only", "Calls can finish in any order; each result must answer the call that asked for it", "Ids are required by JSON", "To save tokens"],
+     "correct": 1, "explanation": "Results go back in the model's order, each under its own id."},
+    {"stage": "check", "question": "A turn asks for two writes to the same notebook. How should they run?",
+     "options": ["In parallel", "One at a time, in the order the model asked", "Randomly", "Only the first"],
+     "correct": 1, "explanation": "Side effects can depend on order; the ledger shows 'first' then 'second'."},
+    {"stage": "check", "question": "One of seven parallel calls raises an exception. What happens to the other six?",
+     "options": ["They're cancelled", "They complete normally; the failed one returns an error observation", "The whole turn fails", "They're retried"],
+     "correct": 1, "explanation": "run_one turns every exception into a tool message, so failures are isolated."},
+    {"stage": "post", "question": "Asked for the weather in three cities, llama3.2 made one call with city=\"['Pune', 'Oslo', 'Lima']\". What did the tool return?",
+     "options": ["An error", "Nonsense weather for a city literally named \"['Pune', 'Oslo', 'Lima']\", silently", "Three results", "Nothing"],
+     "correct": 1, "explanation": "Tools that accept any string need to detect this; silent nonsense is worse than an error."},
+    {"stage": "post", "question": "Why is fan-out not applied to side-effecting tools?",
+     "options": ["It's slower", "Splitting a write is a guess about intent and could duplicate side effects", "Writes can't take lists", "It is applied"],
+     "correct": 1, "explanation": "Lossless repairs only. For writes, reject and let the model decide."}
+  ]
+}

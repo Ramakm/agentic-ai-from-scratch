@@ -1,0 +1,24 @@
+{
+  "lesson": "09-model-selection-for-agent-work",
+  "title": "Model Selection for Agent Work",
+  "questions": [
+    {"stage": "pre", "question": "Why screen on hard requirements before scoring?",
+     "options": ["It's faster to type", "A model that can't call tools or fit the prompt is out, however well it scores elsewhere", "Scores are unreliable", "Leaderboards require it"],
+     "correct": 1, "explanation": "Failed requirements are final; scoring them only wastes time and confuses the ranking."},
+    {"stage": "check", "question": "Why does a missing score count as zero in the ranking?",
+     "options": ["To punish models", "If you didn't measure it, you shouldn't get credit for it", "It's a bug", "Zero is the average"],
+     "correct": 1, "explanation": "Unmeasured qualities can't be assumed."},
+    {"stage": "check", "question": "In the example, adding a $0.01/run budget cap did what?",
+     "options": ["Nothing", "Removed the top-scoring model, making the small hosted model the winner", "Removed every model", "Raised all scores"],
+     "correct": 1, "explanation": "Constraints can change the decision more than scores do."},
+    {"stage": "check", "question": "What did the multi-step probe check?",
+     "options": ["That the model is fast", "That after one tool result, the model makes the next needed tool call", "That JSON is valid", "That the model refuses"],
+     "correct": 1, "explanation": "llama3.2 got the Pune result and never asked for Oslo: 0/3."},
+    {"stage": "post", "question": "llama3.2 first scored a perfect 1.0. What did that indicate?",
+     "options": ["It's the best model", "The probes were too easy to separate candidates (a ceiling effect)", "The scorer was broken", "Temperature was too low"],
+     "correct": 1, "explanation": "Phase 3 had already shown it failing real tasks. Adding a realistic probe dropped it to 0.7."},
+    {"stage": "post", "question": "Where should probes come from?",
+     "options": ["A public benchmark only", "Real transcripts from the agent's own work, including failures", "Random questions", "The model itself"],
+     "correct": 1, "explanation": "Only your workload's tasks tell you how a model does on your workload."}
+  ]
+}

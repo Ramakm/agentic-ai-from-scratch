@@ -1,0 +1,24 @@
+{
+  "lesson": "06-structured-output-json-mode",
+  "title": "Structured Output & JSON Mode",
+  "questions": [
+    {"stage": "pre", "question": "What does JSON mode guarantee?",
+     "options": ["The output matches your schema", "The output is syntactically valid JSON, of any shape", "The values are correct", "Nothing"],
+     "correct": 1, "explanation": "In the live run JSON mode still produced issue: 'none', outside the enum."},
+    {"stage": "check", "question": "How does schema mode prevent an invalid enum value?",
+     "options": ["It rejects the reply and retries", "Constrained decoding: tokens that would break the schema can't be sampled", "It asks the model nicely", "It fixes the value afterwards"],
+     "correct": 1, "explanation": "The sampler only allows tokens that keep the output valid under the schema."},
+    {"stage": "check", "question": "With prompt-only instructions, 13 of 18 replies failed json.loads but all 18 were extractable. Why?",
+     "options": ["The JSON was invalid", "The JSON was wrapped in code fences, which extraction strips", "The model returned XML", "Network errors"],
+     "correct": 1, "explanation": "Strict parsing fails on the wrapper; extraction recovers the object inside."},
+    {"stage": "check", "question": "In Python, why must the validator treat booleans specially?",
+     "options": ["Booleans are strings", "bool is a subclass of int, so True would pass a naive number check", "JSON has no booleans", "It doesn't need to"],
+     "correct": 1, "explanation": "isinstance(True, int) is True. Validators must exclude bool explicitly."},
+    {"stage": "post", "question": "Schema mode was 18/18 valid, yet the model still said Tom wants a refund. Why can't the schema catch that?",
+     "options": ["The schema was wrong", "The schema constrains shape and allowed values; true is allowed, so a wrong-but-valid value passes", "Schema mode was off", "Booleans aren't validated"],
+     "correct": 1, "explanation": "Schemas enforce form, not truth. Check meaning with tests, rules or review."},
+    {"stage": "post", "question": "A schema with pattern ^A-\\d{4}$ crashed Ollama's model runner, while ^A-[0-9]{4}$ worked. What's the lesson?",
+     "options": ["Never use patterns", "Servers support different subsets of JSON Schema; test your exact schema on your exact server and validate client-side", "\\d is invalid regex", "Use XML instead"],
+     "correct": 1, "explanation": "Support varies, and failures can be crashes or silent, not clean errors."}
+  ]
+}

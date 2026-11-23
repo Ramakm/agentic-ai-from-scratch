@@ -1,0 +1,24 @@
+{
+  "lesson": "11-testing-tools-in-isolation",
+  "title": "Testing Tools in Isolation",
+  "questions": [
+    {"stage": "pre", "question": "Which tool tests need a model?",
+     "options": ["All of them", "Only the selection eval: does the model pick the tool and fill it correctly", "Unit tests", "Fuzzing"],
+     "correct": 1, "explanation": "Examples, contracts, fuzzing and fake backends run in milliseconds, offline."},
+    {"stage": "check", "question": "What is the fuzzing rule for a tool?",
+     "options": ["Never raise anything", "Return a valid result or raise a typed ToolError; anything else is a bug", "Always return a string", "Retry on errors"],
+     "correct": 1, "explanation": "The naive tool broke it 303 times in 500 inputs."},
+    {"stage": "check", "question": "Why did int('-5 ') count as a bug for a duration parser?",
+     "options": ["It raised an error", "It returned a negative duration, an impossible result, without any error", "It was slow", "It's not a number"],
+     "correct": 1, "explanation": "Silent nonsense is worse than a crash; bounds checks catch it."},
+    {"stage": "check", "question": "Why use a real local HTTP server instead of mocking urlopen?",
+     "options": ["It's required", "It exercises the real HTTP path, including status codes, bodies and timeouts", "Mocks are illegal", "It's faster to write"],
+     "correct": 1, "explanation": "The fake returned 500s, bad JSON and a 2-second delay, all through real sockets."},
+    {"stage": "post", "question": "The first selection eval said 10/10 arguments correct. What was wrong?",
+     "options": ["Nothing", "It matched substrings, so '2h30m' passed for '2 hours' and a JSON-wrapped value passed too", "The model was perfect", "It used the wrong tools"],
+     "correct": 1, "explanation": "Judged with the real tool, it was 7/10."},
+    {"stage": "post", "question": "How should a selection eval judge a duration argument?",
+     "options": ["By string equality with one expected form", "By running the real parse_duration on it and checking the seconds", "By asking the model", "By length"],
+     "correct": 1, "explanation": "'45 min', '45m' and '2700' are all correct; only the tool knows."}
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "lesson": "01-what-an-llm-actually-returns",
+  "title": "What an LLM Actually Returns",
+  "questions": [
+    {"stage": "pre", "question": "A reply reads 'The capital of Australia'. How do you know whether the model finished?",
+     "options": ["It ends without a full stop, so it's unfinished", "Check the stop reason: 'length' means it was cut off by the token limit", "You can't know", "Count the words"],
+     "correct": 1, "explanation": "Text can look complete or incomplete either way. Only the stop reason is reliable."},
+    {"stage": "check", "question": "The OpenAI-style finish_reason is 'tool_calls'. What is message.content likely to be?",
+     "options": ["The final answer", "Often empty or null; the request is in message.tool_calls", "An error message", "The tool's result"],
+     "correct": 1, "explanation": "Code that assumes content is a string crashes or shows nothing on tool-calling turns."},
+    {"stage": "check", "question": "Anthropic's stop_reason 'end_turn' and OpenAI's finish_reason 'stop' mean:",
+     "options": ["Different things", "The same: the model finished naturally", "The model hit max_tokens", "A safety filter fired"],
+     "correct": 1, "explanation": "Providers name the same few reasons differently; normalise them once."},
+    {"stage": "check", "question": "A token has logprob -0.42. What's its probability?",
+     "options": ["-42%", "About 66% (exp(-0.42))", "0.42%", "4.2%"],
+     "correct": 1, "explanation": "Logprobs are natural logs of probabilities; exp() converts them back."},
+    {"stage": "post", "question": "The live answer 'Canberra' had probability ~100%, with 'Sydney' at 0.007%. What does that prove?",
+     "options": ["The answer is true", "The model was confident; confidence is not correctness", "Sydney is wrong because of the logprob", "Logprobs are broken"],
+     "correct": 1, "explanation": "Models can be near-certain of wrong answers. Logprobs show hesitation, not truth."},
+    {"stage": "post", "question": "The usage said 8 output tokens, but only 7 tokens were visible. Why?",
+     "options": ["A bug in Ollama", "The end-of-turn token is generated and billed but not shown", "Spaces aren't tokens", "Logprobs skip one token"],
+     "correct": 1, "explanation": "Special tokens count toward usage even though they never appear in the text."}
+  ]
+}
