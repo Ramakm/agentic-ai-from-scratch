@@ -1,0 +1,78 @@
+{
+  "lesson": "04-embeddings-from-scratch",
+  "title": "Embeddings from Scratch",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "A memory says 'the physician has a clinic on weekdays'. The user asks to 'see a doctor'. Why does keyword search miss it?",
+      "options": [
+        "The memory is too old",
+        "The two texts share no words, so a word-matching method scores them as unrelated",
+        "Keyword search is case-sensitive",
+        "The query is too short"
+      ],
+      "correct": 1,
+      "explanation": "Matching meaning rather than words is what embeddings are for."
+    },
+    {
+      "stage": "check",
+      "question": "Why is cosine similarity used to compare embeddings, rather than raw distance?",
+      "options": [
+        "It is faster to compute than anything else",
+        "It compares direction and ignores length, so a short query and a long document about the same thing can still match",
+        "It always returns integers",
+        "Providers require it"
+      ],
+      "correct": 1,
+      "explanation": "Length mostly reflects how much text there is; direction reflects what it is about."
+    },
+    {
+      "stage": "check",
+      "question": "Which embedder handled the typo 'restaurnt', and why?",
+      "options": [
+        "TF-IDF, because it weights rare words",
+        "Character 3-grams, because the typo still shares most 3-letter pieces with 'restaurant'",
+        "PPMI, because it learned synonyms",
+        "None of them"
+      ],
+      "correct": 1,
+      "explanation": "PPMI and TF-IDF work on whole words, and 'restaurnt' is a word neither has seen."
+    },
+    {
+      "stage": "check",
+      "question": "How did PPMI learn that 'car' and 'automobile' are similar?",
+      "options": [
+        "From a dictionary of synonyms",
+        "Both words appeared near the same context words (engine, mechanic, drive) in its training corpus",
+        "From their spelling",
+        "By asking an LLM"
+      ],
+      "correct": 1,
+      "explanation": "Words used in similar contexts get similar vectors. Remove those sentences and the similarity disappears."
+    },
+    {
+      "stage": "post",
+      "question": "You switch your memory store to a new embedding model. What must you do with the vectors already stored?",
+      "options": [
+        "Nothing; vectors are compatible across models",
+        "Re-embed all stored texts with the new model, because vectors from different models are not comparable",
+        "Average the old and new vectors",
+        "Only re-embed the newest memories"
+      ],
+      "correct": 1,
+      "explanation": "Each model defines its own space. Store which model made each vector."
+    },
+    {
+      "stage": "post",
+      "question": "How should you choose an embedding model for your agent's memory?",
+      "options": [
+        "Pick the top of a public leaderboard and stop",
+        "Build a small labelled test from your own data (exact, typo, paraphrase queries) and compare candidates on it",
+        "Pick the one with the most dimensions",
+        "Pick the cheapest"
+      ],
+      "correct": 1,
+      "explanation": "Leaderboards are a starting point; your queries and documents decide what works."
+    }
+  ]
+}

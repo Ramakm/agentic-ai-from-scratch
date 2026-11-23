@@ -1,0 +1,78 @@
+{
+  "lesson": "10-files-as-long-term-memory",
+  "title": "Files as Long-Term Memory",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "What is the main practical advantage of Markdown files as agent memory over a vector database?",
+      "options": [
+        "Files are faster to search",
+        "People and models can read, edit, diff and review them directly",
+        "Files can't be corrupted",
+        "Files need no tools"
+      ],
+      "correct": 1,
+      "explanation": "That is why CLAUDE.md, AGENTS.md and progress files are so widely used."
+    },
+    {
+      "stage": "check",
+      "question": "Why does resolve() call Path.resolve() and then compare with the root, instead of checking the string for '..'?",
+      "options": [
+        "It is shorter",
+        "Resolving follows symlinks and normalises the path, so links pointing outside and odd spellings are caught too",
+        "String checks are slow",
+        "Path.resolve() encrypts the path"
+      ],
+      "correct": 1,
+      "explanation": "A symlink inside the root can point anywhere; only the resolved path tells you where a write really goes."
+    },
+    {
+      "stage": "check",
+      "question": "Why must the text in str_replace appear exactly once?",
+      "options": [
+        "To save tokens",
+        "It forces the model to quote enough context, and makes an edit to an ambiguous place fail loudly instead of changing the wrong line",
+        "Files can't contain repeated text",
+        "Because of the size cap"
+      ],
+      "correct": 1,
+      "explanation": "In the demo, replacing '- ' failed with 'found 4 times', and nothing was changed."
+    },
+    {
+      "stage": "check",
+      "question": "What is MEMORY.md for?",
+      "options": [
+        "Storing every fact in one place",
+        "A short index, loaded into every system prompt, telling a new session what each memory file holds",
+        "Logging tool calls",
+        "Storing passwords"
+      ],
+      "correct": 1,
+      "explanation": "Progressive disclosure: the index is always visible, the files are read when needed."
+    },
+    {
+      "stage": "post",
+      "question": "A memory tool raises an exception on a bad path, and the agent loop crashes. What is the fix?",
+      "options": [
+        "Remove the path check",
+        "Return the error as a string observation, so the model can see it and try something else",
+        "Restart the agent automatically",
+        "Ask the user to fix the path"
+      ],
+      "correct": 1,
+      "explanation": "Errors are observations (Phase 2 · Lesson 5). The loop carries on, and the bad write never happens."
+    },
+    {
+      "stage": "post",
+      "question": "How did session 2 know what to do next, with no shared conversation?",
+      "options": [
+        "The model remembered session 1",
+        "It read progress.md, which session 1 wrote before stopping, after the index pointed to it",
+        "The task said so",
+        "The vector store returned it"
+      ],
+      "correct": 1,
+      "explanation": "Write progress before stopping, read it when starting: the hand-off between context windows."
+    }
+  ]
+}

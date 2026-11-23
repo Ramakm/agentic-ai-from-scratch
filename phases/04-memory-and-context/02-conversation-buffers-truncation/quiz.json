@@ -1,0 +1,78 @@
+{
+  "lesson": "02-conversation-buffers-truncation",
+  "title": "Conversation Buffers & Truncation",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "You keep the last 12 messages of a long chat. Which message is dropped first?",
+      "options": [
+        "The newest one",
+        "The oldest one, often the user's first message with their name and goal",
+        "The longest one",
+        "A random one"
+      ],
+      "correct": 1,
+      "explanation": "A sliding window drops from the oldest end, which is where users usually introduce themselves."
+    },
+    {
+      "stage": "check",
+      "question": "Why must an assistant message with tool_calls and its tool results be kept or dropped together?",
+      "options": [
+        "To save tokens",
+        "Because each tool result must answer a tool call in the same request; an orphaned result makes the request invalid",
+        "Because tools are expensive",
+        "Because the model reads them in reverse"
+      ],
+      "correct": 1,
+      "explanation": "OpenAI-compatible APIs reject a tool message whose tool_call_id matches no earlier call."
+    },
+    {
+      "stage": "check",
+      "question": "In the demo, last_n_safe produced a valid request. Why was it still a bad answer?",
+      "options": [
+        "It was too expensive",
+        "It dropped the first user message, so the model no longer knew the user's name or budget",
+        "It orphaned a tool result",
+        "It kept too many messages"
+      ],
+      "correct": 1,
+      "explanation": "Valid and useful are different. Pinning important messages fixes the second problem."
+    },
+    {
+      "stage": "check",
+      "question": "What does the token window do with the gap in the history?",
+      "options": [
+        "Nothing; the model won't notice",
+        "Inserts a short marker saying how many earlier messages were removed",
+        "Fills it with a summary",
+        "Repeats the last message"
+      ],
+      "correct": 1,
+      "explanation": "The marker tells the model the history is incomplete, so it is less likely to invent what was there. Lesson 3 replaces it with a summary."
+    },
+    {
+      "stage": "post",
+      "question": "Why is 'last N messages' a weaker limit than a token budget?",
+      "options": [
+        "Message counts are slower to compute",
+        "Messages vary hugely in size; one tool result can be longer than all the others together",
+        "Providers charge per message",
+        "Token counts never change"
+      ],
+      "correct": 1,
+      "explanation": "You are limited by tokens, so measure tokens."
+    },
+    {
+      "stage": "post",
+      "question": "Your agent gets occasional HTTP 400 errors only on long conversations. What should you check first?",
+      "options": [
+        "The API key",
+        "Whether history truncation leaves a tool result without its tool call (or a call without its results)",
+        "The temperature",
+        "The model name"
+      ],
+      "correct": 1,
+      "explanation": "Long conversations are the ones that get trimmed. Run a validator before every call to catch it."
+    }
+  ]
+}

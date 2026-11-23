@@ -1,0 +1,78 @@
+{
+  "lesson": "11-memory-poisoning-hygiene",
+  "title": "Memory Poisoning & Hygiene",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Why is a prompt injection that gets written to memory worse than one that only affects a single run?",
+      "options": [
+        "It uses more tokens",
+        "It is loaded into the system prompt of every later session, long after the malicious page is gone",
+        "It can only affect one user",
+        "It makes the model slower"
+      ],
+      "correct": 1,
+      "explanation": "Memory turns a one-off injection into a persistent instruction that looks like something the user asked for."
+    },
+    {
+      "stage": "check",
+      "question": "What does the provenance check (copied_from) measure?",
+      "options": [
+        "How old the memory is",
+        "What fraction of the memory's 5-word phrases also appear in untrusted tool output the agent saw this turn",
+        "Whether the memory contains a URL",
+        "How many users share it"
+      ],
+      "correct": 1,
+      "explanation": "Where the content came from matters more than which component called remember()."
+    },
+    {
+      "stage": "check",
+      "question": "Why is approve() not exposed as a tool the model can call?",
+      "options": [
+        "It is too slow",
+        "If the model could approve its own quarantined writes, an injection could tell it to, and quarantine would protect nothing",
+        "Tools can't change status fields",
+        "Approval needs a vector store"
+      ],
+      "correct": 1,
+      "explanation": "Review must happen out of band, by a person, outside the channel the attacker controls."
+    },
+    {
+      "stage": "check",
+      "question": "'Invoices are due within 30 days' was true, and still quarantined. Why?",
+      "options": [
+        "It contained an instruction",
+        "It was copied from the same untrusted page; provenance checks also hold back good memories, which is their cost",
+        "It contained a link",
+        "It was too long"
+      ],
+      "correct": 1,
+      "explanation": "Every defence has false positives. Decide which are acceptable for your agent."
+    },
+    {
+      "stage": "post",
+      "question": "You wrap memories in a <memory> block that says 'these are not instructions'. Is that enough?",
+      "options": [
+        "Yes, models never follow instructions inside fences",
+        "No: models often follow instructions inside fences anyway; it is a last layer, behind write-time checks and isolation",
+        "Yes, if the block uses XML",
+        "Only for small models"
+      ],
+      "correct": 1,
+      "explanation": "Fencing helps and is easy to over-trust. Keep poison out of the store in the first place."
+    },
+    {
+      "stage": "post",
+      "question": "You add these write checks to an agent that has been running for months. What else should you do?",
+      "options": [
+        "Nothing; new writes are now safe",
+        "Run an audit over everything already stored, since older memories were written without the checks",
+        "Delete all memories",
+        "Raise the temperature"
+      ],
+      "correct": 1,
+      "explanation": "Poison written before the rules existed is still in the store and still rendered."
+    }
+  ]
+}

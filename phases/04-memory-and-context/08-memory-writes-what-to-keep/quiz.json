@@ -1,0 +1,78 @@
+{
+  "lesson": "08-memory-writes-what-to-keep",
+  "title": "Memory Writes: What to Keep",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Why is a wrong memory often worse than no memory?",
+      "options": [
+        "It uses more tokens",
+        "It is put back into every future prompt, and the agent acts on it with confidence while the user can't see why",
+        "It slows down the vector store",
+        "Models can't read memories"
+      ],
+      "correct": 1,
+      "explanation": "Memory is context (Lesson 1). A false fact in the window shapes every later answer."
+    },
+    {
+      "stage": "check",
+      "question": "Why must each candidate memory carry the user's exact quote?",
+      "options": [
+        "To make the store bigger",
+        "So code can check the user actually said it, rejecting inventions like 'income: high'",
+        "Because embeddings need quotes",
+        "To translate it later"
+      ],
+      "correct": 1,
+      "explanation": "The quote makes the grounding gate cheap, and makes each memory explainable later."
+    },
+    {
+      "stage": "check",
+      "question": "Why does the secret gate come before the duplicate gate?",
+      "options": [
+        "It is faster",
+        "A secret must be rejected even if it is already stored or would be an update; order decides which rule wins",
+        "Duplicates are more dangerous",
+        "The order doesn't matter"
+      ],
+      "correct": 1,
+      "explanation": "The first failing gate decides. Put the gates that must never be bypassed first."
+    },
+    {
+      "stage": "check",
+      "question": "What does the policy do with 'I have type 2 diabetes'?",
+      "options": [
+        "Stores it",
+        "Returns 'ask': the agent should ask the user before storing sensitive health data",
+        "Rejects it as transient",
+        "Rejects it as ungrounded"
+      ],
+      "correct": 1,
+      "explanation": "Sensitive categories need consent; with consent, decide() stores it."
+    },
+    {
+      "stage": "post",
+      "question": "The policy stored 'has a partner' from the quote 'We're moving to Pune'. What does this show?",
+      "options": [
+        "The grounding gate is broken",
+        "Grounding checks that the quote is real, not that the value follows from it; over-interpretation needs another check",
+        "The extractor is perfect",
+        "Plans should never be stored"
+      ],
+      "correct": 1,
+      "explanation": "Keep such misses in your labelled test set so the gap stays visible."
+    },
+    {
+      "stage": "post",
+      "question": "Your memory framework lets the model decide end to end what to store. What can you still do?",
+      "options": [
+        "Nothing",
+        "Put your own gates (grounding, secrets, consent, rate limit) between the extraction and the write",
+        "Raise the temperature",
+        "Store everything and clean up yearly"
+      ],
+      "correct": 1,
+      "explanation": "The decide step is plain code; it fits between any extractor and any store."
+    }
+  ]
+}

@@ -39,7 +39,7 @@ window.SITE = {
   "totals": {
     "phases": 16,
     "lessons": 163,
-    "published": 42,
+    "published": 53,
     "hours": 127
   }
 };
@@ -494,96 +494,118 @@ window.PHASES = [
   "id": "04-memory-and-context",
   "name": "Memory & Context Engineering",
   "desc": "Context is the program. Buffers, summaries, embeddings, a vector store by hand, and memory that stays clean.",
-  "status": "planned",
-  "published": 0,
+  "status": "complete",
+  "published": 11,
   "lessons": [
    {
     "id": "01-context-is-the-program",
     "title": "Context is the program",
     "minutes": 40,
     "path": "phases/04-memory-and-context/01-context-is-the-program",
-    "type": "",
-    "num": "04.01"
+    "type": "Build",
+    "num": "04.01",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "02-conversation-buffers-truncation",
     "title": "Conversation buffers & truncation",
     "minutes": 40,
     "path": "phases/04-memory-and-context/02-conversation-buffers-truncation",
-    "type": "",
-    "num": "04.02"
+    "type": "Build",
+    "num": "04.02",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "03-summarization-memory",
     "title": "Summarization memory",
     "minutes": 45,
     "path": "phases/04-memory-and-context/03-summarization-memory",
-    "type": "",
-    "num": "04.03"
+    "type": "Build",
+    "num": "04.03",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "04-embeddings-from-scratch",
     "title": "Embeddings from scratch",
     "minutes": 60,
     "path": "phases/04-memory-and-context/04-embeddings-from-scratch",
-    "type": "",
-    "num": "04.04"
+    "type": "Build",
+    "num": "04.04",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "05-a-vector-store-in-80-lines",
     "title": "A vector store in 80 lines",
     "minutes": 60,
     "path": "phases/04-memory-and-context/05-a-vector-store-in-80-lines",
-    "type": "",
-    "num": "04.05"
+    "type": "Build",
+    "num": "04.05",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "06-episodic-memory",
     "title": "Episodic memory",
     "minutes": 50,
     "path": "phases/04-memory-and-context/06-episodic-memory",
-    "type": "",
-    "num": "04.06"
+    "type": "Build",
+    "num": "04.06",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "07-semantic-procedural-memory",
     "title": "Semantic & procedural memory",
     "minutes": 50,
     "path": "phases/04-memory-and-context/07-semantic-procedural-memory",
-    "type": "",
-    "num": "04.07"
+    "type": "Build",
+    "num": "04.07",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "08-memory-writes-what-to-keep",
     "title": "Memory writes: what to keep",
     "minutes": 45,
     "path": "phases/04-memory-and-context/08-memory-writes-what-to-keep",
-    "type": "",
-    "num": "04.08"
+    "type": "Build",
+    "num": "04.08",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "09-context-compaction",
     "title": "Context compaction",
     "minutes": 45,
     "path": "phases/04-memory-and-context/09-context-compaction",
-    "type": "",
-    "num": "04.09"
+    "type": "Build",
+    "num": "04.09",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "10-files-as-long-term-memory",
     "title": "Files as long-term memory",
     "minutes": 40,
     "path": "phases/04-memory-and-context/10-files-as-long-term-memory",
-    "type": "",
-    "num": "04.10"
+    "type": "Build",
+    "num": "04.10",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "11-memory-poisoning-hygiene",
     "title": "Memory poisoning & hygiene",
     "minutes": 40,
     "path": "phases/04-memory-and-context/11-memory-poisoning-hygiene",
-    "type": "",
-    "num": "04.11"
+    "type": "Build",
+    "num": "04.11",
+    "published": true,
+    "hasQuiz": true
    }
   ]
  },

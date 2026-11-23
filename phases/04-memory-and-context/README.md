@@ -3,21 +3,21 @@
 
 > Context is the program. Buffers, summaries, embeddings, a vector store by hand, and memory that stays clean.
 
-**Status:** □ planned · **Lessons:** 0 of 11 live · **Time:** ~9 hours
+**Status:** ■ complete · **Lessons:** 11 of 11 live · **Time:** ~9 hours
 
 | # | Lesson | Type | Time |
 |---|--------|------|------|
-| 04.01 | Context is the program | planned | 40 min |
-| 04.02 | Conversation buffers & truncation | planned | 40 min |
-| 04.03 | Summarization memory | planned | 45 min |
-| 04.04 | Embeddings from scratch | planned | 60 min |
-| 04.05 | A vector store in 80 lines | planned | 60 min |
-| 04.06 | Episodic memory | planned | 50 min |
-| 04.07 | Semantic & procedural memory | planned | 50 min |
-| 04.08 | Memory writes: what to keep | planned | 45 min |
-| 04.09 | Context compaction | planned | 45 min |
-| 04.10 | Files as long-term memory | planned | 40 min |
-| 04.11 | Memory poisoning & hygiene | planned | 40 min |
+| 04.01 | [Context is the program](01-context-is-the-program/docs/en.md) | Build | 40 min |
+| 04.02 | [Conversation buffers & truncation](02-conversation-buffers-truncation/docs/en.md) | Build | 40 min |
+| 04.03 | [Summarization memory](03-summarization-memory/docs/en.md) | Build | 45 min |
+| 04.04 | [Embeddings from scratch](04-embeddings-from-scratch/docs/en.md) | Build | 60 min |
+| 04.05 | [A vector store in 80 lines](05-a-vector-store-in-80-lines/docs/en.md) | Build | 60 min |
+| 04.06 | [Episodic memory](06-episodic-memory/docs/en.md) | Build | 50 min |
+| 04.07 | [Semantic & procedural memory](07-semantic-procedural-memory/docs/en.md) | Build | 50 min |
+| 04.08 | [Memory writes: what to keep](08-memory-writes-what-to-keep/docs/en.md) | Build | 45 min |
+| 04.09 | [Context compaction](09-context-compaction/docs/en.md) | Build | 45 min |
+| 04.10 | [Files as long-term memory](10-files-as-long-term-memory/docs/en.md) | Build | 40 min |
+| 04.11 | [Memory poisoning & hygiene](11-memory-poisoning-hygiene/docs/en.md) | Build | 40 min |
 
 Every live lesson folder has `docs/en.md`, runnable `code/` with tests, a `quiz.json`, and an artifact in `outputs/`.
 Want to write a planned lesson? See [CONTRIBUTING.md](../../CONTRIBUTING.md) and [LESSON_TEMPLATE.md](../../LESSON_TEMPLATE.md).
