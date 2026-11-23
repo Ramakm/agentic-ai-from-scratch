@@ -39,7 +39,7 @@ window.SITE = {
   "totals": {
     "phases": 16,
     "lessons": 163,
-    "published": 45,
+    "published": 49,
     "hours": 127
   }
 };
@@ -495,7 +495,7 @@ window.PHASES = [
   "name": "Memory & Context Engineering",
   "desc": "Context is the program. Buffers, summaries, embeddings, a vector store by hand, and memory that stays clean.",
   "status": "in-progress",
-  "published": 3,
+  "published": 7,
   "lessons": [
    {
     "id": "01-context-is-the-program",
@@ -532,32 +532,40 @@ window.PHASES = [
     "title": "Embeddings from scratch",
     "minutes": 60,
     "path": "phases/04-memory-and-context/04-embeddings-from-scratch",
-    "type": "",
-    "num": "04.04"
+    "type": "Build",
+    "num": "04.04",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "05-a-vector-store-in-80-lines",
     "title": "A vector store in 80 lines",
     "minutes": 60,
     "path": "phases/04-memory-and-context/05-a-vector-store-in-80-lines",
-    "type": "",
-    "num": "04.05"
+    "type": "Build",
+    "num": "04.05",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "06-episodic-memory",
     "title": "Episodic memory",
     "minutes": 50,
     "path": "phases/04-memory-and-context/06-episodic-memory",
-    "type": "",
-    "num": "04.06"
+    "type": "Build",
+    "num": "04.06",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "07-semantic-procedural-memory",
     "title": "Semantic & procedural memory",
     "minutes": 50,
     "path": "phases/04-memory-and-context/07-semantic-procedural-memory",
-    "type": "",
-    "num": "04.07"
+    "type": "Build",
+    "num": "04.07",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "08-memory-writes-what-to-keep",

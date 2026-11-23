@@ -1,0 +1,78 @@
+{
+  "lesson": "06-episodic-memory",
+  "title": "Episodic Memory",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Your agent hits the same retired API every morning, reads the error, and switches to the new one. Why doesn't it learn?",
+      "options": [
+        "The model is too small",
+        "Each run starts with an empty context; nothing from yesterday's run is stored and recalled",
+        "The error message is unclear",
+        "The temperature is too high"
+      ],
+      "correct": 1,
+      "explanation": "Learning within a run is lost unless something writes it down and reads it back next time."
+    },
+    {
+      "stage": "check",
+      "question": "Which is an episodic memory rather than a semantic one?",
+      "options": [
+        "Priya is allergic to nickel",
+        "On Monday the v1 export failed with 410 Gone, and v2 worked",
+        "To export a report, use the v2 API",
+        "Paris is the capital of France"
+      ],
+      "correct": 1,
+      "explanation": "Episodic memory records a specific event with its time and outcome."
+    },
+    {
+      "stage": "check",
+      "question": "On Monday, 'Rotate the database password' had the highest total score. Why was it not recalled?",
+      "options": [
+        "It was too old",
+        "Its relevance to the export task was below the floor; relevance gates, recency and importance only rank",
+        "Its importance was too low",
+        "It was a success"
+      ],
+      "correct": 1,
+      "explanation": "A plain weighted sum lets a recent, important but unrelated memory win. The relevance gate prevents that."
+    },
+    {
+      "stage": "check",
+      "question": "What is 'reflection' in episodic memory?",
+      "options": [
+        "Re-reading the system prompt",
+        "Turning a run's raw action log into a short lesson to use next time",
+        "Mirroring the conversation to a database",
+        "Asking the user for feedback"
+      ],
+      "correct": 1,
+      "explanation": "A one-line lesson is easier for a model to follow than a raw log."
+    },
+    {
+      "stage": "post",
+      "question": "An old episode says 'v1 worked fine'. A newer one says 'avoid v1, it returns 410'. Which part of the score helps the newer one win?",
+      "options": [
+        "Relevance",
+        "Recency",
+        "The embedding dimension",
+        "Nothing; they tie"
+      ],
+      "correct": 1,
+      "explanation": "Both are equally relevant; recency favours newer evidence about a changing world."
+    },
+    {
+      "stage": "post",
+      "question": "How do you prove that episodic memory helps your agent?",
+      "options": [
+        "Check that episodes are being written",
+        "Run the same task twice (and with memory disabled) and show the second run with memory uses fewer steps or fails less",
+        "Count the stored episodes",
+        "Ask the model whether it remembers"
+      ],
+      "correct": 1,
+      "explanation": "Measure behaviour, not storage. The lesson's tests do exactly this."
+    }
+  ]
+}

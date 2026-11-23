@@ -1,0 +1,78 @@
+{
+  "lesson": "05-a-vector-store-in-80-lines",
+  "title": "A Vector Store in 80 Lines",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Your agent stores memories for many users in one vector store. How should you keep Arjun's searches from returning Priya's memories?",
+      "options": [
+        "Trust the embeddings; different users' memories will be dissimilar",
+        "Filter on a user metadata field before ranking",
+        "Use a higher k",
+        "Use a bigger embedding model"
+      ],
+      "correct": 1,
+      "explanation": "Similarity says nothing about ownership. Filtering is a correctness feature."
+    },
+    {
+      "stage": "check",
+      "question": "Why does the store normalise vectors to length 1 when they are written?",
+      "options": [
+        "To save disk space",
+        "So cosine similarity becomes a plain dot product, with no division in the search loop",
+        "Because APIs return unnormalised vectors that are wrong",
+        "To make vectors shorter than 256 dimensions"
+      ],
+      "correct": 1,
+      "explanation": "For unit vectors, dot(a, b) equals the cosine of the angle between them."
+    },
+    {
+      "stage": "check",
+      "question": "What does upsert do when the text for an existing id has not changed?",
+      "options": [
+        "Embeds it again to be safe",
+        "Updates the metadata and skips the embedding call, using a hash of the text to detect that nothing changed",
+        "Raises an error",
+        "Deletes the row"
+      ],
+      "correct": 1,
+      "explanation": "Embedding calls cost money and time; a content hash avoids repeating them."
+    },
+    {
+      "stage": "check",
+      "question": "Why does load() refuse a store built with a different embedding model?",
+      "options": [
+        "The file format differs",
+        "Vectors from different models live in different spaces, so comparing them produces meaningless scores",
+        "To force upgrades",
+        "Because of licensing"
+      ],
+      "correct": 1,
+      "explanation": "The scores would still look like similarities, which makes the bug very hard to notice."
+    },
+    {
+      "stage": "post",
+      "question": "A query has no relevant memory, but top-3 search still returns three items. What prevents them from being put into the prompt as if they were relevant?",
+      "options": [
+        "A larger k",
+        "A min_score threshold, set for this embedding model from a labelled test",
+        "Sorting by id",
+        "Chunking"
+      ],
+      "correct": 1,
+      "explanation": "Thresholds differ between embedding models, so measure rather than guess."
+    },
+    {
+      "stage": "post",
+      "question": "Your agent has 20,000 memories. Do you need an approximate (ANN) index?",
+      "options": [
+        "Yes, always use HNSW",
+        "Probably not: an exact scan in NumPy or the database is usually fast enough at this size, and it never misses the true nearest neighbours",
+        "No, vector search doesn't work above 10,000 items",
+        "Yes, because exact search is inaccurate"
+      ],
+      "correct": 1,
+      "explanation": "Brute force grows linearly; measure it before adding an index that trades recall for speed."
+    }
+  ]
+}
