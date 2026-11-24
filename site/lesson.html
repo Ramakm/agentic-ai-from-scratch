@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lesson | Agentic AI from Scratch</title>
   <meta name="description" content="A lesson from Agentic AI from Scratch: build it by hand, then use the frameworks.">
-  <meta name="theme-color" content="#0e0d0c">
+  <meta name="theme-color" content="#fafaf5">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23EC4D36'/%3E%3Crect x='4' y='4' width='8' height='8' fill='%23fafaf5'/%3E%3C/svg%3E">
   <script>
     (function () {
       var t = null;
-      try { t = localStorage.getItem('aafs-theme'); } catch (e) {}
-      if (t !== 'light' && t !== 'dark') t = 'dark';   /* dark is the default */
+      try { t = sessionStorage.getItem('aafs-theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') t = 'light';   /* every new visit opens in day mode */
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>

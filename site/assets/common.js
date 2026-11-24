@@ -95,7 +95,7 @@
   if (themeBtn) themeBtn.addEventListener('click', function () {
     var t = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     root.setAttribute('data-theme', t);
-    storage(function () { localStorage.setItem('aafs-theme', t); });
+    storage(function () { sessionStorage.setItem('aafs-theme', t); });   /* this visit only: new visits open in day mode */
     syncTheme();
   });
 
