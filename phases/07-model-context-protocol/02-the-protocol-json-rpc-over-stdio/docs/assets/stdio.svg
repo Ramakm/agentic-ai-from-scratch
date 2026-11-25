@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="580" viewBox="0 0 960 580" role="img" aria-label="JSON-RPC over stdio">
+<title>JSON-RPC over stdio</title>
+<defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(26,26,26,0.055)" stroke-width="1"/></pattern><marker id="ar-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1a1a1a"/></marker><marker id="ar-ink-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1a1a1a"/></marker><marker id="ar-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#EC4D36"/></marker><marker id="ar-red-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#EC4D36"/></marker><marker id="ar-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1d7a82"/></marker><marker id="ar-teal-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1d7a82"/></marker><marker id="ar-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b07d0c"/></marker><marker id="ar-amber-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b07d0c"/></marker><marker id="ar-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a4cb3"/></marker><marker id="ar-violet-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a4cb3"/></marker><marker id="ar-mute" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a7a78"/></marker><marker id="ar-mute-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a7a78"/></marker><marker id="ar-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d3a"/></marker><marker id="ar-green-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d3a"/></marker></defs>
+<rect width="960" height="580" fill="#fafaf5"/>
+<rect width="960" height="580" fill="url(#grid)"/>
+<rect x="0.75" y="0.75" width="958.5" height="578.5" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+<rect x="32" y="30" width="11" height="11" fill="#EC4D36"/><rect x="35" y="33" width="5" height="5" fill="#fafaf5"/>
+<text x="52" y="40" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" letter-spacing="2" fill="#EC4D36">PHASE 07 · LESSON 02</text>
+<text x="32" y="80" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="-0.5" fill="#1a1a1a">JSON-RPC over stdio</text>
+<text x="32" y="106" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="16" font-style="italic" fill="#4a4a4a">Two processes, three pipes. One JSON message per line; stdout carries nothing else.</text>
+<line x1="32" y1="124" x2="928" y2="124" stroke="#1a1a1a" stroke-width="1" opacity="0.25"/>
+<rect x="40" y="150" width="250" height="170" fill="#fffef9" stroke="#1a1a1a" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="54" y="172" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78">HOST PROCESS</text>
+<rect x="74" y="204" width="190" height="80" fill="#1d7a82" stroke="#1d7a82" stroke-width="1.5"/>
+<rect x="70" y="200" width="190" height="80" fill="#d8eded" stroke="#1d7a82" stroke-width="1.5"/>
+<text x="165.0" y="237.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="18" fill="#1d7a82" font-weight="600" text-anchor="middle">MCP client</text>
+<text x="165.0" y="255.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#7a7a78" text-anchor="middle">spawns the server</text>
+<rect x="670" y="150" width="250" height="170" fill="#fffef9" stroke="#1a1a1a" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="684" y="172" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78">SERVER PROCESS (CHILD)</text>
+<rect x="704" y="204" width="190" height="80" fill="#7a4cb3" stroke="#7a4cb3" stroke-width="1.5"/>
+<rect x="700" y="200" width="190" height="80" fill="#ebe2f6" stroke="#7a4cb3" stroke-width="1.5"/>
+<text x="795.0" y="237.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="18" fill="#7a4cb3" font-weight="600" text-anchor="middle">MCP server</text>
+<text x="795.0" y="255.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#7a7a78" text-anchor="middle">reads stdin line by line</text>
+<path d="M266 222 L694 222" fill="none" stroke="#1d7a82" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-teal)"/>
+<text x="480" y="212" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#1d7a82" text-anchor="middle">stdin  · requests, notifications</text>
+<path d="M694 262 L266 262" fill="none" stroke="#7a4cb3" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-violet)"/>
+<text x="480" y="282" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#7a4cb3" text-anchor="middle">stdout · responses, errors, notifications</text>
+<path d="M795 286 L795 372" fill="none" stroke="#7a7a78" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 3" marker-end="url(#ar-mute)"/>
+<text x="806" y="346" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78">stderr: logs,</text>
+<text x="806" y="361" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78">free text</text>
+<text x="40" y="386" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1a1a1a">FOUR MESSAGE KINDS · \n ENDS EACH ONE</text>
+<rect x="40" y="400" width="112" height="28" fill="#fffef9" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="96.0" y="418.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1d7a82" text-anchor="middle">request</text>
+<text x="166" y="419" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="14" fill="#1d7a82" font-weight="700">→</text>
+<text x="186" y="419" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.6" fill="#1a1a1a">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:2,&quot;method&quot;:&quot;tools/call&quot;,&quot;params&quot;:{&quot;name&quot;:&quot;echo&quot;,…,&quot;_meta&quot;:{…}}}</text>
+<text x="918" y="419" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12" fill="#7a7a78" text-anchor="end" font-style="italic">has id + method</text>
+<rect x="40" y="436" width="112" height="28" fill="#fffef9" stroke="#7a4cb3" stroke-width="1.2"/>
+<text x="96.0" y="454.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#7a4cb3" text-anchor="middle">response</text>
+<text x="166" y="455" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="14" fill="#7a4cb3" font-weight="700">←</text>
+<text x="186" y="455" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.6" fill="#1a1a1a">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:2,&quot;result&quot;:{&quot;resultType&quot;:&quot;complete&quot;,&quot;content&quot;:[…]}}</text>
+<text x="918" y="455" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12" fill="#7a7a78" text-anchor="end" font-style="italic">same id, result</text>
+<rect x="40" y="472" width="112" height="28" fill="#fffef9" stroke="#EC4D36" stroke-width="1.2"/>
+<text x="96.0" y="490.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#EC4D36" text-anchor="middle">error</text>
+<text x="166" y="491" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="14" fill="#EC4D36" font-weight="700">←</text>
+<text x="186" y="491" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.6" fill="#1a1a1a">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:3,&quot;error&quot;:{&quot;code&quot;:-32601,&quot;message&quot;:&quot;Method not found&quot;,…}}</text>
+<text x="918" y="491" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12" fill="#7a7a78" text-anchor="end" font-style="italic">same id, error</text>
+<rect x="40" y="508" width="112" height="28" fill="#fffef9" stroke="#b07d0c" stroke-width="1.2"/>
+<text x="96.0" y="526.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#b07d0c" text-anchor="middle">notification</text>
+<text x="166" y="527" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="14" fill="#b07d0c" font-weight="700">→</text>
+<text x="186" y="527" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.6" fill="#1a1a1a">{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;notifications/cancelled&quot;,&quot;params&quot;:{&quot;requestId&quot;:2}}</text>
+<text x="918" y="527" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12" fill="#7a7a78" text-anchor="end" font-style="italic">no id: never answered</text>
+<text x="928" y="564" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10" letter-spacing="1.5" fill="#7a7a78" text-anchor="end">AGENTIC AI FROM SCRATCH</text>
+</svg>

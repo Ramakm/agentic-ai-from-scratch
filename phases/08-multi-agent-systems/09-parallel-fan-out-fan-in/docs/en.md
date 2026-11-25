@@ -25,12 +25,7 @@ Lesson 2's orchestrator fanned out to three workers. Real batches are bigger: su
 
 ## The Concept
 
-```
- fan-out (bounded: at most k in flight)                    fan-in
-   docs ─► [w][w][w][w][w][w][w][w]  ──► results ─┬─ fits? ── concatenate ─► synthesiser
-            ↑ timeouts, hedges,                    │
-            ↑ per-item errors                      └─ too big ─ reduce groups ─► partial summaries ─► synthesiser
-```
+![Documents fan out to workers with at most k in flight, including hedged and failed tasks; results either fit and are concatenated, or are reduced in groups, before the synthesiser](assets/fan-out-fan-in.svg)
 
 | Technique | Buys | Costs |
 |-----------|------|-------|

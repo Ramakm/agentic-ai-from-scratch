@@ -140,6 +140,9 @@ if (!CHECK) {
       fs.mkdirSync(path.dirname(dest), { recursive: true });
       fs.copyFileSync(path.join(ROOT, l.path, f), dest);
     }
+    /* diagrams referenced from docs/en.md as ![alt](assets/name.svg) */
+    const assets = path.join(ROOT, l.path, 'docs/assets');
+    if (fs.existsSync(assets)) fs.cpSync(assets, path.join(out, l.path, 'docs/assets'), { recursive: true });
   }
   console.log(`copied ${totals.published} lesson(s) into site/content/`);
 }
@@ -156,6 +159,8 @@ for (const { l } of all.filter((x) => x.l.published)) {
   const doc = read(`${l.path}/docs/en.md`);
   for (const h of ['## The Problem', '## The Concept', '## Build It', '## Use It', '## Ship It', '## Exercises'])
     if (!doc.includes(h)) problems.push(`${l.path}: docs/en.md missing "${h}"`);
+  for (const [, src] of doc.matchAll(/!\[[^\]]*\]\(([^)\s]+)\)/g))
+    if (!/^https?:/.test(src) && !exists(`${l.path}/docs/${src}`)) problems.push(`${l.path}: docs/en.md links a missing image ${src}`);
   if (exists(`${l.path}/quiz.json`)) {
     try {
       const qs = JSON.parse(read(`${l.path}/quiz.json`)).questions || [];

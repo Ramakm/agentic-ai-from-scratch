@@ -22,15 +22,7 @@ Budgets and failures get worse too. A flat supervisor holds one budget for every
 
 ## The Concept
 
-```
- flat                                   two levels
-             supervisor                              top supervisor
-   ┌──┬──┬──┬──┬──┬──┬──┬──┐               ┌───────────┼────────────┐
-   w1 w2 w3 w4 w5 w6 w7 w8 w9          research    engineering    operations   (leads)
-                                       ┌──┼──┐      ┌──┼──┐        ┌──┼──┐
-   supervisor reads 9 reports          w1 w2 w3     w4 w5 w6       w7 w8 w9
-                                       top reads 3 summaries; each lead reads its team's reports
-```
+![A flat supervisor reading nine worker reports, next to a two-level tree where a top supervisor reads three lead summaries and each lead manages three workers](assets/hierarchies.svg)
 
 | | Flat | Two levels |
 |---|---|---|

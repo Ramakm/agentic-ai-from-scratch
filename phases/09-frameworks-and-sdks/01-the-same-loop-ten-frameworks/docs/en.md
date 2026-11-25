@@ -49,6 +49,8 @@ The three styles in this lesson cover nearly every framework:
 | Graph | nodes and routing functions | the graph executor | LangGraph, LlamaIndex Workflows |
 | Declarative agent | an `Agent(name, instructions, tools)` | a `Runner` with the loop inside | OpenAI Agents SDK, Pydantic AI, CrewAI, Google ADK |
 
+![The same five loop steps in three styles: in a raw loop you write all of them, in a graph you write the model node, tool node and routing, and in a declarative agent the framework runs all of them](assets/who-owns-the-loop.svg)
+
 ## Build It
 
 ```bash

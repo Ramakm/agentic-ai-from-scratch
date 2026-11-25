@@ -610,6 +610,11 @@ body.js-anim .reveal.in-view { opacity: 1; transform: none; }
 .hljs-comment, .hljs-meta { color: var(--ink-mute); font-style: italic; }
 .hljs-number, .hljs-title, .hljs-title.function_ { color: var(--ink); font-weight: 700; }
 .table-wrap { overflow-x: auto; margin-top: 1.2em; border: 1px solid var(--rule-soft); }
+.prose img { max-width: 100%; height: auto; }
+.prose figure.diagram { margin: 1.8em 0; }
+.prose figure.diagram a { display: block; border: 0; cursor: zoom-in; }
+.prose figure.diagram img { display: block; width: 100%; box-shadow: var(--shadow-hard); }
+[data-theme="dark"] .prose figure.diagram img { box-shadow: 4px 4px 0 var(--blueprint); }
 .prose table { width: 100%; border-collapse: collapse; font-size: .92rem; line-height: 1.45; }
 .prose th { text-align: left; font-family: var(--font-mono); font-size: .68rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--blueprint); background: var(--bg-surface); }
 .prose th, .prose td { padding: 9px 12px; border-bottom: 1px solid var(--rule-soft); vertical-align: top; }

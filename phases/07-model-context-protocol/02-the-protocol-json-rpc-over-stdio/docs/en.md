@@ -22,14 +22,7 @@ The simplest channel between two processes is the one every program already has:
 
 ## The Concept
 
-```
- host process                                  server process (child)
- ┌──────────────┐  stdin:  one JSON per line   ┌──────────────┐
- │ MCP client   │ ───────────────────────────► │ MCP server   │
- │              │ ◄─────────────────────────── │              │
- └──────────────┘  stdout: one JSON per line   └──────┬───────┘
-                                                      │ stderr: logs (free text)
-```
+![The host process runs the MCP client, which writes requests to the server child process on stdin and reads responses on stdout; stderr carries logs. Below, one example line of each message kind](assets/stdio.svg)
 
 **Framing.** Each message is one line of JSON followed by `\n`. JSON escapes newlines inside strings (`"a\nb"`), so a message never contains a raw newline. Stdout carries only MCP messages; stderr carries anything else.
 

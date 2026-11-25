@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-label="Only the spec separates good runs from bad">
+<title>Only the spec separates good runs from bad</title>
+<defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(26,26,26,0.055)" stroke-width="1"/></pattern><marker id="ar-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1a1a1a"/></marker><marker id="ar-ink-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1a1a1a"/></marker><marker id="ar-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#EC4D36"/></marker><marker id="ar-red-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#EC4D36"/></marker><marker id="ar-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1d7a82"/></marker><marker id="ar-teal-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1d7a82"/></marker><marker id="ar-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b07d0c"/></marker><marker id="ar-amber-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b07d0c"/></marker><marker id="ar-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a4cb3"/></marker><marker id="ar-violet-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a4cb3"/></marker><marker id="ar-mute" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a7a78"/></marker><marker id="ar-mute-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a7a78"/></marker><marker id="ar-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d3a"/></marker><marker id="ar-green-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d3a"/></marker></defs>
+<rect width="960" height="520" fill="#fafaf5"/>
+<rect width="960" height="520" fill="url(#grid)"/>
+<rect x="0.75" y="0.75" width="958.5" height="518.5" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+<rect x="32" y="30" width="11" height="11" fill="#EC4D36"/><rect x="35" y="33" width="5" height="5" fill="#fafaf5"/>
+<text x="52" y="40" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" letter-spacing="2" fill="#EC4D36">PHASE 11 · LESSON 03</text>
+<text x="32" y="80" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="-0.5" fill="#1a1a1a">Only the spec separates good runs from bad</text>
+<text x="32" y="106" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="16" font-style="italic" fill="#4a4a4a">Five refund runs, every metric. Output of main.py.</text>
+<line x1="32" y1="124" x2="928" y2="124" stroke="#1a1a1a" stroke-width="1" opacity="0.25"/>
+<text x="40" y="166" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1a1a1a">RUN</text>
+<text x="304.0" y="166" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1a1a1a" text-anchor="middle">EXACT</text>
+<text x="392.0" y="166" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1a1a1a" text-anchor="middle">IN-ORDER</text>
+<text x="480.0" y="166" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1a1a1a" text-anchor="middle">ANY-ORDER</text>
+<text x="568.0" y="166" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1a1a1a" text-anchor="middle">PREC</text>
+<text x="656.0" y="166" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1a1a1a" text-anchor="middle">RECALL</text>
+<text x="744.0" y="166" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1a1a1a" text-anchor="middle">EDIT</text>
+<text x="832.0" y="166" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#EC4D36" text-anchor="middle">SPEC</text>
+<text x="40" y="210" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="14" fill="#2f7d3a">● </text>
+<text x="62" y="210" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="14" fill="#1a1a1a">textbook</text>
+<rect x="263" y="185" width="82" height="40" fill="#ddefdc" stroke="#2f7d3a" stroke-width="1"/>
+<text x="304.0" y="210" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#2f7d3a" text-anchor="middle">yes</text>
+<rect x="351" y="185" width="82" height="40" fill="#ddefdc" stroke="#2f7d3a" stroke-width="1"/>
+<text x="392.0" y="210" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#2f7d3a" text-anchor="middle">yes</text>
+<rect x="439" y="185" width="82" height="40" fill="#ddefdc" stroke="#2f7d3a" stroke-width="1"/>
+<text x="480.0" y="210" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#2f7d3a" text-anchor="middle">yes</text>
+<rect x="527" y="185" width="82" height="40" fill="#ddefdc" stroke="#2f7d3a" stroke-width="1"/>
+<text x="568.0" y="210" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#2f7d3a" text-anchor="middle">1.00</text>
+<rect x="615" y="185" width="82" height="40" fill="#ddefdc" stroke="#2f7d3a" stroke-width="1"/>
+<text x="656.0" y="210" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#2f7d3a" text-anchor="middle">1.00</text>
+<rect x="703" y="185" width="82" height="40" fill="#ddefdc" stroke="#2f7d3a" stroke-width="1"/>
+<text x="744.0" y="210" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#2f7d3a" text-anchor="middle">0</text>
+<rect x="791" y="185" width="82" height="40" fill="#ddefdc" stroke="#2f7d3a" stroke-width="2"/>
+<text x="832.0" y="210" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#2f7d3a" font-weight="700" text-anchor="middle">PASS</text>
+<text x="40" y="260" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="14" fill="#2f7d3a">● </text>
+<text x="62" y="260" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="14" fill="#1a1a1a">different but fine</text>
+<rect x="263" y="235" width="82" height="40" fill="#fde5e0" stroke="#EC4D36" stroke-width="1"/>
+<text x="304.0" y="260" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#EC4D36" text-anchor="middle">no</text>
+<rect x="351" y="235" width="82" height="40" fill="#fde5e0" stroke="#EC4D36" stroke-width="1"/>
+<text x="392.0" y="260" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#EC4D36" text-anchor="middle">no</text>
+<rect x="439" y="235" width="82" height="40" fill="#ddefdc" stroke="#2f7d3a" stroke-width="1"/>
+<text x="480.0" y="260" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#2f7d3a" text-anchor="middle">yes</text>
+<rect x="527" y="235" width="82" height="40" fill="#fde5e0" stroke="#EC4D36" stroke-width="1"/>
+<text x="568.0" y="260" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#EC4D36" text-anchor="middle">0.80</text>
+<rect x="615" y="235" width="82" height="40" fill="#ddefdc" stroke="#2f7d3a" stroke-width="1"/>
+<text x="656.0" y="260" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#2f7d3a" text-anchor="middle">1.00</text>
+<rect x="703" y="235" width="82" height="40" fill="#fde5e0" stroke="#EC4D36" stroke-width="1"/>
+<text x="744.0" y="260" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#EC4D36" text-anchor="middle">3</text>
+<rect x="791" y="235" width="82" height="40" fill="#ddefdc" stroke="#2f7d3a" stroke-width="2"/>
+<text x="832.0" y="260" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#2f7d3a" font-weight="700" text-anchor="middle">PASS</text>
+<text x="40" y="310" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="14" fill="#EC4D36">● </text>
+<text x="62" y="310" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="14" fill="#1a1a1a">refund before lookup</text>
+<rect x="263" y="285" width="82" height="40" fill="#ddefdc" stroke="#2f7d3a" stroke-width="1"/>
+<text x="304.0" y="310" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#2f7d3a" text-anchor="middle">no</text>
+<rect x="351" y="285" width="82" height="40" fill="#ddefdc" stroke="#2f7d3a" stroke-width="1"/>
+<text x="392.0" y="310" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#2f7d3a" text-anchor="middle">no</text>
+<rect x="439" y="285" width="82" height="40" fill="#fde5e0" stroke="#EC4D36" stroke-width="1"/>
+<text x="480.0" y="310" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#EC4D36" text-anchor="middle">yes</text>
+<rect x="527" y="285" width="82" height="40" fill="#fde5e0" stroke="#EC4D36" stroke-width="1"/>
+<text x="568.0" y="310" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#EC4D36" text-anchor="middle">1.00</text>
+<rect x="615" y="285" width="82" height="40" fill="#fde5e0" stroke="#EC4D36" stroke-width="1"/>
+<text x="656.0" y="310" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#EC4D36" text-anchor="middle">1.00</text>
+<rect x="703" y="285" width="82" height="40" fill="#ddefdc" stroke="#2f7d3a" stroke-width="1"/>
+<text x="744.0" y="310" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#2f7d3a" text-anchor="middle">2</text>
+<rect x="791" y="285" width="82" height="40" fill="#ddefdc" stroke="#2f7d3a" stroke-width="2"/>
+<text x="832.0" y="310" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#2f7d3a" font-weight="700" text-anchor="middle">FAIL</text>
+<text x="40" y="360" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="14" fill="#EC4D36">● </text>
+<text x="62" y="360" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="14" fill="#1a1a1a">over-refund</text>
+<rect x="263" y="335" width="82" height="40" fill="#ddefdc" stroke="#2f7d3a" stroke-width="1"/>
+<text x="304.0" y="360" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#2f7d3a" text-anchor="middle">no</text>
+<rect x="351" y="335" width="82" height="40" fill="#fde5e0" stroke="#EC4D36" stroke-width="1"/>
+<text x="392.0" y="360" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#EC4D36" text-anchor="middle">yes</text>
+<rect x="439" y="335" width="82" height="40" fill="#fde5e0" stroke="#EC4D36" stroke-width="1"/>
+<text x="480.0" y="360" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#EC4D36" text-anchor="middle">yes</text>
+<rect x="527" y="335" width="82" height="40" fill="#fde5e0" stroke="#EC4D36" stroke-width="1"/>
+<text x="568.0" y="360" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#EC4D36" text-anchor="middle">1.00</text>
+<rect x="615" y="335" width="82" height="40" fill="#fde5e0" stroke="#EC4D36" stroke-width="1"/>
+<text x="656.0" y="360" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#EC4D36" text-anchor="middle">1.00</text>
+<rect x="703" y="335" width="82" height="40" fill="#fde5e0" stroke="#EC4D36" stroke-width="1"/>
+<text x="744.0" y="360" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#EC4D36" text-anchor="middle">0</text>
+<rect x="791" y="335" width="82" height="40" fill="#ddefdc" stroke="#2f7d3a" stroke-width="2"/>
+<text x="832.0" y="360" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#2f7d3a" font-weight="700" text-anchor="middle">FAIL</text>
+<text x="40" y="410" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="14" fill="#EC4D36">● </text>
+<text x="62" y="410" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="14" fill="#1a1a1a">loops on lookup</text>
+<rect x="263" y="385" width="82" height="40" fill="#ddefdc" stroke="#2f7d3a" stroke-width="1"/>
+<text x="304.0" y="410" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#2f7d3a" text-anchor="middle">no</text>
+<rect x="351" y="385" width="82" height="40" fill="#fde5e0" stroke="#EC4D36" stroke-width="1"/>
+<text x="392.0" y="410" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#EC4D36" text-anchor="middle">yes</text>
+<rect x="439" y="385" width="82" height="40" fill="#fde5e0" stroke="#EC4D36" stroke-width="1"/>
+<text x="480.0" y="410" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#EC4D36" text-anchor="middle">yes</text>
+<rect x="527" y="385" width="82" height="40" fill="#ddefdc" stroke="#2f7d3a" stroke-width="1"/>
+<text x="568.0" y="410" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#2f7d3a" text-anchor="middle">0.57</text>
+<rect x="615" y="385" width="82" height="40" fill="#fde5e0" stroke="#EC4D36" stroke-width="1"/>
+<text x="656.0" y="410" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#EC4D36" text-anchor="middle">1.00</text>
+<rect x="703" y="385" width="82" height="40" fill="#ddefdc" stroke="#2f7d3a" stroke-width="1"/>
+<text x="744.0" y="410" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#2f7d3a" text-anchor="middle">3</text>
+<rect x="791" y="385" width="82" height="40" fill="#ddefdc" stroke="#2f7d3a" stroke-width="2"/>
+<text x="832.0" y="410" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#2f7d3a" font-weight="700" text-anchor="middle">FAIL</text>
+<rect x="40" y="442" width="14" height="14" fill="#ddefdc" stroke="#2f7d3a" stroke-width="1.2"/>
+<text x="62" y="453" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="13" fill="#4a4a4a">metric agrees with the truth</text>
+<rect x="276.79999999999995" y="442" width="14" height="14" fill="#fde5e0" stroke="#EC4D36" stroke-width="1.2"/>
+<text x="298.79999999999995" y="453" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="13" fill="#4a4a4a">metric is fooled</text>
+<rect x="428.4" y="442" width="14" height="14" fill="#2f7d3a" stroke="#2f7d3a" stroke-width="1.2"/>
+<text x="450.4" y="453" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="13" fill="#4a4a4a">good run</text>
+<rect x="523.1999999999999" y="442" width="14" height="14" fill="#EC4D36" stroke="#EC4D36" stroke-width="1.2"/>
+<text x="545.1999999999999" y="453" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="13" fill="#4a4a4a">bad run</text>
+<text x="40" y="488" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="13" fill="#4a4a4a" font-style="italic">name-based metrics give &quot;over-refund&quot; a perfect score. Only the spec catches the money.</text>
+<text x="928" y="504" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10" letter-spacing="1.5" fill="#7a7a78" text-anchor="end">AGENTIC AI FROM SCRATCH</text>
+</svg>

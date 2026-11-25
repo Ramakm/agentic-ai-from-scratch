@@ -51,6 +51,8 @@ Without a rule, BPE merges across words, and with repetitive data it learns whol
 | History | Grows every step |
 | Output | Reserved: input + output must fit together |
 
+![Characters per token for six kinds of text with the llama3.2 tokenizer, how our BPE splits a seen phrase and an unseen word, and one context window shared by system prompt, tool definitions, growing history and reserved output](assets/context-window.svg)
+
 ## Build It
 
 ```bash

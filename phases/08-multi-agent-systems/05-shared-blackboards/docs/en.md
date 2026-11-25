@@ -22,19 +22,7 @@ You could write that as a growing chain of handoffs, or a supervisor that re-pla
 
 ## The Concept
 
-```
-                 ┌──────────────────── blackboard ────────────────────┐
-  pager ───────► │ A1 alert                                           │
-  log_reader ◄──►│ S2 S3 symptoms (logs)        based_on: A1          │
-  metrics ◄─────►│ S4 S5 S6 symptoms (metrics)  based_on: A1          │
-  deploys ◄─────►│ S7 symptom (deploy)          based_on: A1          │
-  hypothesizer ◄►│ H8 H9 H10 hypotheses         based_on: symptoms    │
-  tester ◄──────►│ E11 E12 E13 evidence         based_on: hypothesis  │
-  decider ◄─────►│ C14 conclusion               based_on: H10, E13    │
-                 └────────────────────────────────────────────────────┘
-       control loop: each cycle, run one agent whose trigger fires; stop on a conclusion,
-                     when nobody can act, or at the cycle limit
-```
+![Seven agents read and write a shared blackboard of typed entries (alert, symptoms, hypotheses, evidence, conclusion), each citing the entries it was based on](assets/blackboard.svg)
 
 | Piece | What it is |
 |-------|-----------|

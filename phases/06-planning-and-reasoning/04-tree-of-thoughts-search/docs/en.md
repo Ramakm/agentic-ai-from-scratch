@@ -67,6 +67,8 @@ some solutions found by dfs:
   (1, 4, 5, 6) -> 6/((5/4)-1) = 24
 ```
 
+![Greedy, beam search and DFS on the same tree with a misleading evaluator, and the results on the 10 puzzles: greedy 0, beam 5 3, beam 20 9, DFS 10](assets/search-strategies.svg)
+
 Ten puzzles, all solvable (an exhaustive search checks). The evaluator is deliberately weak at depth 1: it prefers states where two numbers multiply to something near 24, which is often the wrong idea.
 
 - **Greedy: 0/10.** It follows the heuristic's first choice on every puzzle, and the heuristic's first choice is never right here.

@@ -24,17 +24,7 @@ Every pair needs glue: parse this host's tool call, call that service's API, for
 
 ## The Concept
 
-```
- without a protocol                       with MCP
-
- chat-app ──┬── weather                   chat-app ──┐             ┌── weather server
-            ├── calendar                  ide ───────┼── MCP ──────┼── calendar server
-            └── tickets                   cli-agent ─┘             └── tickets server
- ide ───────┬── weather
-            ├── calendar                  each host: one MCP client
-            └── tickets                   each service: one MCP server
- cli-agent ─┴── ...  (N × M adapters)     (N + M pieces)
-```
+![Without a protocol three hosts need nine adapters to three services; with MCP each host has one client and each service one server, six pieces in all](assets/n-times-m.svg)
 
 The idea isn't new. The Language Server Protocol did the same for editors and programming languages: before LSP, every editor needed its own plugin for every language. MCP borrows LSP's shape directly, including its wire format, JSON-RPC 2.0.
 

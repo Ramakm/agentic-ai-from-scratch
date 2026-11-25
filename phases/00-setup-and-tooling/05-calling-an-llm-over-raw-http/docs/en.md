@@ -26,6 +26,8 @@ All of these make sense the moment you've seen the wire. Every model call in thi
 
 ## The Concept
 
+![Two lanes: an OpenAI-compatible request and response and an Anthropic Messages request and response, both normalised into one Reply with text, tool_calls, stop, input_tokens and output_tokens](assets/wire-formats.svg)
+
 ### Two wire formats
 
 | | OpenAI-compatible | Anthropic Messages |

@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" role="img" aria-label="Naive RAG, and where it breaks">
+<title>Naive RAG, and where it breaks</title>
+<defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(26,26,26,0.055)" stroke-width="1"/></pattern><marker id="ar-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1a1a1a"/></marker><marker id="ar-ink-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1a1a1a"/></marker><marker id="ar-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#EC4D36"/></marker><marker id="ar-red-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#EC4D36"/></marker><marker id="ar-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1d7a82"/></marker><marker id="ar-teal-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1d7a82"/></marker><marker id="ar-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b07d0c"/></marker><marker id="ar-amber-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b07d0c"/></marker><marker id="ar-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a4cb3"/></marker><marker id="ar-violet-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a4cb3"/></marker><marker id="ar-mute" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a7a78"/></marker><marker id="ar-mute-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a7a78"/></marker><marker id="ar-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d3a"/></marker><marker id="ar-green-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d3a"/></marker></defs>
+<rect width="960" height="600" fill="#fafaf5"/>
+<rect width="960" height="600" fill="url(#grid)"/>
+<rect x="0.75" y="0.75" width="958.5" height="598.5" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+<rect x="32" y="30" width="11" height="11" fill="#EC4D36"/><rect x="35" y="33" width="5" height="5" fill="#fafaf5"/>
+<text x="52" y="40" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" letter-spacing="2" fill="#EC4D36">PHASE 05 · LESSON 01</text>
+<text x="32" y="80" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="-0.5" fill="#1a1a1a">Naive RAG, and where it breaks</text>
+<text x="32" y="106" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="16" font-style="italic" fill="#4a4a4a">Five steps, each with its own failure. Six questions against the lesson's 8 documents: 1 answered correctly.</text>
+<line x1="32" y1="124" x2="928" y2="124" stroke="#1a1a1a" stroke-width="1" opacity="0.25"/>
+<rect x="44" y="164" width="160" height="62" fill="#1d7a82" stroke="#1d7a82" stroke-width="1.5"/>
+<rect x="40" y="160" width="160" height="62" fill="#d8eded" stroke="#1d7a82" stroke-width="1.5"/>
+<text x="120.0" y="188.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="17" fill="#1d7a82" font-weight="600" text-anchor="middle">Chunk</text>
+<text x="120.0" y="206.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78" text-anchor="middle">120 characters</text>
+<line x1="120.0" y1="230" x2="120.0" y2="250" stroke="#EC4D36" stroke-width="1.2" stroke-dasharray="3 3"/>
+<text x="120.0" y="266" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12.5" fill="#EC4D36" text-anchor="middle" font-style="italic">facts cut in half</text>
+<rect x="224" y="164" width="160" height="62" fill="#1d7a82" stroke="#1d7a82" stroke-width="1.5"/>
+<rect x="220" y="160" width="160" height="62" fill="#d8eded" stroke="#1d7a82" stroke-width="1.5"/>
+<text x="300.0" y="188.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="17" fill="#1d7a82" font-weight="600" text-anchor="middle">Embed</text>
+<text x="300.0" y="206.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78" text-anchor="middle">one vector each</text>
+<path d="M202 191 L216 191" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-ink)"/>
+<line x1="300.0" y1="230" x2="300.0" y2="250" stroke="#EC4D36" stroke-width="1.2" stroke-dasharray="3 3"/>
+<text x="300.0" y="266" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12.5" fill="#EC4D36" text-anchor="middle" font-style="italic">synonyms miss</text>
+<rect x="404" y="164" width="160" height="62" fill="#1d7a82" stroke="#1d7a82" stroke-width="1.5"/>
+<rect x="400" y="160" width="160" height="62" fill="#d8eded" stroke="#1d7a82" stroke-width="1.5"/>
+<text x="480.0" y="188.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="17" fill="#1d7a82" font-weight="600" text-anchor="middle">Retrieve</text>
+<text x="480.0" y="206.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78" text-anchor="middle">top-2 by cosine</text>
+<path d="M382 191 L396 191" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-ink)"/>
+<line x1="480.0" y1="230" x2="480.0" y2="250" stroke="#EC4D36" stroke-width="1.2" stroke-dasharray="3 3"/>
+<text x="480.0" y="266" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12.5" fill="#EC4D36" text-anchor="middle" font-style="italic">old ≈ new; 2nd hop missed</text>
+<rect x="584" y="164" width="160" height="62" fill="#7a4cb3" stroke="#7a4cb3" stroke-width="1.5"/>
+<rect x="580" y="160" width="160" height="62" fill="#ebe2f6" stroke="#7a4cb3" stroke-width="1.5"/>
+<text x="660.0" y="188.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="17" fill="#7a4cb3" font-weight="600" text-anchor="middle">Stuff</text>
+<text x="660.0" y="206.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78" text-anchor="middle">paste with ids</text>
+<path d="M562 191 L576 191" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-ink)"/>
+<line x1="660.0" y1="230" x2="660.0" y2="250" stroke="#EC4D36" stroke-width="1.2" stroke-dasharray="3 3"/>
+<text x="660.0" y="266" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12.5" fill="#EC4D36" text-anchor="middle" font-style="italic">noise looks authoritative</text>
+<rect x="764" y="164" width="160" height="62" fill="#7a4cb3" stroke="#7a4cb3" stroke-width="1.5"/>
+<rect x="760" y="160" width="160" height="62" fill="#ebe2f6" stroke="#7a4cb3" stroke-width="1.5"/>
+<text x="840.0" y="188.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="17" fill="#7a4cb3" font-weight="600" text-anchor="middle">Answer</text>
+<text x="840.0" y="206.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78" text-anchor="middle">from the context</text>
+<path d="M742 191 L756 191" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-ink)"/>
+<line x1="840.0" y1="230" x2="840.0" y2="250" stroke="#EC4D36" stroke-width="1.2" stroke-dasharray="3 3"/>
+<text x="840.0" y="266" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12.5" fill="#EC4D36" text-anchor="middle" font-style="italic">answers anyway</text>
+<path d="M40 290 L40 298 L520 298 L520 290" fill="none" stroke="#1d7a82" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="280" y="318" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#1d7a82" text-anchor="middle">retrieval failure: the right text never arrived</text>
+<path d="M580 290 L580 298 L880 298 L880 290" fill="none" stroke="#7a4cb3" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="730" y="318" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#7a4cb3" text-anchor="middle">reading failure: it arrived, still wrong</text>
+<text x="40" y="360" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1a1a1a">THE SIX TEST QUESTIONS · OUTPUT OF MAIN.PY</text>
+<rect x="36" y="374" width="888" height="30" fill="#f3f1e8" stroke="none" stroke-width="0" opacity="0.7"/>
+<text x="48" y="394" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="15" fill="#2f7d3a" font-weight="700">✓</text>
+<text x="76" y="394" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#1a1a1a">control</text>
+<text x="270" y="394" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#7a7a78">leave.md#0 · refunds-2026.md#0</text>
+<text x="610" y="394" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="13" fill="#2f7d3a" font-style="italic">correct, with a citation</text>
+<text x="48" y="424" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="15" fill="#EC4D36" font-weight="700">✕</text>
+<text x="76" y="424" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#1a1a1a">outdated doc</text>
+<text x="270" y="424" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#7a7a78">refunds-2024.md#0 · refunds-2026.md#0</text>
+<text x="610" y="424" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="13" fill="#EC4D36" font-style="italic">read the 2024 policy</text>
+<rect x="36" y="434" width="888" height="30" fill="#f3f1e8" stroke="none" stroke-width="0" opacity="0.7"/>
+<text x="48" y="454" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="15" fill="#EC4D36" font-weight="700">✕</text>
+<text x="76" y="454" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#1a1a1a">split across chunks</text>
+<text x="270" y="454" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#7a7a78">teams.md#0 · oncall.md#1</text>
+<text x="610" y="454" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="13" fill="#EC4D36" font-style="italic">&quot;…her deputy is Luis Fe&quot;</text>
+<text x="48" y="484" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="15" fill="#EC4D36" font-weight="700">✕</text>
+<text x="76" y="484" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#1a1a1a">multi-hop</text>
+<text x="270" y="484" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#7a7a78">oncall.md#0 · oncall.md#1</text>
+<text x="610" y="484" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="13" fill="#EC4D36" font-style="italic">second fact never fetched</text>
+<rect x="36" y="494" width="888" height="30" fill="#f3f1e8" stroke="none" stroke-width="0" opacity="0.7"/>
+<text x="48" y="514" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="15" fill="#EC4D36" font-weight="700">✕</text>
+<text x="76" y="514" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#1a1a1a">vocabulary mismatch</text>
+<text x="270" y="514" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#7a7a78">warranty.md#1 · leave.md#1</text>
+<text x="610" y="514" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="13" fill="#EC4D36" font-style="italic">&quot;fast option&quot; ≠ &quot;express&quot;</text>
+<text x="48" y="544" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="15" fill="#EC4D36" font-weight="700">✕</text>
+<text x="76" y="544" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#1a1a1a">not in the corpus</text>
+<text x="270" y="544" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#7a7a78">oncall.md#0 · warranty.md#0</text>
+<text x="610" y="544" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="13" fill="#EC4D36" font-style="italic">answered &quot;On-call.&quot;</text>
+<text x="928" y="584" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10" letter-spacing="1.5" fill="#7a7a78" text-anchor="end">AGENTIC AI FROM SCRATCH</text>
+</svg>

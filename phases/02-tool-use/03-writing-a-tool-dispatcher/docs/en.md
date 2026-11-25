@@ -32,6 +32,8 @@ If each tool handles these itself, each tool handles them differently, or not at
 
 ### Six stages
 
+![A tool call passes through six stages (resolve, parse, validate, hooks, run, serialise); each of the first five can exit with an error type, and every path ends in a Result with a string for the model](assets/dispatcher.svg)
+
 | Stage | Failure it handles | Error type |
 |-------|-------------------|------------|
 | 1. Resolve | Unknown tool name | `unknown_tool` |

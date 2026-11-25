@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" role="img" aria-label="Anatomy of a coding agent">
+<title>Anatomy of a coding agent</title>
+<defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(26,26,26,0.055)" stroke-width="1"/></pattern><marker id="ar-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1a1a1a"/></marker><marker id="ar-ink-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1a1a1a"/></marker><marker id="ar-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#EC4D36"/></marker><marker id="ar-red-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#EC4D36"/></marker><marker id="ar-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1d7a82"/></marker><marker id="ar-teal-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1d7a82"/></marker><marker id="ar-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b07d0c"/></marker><marker id="ar-amber-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b07d0c"/></marker><marker id="ar-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a4cb3"/></marker><marker id="ar-violet-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a4cb3"/></marker><marker id="ar-mute" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a7a78"/></marker><marker id="ar-mute-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a7a78"/></marker><marker id="ar-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d3a"/></marker><marker id="ar-green-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d3a"/></marker></defs>
+<rect width="960" height="600" fill="#fafaf5"/>
+<rect width="960" height="600" fill="url(#grid)"/>
+<rect x="0.75" y="0.75" width="958.5" height="598.5" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+<rect x="32" y="30" width="11" height="11" fill="#EC4D36"/><rect x="35" y="33" width="5" height="5" fill="#fafaf5"/>
+<text x="52" y="40" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" letter-spacing="2" fill="#EC4D36">PHASE 10 · LESSON 01</text>
+<text x="32" y="80" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="-0.5" fill="#1a1a1a">Anatomy of a coding agent</text>
+<text x="32" y="106" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="16" font-style="italic" fill="#4a4a4a">Six parts around one loop. The run counts as done only with fresh evidence.</text>
+<line x1="32" y1="124" x2="928" y2="124" stroke="#1a1a1a" stroke-width="1" opacity="0.25"/>
+<circle cx="300" cy="330" r="70" fill="#fde5e0" stroke="#EC4D36" stroke-width="2"/>
+<text x="300" y="326" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="20" fill="#EC4D36" font-weight="700" text-anchor="middle">Model</text>
+<text x="300" y="346" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#EC4D36" text-anchor="middle">next action</text>
+<circle cx="300" cy="330" r="112" fill="none" stroke="#1a1a1a" stroke-width="1.4" stroke-dasharray="6 5"/>
+<circle cx="412" cy="330" r="5" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="300" y="422" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1a1a1a" text-anchor="middle">loop · max_steps=12</text>
+<rect x="44" y="180" width="200" height="52" fill="#1d7a82" stroke="#1d7a82" stroke-width="1.5"/>
+<rect x="40" y="176" width="200" height="52" fill="#d8eded" stroke="#1d7a82" stroke-width="1.5"/>
+<text x="140.0" y="199.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="15" fill="#1d7a82" font-weight="600" text-anchor="middle">Tools</text>
+<text x="140.0" y="217.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#7a7a78" text-anchor="middle">list · read · edit · run_tests</text>
+<rect x="364" y="180" width="200" height="52" fill="#7a4cb3" stroke="#7a4cb3" stroke-width="1.5"/>
+<rect x="360" y="176" width="200" height="52" fill="#ebe2f6" stroke="#7a4cb3" stroke-width="1.5"/>
+<text x="460.0" y="199.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="15" fill="#7a4cb3" font-weight="600" text-anchor="middle">Context</text>
+<text x="460.0" y="217.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#7a7a78" text-anchor="middle">SYSTEM + file list</text>
+<rect x="44" y="436" width="200" height="52" fill="#b07d0c" stroke="#b07d0c" stroke-width="1.5"/>
+<rect x="40" y="432" width="200" height="52" fill="#f6ecd0" stroke="#b07d0c" stroke-width="1.5"/>
+<text x="140.0" y="455.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="15" fill="#b07d0c" font-weight="600" text-anchor="middle">Permissions</text>
+<text x="140.0" y="473.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#7a7a78" text-anchor="middle">approve(&quot;edit&quot;, …)</text>
+<rect x="364" y="436" width="200" height="52" fill="#2f7d3a" stroke="#2f7d3a" stroke-width="1.5"/>
+<rect x="360" y="432" width="200" height="52" fill="#ddefdc" stroke="#2f7d3a" stroke-width="1.5"/>
+<text x="460.0" y="455.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="15" fill="#2f7d3a" font-weight="600" text-anchor="middle">Verification</text>
+<text x="460.0" y="473.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#7a7a78" text-anchor="middle">tests after last edit</text>
+<line x1="584" y1="150" x2="590" y2="540" stroke="#1a1a1a" stroke-width="1" opacity="0.15"/>
+<text x="610" y="164" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1a1a1a">THE VERIFICATION RULE</text>
+<text x="610" y="186" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="13" fill="#4a4a4a" font-style="italic">every edit invalidates earlier test results</text>
+<text x="610" y="222" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" fill="#1a1a1a" font-weight="600">the fix, from main.py</text>
+<rect x="610" y="234" width="54" height="32" fill="#f3f1e8" stroke="#1a1a1a" stroke-width="1.2"/>
+<text x="637.0" y="254.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1a1a1a" text-anchor="middle">read</text>
+<path d="M666 250 L680 250" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-ink)"/>
+<rect x="684" y="234" width="54" height="32" fill="#f6ecd0" stroke="#b07d0c" stroke-width="1.2"/>
+<text x="711.0" y="254.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#b07d0c" text-anchor="middle">edit</text>
+<path d="M740 250 L754 250" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-ink)"/>
+<rect x="758" y="234" width="78" height="32" fill="#ddefdc" stroke="#2f7d3a" stroke-width="1.2"/>
+<text x="797.0" y="254.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#2f7d3a" text-anchor="middle">tests ✓</text>
+<text x="610" y="288" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12.5" fill="#2f7d3a">✓ verified: True</text>
+<text x="610" y="326" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" fill="#1a1a1a" font-weight="600">declares victory early</text>
+<rect x="610" y="338" width="54" height="32" fill="#f3f1e8" stroke="#1a1a1a" stroke-width="1.2"/>
+<text x="637.0" y="358.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1a1a1a" text-anchor="middle">read</text>
+<path d="M666 354 L680 354" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-ink)"/>
+<rect x="684" y="338" width="54" height="32" fill="#f6ecd0" stroke="#b07d0c" stroke-width="1.2"/>
+<text x="711.0" y="358.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#b07d0c" text-anchor="middle">edit</text>
+<path d="M740 354 L754 354" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-ink)"/>
+<rect x="758" y="338" width="110" height="32" fill="#fffef9" stroke="#1a1a1a" stroke-width="1.2"/>
+<text x="813.0" y="358.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1a1a1a" text-anchor="middle">&quot;Fixed it!&quot;</text>
+<text x="610" y="392" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12.5" fill="#EC4D36">✕ no tests after the edit</text>
+<text x="610" y="430" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" fill="#1a1a1a" font-weight="600">edits after passing</text>
+<rect x="610" y="442" width="54" height="32" fill="#f6ecd0" stroke="#b07d0c" stroke-width="1.2"/>
+<text x="637.0" y="462.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#b07d0c" text-anchor="middle">edit</text>
+<path d="M666 458 L680 458" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-ink)"/>
+<rect x="684" y="442" width="78" height="32" fill="#ddefdc" stroke="#2f7d3a" stroke-width="1.2"/>
+<text x="723.0" y="462.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#2f7d3a" text-anchor="middle">tests ✓</text>
+<path d="M764 458 L778 458" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-ink)"/>
+<rect x="782" y="442" width="110" height="32" fill="#f6ecd0" stroke="#b07d0c" stroke-width="1.2"/>
+<text x="837.0" y="462.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#b07d0c" text-anchor="middle">edit README</text>
+<text x="610" y="496" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12.5" fill="#EC4D36">✕ tests are stale</text>
+<text x="40" y="560" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12" fill="#7a7a78" font-style="italic">tests in this lesson come from the scripted runs in code/test_main.py</text>
+<text x="928" y="584" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10" letter-spacing="1.5" fill="#7a7a78" text-anchor="end">AGENTIC AI FROM SCRATCH</text>
+</svg>

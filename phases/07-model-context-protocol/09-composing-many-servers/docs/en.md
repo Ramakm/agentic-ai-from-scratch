@@ -28,16 +28,7 @@ Lesson 5's client talked to one server. A working setup has six or twenty: files
 
 ## The Concept
 
-```
-                          ┌───────────── hub ─────────────┐
- model sees:              │ exposed name -> (server, tool)│        stdio / HTTP
-  files__search ──────────┼──────────────► files ─────────┼──────► files server
-  tickets__search ────────┼──────────────► tickets ───────┼──────► tickets server
-  calendar__list_events ──┼──────────────► calendar ──────┼──────► calendar server (slow)
-  (hr, crm, weather       │  per-server timeout, health,  │        hr, crm servers
-   not shown for this     │  restart budget               │        weather server (crashes)
-   task)                  └───────────────────────────────┘
-```
+![The model sees prefixed tool names; the hub maps each to a server and tool, with per-server timeouts, parallel calls, crash isolation and a restart budget; calendar is slow, weather crashed, hr and crm are not selected](assets/hub.svg)
 
 | Problem | Hub behaviour |
 |---------|---------------|

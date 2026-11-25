@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-label="Two wire formats, one Reply">
+<title>Two wire formats, one Reply</title>
+<defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(26,26,26,0.055)" stroke-width="1"/></pattern><marker id="ar-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1a1a1a"/></marker><marker id="ar-ink-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1a1a1a"/></marker><marker id="ar-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#EC4D36"/></marker><marker id="ar-red-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#EC4D36"/></marker><marker id="ar-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1d7a82"/></marker><marker id="ar-teal-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1d7a82"/></marker><marker id="ar-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b07d0c"/></marker><marker id="ar-amber-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b07d0c"/></marker><marker id="ar-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a4cb3"/></marker><marker id="ar-violet-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a4cb3"/></marker><marker id="ar-mute" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a7a78"/></marker><marker id="ar-mute-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a7a78"/></marker><marker id="ar-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d3a"/></marker><marker id="ar-green-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d3a"/></marker></defs>
+<rect width="960" height="560" fill="#fafaf5"/>
+<rect width="960" height="560" fill="url(#grid)"/>
+<rect x="0.75" y="0.75" width="958.5" height="558.5" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+<rect x="32" y="30" width="11" height="11" fill="#EC4D36"/><rect x="35" y="33" width="5" height="5" fill="#fafaf5"/>
+<text x="52" y="40" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" letter-spacing="2" fill="#EC4D36">PHASE 00 · LESSON 05</text>
+<text x="32" y="80" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="-0.5" fill="#1a1a1a">Two wire formats, one Reply</text>
+<text x="32" y="106" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="16" font-style="italic" fill="#4a4a4a">Talk to any provider over raw HTTP, then normalise the response at the edge.</text>
+<line x1="32" y1="124" x2="928" y2="124" stroke="#1a1a1a" stroke-width="1" opacity="0.25"/>
+<text x="40" y="150" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="17" fill="#1d7a82" font-weight="700">OpenAI-compatible</text>
+<text x="224" y="150" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12" fill="#4a4a4a" font-style="italic">OpenAI · Ollama · Groq · vLLM · OpenRouter</text>
+<rect x="40" y="160" width="290" height="140" fill="#fffef9" stroke="#1d7a82" stroke-width="1.5"/>
+<rect x="40" y="160" width="290" height="28" fill="#d8eded" stroke="#1d7a82" stroke-width="1.5"/>
+<text x="52" y="179" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1d7a82" font-weight="700">POST {base}/chat/completions</text>
+<text x="52" y="212" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1a1a1a">Authorization: Bearer &lt;key&gt;</text>
+<text x="52" y="236" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1a1a1a">system → a role:&quot;system&quot; message</text>
+<text x="52" y="260" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1a1a1a">max_tokens optional</text>
+<text x="52" y="288" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78">REQUEST</text>
+<path d="M334 230 L380 230" fill="none" stroke="#1d7a82" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-teal)"/>
+<rect x="384" y="160" width="330" height="140" fill="#fffef9" stroke="#1d7a82" stroke-width="1.5"/>
+<rect x="384" y="160" width="330" height="28" fill="#d8eded" stroke="#1d7a82" stroke-width="1.5"/>
+<text x="396" y="179" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1d7a82" font-weight="700">200 OK · JSON</text>
+<text x="396" y="212" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11.5" fill="#1a1a1a">message.tool_calls[] · args: JSON string</text>
+<text x="396" y="236" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11.5" fill="#1a1a1a">finish_reason: stop · length · tool_calls</text>
+<text x="396" y="260" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11.5" fill="#1a1a1a">usage: prompt_ / completion_tokens</text>
+<text x="396" y="288" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78">RESPONSE</text>
+<path d="M718 230 L760 230 L760 315 L778 315" fill="none" stroke="#1d7a82" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-teal)"/>
+<text x="40" y="340" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="17" fill="#7a4cb3" font-weight="700">Anthropic Messages</text>
+<text x="234" y="340" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12" fill="#4a4a4a" font-style="italic">Claude, native features</text>
+<rect x="40" y="350" width="290" height="140" fill="#fffef9" stroke="#7a4cb3" stroke-width="1.5"/>
+<rect x="40" y="350" width="290" height="28" fill="#ebe2f6" stroke="#7a4cb3" stroke-width="1.5"/>
+<text x="52" y="369" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#7a4cb3" font-weight="700">POST {base}/messages</text>
+<text x="52" y="402" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1a1a1a">x-api-key + anthropic-version</text>
+<text x="52" y="426" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1a1a1a">system → top-level field</text>
+<text x="52" y="450" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1a1a1a">max_tokens required</text>
+<text x="52" y="478" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78">REQUEST</text>
+<path d="M334 420 L380 420" fill="none" stroke="#7a4cb3" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-violet)"/>
+<rect x="384" y="350" width="330" height="140" fill="#fffef9" stroke="#7a4cb3" stroke-width="1.5"/>
+<rect x="384" y="350" width="330" height="28" fill="#ebe2f6" stroke="#7a4cb3" stroke-width="1.5"/>
+<text x="396" y="369" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#7a4cb3" font-weight="700">200 OK · JSON</text>
+<text x="396" y="402" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11.5" fill="#1a1a1a">tool_use block · input: JSON object</text>
+<text x="396" y="426" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11.5" fill="#1a1a1a">stop_reason: end_turn · max_tokens · tool_use</text>
+<text x="396" y="450" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11.5" fill="#1a1a1a">usage: input_ / output_tokens</text>
+<text x="396" y="478" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78">RESPONSE</text>
+<path d="M718 420 L760 420 L760 315 L778 315" fill="none" stroke="#7a4cb3" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-violet)"/>
+<rect x="788" y="230" width="150" height="170" fill="#EC4D36" stroke="#EC4D36" stroke-width="1.5"/>
+<rect x="784" y="226" width="150" height="170" fill="#fde5e0" stroke="#EC4D36" stroke-width="1.5"/>
+<text x="859" y="258" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="20" fill="#EC4D36" font-weight="700" text-anchor="middle">Reply</text>
+<line x1="784" y1="272" x2="934" y2="272" stroke="#EC4D36" stroke-width="1"/>
+<text x="800" y="296" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12.5" fill="#1a1a1a">text</text>
+<text x="800" y="317" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12.5" fill="#1a1a1a">tool_calls</text>
+<text x="800" y="338" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12.5" fill="#1a1a1a">stop</text>
+<text x="800" y="359" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12.5" fill="#1a1a1a">input_tokens</text>
+<text x="800" y="380" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12.5" fill="#1a1a1a">output_tokens</text>
+<text x="859" y="420" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12" fill="#4a4a4a" text-anchor="middle" font-style="italic">agent code only</text>
+<text x="859" y="436" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12" fill="#4a4a4a" text-anchor="middle" font-style="italic">ever sees this</text>
+<text x="928" y="544" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10" letter-spacing="1.5" fill="#7a7a78" text-anchor="end">AGENTIC AI FROM SCRATCH</text>
+</svg>

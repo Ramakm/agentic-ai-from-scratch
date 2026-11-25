@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-label="One hub, many servers">
+<title>One hub, many servers</title>
+<defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(26,26,26,0.055)" stroke-width="1"/></pattern><marker id="ar-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1a1a1a"/></marker><marker id="ar-ink-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1a1a1a"/></marker><marker id="ar-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#EC4D36"/></marker><marker id="ar-red-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#EC4D36"/></marker><marker id="ar-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1d7a82"/></marker><marker id="ar-teal-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1d7a82"/></marker><marker id="ar-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b07d0c"/></marker><marker id="ar-amber-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b07d0c"/></marker><marker id="ar-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a4cb3"/></marker><marker id="ar-violet-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a4cb3"/></marker><marker id="ar-mute" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a7a78"/></marker><marker id="ar-mute-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a7a78"/></marker><marker id="ar-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d3a"/></marker><marker id="ar-green-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d3a"/></marker></defs>
+<rect width="960" height="540" fill="#fafaf5"/>
+<rect width="960" height="540" fill="url(#grid)"/>
+<rect x="0.75" y="0.75" width="958.5" height="538.5" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+<rect x="32" y="30" width="11" height="11" fill="#EC4D36"/><rect x="35" y="33" width="5" height="5" fill="#fafaf5"/>
+<text x="52" y="40" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" letter-spacing="2" fill="#EC4D36">PHASE 07 · LESSON 09</text>
+<text x="32" y="80" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="-0.5" fill="#1a1a1a">One hub, many servers</text>
+<text x="32" y="106" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="16" font-style="italic" fill="#4a4a4a">The model sees prefixed names. The hub routes, times out, and isolates each server.</text>
+<line x1="32" y1="124" x2="928" y2="124" stroke="#1a1a1a" stroke-width="1" opacity="0.25"/>
+<text x="40" y="160" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1a1a1a">THE MODEL SEES</text>
+<rect x="40" y="180" width="200" height="36" fill="#fde5e0" stroke="#EC4D36" stroke-width="1.2"/>
+<text x="140.0" y="202.375" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12.5" fill="#EC4D36" text-anchor="middle">files__search</text>
+<rect x="40" y="236" width="200" height="36" fill="#fde5e0" stroke="#EC4D36" stroke-width="1.2"/>
+<text x="140.0" y="258.375" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12.5" fill="#EC4D36" text-anchor="middle">tickets__search</text>
+<rect x="40" y="292" width="200" height="36" fill="#fde5e0" stroke="#EC4D36" stroke-width="1.2"/>
+<text x="140.0" y="314.375" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12.5" fill="#EC4D36" text-anchor="middle">calendar__list_events</text>
+<text x="40" y="368" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12.5" fill="#4a4a4a" font-style="italic">hr, crm, weather: not selected</text>
+<text x="40" y="385" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12.5" fill="#4a4a4a" font-style="italic">for this task (by tags), so their</text>
+<text x="40" y="402" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12.5" fill="#4a4a4a" font-style="italic">tool definitions cost nothing</text>
+<rect x="304" y="144" width="300" height="336" fill="#fde5e0" stroke="#1a1a1a" stroke-width="1.5"/>
+<rect x="300" y="140" width="300" height="336" fill="#fffef9" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="316" y="164" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78">HUB · exposed name → (server, tool)</text>
+<path d="M244 198 L334 198" fill="none" stroke="#EC4D36" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-red)"/>
+<rect x="338" y="183" width="196" height="30" fill="#f3f1e8" stroke="#1a1a1a" stroke-width="1.2"/>
+<text x="436.0" y="202.025" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11.5" fill="#1a1a1a" text-anchor="middle">files · search</text>
+<path d="M244 254 L334 254" fill="none" stroke="#EC4D36" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-red)"/>
+<rect x="338" y="239" width="196" height="30" fill="#f3f1e8" stroke="#1a1a1a" stroke-width="1.2"/>
+<text x="436.0" y="258.025" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11.5" fill="#1a1a1a" text-anchor="middle">tickets · search</text>
+<path d="M244 310 L334 310" fill="none" stroke="#EC4D36" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-red)"/>
+<rect x="338" y="295" width="196" height="30" fill="#f3f1e8" stroke="#1a1a1a" stroke-width="1.2"/>
+<text x="436.0" y="314.025" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11.5" fill="#1a1a1a" text-anchor="middle">calendar · list_events</text>
+<line x1="316" y1="372" x2="584" y2="372" stroke="#1a1a1a" stroke-width="1" opacity="0.2"/>
+<text x="316" y="396" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11.5" fill="#4a4a4a">· timeout per server</text>
+<text x="316" y="416" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11.5" fill="#4a4a4a">· calls in parallel</text>
+<text x="316" y="436" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11.5" fill="#4a4a4a">· crash: drop its tools</text>
+<text x="316" y="456" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11.5" fill="#4a4a4a">· restart, with a budget</text>
+<text x="660" y="160" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1a1a1a">STDIO SERVERS</text>
+<rect x="660" y="180" width="260" height="36" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="790.0" y="202.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1a1a1a" text-anchor="middle"></text>
+<text x="674" y="203" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#1a1a1a" font-weight="700">files</text>
+<text x="908" y="203" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11.5" fill="#1d7a82" text-anchor="end">ok</text>
+<path d="M538 198 L654 198" fill="none" stroke="#1d7a82" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-teal)"/>
+<rect x="660" y="236" width="260" height="36" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="790.0" y="258.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1a1a1a" text-anchor="middle"></text>
+<text x="674" y="259" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#1a1a1a" font-weight="700">tickets</text>
+<text x="908" y="259" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11.5" fill="#1d7a82" text-anchor="end">ok</text>
+<path d="M538 254 L654 254" fill="none" stroke="#1d7a82" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-teal)"/>
+<rect x="660" y="292" width="260" height="36" fill="#f6ecd0" stroke="#b07d0c" stroke-width="1.2"/>
+<text x="790.0" y="314.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1a1a1a" text-anchor="middle"></text>
+<text x="674" y="315" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#1a1a1a" font-weight="700">calendar</text>
+<text x="908" y="315" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11.5" fill="#b07d0c" text-anchor="end">slow: timeout</text>
+<path d="M538 310 L654 310" fill="none" stroke="#b07d0c" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-amber)"/>
+<rect x="660" y="348" width="260" height="36" fill="#fffef9" stroke="#7a7a78" stroke-width="1.2"/>
+<text x="790.0" y="370.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1a1a1a" text-anchor="middle"></text>
+<text x="674" y="371" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#1a1a1a" font-weight="700">hr · crm</text>
+<text x="908" y="371" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11.5" fill="#7a7a78" text-anchor="end">not selected</text>
+<rect x="660" y="404" width="260" height="36" fill="#fde5e0" stroke="#EC4D36" stroke-width="1.2"/>
+<text x="790.0" y="426.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1a1a1a" text-anchor="middle"></text>
+<text x="674" y="427" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#1a1a1a" font-weight="700">weather</text>
+<text x="908" y="427" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11.5" fill="#EC4D36" text-anchor="end">crashed: removed</text>
+<text x="480" y="508" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="13" fill="#4a4a4a" text-anchor="middle" font-style="italic">a timeout or a crash becomes an error observation; the other servers keep working</text>
+<text x="928" y="524" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10" letter-spacing="1.5" fill="#7a7a78" text-anchor="end">AGENTIC AI FROM SCRATCH</text>
+</svg>

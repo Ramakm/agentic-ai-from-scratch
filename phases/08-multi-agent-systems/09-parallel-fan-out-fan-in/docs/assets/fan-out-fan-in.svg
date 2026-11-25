@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="470" viewBox="0 0 960 470" role="img" aria-label="Fan-out, fan-in">
+<title>Fan-out, fan-in</title>
+<defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(26,26,26,0.055)" stroke-width="1"/></pattern><marker id="ar-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1a1a1a"/></marker><marker id="ar-ink-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1a1a1a"/></marker><marker id="ar-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#EC4D36"/></marker><marker id="ar-red-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#EC4D36"/></marker><marker id="ar-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1d7a82"/></marker><marker id="ar-teal-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1d7a82"/></marker><marker id="ar-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b07d0c"/></marker><marker id="ar-amber-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b07d0c"/></marker><marker id="ar-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a4cb3"/></marker><marker id="ar-violet-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a4cb3"/></marker><marker id="ar-mute" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a7a78"/></marker><marker id="ar-mute-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a7a78"/></marker><marker id="ar-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d3a"/></marker><marker id="ar-green-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d3a"/></marker></defs>
+<rect width="960" height="470" fill="#fafaf5"/>
+<rect width="960" height="470" fill="url(#grid)"/>
+<rect x="0.75" y="0.75" width="958.5" height="468.5" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+<rect x="32" y="30" width="11" height="11" fill="#EC4D36"/><rect x="35" y="33" width="5" height="5" fill="#fafaf5"/>
+<text x="52" y="40" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" letter-spacing="2" fill="#EC4D36">PHASE 08 · LESSON 09</text>
+<text x="32" y="80" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="-0.5" fill="#1a1a1a">Fan-out, fan-in</text>
+<text x="32" y="106" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="16" font-style="italic" fill="#4a4a4a">Bounded parallel work in, then either one concatenation or a tree of reductions out.</text>
+<line x1="32" y1="124" x2="928" y2="124" stroke="#1a1a1a" stroke-width="1" opacity="0.25"/>
+<rect x="40" y="236" width="80" height="40" fill="#fffef9" stroke="#1a1a1a" stroke-width="1.2"/>
+<text x="80.0" y="260.55" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#1a1a1a" text-anchor="middle">docs</text>
+<text x="150" y="164" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1a1a1a">FAN-OUT · AT MOST K IN FLIGHT</text>
+<rect x="150" y="196" width="38" height="38" fill="#d8eded" stroke="#1d7a82" stroke-width="1.5"/>
+<text x="169" y="220" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#1d7a82" text-anchor="middle">w</text>
+<rect x="196" y="196" width="38" height="38" fill="#d8eded" stroke="#1d7a82" stroke-width="1.5"/>
+<text x="215" y="220" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#1d7a82" text-anchor="middle">w</text>
+<rect x="242" y="196" width="38" height="38" fill="#f6ecd0" stroke="#b07d0c" stroke-width="1.5"/>
+<text x="261" y="220" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#b07d0c" text-anchor="middle">w</text>
+<rect x="288" y="196" width="38" height="38" fill="#f6ecd0" stroke="#b07d0c" stroke-width="1.5"/>
+<text x="307" y="220" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#b07d0c" text-anchor="middle">w</text>
+<rect x="334" y="196" width="38" height="38" fill="#f6ecd0" stroke="#b07d0c" stroke-width="1.5"/>
+<text x="353" y="220" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#b07d0c" text-anchor="middle">w</text>
+<rect x="150" y="258" width="38" height="38" fill="#ebe2f6" stroke="#7a4cb3" stroke-width="1.5"/>
+<text x="169" y="282" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#7a4cb3" text-anchor="middle">w</text>
+<rect x="196" y="258" width="38" height="38" fill="#fffef9" stroke="#7a7a78" stroke-width="1.5" stroke-dasharray="3 3"/>
+<text x="215" y="282" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#7a7a78" text-anchor="middle">w</text>
+<rect x="242" y="258" width="38" height="38" fill="#fffef9" stroke="#7a7a78" stroke-width="1.5" stroke-dasharray="3 3"/>
+<text x="261" y="282" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#7a7a78" text-anchor="middle">w</text>
+<rect x="288" y="258" width="38" height="38" fill="#fde5e0" stroke="#EC4D36" stroke-width="1.5"/>
+<text x="307" y="282" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#EC4D36" text-anchor="middle">w</text>
+<rect x="334" y="258" width="38" height="38" fill="#fffef9" stroke="#7a7a78" stroke-width="1.5" stroke-dasharray="3 3"/>
+<text x="353" y="282" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#7a7a78" text-anchor="middle">w</text>
+<path d="M124 256 L144 256" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-ink)"/>
+<rect x="146" y="192" width="140" height="108" fill="none" stroke="#b07d0c" stroke-width="1" stroke-dasharray="2 2"/>
+<rect x="150" y="340" width="14" height="14" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="172" y="351" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="13" fill="#4a4a4a">done</text>
+<rect x="214.4" y="340" width="14" height="14" fill="#f6ecd0" stroke="#b07d0c" stroke-width="1.2"/>
+<text x="236.4" y="351" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="13" fill="#4a4a4a">running (k=3)</text>
+<rect x="342.70000000000005" y="340" width="14" height="14" fill="#ebe2f6" stroke="#7a4cb3" stroke-width="1.2"/>
+<text x="364.70000000000005" y="351" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="13" fill="#4a4a4a">hedged</text>
+<rect x="150" y="364" width="14" height="14" fill="#fde5e0" stroke="#EC4D36" stroke-width="1.2"/>
+<text x="172" y="375" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="13" fill="#4a4a4a">error, isolated</text>
+<rect x="292.5" y="364" width="14" height="14" fill="#fffef9" stroke="#7a7a78" stroke-width="1.2"/>
+<text x="314.5" y="375" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="13" fill="#4a4a4a">queued</text>
+<text x="150" y="410" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12.5" fill="#4a4a4a" font-style="italic">per-task timeouts; a slow one is duplicated (hedge)</text>
+<path d="M386 256 L440 256" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-ink)"/>
+<rect x="444" y="236" width="100" height="40" fill="#f3f1e8" stroke="#1a1a1a" stroke-width="1.2"/>
+<text x="494.0" y="260.55" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#1a1a1a" text-anchor="middle">results</text>
+<path d="M612 228.0 L657.0 256 L612 284.0 L567.0 256 Z" fill="#fffef9" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="612" y="260.55" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#1a1a1a" text-anchor="middle">fits?</text>
+<path d="M548 256 L566 256" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-ink)"/>
+<path d="M612 228 L612 190 L650 190" fill="none" stroke="#1d7a82" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-teal)"/>
+<text x="620" y="214" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1d7a82">yes</text>
+<rect x="654" y="172" width="130" height="36" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="719.0" y="194.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1d7a82" text-anchor="middle">concatenate</text>
+<path d="M612 284 L612 330 L650 330" fill="none" stroke="#7a4cb3" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-violet)"/>
+<text x="620" y="306" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a4cb3">too big</text>
+<rect x="654" y="312" width="130" height="36" fill="#ebe2f6" stroke="#7a4cb3" stroke-width="1.2"/>
+<text x="719.0" y="334.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#7a4cb3" text-anchor="middle">reduce groups</text>
+<text x="654" y="370" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12" fill="#4a4a4a" font-style="italic">partial summaries, then</text>
+<text x="654" y="386" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12" fill="#4a4a4a" font-style="italic">reduce again until it fits</text>
+<path d="M788 190 L840 190 L840 238" fill="none" stroke="#1d7a82" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-teal)"/>
+<path d="M788 330 L840 330 L840 276" fill="none" stroke="#7a4cb3" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-violet)"/>
+<rect x="800" y="238" width="120" height="38" fill="#fde5e0" stroke="#EC4D36" stroke-width="1.5"/>
+<text x="860.0" y="261.9" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" fill="#EC4D36" font-weight="600" text-anchor="middle">synthesiser</text>
+<text x="480" y="444" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="13" fill="#4a4a4a" text-anchor="middle" font-style="italic">report what is missing: one failure stays one failure</text>
+<text x="928" y="454" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10" letter-spacing="1.5" fill="#7a7a78" text-anchor="end">AGENTIC AI FROM SCRATCH</text>
+</svg>

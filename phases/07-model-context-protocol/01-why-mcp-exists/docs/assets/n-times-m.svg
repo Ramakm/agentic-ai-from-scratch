@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-label="From N × M adapters to N + M pieces">
+<title>From N × M adapters to N + M pieces</title>
+<defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(26,26,26,0.055)" stroke-width="1"/></pattern><marker id="ar-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1a1a1a"/></marker><marker id="ar-ink-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1a1a1a"/></marker><marker id="ar-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#EC4D36"/></marker><marker id="ar-red-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#EC4D36"/></marker><marker id="ar-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1d7a82"/></marker><marker id="ar-teal-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1d7a82"/></marker><marker id="ar-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b07d0c"/></marker><marker id="ar-amber-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b07d0c"/></marker><marker id="ar-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a4cb3"/></marker><marker id="ar-violet-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a4cb3"/></marker><marker id="ar-mute" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a7a78"/></marker><marker id="ar-mute-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a7a78"/></marker><marker id="ar-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d3a"/></marker><marker id="ar-green-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d3a"/></marker></defs>
+<rect width="960" height="520" fill="#fafaf5"/>
+<rect width="960" height="520" fill="url(#grid)"/>
+<rect x="0.75" y="0.75" width="958.5" height="518.5" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+<rect x="32" y="30" width="11" height="11" fill="#EC4D36"/><rect x="35" y="33" width="5" height="5" fill="#fafaf5"/>
+<text x="52" y="40" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" letter-spacing="2" fill="#EC4D36">PHASE 07 · LESSON 01</text>
+<text x="32" y="80" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="-0.5" fill="#1a1a1a">From N × M adapters to N + M pieces</text>
+<text x="32" y="106" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="16" font-style="italic" fill="#4a4a4a">Every host speaks one protocol; every service is wrapped once. The same move LSP made for editors.</text>
+<line x1="32" y1="124" x2="928" y2="124" stroke="#1a1a1a" stroke-width="1" opacity="0.25"/>
+<text x="40" y="164" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="18" fill="#EC4D36" font-weight="700">Without a protocol</text>
+<rect x="40" y="190" width="120" height="46" fill="#fffef9" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="100.0" y="217.9" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" fill="#1a1a1a" font-weight="600" text-anchor="middle">chat app</text>
+<rect x="40" y="270" width="120" height="46" fill="#fffef9" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="100.0" y="297.9" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" fill="#1a1a1a" font-weight="600" text-anchor="middle">IDE</text>
+<rect x="40" y="350" width="120" height="46" fill="#fffef9" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="100.0" y="377.9" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" fill="#1a1a1a" font-weight="600" text-anchor="middle">CLI agent</text>
+<rect x="320" y="190" width="120" height="46" fill="#f3f1e8" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="380.0" y="217.9" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" fill="#1a1a1a" font-weight="600" text-anchor="middle">weather</text>
+<rect x="320" y="270" width="120" height="46" fill="#f3f1e8" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="380.0" y="297.9" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" fill="#1a1a1a" font-weight="600" text-anchor="middle">calendar</text>
+<rect x="320" y="350" width="120" height="46" fill="#f3f1e8" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="380.0" y="377.9" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" fill="#1a1a1a" font-weight="600" text-anchor="middle">tickets</text>
+<line x1="160" y1="213" x2="320" y2="213" stroke="#EC4D36" stroke-width="1.3" opacity="0.8"/>
+<circle cx="240" cy="213" r="3.5" fill="#EC4D36" stroke="#EC4D36" stroke-width="1"/>
+<line x1="160" y1="213" x2="320" y2="293" stroke="#EC4D36" stroke-width="1.3" opacity="0.8"/>
+<circle cx="240" cy="253" r="3.5" fill="#EC4D36" stroke="#EC4D36" stroke-width="1"/>
+<line x1="160" y1="213" x2="320" y2="373" stroke="#EC4D36" stroke-width="1.3" opacity="0.8"/>
+<circle cx="240" cy="293" r="3.5" fill="#EC4D36" stroke="#EC4D36" stroke-width="1"/>
+<line x1="160" y1="293" x2="320" y2="213" stroke="#EC4D36" stroke-width="1.3" opacity="0.8"/>
+<circle cx="240" cy="253" r="3.5" fill="#EC4D36" stroke="#EC4D36" stroke-width="1"/>
+<line x1="160" y1="293" x2="320" y2="293" stroke="#EC4D36" stroke-width="1.3" opacity="0.8"/>
+<circle cx="240" cy="293" r="3.5" fill="#EC4D36" stroke="#EC4D36" stroke-width="1"/>
+<line x1="160" y1="293" x2="320" y2="373" stroke="#EC4D36" stroke-width="1.3" opacity="0.8"/>
+<circle cx="240" cy="333" r="3.5" fill="#EC4D36" stroke="#EC4D36" stroke-width="1"/>
+<line x1="160" y1="373" x2="320" y2="213" stroke="#EC4D36" stroke-width="1.3" opacity="0.8"/>
+<circle cx="240" cy="293" r="3.5" fill="#EC4D36" stroke="#EC4D36" stroke-width="1"/>
+<line x1="160" y1="373" x2="320" y2="293" stroke="#EC4D36" stroke-width="1.3" opacity="0.8"/>
+<circle cx="240" cy="333" r="3.5" fill="#EC4D36" stroke="#EC4D36" stroke-width="1"/>
+<line x1="160" y1="373" x2="320" y2="373" stroke="#EC4D36" stroke-width="1.3" opacity="0.8"/>
+<circle cx="240" cy="373" r="3.5" fill="#EC4D36" stroke="#EC4D36" stroke-width="1"/>
+<text x="240" y="450" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="15" fill="#EC4D36" text-anchor="middle">3 × 3 = 9 custom adapters</text>
+<line x1="480" y1="150" x2="480" y2="460" stroke="#1a1a1a" stroke-width="1" opacity="0.15"/>
+<text x="520" y="164" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="18" fill="#1d7a82" font-weight="700">With MCP</text>
+<rect x="520" y="190" width="110" height="46" fill="#fffef9" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="575.0" y="217.9" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" fill="#1a1a1a" font-weight="600" text-anchor="middle">chat app</text>
+<rect x="630" y="202" width="26" height="22" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="643.0" y="216.85" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1d7a82" text-anchor="middle">c</text>
+<line x1="656" y1="213" x2="708" y2="293" stroke="#1d7a82" stroke-width="1.6"/>
+<rect x="520" y="270" width="110" height="46" fill="#fffef9" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="575.0" y="297.9" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" fill="#1a1a1a" font-weight="600" text-anchor="middle">IDE</text>
+<rect x="630" y="282" width="26" height="22" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="643.0" y="296.85" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1d7a82" text-anchor="middle">c</text>
+<line x1="656" y1="293" x2="708" y2="293" stroke="#1d7a82" stroke-width="1.6"/>
+<rect x="520" y="350" width="110" height="46" fill="#fffef9" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="575.0" y="377.9" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" fill="#1a1a1a" font-weight="600" text-anchor="middle">CLI agent</text>
+<rect x="630" y="362" width="26" height="22" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="643.0" y="376.85" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1d7a82" text-anchor="middle">c</text>
+<line x1="656" y1="373" x2="708" y2="293" stroke="#1d7a82" stroke-width="1.6"/>
+<rect x="708" y="258" width="64" height="70" fill="#1d7a82" stroke="#1d7a82" stroke-width="1.5"/>
+<text x="740.0" y="298.25" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="15" fill="#fffef9" font-weight="600" text-anchor="middle">MCP</text>
+<line x1="772" y1="293" x2="800" y2="213" stroke="#1d7a82" stroke-width="1.6"/>
+<rect x="800" y="202" width="26" height="22" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="813.0" y="216.85" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1d7a82" text-anchor="middle">s</text>
+<rect x="826" y="190" width="100" height="46" fill="#f3f1e8" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="876.0" y="217.9" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" fill="#1a1a1a" font-weight="600" text-anchor="middle">weather</text>
+<line x1="772" y1="293" x2="800" y2="293" stroke="#1d7a82" stroke-width="1.6"/>
+<rect x="800" y="282" width="26" height="22" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="813.0" y="296.85" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1d7a82" text-anchor="middle">s</text>
+<rect x="826" y="270" width="100" height="46" fill="#f3f1e8" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="876.0" y="297.9" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" fill="#1a1a1a" font-weight="600" text-anchor="middle">calendar</text>
+<line x1="772" y1="293" x2="800" y2="373" stroke="#1d7a82" stroke-width="1.6"/>
+<rect x="800" y="362" width="26" height="22" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="813.0" y="376.85" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1d7a82" text-anchor="middle">s</text>
+<rect x="826" y="350" width="100" height="46" fill="#f3f1e8" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="876.0" y="377.9" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" fill="#1a1a1a" font-weight="600" text-anchor="middle">tickets</text>
+<text x="724" y="450" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="15" fill="#1d7a82" text-anchor="middle">3 clients + 3 servers = 6 pieces</text>
+<text x="520" y="474" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78">c = client in the host · s = server wrapping a service</text>
+<text x="928" y="504" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10" letter-spacing="1.5" fill="#7a7a78" text-anchor="end">AGENTIC AI FROM SCRATCH</text>
+</svg>

@@ -22,6 +22,8 @@ The obvious fix is several agents. But "several agents" without structure become
 
 ## The Concept
 
+![The orchestrator turns a task into a validated JSON plan, three workers run in parallel with fresh contexts (one fails), and a synthesizer combines the findings; five model calls instead of one](assets/orchestrator-worker.svg)
+
 ### Three phases
 
 | Phase | Who | Input | Output |

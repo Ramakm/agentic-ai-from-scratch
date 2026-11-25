@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="570" viewBox="0 0 960 570" role="img" aria-label="Who owns the loop?">
+<title>Who owns the loop?</title>
+<defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(26,26,26,0.055)" stroke-width="1"/></pattern><marker id="ar-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1a1a1a"/></marker><marker id="ar-ink-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1a1a1a"/></marker><marker id="ar-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#EC4D36"/></marker><marker id="ar-red-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#EC4D36"/></marker><marker id="ar-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1d7a82"/></marker><marker id="ar-teal-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1d7a82"/></marker><marker id="ar-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b07d0c"/></marker><marker id="ar-amber-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b07d0c"/></marker><marker id="ar-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a4cb3"/></marker><marker id="ar-violet-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a4cb3"/></marker><marker id="ar-mute" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a7a78"/></marker><marker id="ar-mute-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a7a78"/></marker><marker id="ar-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d3a"/></marker><marker id="ar-green-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d3a"/></marker></defs>
+<rect width="960" height="570" fill="#fafaf5"/>
+<rect width="960" height="570" fill="url(#grid)"/>
+<rect x="0.75" y="0.75" width="958.5" height="568.5" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+<rect x="32" y="30" width="11" height="11" fill="#EC4D36"/><rect x="35" y="33" width="5" height="5" fill="#fafaf5"/>
+<text x="52" y="40" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" letter-spacing="2" fill="#EC4D36">PHASE 09 · LESSON 01</text>
+<text x="32" y="80" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="-0.5" fill="#1a1a1a">Who owns the loop?</text>
+<text x="32" y="106" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="16" font-style="italic" fill="#4a4a4a">Every framework runs the same five steps. The styles differ in which part you write.</text>
+<line x1="32" y1="124" x2="928" y2="124" stroke="#1a1a1a" stroke-width="1" opacity="0.25"/>
+<text x="40" y="164" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="19" fill="#1a1a1a" font-weight="700">Raw loop</text>
+<text x="40" y="184" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12.5" fill="#4a4a4a" font-style="italic">you write the while-loop</text>
+<rect x="40" y="204" width="270" height="250" fill="#fffef9" stroke="#1a1a1a" stroke-width="1.5" stroke-dasharray="5 4"/>
+<rect x="54" y="216" width="242" height="34" fill="#fde5e0" stroke="#EC4D36" stroke-width="1.2"/>
+<text x="175.0" y="237.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#EC4D36" text-anchor="middle">send messages + schemas</text>
+<line x1="175" y1="250" x2="175" y2="262" stroke="#1a1a1a" stroke-width="1.2"/>
+<rect x="54" y="262" width="242" height="34" fill="#fde5e0" stroke="#EC4D36" stroke-width="1.2"/>
+<text x="175.0" y="283.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#EC4D36" text-anchor="middle">model asks for tools</text>
+<line x1="175" y1="296" x2="175" y2="308" stroke="#1a1a1a" stroke-width="1.2"/>
+<rect x="54" y="308" width="242" height="34" fill="#fde5e0" stroke="#EC4D36" stroke-width="1.2"/>
+<text x="175.0" y="329.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#EC4D36" text-anchor="middle">run tools, catch errors</text>
+<line x1="175" y1="342" x2="175" y2="354" stroke="#1a1a1a" stroke-width="1.2"/>
+<rect x="54" y="354" width="242" height="34" fill="#fde5e0" stroke="#EC4D36" stroke-width="1.2"/>
+<text x="175.0" y="375.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#EC4D36" text-anchor="middle">append results</text>
+<line x1="175" y1="388" x2="175" y2="400" stroke="#1a1a1a" stroke-width="1.2"/>
+<rect x="54" y="400" width="242" height="34" fill="#fde5e0" stroke="#EC4D36" stroke-width="1.2"/>
+<text x="175.0" y="421.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#EC4D36" text-anchor="middle">stop?</text>
+<path d="M298 417 C 340 417, 340 233, 302 233" fill="none" stroke="#7a7a78" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 3" marker-end="url(#ar-mute)"/>
+<text x="40" y="480" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78">Phase 3, or no framework</text>
+<text x="340" y="164" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="19" fill="#1a1a1a" font-weight="700">Graph</text>
+<text x="340" y="184" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12.5" fill="#4a4a4a" font-style="italic">you write nodes + routing</text>
+<rect x="340" y="204" width="270" height="250" fill="#fffef9" stroke="#1a1a1a" stroke-width="1.5" stroke-dasharray="5 4"/>
+<rect x="354" y="216" width="242" height="34" fill="#fde5e0" stroke="#EC4D36" stroke-width="1.2"/>
+<text x="475.0" y="237.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#EC4D36" text-anchor="middle">model node (yours)</text>
+<line x1="475" y1="250" x2="475" y2="262" stroke="#1a1a1a" stroke-width="1.2"/>
+<rect x="354" y="262" width="242" height="34" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="475.0" y="283.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1d7a82" text-anchor="middle">model asks for tools</text>
+<line x1="475" y1="296" x2="475" y2="308" stroke="#1a1a1a" stroke-width="1.2"/>
+<rect x="354" y="308" width="242" height="34" fill="#fde5e0" stroke="#EC4D36" stroke-width="1.2"/>
+<text x="475.0" y="329.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#EC4D36" text-anchor="middle">tool node (yours)</text>
+<line x1="475" y1="342" x2="475" y2="354" stroke="#1a1a1a" stroke-width="1.2"/>
+<rect x="354" y="354" width="242" height="34" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="475.0" y="375.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1d7a82" text-anchor="middle">append results</text>
+<line x1="475" y1="388" x2="475" y2="400" stroke="#1a1a1a" stroke-width="1.2"/>
+<rect x="354" y="400" width="242" height="34" fill="#fde5e0" stroke="#EC4D36" stroke-width="1.2"/>
+<text x="475.0" y="421.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#EC4D36" text-anchor="middle">routing fn (yours)</text>
+<path d="M598 417 C 640 417, 640 233, 602 233" fill="none" stroke="#7a7a78" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 3" marker-end="url(#ar-mute)"/>
+<text x="340" y="480" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78">LangGraph · LlamaIndex Workflows</text>
+<text x="640" y="164" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="19" fill="#1a1a1a" font-weight="700">Declarative agent</text>
+<text x="640" y="184" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12.5" fill="#4a4a4a" font-style="italic">you write Agent(name, instructions, tools)</text>
+<rect x="640" y="204" width="270" height="250" fill="#fffef9" stroke="#1a1a1a" stroke-width="1.5" stroke-dasharray="5 4"/>
+<rect x="654" y="216" width="242" height="34" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="775.0" y="237.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1d7a82" text-anchor="middle">send messages + schemas</text>
+<line x1="775" y1="250" x2="775" y2="262" stroke="#1a1a1a" stroke-width="1.2"/>
+<rect x="654" y="262" width="242" height="34" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="775.0" y="283.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1d7a82" text-anchor="middle">model asks for tools</text>
+<line x1="775" y1="296" x2="775" y2="308" stroke="#1a1a1a" stroke-width="1.2"/>
+<rect x="654" y="308" width="242" height="34" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="775.0" y="329.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1d7a82" text-anchor="middle">run tools, catch errors</text>
+<line x1="775" y1="342" x2="775" y2="354" stroke="#1a1a1a" stroke-width="1.2"/>
+<rect x="654" y="354" width="242" height="34" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="775.0" y="375.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1d7a82" text-anchor="middle">append results</text>
+<line x1="775" y1="388" x2="775" y2="400" stroke="#1a1a1a" stroke-width="1.2"/>
+<rect x="654" y="400" width="242" height="34" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="775.0" y="421.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1d7a82" text-anchor="middle">stop?</text>
+<path d="M898 417 C 940 417, 940 233, 902 233" fill="none" stroke="#7a7a78" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 3" marker-end="url(#ar-mute)"/>
+<text x="640" y="480" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78">OpenAI Agents SDK · Pydantic AI</text>
+<text x="640" y="496" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78">CrewAI · Google ADK</text>
+<rect x="40" y="522" width="14" height="14" fill="#fde5e0" stroke="#EC4D36" stroke-width="1.2"/>
+<text x="62" y="533" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="13" fill="#4a4a4a">code you write</text>
+<rect x="187.39999999999998" y="522" width="14" height="14" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="209.39999999999998" y="533" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="13" fill="#4a4a4a">code the framework runs</text>
+<text x="928" y="554" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10" letter-spacing="1.5" fill="#7a7a78" text-anchor="end">AGENTIC AI FROM SCRATCH</text>
+</svg>

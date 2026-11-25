@@ -66,6 +66,8 @@ automatic at 70% of the window, clear_first=True: cleared old tool results -> ~3
 automatic at 70% of the window, clear_first=False: compacted with a handoff note -> ~2174 tokens; recall=['failing line', 'bad format']
 ```
 
+![Tokens in context for four strategies against an 8,000-token window, and which of three needed facts survive each: no compaction overflows, clearing keeps none, the handoff note keeps two](assets/compaction.svg)
+
 Every strategy fits, and every result is a valid request. Recall is what separates them:
 
 - **Clearing** cut 77% of the tokens and all three needed facts. The run would have to re-read the files, or guess.

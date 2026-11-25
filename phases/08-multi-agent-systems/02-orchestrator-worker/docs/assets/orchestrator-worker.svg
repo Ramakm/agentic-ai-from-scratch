@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img" aria-label="Orchestrator–worker">
+<title>Orchestrator–worker</title>
+<defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(26,26,26,0.055)" stroke-width="1"/></pattern><marker id="ar-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1a1a1a"/></marker><marker id="ar-ink-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1a1a1a"/></marker><marker id="ar-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#EC4D36"/></marker><marker id="ar-red-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#EC4D36"/></marker><marker id="ar-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1d7a82"/></marker><marker id="ar-teal-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1d7a82"/></marker><marker id="ar-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b07d0c"/></marker><marker id="ar-amber-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b07d0c"/></marker><marker id="ar-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a4cb3"/></marker><marker id="ar-violet-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a4cb3"/></marker><marker id="ar-mute" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a7a78"/></marker><marker id="ar-mute-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a7a78"/></marker><marker id="ar-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d3a"/></marker><marker id="ar-green-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d3a"/></marker></defs>
+<rect width="960" height="560" fill="#fafaf5"/>
+<rect width="960" height="560" fill="url(#grid)"/>
+<rect x="0.75" y="0.75" width="958.5" height="558.5" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+<rect x="32" y="30" width="11" height="11" fill="#EC4D36"/><rect x="35" y="33" width="5" height="5" fill="#fafaf5"/>
+<text x="52" y="40" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" letter-spacing="2" fill="#EC4D36">PHASE 08 · LESSON 02</text>
+<text x="32" y="80" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="-0.5" fill="#1a1a1a">Orchestrator–worker</text>
+<text x="32" y="106" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="16" font-style="italic" fill="#4a4a4a">Plan, work in parallel, synthesise. Workers never talk to each other.</text>
+<line x1="32" y1="124" x2="928" y2="124" stroke="#1a1a1a" stroke-width="1" opacity="0.25"/>
+<rect x="40" y="270" width="100" height="44" fill="#fffef9" stroke="#1a1a1a" stroke-width="1.2"/>
+<text x="90.0" y="296.9" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="14" fill="#1a1a1a" text-anchor="middle">task</text>
+<rect x="194" y="256" width="160" height="80" fill="#EC4D36" stroke="#EC4D36" stroke-width="1.5"/>
+<rect x="190" y="252" width="160" height="80" fill="#fde5e0" stroke="#EC4D36" stroke-width="1.5"/>
+<text x="270.0" y="289.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="17" fill="#EC4D36" font-weight="600" text-anchor="middle">Orchestrator</text>
+<text x="270.0" y="307.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#7a7a78" text-anchor="middle">plans subtasks</text>
+<path d="M144 292 L184 292" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-ink)"/>
+<rect x="40" y="150" width="360" height="74" fill="#fffef9" stroke="#EC4D36" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="54" y="172" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11.5" fill="#EC4D36">{&quot;subtasks&quot;: [{&quot;role&quot;, &quot;task&quot;}]}</text>
+<text x="54" y="192" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11.5" fill="#1a1a1a">roles: researcher · analyst · critic</text>
+<text x="54" y="212" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11.5" fill="#1a1a1a">1 to max_workers subtasks</text>
+<line x1="270" y1="224" x2="270" y2="248" stroke="#EC4D36" stroke-width="1.2" stroke-dasharray="3 3"/>
+<text x="190" y="360" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12" fill="#4a4a4a" font-style="italic">invalid plan → the reason goes back</text>
+<text x="190" y="376" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12" fill="#4a4a4a" font-style="italic">for one retry, then one worker</text>
+<rect x="484" y="176" width="150" height="62" fill="#1d7a82" stroke="#1d7a82" stroke-width="1.5"/>
+<rect x="480" y="172" width="150" height="62" fill="#d8eded" stroke="#1d7a82" stroke-width="1.5"/>
+<text x="555.0" y="200.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="16" fill="#1d7a82" font-weight="600" text-anchor="middle">researcher</text>
+<text x="555.0" y="218.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78" text-anchor="middle">fresh context</text>
+<path d="M354 292 L420 292 L420 203 L474 203" fill="none" stroke="#7a7a78" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-mute)"/>
+<path d="M636 203 L720 203 L720 292 L744 292" fill="none" stroke="#1d7a82" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-teal)"/>
+<text x="645" y="196" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1d7a82">findings</text>
+<rect x="484" y="276" width="150" height="62" fill="#1d7a82" stroke="#1d7a82" stroke-width="1.5"/>
+<rect x="480" y="272" width="150" height="62" fill="#d8eded" stroke="#1d7a82" stroke-width="1.5"/>
+<text x="555.0" y="300.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="16" fill="#1d7a82" font-weight="600" text-anchor="middle">analyst</text>
+<text x="555.0" y="318.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78" text-anchor="middle">fresh context</text>
+<path d="M354 292 L420 292 L420 303 L474 303" fill="none" stroke="#7a7a78" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-mute)"/>
+<path d="M636 303 L720 303 L720 292 L744 292" fill="none" stroke="#1d7a82" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-teal)"/>
+<text x="645" y="296" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1d7a82">findings</text>
+<rect x="484" y="376" width="150" height="62" fill="#b07d0c" stroke="#b07d0c" stroke-width="1.5"/>
+<rect x="480" y="372" width="150" height="62" fill="#f6ecd0" stroke="#b07d0c" stroke-width="1.5"/>
+<text x="555.0" y="400.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="16" fill="#b07d0c" font-weight="600" text-anchor="middle">critic</text>
+<text x="555.0" y="418.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78" text-anchor="middle">fresh context</text>
+<path d="M354 292 L420 292 L420 403 L474 403" fill="none" stroke="#7a7a78" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-mute)"/>
+<path d="M636 403 L720 403 L720 292 L744 292" fill="none" stroke="#b07d0c" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-amber)"/>
+<text x="645" y="396" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#b07d0c">FAILED: …</text>
+<text x="480" y="164" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1d7a82">IN PARALLEL</text>
+<rect x="754" y="256" width="170" height="80" fill="#7a4cb3" stroke="#7a4cb3" stroke-width="1.5"/>
+<rect x="750" y="252" width="170" height="80" fill="#ebe2f6" stroke="#7a4cb3" stroke-width="1.5"/>
+<text x="835.0" y="289.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="17" fill="#7a4cb3" font-weight="600" text-anchor="middle">Synthesizer</text>
+<text x="835.0" y="307.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#7a7a78" text-anchor="middle">task + all findings</text>
+<text x="750" y="360" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12" fill="#4a4a4a" font-style="italic">says what is missing</text>
+<text x="750" y="376" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12" fill="#4a4a4a" font-style="italic">instead of pretending</text>
+<text x="40" y="444" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1a1a1a">COST IN MODEL CALLS</text>
+<rect x="40" y="456" width="86" height="34" fill="#fffef9" stroke="#EC4D36" stroke-width="1.2"/>
+<text x="83.0" y="477.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#EC4D36" text-anchor="middle">plan</text>
+<rect x="132" y="456" width="86" height="34" fill="#fffef9" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="175.0" y="477.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1d7a82" text-anchor="middle">worker</text>
+<rect x="224" y="456" width="86" height="34" fill="#fffef9" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="267.0" y="477.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1d7a82" text-anchor="middle">worker</text>
+<rect x="316" y="456" width="86" height="34" fill="#fffef9" stroke="#b07d0c" stroke-width="1.2"/>
+<text x="359.0" y="477.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#b07d0c" text-anchor="middle">worker</text>
+<rect x="408" y="456" width="86" height="34" fill="#fffef9" stroke="#7a4cb3" stroke-width="1.2"/>
+<text x="451.0" y="477.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#7a4cb3" text-anchor="middle">synth</text>
+<text x="520" y="479" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="18" fill="#1a1a1a" font-weight="700">= 5 calls</text>
+<rect x="650" y="456" width="86" height="34" fill="#fffef9" stroke="#1a1a1a" stroke-width="1.2"/>
+<text x="693.0" y="477.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1a1a1a" text-anchor="middle">agent</text>
+<text x="752" y="479" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="18" fill="#7a7a78" font-weight="700">= 1 call</text>
+<text x="650" y="520" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12.5" fill="#4a4a4a" font-style="italic">worth it only when subtasks are truly independent</text>
+<text x="928" y="544" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10" letter-spacing="1.5" fill="#7a7a78" text-anchor="end">AGENTIC AI FROM SCRATCH</text>
+</svg>

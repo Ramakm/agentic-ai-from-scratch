@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="530" viewBox="0 0 960 530" role="img" aria-label="Six stages of a tool dispatcher">
+<title>Six stages of a tool dispatcher</title>
+<defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(26,26,26,0.055)" stroke-width="1"/></pattern><marker id="ar-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1a1a1a"/></marker><marker id="ar-ink-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1a1a1a"/></marker><marker id="ar-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#EC4D36"/></marker><marker id="ar-red-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#EC4D36"/></marker><marker id="ar-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1d7a82"/></marker><marker id="ar-teal-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1d7a82"/></marker><marker id="ar-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b07d0c"/></marker><marker id="ar-amber-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b07d0c"/></marker><marker id="ar-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a4cb3"/></marker><marker id="ar-violet-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a4cb3"/></marker><marker id="ar-mute" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a7a78"/></marker><marker id="ar-mute-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a7a78"/></marker><marker id="ar-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d3a"/></marker><marker id="ar-green-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d3a"/></marker></defs>
+<rect width="960" height="530" fill="#fafaf5"/>
+<rect width="960" height="530" fill="url(#grid)"/>
+<rect x="0.75" y="0.75" width="958.5" height="528.5" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+<rect x="32" y="30" width="11" height="11" fill="#EC4D36"/><rect x="35" y="33" width="5" height="5" fill="#fafaf5"/>
+<text x="52" y="40" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" letter-spacing="2" fill="#EC4D36">PHASE 02 · LESSON 03</text>
+<text x="32" y="80" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="-0.5" fill="#1a1a1a">Six stages of a tool dispatcher</text>
+<text x="32" y="106" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="16" font-style="italic" fill="#4a4a4a">Every path ends in a Result with a string the model can read. The loop never crashes on a tool.</text>
+<line x1="32" y1="124" x2="928" y2="124" stroke="#1a1a1a" stroke-width="1" opacity="0.25"/>
+<rect x="32" y="196" width="96" height="54" fill="#fde5e0" stroke="#EC4D36" stroke-width="1.2"/>
+<text x="80.0" y="227.2" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1a1a1a" text-anchor="middle"></text>
+<text x="80" y="218" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#EC4D36" text-anchor="middle">tool call</text>
+<text x="80" y="236" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#EC4D36" text-anchor="middle">{name, args}</text>
+<rect x="154" y="194" width="104" height="66" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="1.5"/>
+<rect x="150" y="190" width="104" height="66" fill="#fffef9" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="202.0" y="220.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="15" fill="#1a1a1a" font-weight="600" text-anchor="middle">1 Resolve</text>
+<text x="202.0" y="238.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78" text-anchor="middle">name → tool</text>
+<path d="M131 223 L147 223" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-ink)"/>
+<path d="M202.0 262 L202.0 318" fill="none" stroke="#EC4D36" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 3" marker-end="url(#ar-red)"/>
+<rect x="155.94" y="324" width="92.12" height="20" fill="#EC4D36" stroke="#EC4D36" stroke-width="1"/>
+<text x="202.0" y="338" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#fffef9" text-anchor="middle">unknown_tool</text>
+<rect x="278" y="194" width="104" height="66" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="1.5"/>
+<rect x="274" y="190" width="104" height="66" fill="#fffef9" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="326.0" y="220.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="15" fill="#1a1a1a" font-weight="600" text-anchor="middle">2 Parse</text>
+<text x="326.0" y="238.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78" text-anchor="middle">dict or JSON</text>
+<path d="M255 223 L271 223" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-ink)"/>
+<path d="M326.0 262 L326.0 318" fill="none" stroke="#EC4D36" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 3" marker-end="url(#ar-red)"/>
+<rect x="276.685" y="324" width="98.63" height="20" fill="#EC4D36" stroke="#EC4D36" stroke-width="1"/>
+<text x="326.0" y="338" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#fffef9" text-anchor="middle">bad_arguments</text>
+<rect x="402" y="194" width="104" height="66" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="1.5"/>
+<rect x="398" y="190" width="104" height="66" fill="#fffef9" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="450.0" y="220.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="15" fill="#1a1a1a" font-weight="600" text-anchor="middle">3 Validate</text>
+<text x="450.0" y="238.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78" text-anchor="middle">coerce, check</text>
+<path d="M379 223 L395 223" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-ink)"/>
+<path d="M450.0 262 L450.0 318" fill="none" stroke="#EC4D36" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 3" marker-end="url(#ar-red)"/>
+<rect x="400.685" y="324" width="98.63" height="20" fill="#EC4D36" stroke="#EC4D36" stroke-width="1"/>
+<text x="450.0" y="338" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#fffef9" text-anchor="middle">bad_arguments</text>
+<rect x="526" y="194" width="104" height="66" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="1.5"/>
+<rect x="522" y="190" width="104" height="66" fill="#fffef9" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="574.0" y="220.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="15" fill="#1a1a1a" font-weight="600" text-anchor="middle">4 Hooks</text>
+<text x="574.0" y="238.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78" text-anchor="middle">rules, limits</text>
+<path d="M503 223 L519 223" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-ink)"/>
+<path d="M574.0 262 L574.0 318" fill="none" stroke="#EC4D36" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 3" marker-end="url(#ar-red)"/>
+<rect x="547.47" y="324" width="53.06" height="20" fill="#EC4D36" stroke="#EC4D36" stroke-width="1"/>
+<text x="574.0" y="338" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#fffef9" text-anchor="middle">denied</text>
+<rect x="650" y="194" width="104" height="66" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="1.5"/>
+<rect x="646" y="190" width="104" height="66" fill="#fffef9" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="698.0" y="220.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="15" fill="#1a1a1a" font-weight="600" text-anchor="middle">5 Run</text>
+<text x="698.0" y="238.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78" text-anchor="middle">with a timeout</text>
+<path d="M627 223 L643 223" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-ink)"/>
+<path d="M698.0 262 L698.0 318" fill="none" stroke="#EC4D36" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 3" marker-end="url(#ar-red)"/>
+<rect x="625.9" y="324" width="144.2" height="20" fill="#EC4D36" stroke="#EC4D36" stroke-width="1"/>
+<text x="698.0" y="338" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#fffef9" text-anchor="middle">tool_error · timeout</text>
+<rect x="774" y="194" width="104" height="66" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="1.5"/>
+<rect x="770" y="190" width="104" height="66" fill="#fffef9" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="822.0" y="220.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="15" fill="#1a1a1a" font-weight="600" text-anchor="middle">6 Serialise</text>
+<text x="822.0" y="238.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78" text-anchor="middle">and cap size</text>
+<path d="M751 223 L767 223" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-ink)"/>
+<line x1="878" y1="223" x2="908" y2="223" stroke="#2f7d3a" stroke-width="1.4"/>
+<text x="916" y="312" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#2f7d3a">ok</text>
+<rect x="154" y="404" width="750" height="54" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="1.5"/>
+<rect x="150" y="400" width="750" height="54" fill="#f3f1e8" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="525.0" y="432.6" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="16" fill="#1a1a1a" font-weight="500" text-anchor="middle">Result(ok, content: str, error_type)</text>
+<line x1="202.0" y1="346" x2="202.0" y2="394" stroke="#EC4D36" stroke-width="1.2" stroke-dasharray="4 3"/>
+<line x1="326.0" y1="346" x2="326.0" y2="394" stroke="#EC4D36" stroke-width="1.2" stroke-dasharray="4 3"/>
+<line x1="450.0" y1="346" x2="450.0" y2="394" stroke="#EC4D36" stroke-width="1.2" stroke-dasharray="4 3"/>
+<line x1="574.0" y1="346" x2="574.0" y2="394" stroke="#EC4D36" stroke-width="1.2" stroke-dasharray="4 3"/>
+<line x1="698.0" y1="346" x2="698.0" y2="394" stroke="#EC4D36" stroke-width="1.2" stroke-dasharray="4 3"/>
+<path d="M908 223 L908 394" fill="none" stroke="#2f7d3a" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-green)"/>
+<text x="160" y="160" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="13" fill="#4a4a4a" font-style="italic">model asks for a tool</text>
+<text x="525" y="484" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="13" fill="#4a4a4a" text-anchor="middle" font-style="italic">goes back to the model as an observation: failures included, in plain words</text>
+<text x="928" y="514" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10" letter-spacing="1.5" fill="#7a7a78" text-anchor="end">AGENTIC AI FROM SCRATCH</text>
+</svg>

@@ -52,6 +52,8 @@ The folder ids must match `curriculum.json` exactly.
 
 Tables and short sections. Build the mental model before any code.
 Use tables or SVG for diagrams (no ASCII art).
+SVG files go in `docs/assets/` and are linked as `![what it shows](assets/name.svg)`;
+the build copies them to the site and `--check` fails on a missing one.
 
 ## Build It
 

@@ -95,6 +95,8 @@ why the spec failed:
   loops on lookup: repeated lookup_order({"order_id": "A-1001"}) 3 times in a row
 ```
 
+![Five refund runs scored by exact match, in-order, any-order, precision, recall, edit distance and spec checks; only the spec column marks both good runs as passing and all three bad runs as failing](assets/trajectory-metrics.svg)
+
 Read across the rows:
 
 - **"different but fine"** fails exact and in-order, with edit distance 3, worse than the dangerous "refund before lookup". The spec passes it.

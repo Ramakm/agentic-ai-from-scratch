@@ -24,6 +24,8 @@ That something is the agent loop. It's about 40 lines of logic, and every agent 
 
 ## The Concept
 
+![The agent loop: the model thinks, a decision on whether it asked for tools, your code acts and observes, results are appended to a message buffer that only grows, and a step budget stops runaway loops](assets/agent-loop.svg)
+
 ### Think → act → observe
 
 Each turn of the loop does three things:

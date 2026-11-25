@@ -71,6 +71,8 @@ T=1.5, top_p 0.9       entropy 1.43 bits  Canberra:0.65  Sydney:0.20  Melbourne:
 same seed, same sequence: True
 ```
 
+![The sampling pipeline (logits, divide by temperature, softmax, top-k or top-p, sample) and the probability of each candidate token at temperature 0, 0.5, 1.0, 1.5 and with top_p 0.9, plus how many of 1,000 samples did not start with Canberra](assets/sampling.svg)
+
 The scores are made up, but the shape is typical: one strong answer and a tail of plausible wrong ones. At temperature 1.0, about one sample in five doesn't start with the right token. At 1.5, more than a third. Top-p 0.9 cut the tail down to Canberra and Sydney, which removed Melbourne but left the most tempting wrong answer.
 
 ### Step 1: `softmax` with temperature

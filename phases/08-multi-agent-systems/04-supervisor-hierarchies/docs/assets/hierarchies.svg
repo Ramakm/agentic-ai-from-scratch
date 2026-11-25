@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="490" viewBox="0 0 960 490" role="img" aria-label="Flat vs two levels">
+<title>Flat vs two levels</title>
+<defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(26,26,26,0.055)" stroke-width="1"/></pattern><marker id="ar-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1a1a1a"/></marker><marker id="ar-ink-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1a1a1a"/></marker><marker id="ar-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#EC4D36"/></marker><marker id="ar-red-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#EC4D36"/></marker><marker id="ar-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1d7a82"/></marker><marker id="ar-teal-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1d7a82"/></marker><marker id="ar-amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b07d0c"/></marker><marker id="ar-amber-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b07d0c"/></marker><marker id="ar-violet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a4cb3"/></marker><marker id="ar-violet-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a4cb3"/></marker><marker id="ar-mute" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a7a78"/></marker><marker id="ar-mute-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a7a78"/></marker><marker id="ar-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d3a"/></marker><marker id="ar-green-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d3a"/></marker></defs>
+<rect width="960" height="490" fill="#fafaf5"/>
+<rect width="960" height="490" fill="url(#grid)"/>
+<rect x="0.75" y="0.75" width="958.5" height="488.5" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+<rect x="32" y="30" width="11" height="11" fill="#EC4D36"/><rect x="35" y="33" width="5" height="5" fill="#fafaf5"/>
+<text x="52" y="40" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" letter-spacing="2" fill="#EC4D36">PHASE 08 · LESSON 04</text>
+<text x="32" y="80" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="-0.5" fill="#1a1a1a">Flat vs two levels</text>
+<text x="32" y="106" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="16" font-style="italic" fill="#4a4a4a">A hierarchy trades latency for a smaller top context and smaller routing choices.</text>
+<line x1="32" y1="124" x2="928" y2="124" stroke="#1a1a1a" stroke-width="1" opacity="0.25"/>
+<text x="40" y="164" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="18" fill="#1a1a1a" font-weight="700">Flat</text>
+<rect x="150" y="186" width="130" height="42" fill="#fde5e0" stroke="#EC4D36" stroke-width="1.5"/>
+<text x="215.0" y="211.9" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" fill="#EC4D36" font-weight="600" text-anchor="middle">supervisor</text>
+<line x1="215" y1="228" x2="56" y2="320" stroke="#1a1a1a" stroke-width="1" opacity="0.6"/>
+<rect x="40" y="320" width="32" height="28" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="56.0" y="337.85" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1d7a82" text-anchor="middle">w1</text>
+<line x1="215" y1="228" x2="96" y2="320" stroke="#1a1a1a" stroke-width="1" opacity="0.6"/>
+<rect x="80" y="320" width="32" height="28" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="96.0" y="337.85" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1d7a82" text-anchor="middle">w2</text>
+<line x1="215" y1="228" x2="136" y2="320" stroke="#1a1a1a" stroke-width="1" opacity="0.6"/>
+<rect x="120" y="320" width="32" height="28" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="136.0" y="337.85" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1d7a82" text-anchor="middle">w3</text>
+<line x1="215" y1="228" x2="176" y2="320" stroke="#1a1a1a" stroke-width="1" opacity="0.6"/>
+<rect x="160" y="320" width="32" height="28" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="176.0" y="337.85" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1d7a82" text-anchor="middle">w4</text>
+<line x1="215" y1="228" x2="216" y2="320" stroke="#1a1a1a" stroke-width="1" opacity="0.6"/>
+<rect x="200" y="320" width="32" height="28" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="216.0" y="337.85" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1d7a82" text-anchor="middle">w5</text>
+<line x1="215" y1="228" x2="256" y2="320" stroke="#1a1a1a" stroke-width="1" opacity="0.6"/>
+<rect x="240" y="320" width="32" height="28" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="256.0" y="337.85" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1d7a82" text-anchor="middle">w6</text>
+<line x1="215" y1="228" x2="296" y2="320" stroke="#1a1a1a" stroke-width="1" opacity="0.6"/>
+<rect x="280" y="320" width="32" height="28" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="296.0" y="337.85" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1d7a82" text-anchor="middle">w7</text>
+<line x1="215" y1="228" x2="336" y2="320" stroke="#1a1a1a" stroke-width="1" opacity="0.6"/>
+<rect x="320" y="320" width="32" height="28" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="336.0" y="337.85" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1d7a82" text-anchor="middle">w8</text>
+<line x1="215" y1="228" x2="376" y2="320" stroke="#1a1a1a" stroke-width="1" opacity="0.6"/>
+<rect x="360" y="320" width="32" height="28" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="376.0" y="337.85" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1d7a82" text-anchor="middle">w9</text>
+<text x="40" y="384" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="13" fill="#4a4a4a" font-style="italic">reads 9 reports</text>
+<text x="40" y="408" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78">DEPTH 3 · plan → work → synthesise</text>
+<line x1="440" y1="150" x2="440" y2="430" stroke="#1a1a1a" stroke-width="1" opacity="0.15"/>
+<text x="480" y="164" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="18" fill="#1a1a1a" font-weight="700">Two levels</text>
+<rect x="640" y="176" width="150" height="40" fill="#fde5e0" stroke="#EC4D36" stroke-width="1.5"/>
+<text x="715.0" y="200.9" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" fill="#EC4D36" font-weight="600" text-anchor="middle">top supervisor</text>
+<line x1="715" y1="216" x2="540" y2="250" stroke="#1a1a1a" stroke-width="1.2"/>
+<rect x="480" y="250" width="120" height="36" fill="#f6ecd0" stroke="#b07d0c" stroke-width="1.5"/>
+<text x="540.0" y="272.55" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="13" fill="#b07d0c" font-weight="600" text-anchor="middle">research</text>
+<line x1="540" y1="286" x2="496" y2="320" stroke="#1a1a1a" stroke-width="1" opacity="0.6"/>
+<rect x="480" y="320" width="32" height="28" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="496.0" y="337.85" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1d7a82" text-anchor="middle">w1</text>
+<line x1="540" y1="286" x2="538" y2="320" stroke="#1a1a1a" stroke-width="1" opacity="0.6"/>
+<rect x="522" y="320" width="32" height="28" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="538.0" y="337.85" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1d7a82" text-anchor="middle">w2</text>
+<line x1="540" y1="286" x2="580" y2="320" stroke="#1a1a1a" stroke-width="1" opacity="0.6"/>
+<rect x="564" y="320" width="32" height="28" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="580.0" y="337.85" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1d7a82" text-anchor="middle">w3</text>
+<line x1="715" y1="216" x2="690" y2="250" stroke="#1a1a1a" stroke-width="1.2"/>
+<rect x="630" y="250" width="120" height="36" fill="#f6ecd0" stroke="#b07d0c" stroke-width="1.5"/>
+<text x="690.0" y="272.55" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="13" fill="#b07d0c" font-weight="600" text-anchor="middle">engineering</text>
+<line x1="690" y1="286" x2="646" y2="320" stroke="#1a1a1a" stroke-width="1" opacity="0.6"/>
+<rect x="630" y="320" width="32" height="28" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="646.0" y="337.85" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1d7a82" text-anchor="middle">w4</text>
+<line x1="690" y1="286" x2="688" y2="320" stroke="#1a1a1a" stroke-width="1" opacity="0.6"/>
+<rect x="672" y="320" width="32" height="28" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="688.0" y="337.85" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1d7a82" text-anchor="middle">w5</text>
+<line x1="690" y1="286" x2="730" y2="320" stroke="#1a1a1a" stroke-width="1" opacity="0.6"/>
+<rect x="714" y="320" width="32" height="28" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="730.0" y="337.85" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1d7a82" text-anchor="middle">w6</text>
+<line x1="715" y1="216" x2="840" y2="250" stroke="#1a1a1a" stroke-width="1.2"/>
+<rect x="780" y="250" width="120" height="36" fill="#f6ecd0" stroke="#b07d0c" stroke-width="1.5"/>
+<text x="840.0" y="272.55" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="13" fill="#b07d0c" font-weight="600" text-anchor="middle">operations</text>
+<line x1="840" y1="286" x2="796" y2="320" stroke="#1a1a1a" stroke-width="1" opacity="0.6"/>
+<rect x="780" y="320" width="32" height="28" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="796.0" y="337.85" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1d7a82" text-anchor="middle">w7</text>
+<line x1="840" y1="286" x2="838" y2="320" stroke="#1a1a1a" stroke-width="1" opacity="0.6"/>
+<rect x="822" y="320" width="32" height="28" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="838.0" y="337.85" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1d7a82" text-anchor="middle">w8</text>
+<line x1="840" y1="286" x2="880" y2="320" stroke="#1a1a1a" stroke-width="1" opacity="0.6"/>
+<rect x="864" y="320" width="32" height="28" fill="#d8eded" stroke="#1d7a82" stroke-width="1.2"/>
+<text x="880.0" y="337.85" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1d7a82" text-anchor="middle">w9</text>
+<text x="480" y="384" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="13" fill="#4a4a4a" font-style="italic">top reads 3 summaries; each lead reads its own team</text>
+<text x="480" y="408" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78">DEPTH 5 · each level adds a plan and a summary</text>
+<path d="M930 340 L930 186" fill="none" stroke="#b07d0c" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar-amber)"/>
+<text x="922" y="200" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#b07d0c" text-anchor="end">escalate</text>
+<text x="480" y="440" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12" fill="#7a7a78" font-style="italic">what a level cannot decide goes up, as a short summary</text>
+<text x="928" y="474" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10" letter-spacing="1.5" fill="#7a7a78" text-anchor="end">AGENTIC AI FROM SCRATCH</text>
+</svg>

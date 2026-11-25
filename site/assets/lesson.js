@@ -114,6 +114,22 @@
       if (/^(https?:|mailto:|#)/.test(h)) { if (/^https?:/.test(h)) { a.target = '_blank'; a.rel = 'noopener'; } return; }
       a.href = new URL(h, base).href; a.target = '_blank'; a.rel = 'noopener';
     });
+    /* diagrams: docs/assets/*.svg, served from the site/content copy */
+    prose.querySelectorAll('img').forEach(function (img) {
+      var src = img.getAttribute('src') || '';
+      if (!/^(https?:|data:|\/)/.test(src)) img.src = 'content/' + lesson.path + '/docs/' + src.replace(/^\.\//, '');
+      img.loading = 'lazy'; img.decoding = 'async';
+      var p = img.parentNode;
+      if (p.tagName === 'P' && p.childNodes.length === 1) {
+        var fig = document.createElement('figure');
+        fig.className = 'diagram';
+        p.parentNode.replaceChild(fig, p);
+        var a = document.createElement('a');
+        a.href = img.src; a.target = '_blank'; a.rel = 'noopener'; a.title = 'Open full size';
+        a.appendChild(img);
+        fig.appendChild(a);
+      }
+    });
     prose.querySelectorAll('pre > code').forEach(function (code, i) {
       var pre = code.parentNode;
       var lang = ((code.className.match(/language-(\w+)/) || [])[1] || 'text');

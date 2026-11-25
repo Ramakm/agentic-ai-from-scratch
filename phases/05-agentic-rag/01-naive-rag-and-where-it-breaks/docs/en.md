@@ -97,6 +97,8 @@ python3 main.py
 1/6 correct
 ```
 
+![The five naive RAG steps with the failure each can cause, grouped into retrieval failures and reading failures, and the result of the six test questions: one correct](assets/naive-rag.svg)
+
 The offline reader is `extractive_reader()`: it returns the context sentence sharing the most words with the question. It is a crude stand-in for a model, but it has the property that matters: like a naive pipeline, it always answers from whatever it was given. Read each failure:
 
 - **Outdated doc.** Both refund policies were retrieved. The 2024 one, marked "superseded", ranked first and won. Retrieval was fine; the context contradicted itself.

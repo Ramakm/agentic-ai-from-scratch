@@ -22,6 +22,8 @@ You ask an agent to fix a failing test. It reads the file, makes an edit, and sa
 
 ## The Concept
 
+![The model inside a loop surrounded by tools, context, permissions and verification, and three runs showing the verification rule: only tests after the last edit count](assets/coding-agent.svg)
+
 | # | Part | Job | In `main.py` | Later lesson |
 |---|------|-----|--------------|--------------|
 | 1 | Model | Decide the next action | `llm(messages, SCHEMAS)` | — |
