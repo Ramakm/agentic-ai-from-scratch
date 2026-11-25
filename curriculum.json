@@ -2,7 +2,7 @@
   "title": "Agentic AI from Scratch",
   "tagline": "Build AI agents from a raw while-loop and an HTTP call, before a single framework gets imported.",
   "repo": "Ramakm/agentic-ai-from-scratch",
-  "site": "https://ramakm.github.io/agentic-ai-from-scratch/",
+  "site": "https://agentic-ai-from-scratch.vercel.app/",
   "maintainer": {
     "name": "Ramakrushna Mohapatra",
     "handle": "techwith_ram",

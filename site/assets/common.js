@@ -14,7 +14,7 @@
   var ALL = [];
   PHASES.forEach(function (p) { p.lessons.forEach(function (l) { ALL.push(l); }); });
 
-  function lessonHref(l) { return 'lesson.html?path=' + encodeURIComponent(l.path); }
+  function lessonHref(l) { return '/' + l.path.replace(/^phases\//, 'lessons/') + '/'; }   /* static page built by scripts/build.mjs */
   function findLesson(path) { for (var i = 0; i < ALL.length; i++) if (ALL[i].path === path) return ALL[i]; return null; }
 
   /* ---------- progress (browser only) ---------- */
@@ -102,21 +102,21 @@
   /* ---------- site menu (hamburger, every page and width) ---------- */
   /* [label, href, external]. Only things that exist: no placeholder pages. */
   var MENU = [
-    ['How to learn', './#tutor'],
-    ['How lessons work', './#how'],
+    ['How to learn', '/#tutor'],
+    ['How lessons work', '/#how'],
     ['Skills', REPO_URL + '/tree/main/skills', 1],
-    ['Contents', './#contents'],
-    ['Learning paths', './#paths'],
+    ['Contents', '/#contents'],
+    ['Learning paths', '/#paths'],
     ['Roadmap', REPO_URL + '/blob/main/ROADMAP.md', 1],
-    ['Machines', './#machines'],
-    ['Books', './#books'],
-    ['Capstone', './#capstone'],
+    ['Machines', '/#machines'],
+    ['Books', '/#books'],
+    ['Capstone', '/#capstone'],
     ['Curriculum index', 'llms.txt'],
     ["What's new", REPO_URL + '/commits/main', 1],
     ['Contribute', REPO_URL + '/blob/main/CONTRIBUTING.md', 1],
     ['Report an issue', REPO_URL + '/issues/new/choose', 1],
     ['GitHub', REPO_URL, 1],
-    ['About', './#maintainer']
+    ['About', '/#maintainer']
   ];
   var menuBtn = document.getElementById('menuToggle');
   if (menuBtn) {
@@ -194,7 +194,7 @@
     closeOverlay(palOverlay);
     if (l.published) location.href = lessonHref(l);
     else if (window.AAFS.openPhase) window.AAFS.openPhase(l.phase.index, l.index);
-    else location.href = './?phase=' + l.phase.index + '&lesson=' + l.index + '#contents';
+    else location.href = '/?phase=' + l.phase.index + '&lesson=' + l.index + '#contents';
   }
   function openPalette() { palInput.value = ''; palSel = 0; renderPalette(); openOverlay(palOverlay, palInput); }
   function scrollSel() { var el = palList.querySelector('[aria-selected="true"]'); if (el) el.scrollIntoView({ block: 'nearest' }); }

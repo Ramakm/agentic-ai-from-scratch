@@ -7,8 +7,11 @@
   var body = document.getElementById('lessonBody');
   var state = document.getElementById('lessonState');
 
-  var path = new URLSearchParams(location.search).get('path') || '';
+  /* static lesson pages set AAFS_LESSON_PATH; old lesson.html?path= links redirect to them */
+  var query = new URLSearchParams(location.search).get('path');
+  var path = window.AAFS_LESSON_PATH || query || '';
   var lesson = A.findLesson(path.replace(/\/+$/, ''));
+  if (lesson && !window.AAFS_LESSON_PATH && lesson.published) { location.replace(A.lessonHref(lesson) + location.hash); return; }
 
   /* Only paths that exist in the curriculum are ever fetched. */
   if (!lesson) return fail('That lesson does not exist.', true);
@@ -19,7 +22,7 @@
 
   /* local build copy first (site/content), then GitHub raw as a fallback */
   function fetchText(rel) {
-    return fetch('content/' + rel).then(function (r) { if (!r.ok) throw r; return r.text(); })
+    return fetch('/content/' + rel).then(function (r) { if (!r.ok) throw r; return r.text(); })
       .catch(function () { return fetch(RAW + rel).then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); }); });
   }
 
@@ -31,7 +34,7 @@
 
   function renderAside() {
     var a = document.getElementById('asidePhase');
-    a.href = './?phase=' + phase.index + '#contents';
+    a.href = '/?phase=' + phase.index + '#contents';
     a.innerHTML = '<span class="eyebrow">Phase ' + pad(phase.index) + '</span><span class="aside-phase-name">' + esc(phase.name) + '</span>';
     document.getElementById('asideLessons').innerHTML = phase.lessons.map(function (l) {
       var cls = (l === lesson ? 'is-current ' : '') + (l.published ? '' : 'is-planned ') + (A.isDone(l) ? 'is-done' : '');
@@ -44,7 +47,7 @@
 
   function renderCrumbs() {
     document.getElementById('crumbs').innerHTML =
-      '<a href="./#contents">Curriculum</a><span>/</span><a href="./?phase=' + phase.index + '#contents">Phase ' + pad(phase.index) + ' · ' + esc(phase.name) + '</a>' +
+      '<a href="/#contents">Curriculum</a><span>/</span><a href="/?phase=' + phase.index + '#contents">Phase ' + pad(phase.index) + ' · ' + esc(phase.name) + '</a>' +
       '<span>/</span><span>' + lesson.num + '</span>';
     document.title = lesson.title + ' | Agentic AI from Scratch';
   }
@@ -53,7 +56,7 @@
     state.className = 'lesson-empty';
     state.innerHTML = '<p class="eyebrow">' + (notFound ? '404 · not in the curriculum' : 'Lesson ' + lesson.num) + '</p>' +
       '<h1 class="lesson-title">' + esc(notFound ? 'Lesson not found' : lesson.title) + '</h1><p>' + esc(msg) + '</p>' +
-      '<div class="lesson-actions"><a class="btn btn--primary" href="./#contents">Browse the curriculum</a>' +
+      '<div class="lesson-actions"><a class="btn btn--primary" href="/#contents">Browse the curriculum</a>' +
       (notFound ? '' : '<a class="btn" href="' + A.REPO_URL + '/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Write this lesson</a>') + '</div>';
   }
 
@@ -117,7 +120,7 @@
     /* diagrams: docs/assets/*.svg, served from the site/content copy */
     prose.querySelectorAll('img').forEach(function (img) {
       var src = img.getAttribute('src') || '';
-      if (!/^(https?:|data:|\/)/.test(src)) img.src = 'content/' + lesson.path + '/docs/' + src.replace(/^\.\//, '');
+      if (!/^(https?:|data:|\/)/.test(src)) img.src = '/content/' + lesson.path + '/docs/' + src.replace(/^\.\//, '');
       img.loading = 'lazy'; img.decoding = 'async';
       var p = img.parentNode;
       if (p.tagName === 'P' && p.childNodes.length === 1) {

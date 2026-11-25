@@ -4,5 +4,6 @@
   "installCommand": "",
   "buildCommand": "node scripts/build.mjs",
   "outputDirectory": "site",
-  "cleanUrls": false
+  "cleanUrls": false,
+  "trailingSlash": true
 }

@@ -2,7 +2,7 @@
 window.SITE = {
   "title": "Agentic AI from Scratch",
   "repo": "Ramakm/agentic-ai-from-scratch",
-  "site": "https://ramakm.github.io/agentic-ai-from-scratch/",
+  "site": "https://agentic-ai-from-scratch.vercel.app/",
   "maintainer": {
     "name": "Ramakrushna Mohapatra",
     "handle": "techwith_ram",

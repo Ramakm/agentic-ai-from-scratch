@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://ramakm.github.io/agentic-ai-from-scratch/">
+  <a href="https://agentic-ai-from-scratch.vercel.app/">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="assets/readme/header-dark.svg">
       <img src="assets/readme/header-light.svg" alt="Agentic AI from Scratch" width="840">
@@ -19,7 +19,7 @@
 </p>
 
 <p align="center">
-  <a href="https://ramakm.github.io/agentic-ai-from-scratch/"><b>Website</b></a> ·
+  <a href="https://agentic-ai-from-scratch.vercel.app/"><b>Website</b></a> ·
   <a href="phases/00-setup-and-tooling/01-your-agent-dev-environment/docs/en.md"><b>Start learning</b></a> ·
   <a href="#learning-paths"><b>Choose a path</b></a> ·
   <a href="#contents"><b>Curriculum</b></a> ·
@@ -89,7 +89,7 @@ AGENT_BASE_URL=http://localhost:11434/v1 AGENT_MODEL=llama3.2 python3 code/main.
 
 ## Choose how to learn
 
-- **On the website.** Every lesson, with quizzes and progress saved in your browser: **[ramakm.github.io/agentic-ai-from-scratch](https://ramakm.github.io/agentic-ai-from-scratch/)**
+- **On the website.** Every lesson, with quizzes and progress saved in your browser: **[agentic-ai-from-scratch.vercel.app](https://agentic-ai-from-scratch.vercel.app/)**
 - **With your coding agent as tutor.** Install the skills, then:
 
   | Skill | What it does |
