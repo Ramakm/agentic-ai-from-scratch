@@ -1,7 +1,15 @@
 /* =========================================================
    Agentic AI from Scratch — blueprint-on-paper design system
    ========================================================= */
+/* Geist Pixel (Square) by Vercel, SIL Open Font License 1.1: assets/fonts/GeistPixel-OFL.txt */
+@font-face {
+  font-family: 'Geist Pixel';
+  src: url('/assets/fonts/GeistPixel-Square.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+
 :root {
+  --font-pixel: 'Geist Pixel', 'JetBrains Mono', ui-monospace, monospace;
   --font-display: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
   --font-body: 'Source Serif 4', 'Source Serif Pro', 'Iowan Old Style', Georgia, serif;
   --font-mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
@@ -143,7 +151,7 @@ code, pre { font-family: var(--font-mono); }
 /* ---------- masthead ---------- */
 .masthead { padding-block: 128px 44px; border-bottom: 1px solid var(--rule-soft); }
 .masthead-title {
-  font-family: var(--font-display); font-weight: 600; letter-spacing: -.02em; font-size: clamp(2.6rem, 7.2vw, 4.9rem);
+  font-family: var(--font-pixel); font-weight: 400; font-synthesis: none; letter-spacing: 0; font-size: clamp(2.6rem, 7.2vw, 4.9rem);
   line-height: .96; text-transform: uppercase; color: var(--blueprint);
   animation: title-enter 420ms var(--ease-out) both;
 }
@@ -576,7 +584,7 @@ body.js-anim .reveal.in-view { opacity: 1; transform: none; }
 .lesson-empty { padding: 24px 0 48px; }
 .lesson-empty p:not(.eyebrow) { color: var(--ink-soft); margin: 12px 0 20px; }
 .lesson-head { padding-bottom: 28px; margin-bottom: 32px; border-bottom: 1px solid var(--rule-soft); }
-.lesson-title { margin: 10px 0 14px; font-family: var(--font-display); font-weight: 600; letter-spacing: -.02em; font-size: clamp(1.78rem, 4vw, 2.81rem); line-height: 1; text-transform: uppercase; color: var(--blueprint); }
+.lesson-title { margin: 10px 0 14px; font-family: var(--font-pixel); font-weight: 400; font-synthesis: none; letter-spacing: 0; font-size: clamp(1.78rem, 4vw, 2.81rem); line-height: 1; text-transform: uppercase; color: var(--blueprint); }
 .lesson-motto { font-size: 1.2rem; line-height: 1.5; font-style: italic; max-width: 62ch; padding-left: 16px; border-left: 3px solid var(--blueprint); }
 .lesson-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); margin: 24px 0 20px; border: 1px solid var(--rule-soft); background: var(--bg-surface); }
 .lesson-meta div { padding: 10px 14px; border-right: 1px solid var(--rule-soft); }
@@ -673,3 +681,6 @@ body.js-anim .reveal.in-view { opacity: 1; transform: none; }
   .lesson-meta div { border-right: 0; border-bottom: 1px solid var(--rule-soft); }
 }
 .prose > h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+
+/* every H1 uses the pixel face */
+h1 { font-family: var(--font-pixel); font-weight: 400; font-synthesis: none; }
