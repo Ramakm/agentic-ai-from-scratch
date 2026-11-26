@@ -250,3 +250,58 @@ Everything at once. A loop, tool registry, memory, MCP, subagents, permissions, 
 - 15.06 Permissions & sandbox (60 min) [planned]
 - 15.07 Evals & traces (60 min) [planned]
 - 15.08 Ship it: CLI + docs (60 min) [planned]
+
+## Interview questions
+
+50 practice questions with short and full answers, follow-ups and common wrong answers: https://agentic-ai-from-scratch.vercel.app/interviews/
+
+- The agent takes a different path every run, even at temperature 0 (level 1 Fundamentals, Concept): https://agentic-ai-from-scratch.vercel.app/interviews/llm-foundations/different-answer-every-run/
+- Thirty turns in, the agent forgets what it was asked to do (level 2 Practitioner, Debug): https://agentic-ai-from-scratch.vercel.app/interviews/llm-foundations/forgets-the-task/
+- JSON that parses on Monday and breaks on Friday (level 2 Practitioner, Debug): https://agentic-ai-from-scratch.vercel.app/interviews/llm-foundations/json-fails-on-friday/
+- Estimate what one support conversation costs (level 2 Practitioner, Estimate): https://agentic-ai-from-scratch.vercel.app/interviews/llm-foundations/cost-of-a-conversation/
+- One model for everything, or a different model per step? (level 3 Senior, Trade-off): https://agentic-ai-from-scratch.vercel.app/interviews/llm-foundations/which-model-for-which-step/
+- The system prompt says one thing, the user says another (level 1 Fundamentals, Concept): https://agentic-ai-from-scratch.vercel.app/interviews/llm-foundations/system-prompt-loses/
+- What actually happens when the model "calls a tool" (level 1 Fundamentals, Concept): https://agentic-ai-from-scratch.vercel.app/interviews/tool-use/what-a-tool-call-is/
+- A tool raises an exception and the whole run dies (level 1 Fundamentals, Debug): https://agentic-ai-from-scratch.vercel.app/interviews/tool-use/tool-throws/
+- The customer got refunded twice (level 2 Practitioner, Debug): https://agentic-ai-from-scratch.vercel.app/interviews/tool-use/refund-twice/
+- Forty tools, and the model keeps picking the wrong one (level 2 Practitioner, Design): https://agentic-ai-from-scratch.vercel.app/interviews/tool-use/forty-tools/
+- One tool result ate the context window (level 2 Practitioner, Design): https://agentic-ai-from-scratch.vercel.app/interviews/tool-use/tool-result-eats-context/
+- The model asks for three tools in one turn (level 2 Practitioner, Concept): https://agentic-ai-from-scratch.vercel.app/interviews/tool-use/parallel-calls/
+- How do you test a tool without calling a model? (level 1 Fundamentals, Concept): https://agentic-ai-from-scratch.vercel.app/interviews/tool-use/test-tools-without-a-model/
+- Write the agent loop on a whiteboard (level 1 Fundamentals, Code): https://agentic-ai-from-scratch.vercel.app/interviews/agent-loop/write-the-loop/
+- The agent called search forty times with the same query (level 2 Practitioner, Debug): https://agentic-ai-from-scratch.vercel.app/interviews/agent-loop/calls-search-forty-times/
+- When should an agent loop stop? (level 1 Fundamentals, Concept): https://agentic-ai-from-scratch.vercel.app/interviews/agent-loop/when-to-stop/
+- The model returned a tool call with broken arguments (level 2 Practitioner, Debug): https://agentic-ai-from-scratch.vercel.app/interviews/agent-loop/broken-arguments/
+- The user closes the tab halfway through a ten-minute task (level 3 Senior, Design): https://agentic-ai-from-scratch.vercel.app/interviews/agent-loop/user-closes-the-tab/
+- A free-running loop or an explicit graph? (level 3 Senior, Trade-off): https://agentic-ai-from-scratch.vercel.app/interviews/agent-loop/loop-or-graph/
+- Cap what a single task can spend (level 2 Practitioner, Estimate): https://agentic-ai-from-scratch.vercel.app/interviews/agent-loop/cap-spend-per-task/
+- Conversation memory that grows forever (level 2 Practitioner, Design): https://agentic-ai-from-scratch.vercel.app/interviews/memory-rag/memory-grows-forever/
+- What should an agent remember about a user? (level 3 Senior, Design): https://agentic-ai-from-scratch.vercel.app/interviews/memory-rag/what-to-remember/
+- A note in memory keeps steering every session (level 3 Senior, Debug): https://agentic-ai-from-scratch.vercel.app/interviews/memory-rag/poisoned-memory/
+- RAG returns the right document but the wrong answer (level 2 Practitioner, Debug): https://agentic-ai-from-scratch.vercel.app/interviews/memory-rag/right-document-wrong-answer/
+- Retrieve on every turn, or give the agent a search tool? (level 2 Practitioner, Trade-off): https://agentic-ai-from-scratch.vercel.app/interviews/memory-rag/retrieval-as-a-tool/
+- Keyword search beats your embeddings on product codes (level 2 Practitioner, Concept): https://agentic-ai-from-scratch.vercel.app/interviews/memory-rag/keyword-beats-embeddings/
+- Plan first, or act and observe? (level 2 Practitioner, Trade-off): https://agentic-ai-from-scratch.vercel.app/interviews/planning-multi-agent/plan-first-or-act-first/
+- The agent confidently says the task is done when it isn't (level 2 Practitioner, Design): https://agentic-ai-from-scratch.vercel.app/interviews/planning-multi-agent/confidently-done/
+- Does asking the model to reflect actually help? (level 3 Senior, Concept): https://agentic-ai-from-scratch.vercel.app/interviews/planning-multi-agent/does-reflection-help/
+- When is one agent not enough? (level 2 Practitioner, Trade-off): https://agentic-ai-from-scratch.vercel.app/interviews/planning-multi-agent/one-agent-not-enough/
+- Design an orchestrator-worker research system (level 3 Senior, Design): https://agentic-ai-from-scratch.vercel.app/interviews/planning-multi-agent/orchestrator-worker-research/
+- Five agents, five times the bill, and worse answers (level 4 Staff, Debug): https://agentic-ai-from-scratch.vercel.app/interviews/planning-multi-agent/five-agents-worse-answers/
+- What problem does MCP actually solve? (level 1 Fundamentals, Concept): https://agentic-ai-from-scratch.vercel.app/interviews/mcp-frameworks/what-mcp-solves/
+- Walk through an MCP tool call over stdio (level 2 Practitioner, Concept): https://agentic-ai-from-scratch.vercel.app/interviews/mcp-frameworks/mcp-call-over-stdio/
+- Someone wants to connect a third-party MCP server (level 3 Senior, Design): https://agentic-ai-from-scratch.vercel.app/interviews/mcp-frameworks/third-party-server/
+- Framework or no framework? (level 3 Senior, Trade-off): https://agentic-ai-from-scratch.vercel.app/interviews/mcp-frameworks/framework-or-not/
+- Port an agent from one framework to another (level 3 Senior, Design): https://agentic-ai-from-scratch.vercel.app/interviews/mcp-frameworks/porting-frameworks/
+- Why are agent evals harder than model evals? (level 1 Fundamentals, Concept): https://agentic-ai-from-scratch.vercel.app/interviews/evals-observability/why-agent-evals-are-hard/
+- The golden set is all green, and users are unhappy (level 3 Senior, Debug): https://agentic-ai-from-scratch.vercel.app/interviews/evals-observability/green-evals-unhappy-users/
+- Grade the path, not just the answer (level 2 Practitioner, Concept): https://agentic-ai-from-scratch.vercel.app/interviews/evals-observability/grade-the-path/
+- The LLM judge says 92%. Do you believe it? (level 3 Senior, Trade-off): https://agentic-ai-from-scratch.vercel.app/interviews/evals-observability/llm-judge-says-92/
+- A prompt change broke something, but what? (level 2 Practitioner, Debug): https://agentic-ai-from-scratch.vercel.app/interviews/evals-observability/prompt-change-broke-something/
+- Design an eval harness for a coding agent (level 4 Staff, Design): https://agentic-ai-from-scratch.vercel.app/interviews/evals-observability/eval-harness-coding-agent/
+- Explain prompt injection to a product manager (level 1 Fundamentals, Concept): https://agentic-ai-from-scratch.vercel.app/interviews/safety-security/explain-prompt-injection/
+- Which of these three agents is dangerous? (level 2 Practitioner, Concept): https://agentic-ai-from-scratch.vercel.app/interviews/safety-security/lethal-trifecta/
+- Data leaked, but the agent never called a send tool (level 2 Practitioner, Debug): https://agentic-ai-from-scratch.vercel.app/interviews/safety-security/leak-without-a-tool/
+- The agent needs database access (level 2 Practitioner, Design): https://agentic-ai-from-scratch.vercel.app/interviews/safety-security/give-agent-database-access/
+- Run model-written code safely (level 3 Senior, Design): https://agentic-ai-from-scratch.vercel.app/interviews/safety-security/run-model-written-code/
+- Approval prompts that everyone clicks through (level 3 Senior, Trade-off): https://agentic-ai-from-scratch.vercel.app/interviews/safety-security/approvals-everyone-clicks/
+- The agent paid the wrong supplier. Investigate. (level 4 Staff, Design): https://agentic-ai-from-scratch.vercel.app/interviews/safety-security/investigate-wrong-payment/

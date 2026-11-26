@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Shell for the generated interview pages. scripts/build.mjs fills IV:HEAD and IV:BODY and writes
+       site/interviews/. Edit this file for layout; edit interviews/ for content. -->
+  <!-- IV:HEAD -->
+  <meta name="theme-color" content="#fafaf5">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23EC4D36'/%3E%3Crect x='4' y='4' width='8' height='8' fill='%23fafaf5'/%3E%3C/svg%3E">
+  <script>
+    (function () {
+      var t = null;
+      try { t = sessionStorage.getItem('aafs-theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') t = 'light';   /* every new visit opens in day mode */
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="/assets/fonts/GeistPixel-Square.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/style.css?v=4">
+</head>
+<body class="interview-page">
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="Agentic AI from Scratch home"><span class="logo-icon" aria-hidden="true"></span>AGENTS / FROM SCRATCH</a>
+      <nav class="header-nav" id="headerNav" aria-label="Primary">
+        <a href="/#contents">Contents</a>
+        <a href="/#paths">Paths</a>
+        <a href="/interviews/" aria-current="page">Interviews</a>
+        <a href="/#machines">Machines</a>
+        <a href="/#maintainer">About</a>
+        <a href="#" data-repo-link target="_blank" rel="noopener" class="header-github" aria-label="GitHub repository"><span data-icon="github" data-icon-size="15"></span><span class="star-count" data-stars hidden></span></a>
+      </nav>
+      <button class="icon-btn" type="button" id="searchToggle" aria-label="Search lessons (⌘K)" title="Search (⌘K)">
+        <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M11 11l4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+      <button class="icon-btn" type="button" id="themeToggle" aria-label="Toggle theme"><span id="themeIcon">N</span></button>
+      <button class="icon-btn menu-toggle" type="button" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="siteMenu">≡</button>
+    </div>
+  </header>
+
+  <main class="container iv-main" id="main">
+    <!-- IV:BODY -->
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p>© 2026 · <span data-maintainer>Ramakrushna Mohapatra</span> · MIT · free forever</p>
+        <div class="footer-socials" data-socials="inline" aria-label="Social profiles"></div>
+      </div>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/#contents">Contents</a>
+        <a href="/interviews/">Interviews</a>
+        <a href="#" data-repo-link target="_blank" rel="noopener">GitHub</a>
+        <a href="#" data-repo-link="/blob/main/interviews/README.md" target="_blank" rel="noopener">Add a question</a>
+        <a href="#" data-repo-link="/issues/new/choose" target="_blank" rel="noopener">Report</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="/assets/data.js?v=3"></script>
+  <script src="/assets/common.js?v=4"></script>
+  <script src="/assets/interviews.js?v=1"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+[
+  { "id": "llm-foundations", "name": "LLM foundations", "desc": "What the model returns, context windows, sampling, structured output, cost and model choice." },
+  { "id": "tool-use", "name": "Tool use", "desc": "Schemas, dispatchers, errors as observations, side effects, tool design and testing." },
+  { "id": "agent-loop", "name": "The agent loop", "desc": "The loop itself, stop conditions, malformed actions, budgets, interrupts and graphs." },
+  { "id": "memory-rag", "name": "Memory, context & RAG", "desc": "Growing context, what to remember, memory poisoning, retrieval as a tool, hybrid search." },
+  { "id": "planning-multi-agent", "name": "Planning & multi-agent", "desc": "Plan or act, verifiers, reflection, when to add agents, and what coordination costs." },
+  { "id": "mcp-frameworks", "name": "MCP & frameworks", "desc": "Why MCP exists, the protocol, third-party servers, and framework trade-offs." },
+  { "id": "evals-observability", "name": "Evals & observability", "desc": "Why agent evals are hard, golden sets, trajectories, judges, traces and harnesses." },
+  { "id": "safety-security", "name": "Safety & security", "desc": "Prompt injection, the lethal trifecta, exfiltration, least privilege, sandboxes, approvals, audits." }
+]

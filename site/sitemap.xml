@@ -138,4 +138,55 @@
   <url><loc>https://agentic-ai-from-scratch.vercel.app/lessons/12-safety-and-security/09-human-in-the-loop-design/</loc><priority>0.8</priority></url>
   <url><loc>https://agentic-ai-from-scratch.vercel.app/lessons/12-safety-and-security/10-red-teaming-your-agent/</loc><priority>0.8</priority></url>
   <url><loc>https://agentic-ai-from-scratch.vercel.app/lessons/12-safety-and-security/11-audit-logs/</loc><priority>0.8</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/</loc><priority>0.9</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/llm-foundations/different-answer-every-run/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/llm-foundations/forgets-the-task/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/llm-foundations/json-fails-on-friday/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/llm-foundations/cost-of-a-conversation/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/llm-foundations/which-model-for-which-step/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/llm-foundations/system-prompt-loses/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/tool-use/what-a-tool-call-is/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/tool-use/tool-throws/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/tool-use/refund-twice/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/tool-use/forty-tools/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/tool-use/tool-result-eats-context/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/tool-use/parallel-calls/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/tool-use/test-tools-without-a-model/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/agent-loop/write-the-loop/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/agent-loop/calls-search-forty-times/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/agent-loop/when-to-stop/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/agent-loop/broken-arguments/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/agent-loop/user-closes-the-tab/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/agent-loop/loop-or-graph/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/agent-loop/cap-spend-per-task/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/memory-rag/memory-grows-forever/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/memory-rag/what-to-remember/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/memory-rag/poisoned-memory/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/memory-rag/right-document-wrong-answer/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/memory-rag/retrieval-as-a-tool/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/memory-rag/keyword-beats-embeddings/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/planning-multi-agent/plan-first-or-act-first/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/planning-multi-agent/confidently-done/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/planning-multi-agent/does-reflection-help/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/planning-multi-agent/one-agent-not-enough/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/planning-multi-agent/orchestrator-worker-research/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/planning-multi-agent/five-agents-worse-answers/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/mcp-frameworks/what-mcp-solves/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/mcp-frameworks/mcp-call-over-stdio/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/mcp-frameworks/third-party-server/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/mcp-frameworks/framework-or-not/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/mcp-frameworks/porting-frameworks/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/evals-observability/why-agent-evals-are-hard/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/evals-observability/green-evals-unhappy-users/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/evals-observability/grade-the-path/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/evals-observability/llm-judge-says-92/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/evals-observability/prompt-change-broke-something/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/evals-observability/eval-harness-coding-agent/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/safety-security/explain-prompt-injection/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/safety-security/lethal-trifecta/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/safety-security/leak-without-a-tool/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/safety-security/give-agent-database-access/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/safety-security/run-model-written-code/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/safety-security/approvals-everyone-clicks/</loc><priority>0.6</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/safety-security/investigate-wrong-payment/</loc><priority>0.6</priority></url>
 </urlset>

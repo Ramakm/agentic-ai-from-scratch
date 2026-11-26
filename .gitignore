@@ -8,5 +8,6 @@ __pycache__/
 .ipynb_checkpoints/
 site/content/
 site/lessons/
+site/interviews/
 phases/**/traces/
 phases/**/runs/

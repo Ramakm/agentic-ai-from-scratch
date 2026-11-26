@@ -57,6 +57,56 @@ const totals = {
   hours: Math.round(all.reduce((s, x) => s + x.l.minutes, 0) / 60),
 };
 
+/* ------------------------------------------------------------ interview questions */
+/* interviews/cards.json lists the topics; interviews/<card>/<NN-slug>.md is one question.
+   The header shape is fixed (see interviews/README.md) and checked below. */
+
+const IV_LEVELS = { 1: 'Fundamentals', 2: 'Practitioner', 3: 'Senior', 4: 'Staff' };
+const IV_TYPES = ['Concept', 'Debug', 'Design', 'Trade-off', 'Estimate', 'Code'];
+const IV_SECTIONS = ['Short answer', 'Full answer', 'Follow-ups', 'Wrong answers'];
+const ivProblems = [];
+const lessonByKey = new Map(all.map((x) => [`${x.p.id}/${x.l.id}`, x]));
+const ivCards = exists('interviews/cards.json') ? JSON.parse(read('interviews/cards.json')) : [];
+const interviews = [];
+for (const card of ivCards) {
+  const dir = `interviews/${card.id}`;
+  if (!exists(dir)) { ivProblems.push(`${dir}: card has no folder`); continue; }
+  for (const f of fs.readdirSync(path.join(ROOT, dir)).filter((f) => f.endsWith('.md')).sort()) {
+    const rel = `${dir}/${f}`, doc = read(rel);
+    const field = (k) => (doc.match(new RegExp(`^\\*\\*${k}:\\*\\*\\s*(.+)$`, 'm')) || [])[1]?.trim() || '';
+    const sections = {};
+    for (const part of doc.split(/^## /m).slice(1)) {
+      const nl = part.indexOf('\n');
+      sections[part.slice(0, nl).trim()] = part.slice(nl + 1).trim();
+    }
+    const q = {
+      card: card.id, slug: f.replace(/^\d+-/, '').replace(/\.md$/, ''), file: rel,
+      title: (doc.match(/^# (.+)$/m) || [])[1]?.trim() || '',
+      prompt: doc.split('\n').filter((x) => /^>\s?/.test(x)).map((x) => x.replace(/^>\s?/, '')).join('\n').trim(),
+      level: Number(field('Level')), type: field('Type'), minutes: Number((field('Time').match(/\d+/) || [])[0] || 0),
+      lessons: field('Taught in').split(',').map((s) => s.trim()).filter(Boolean), sections,
+    };
+    if (!q.title) ivProblems.push(`${rel}: missing "# title"`);
+    if (!q.prompt) ivProblems.push(`${rel}: missing "> scenario" line`);
+    if (!IV_LEVELS[q.level]) ivProblems.push(`${rel}: **Level:** must be 1-4`);
+    if (!IV_TYPES.includes(q.type)) ivProblems.push(`${rel}: **Type:** must be one of ${IV_TYPES.join(', ')}`);
+    if (!q.minutes) ivProblems.push(`${rel}: **Time:** must be "~N minutes"`);
+    for (const s of IV_SECTIONS) if (!sections[s]) ivProblems.push(`${rel}: missing "## ${s}"`);
+    if (!q.lessons.length) ivProblems.push(`${rel}: **Taught in:** needs at least one lesson`);
+    for (const k of q.lessons) {
+      const x = lessonByKey.get(k);
+      if (!x) ivProblems.push(`${rel}: unknown lesson ${k}`);
+      else if (!x.l.published) ivProblems.push(`${rel}: lesson ${k} is not live yet`);
+    }
+    interviews.push(q);
+  }
+}
+interviews.forEach((q, i) => { q.num = i + 1; q.url = `${cur.site}interviews/${q.card}/${q.slug}/`; q.href = `/interviews/${q.card}/${q.slug}/`; });
+{
+  const seen = new Set();
+  for (const q of interviews) { if (seen.has(q.href)) ivProblems.push(`duplicate interview slug ${q.href}`); seen.add(q.href); }
+}
+
 /* ------------------------------------------------------------ site data */
 
 write('site/assets/data.js',
@@ -127,7 +177,9 @@ write('site/llms.txt',
   `Source: ${repoUrl}\nSite: ${cur.site}\nMaintainer: ${cur.maintainer.name} (${cur.maintainer.socials.map((s) => s.url).join(', ')})\n\n` +
   `Install the tutor skills into a coding agent: npx skills add ${cur.repo}\n\n` +
   phases.map((p) => `## Phase ${pad(p.index)}: ${p.name}\n\n${p.desc}\n\n` + p.lessons.map((l) =>
-    `- ${l.num} ${l.title} (${l.minutes} min)${l.published ? `: ${lessonUrl(l)} | raw: https://raw.githubusercontent.com/${cur.repo}/main/${l.path}/docs/en.md` : ' [planned]'}`).join('\n')).join('\n\n') + '\n');
+    `- ${l.num} ${l.title} (${l.minutes} min)${l.published ? `: ${lessonUrl(l)} | raw: https://raw.githubusercontent.com/${cur.repo}/main/${l.path}/docs/en.md` : ' [planned]'}`).join('\n')).join('\n\n') +
+  (interviews.length ? `\n\n## Interview questions\n\n${interviews.length} practice questions with short and full answers, follow-ups and common wrong answers: ${cur.site}interviews/\n\n` +
+    interviews.map((q) => `- ${q.title} (level ${q.level} ${IV_LEVELS[q.level]}, ${q.type}): ${q.url}`).join('\n') : '') + '\n');
 
 /* ------------------------------------------------------------ lesson content for the site (not committed) */
 
@@ -209,7 +261,9 @@ write('site/robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${cur.site}sitemap
 write('site/sitemap.xml',
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
   [`  <url><loc>${cur.site}</loc><priority>1.0</priority></url>`,
-    ...all.filter((x) => x.l.published).map((x) => `  <url><loc>${lessonUrl(x.l)}</loc><priority>0.8</priority></url>`)].join('\n') +
+    ...all.filter((x) => x.l.published).map((x) => `  <url><loc>${lessonUrl(x.l)}</loc><priority>0.8</priority></url>`),
+    ...(interviews.length ? [`  <url><loc>${cur.site}interviews/</loc><priority>0.9</priority></url>`] : []),
+    ...interviews.map((q) => `  <url><loc>${q.url}</loc><priority>0.6</priority></url>`)].join('\n') +
   `\n</urlset>\n`);
 
 /* ------------------------------------------------------------ static lesson pages (not committed) */
@@ -262,9 +316,161 @@ if (!CHECK) {
   console.log(`wrote ${live.length} static lesson page(s) into site/lessons/`);
 }
 
+/* ------------------------------------------------------------ interview pages (not committed) */
+/* /interviews/ is a filterable index; /interviews/<card>/<slug>/ is one question, rendered at build
+   time so every answer is in the HTML. interviews.js adds search, filters, reveal and progress. */
+
+function mdInline(s) {
+  const codes = [];
+  s = htmlEsc(s).replace(/`([^`]+)`/g, (_, c) => `\u0000${codes.push(c) - 1}\u0000`);
+  s = s.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, t, u) => `<a href="${u}"${/^https?:/.test(u) ? ' target="_blank" rel="noopener"' : ''}>${t}</a>`)
+    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>').replace(/(^|[^*\w])\*([^*\n]+)\*(?!\w)/g, '$1<em>$2</em>');
+  return s.replace(/\u0000(\d+)\u0000/g, (_, i) => `<code>${codes[i]}</code>`);
+}
+
+function mdToHtml(md) {
+  /* The subset interview answers use: paragraphs, ### headings, lists, tables, code fences, quotes. */
+  const out = [], lines = md.split('\n');
+  for (let i = 0; i < lines.length;) {
+    const line = lines[i];
+    if (!line.trim()) { i++; continue; }
+    if (line.startsWith('```')) {
+      const lang = line.slice(3).trim(), body = [];
+      for (i++; i < lines.length && !lines[i].startsWith('```'); i++) body.push(lines[i]);
+      i++;
+      out.push(`<pre><code${lang ? ` class="language-${lang}"` : ''}>${htmlEsc(body.join('\n'))}</code></pre>`);
+    } else if (/^#{3,4} /.test(line)) {
+      const n = line.match(/^#+/)[0].length;
+      out.push(`<h${n}>${mdInline(line.slice(n + 1))}</h${n}>`); i++;
+    } else if (/^\|/.test(line)) {
+      const rows = [];
+      for (; i < lines.length && /^\|/.test(lines[i]); i++) rows.push(lines[i]);
+      const cells = (r) => r.replace(/^\||\|$/g, '').split(/(?<!\\)\|/).map((c) => mdInline(c.trim().replace(/\\\|/g, '|')));
+      const body = rows.slice(2).map((r) => `<tr>${cells(r).map((c) => `<td>${c}</td>`).join('')}</tr>`).join('');
+      out.push(`<div class="table-wrap"><table><thead><tr>${cells(rows[0]).map((c) => `<th>${c}</th>`).join('')}</tr></thead><tbody>${body}</tbody></table></div>`);
+    } else if (/^\s*([-*]|\d+\.) /.test(line)) {
+      const ordered = /^\s*\d+\./.test(line), items = [];
+      for (; i < lines.length && (/^\s*([-*]|\d+\.) /.test(lines[i]) || (/^\s{2,}\S/.test(lines[i]) && items.length)); i++) {
+        if (/^\s*([-*]|\d+\.) /.test(lines[i])) items.push(lines[i].replace(/^\s*([-*]|\d+\.) /, ''));
+        else items[items.length - 1] += ' ' + lines[i].trim();
+      }
+      out.push(`<${ordered ? 'ol' : 'ul'}>${items.map((t) => `<li>${mdInline(t)}</li>`).join('')}</${ordered ? 'ol' : 'ul'}>`);
+    } else if (line.startsWith('>')) {
+      const body = [];
+      for (; i < lines.length && lines[i].startsWith('>'); i++) body.push(lines[i].replace(/^>\s?/, ''));
+      out.push(`<blockquote>${mdToHtml(body.join('\n'))}</blockquote>`);
+    } else {
+      const body = [];
+      for (; i < lines.length && lines[i].trim() && !/^(```|#{3,4} |\||\s*([-*]|\d+\.) |>)/.test(lines[i]); i++) body.push(lines[i].trim());
+      out.push(`<p>${mdInline(body.join(' '))}</p>`);
+    }
+  }
+  return out.join('\n');
+}
+
+const ivLevelChip = (n) => `<span class="iv-level iv-level--${n}">L${n} · ${IV_LEVELS[n]}</span>`;
+
+if (!CHECK && interviews.length) {
+  const shell = read('scripts/interview-shell.html');
+  if (!shell.includes('<!-- IV:HEAD -->') || !shell.includes('<!-- IV:BODY -->')) { console.error('scripts/interview-shell.html is missing the IV:HEAD / IV:BODY markers'); process.exit(1); }
+  const out = path.join(ROOT, 'site/interviews');
+  fs.rmSync(out, { recursive: true, force: true });
+  const page = (head, body) => shell.replace('<!-- IV:HEAD -->', head).replace('<!-- IV:BODY -->', body);
+  const cardName = Object.fromEntries(ivCards.map((c) => [c.id, c.name]));
+  const save = (rel, html) => { const dest = path.join(out, rel, 'index.html'); fs.mkdirSync(path.dirname(dest), { recursive: true }); fs.writeFileSync(dest, html); };
+
+  /* index */
+  const levelCounts = (qs) => [1, 2, 3, 4].map((n) => qs.filter((q) => q.level === n).length);
+  const indexTitle = 'Agentic AI Interview Questions (Free): AI Agent Engineer Interview Prep';
+  const indexDesc = clip(`${interviews.length} AI agent interview questions with short answers, full answers, follow-ups and the wrong answers interviewers hear most. Free, from the Agentic AI from Scratch course.`, 158);
+  const indexLd = { '@context': 'https://schema.org', '@graph': [
+    { '@type': 'CollectionPage', name: indexTitle, description: indexDesc, url: `${cur.site}interviews/`, isPartOf: { '@id': `${cur.site}#website` } },
+    { '@type': 'ItemList', itemListElement: interviews.map((q) => ({ '@type': 'ListItem', position: q.num, url: q.url, name: q.title })) },
+  ] };
+  const cardsHtml = ivCards.map((c) => {
+    const qs = interviews.filter((q) => q.card === c.id), lc = levelCounts(qs);
+    return `<button type="button" class="iv-card" data-card-filter="${c.id}">` +
+      `<span class="iv-card-count">${qs.length} questions</span><span class="iv-card-name">${htmlEsc(c.name)}</span>` +
+      `<span class="iv-card-desc">${htmlEsc(c.desc)}</span>` +
+      `<span class="iv-card-levels">${lc.map((n, k) => `<span title="${IV_LEVELS[k + 1]}">L${k + 1} ${n}</span>`).join('')}</span></button>`;
+  }).join('\n');
+  const rowsHtml = interviews.map((q) =>
+    `<li class="iv-row" data-id="${q.card}/${q.slug}" data-card="${q.card}" data-level="${q.level}" data-type="${q.type}" ` +
+    `data-text="${htmlEsc((q.title + ' ' + plain(q.prompt) + ' ' + cardName[q.card] + ' ' + q.type).toLowerCase())}">` +
+    `<span class="iv-row-num">${pad(q.num)}</span><a class="iv-row-title" href="${q.href}">${htmlEsc(q.title)}</a>` +
+    `<span class="iv-row-meta">${ivLevelChip(q.level)}<span class="iv-type">${q.type}</span><span class="iv-card-tag">${htmlEsc(cardName[q.card])}</span><span class="iv-min">~${q.minutes} min</span></span>` +
+    `<span class="iv-row-done" aria-label="practiced" hidden>✓</span></li>`).join('\n');
+  const opts = (pairs) => pairs.map(([v, t]) => `<option value="${v}">${htmlEsc(t)}</option>`).join('');
+  save('', page(
+    metaTags({ title: indexTitle, description: indexDesc, url: `${cur.site}interviews/` }) + '\n  ' + jsonLd(indexLd),
+    `<section class="iv-hero">
+      <p class="eyebrow">Interview prep · free</p>
+      <h1 class="lesson-title">Interviews</h1>
+      <p class="iv-intro">Questions you'll meet when interviewing for AI agent and LLM engineering roles. Each one has a scenario, a short answer, a full answer, follow-ups an interviewer might ask next, and the wrong answers they hear most. Try the question first, then open the answer. Every answer links to the lesson that teaches it.</p>
+      <dl class="iv-stats"><div><dt>Questions</dt><dd>${interviews.length}</dd></div><div><dt>Topics</dt><dd>${ivCards.length}</dd></div><div><dt>Levels</dt><dd>4</dd></div><div><dt>Practiced</dt><dd id="ivDoneCount">0</dd></div></dl>
+    </section>
+    <section class="iv-cards" aria-label="Topics">${cardsHtml}</section>
+    <section class="iv-bank" aria-label="Question bank">
+      <div class="iv-controls">
+        <label class="iv-search"><span class="sr-only">Search questions</span><input type="search" id="ivSearch" placeholder="Search the questions…" autocomplete="off"></label>
+        <label><span class="sr-only">Level</span><select id="ivLevel"><option value="">All levels</option>${opts(Object.entries(IV_LEVELS).map(([n, t]) => [n, `L${n} · ${t}`]))}</select></label>
+        <label><span class="sr-only">Type</span><select id="ivType"><option value="">All types</option>${opts(IV_TYPES.map((t) => [t, t]))}</select></label>
+        <label><span class="sr-only">Topic</span><select id="ivCard"><option value="">All topics</option>${opts(ivCards.map((c) => [c.id, c.name]))}</select></label>
+        <label class="iv-check"><input type="checkbox" id="ivHideDone"> Hide practiced</label>
+        <button type="button" class="btn" id="ivRandom">Random question</button>
+      </div>
+      <p class="iv-count" id="ivCount">${interviews.length} questions</p>
+      <ol class="iv-list" id="ivList">${rowsHtml}</ol>
+      <p class="iv-empty" id="ivEmpty" hidden>No question matches these filters.</p>
+    </section>`));
+
+  /* one page per question */
+  interviews.forEach((q, k) => {
+    const prev = interviews[k - 1], next = interviews[k + 1];
+    const title = `${q.title} · AI Agent Interview Question`;
+    const description = clip(plain(q.prompt), 158);
+    const ld = { '@context': 'https://schema.org', '@graph': [
+      { '@type': 'QAPage', mainEntity: { '@type': 'Question', name: q.title, text: plain(q.prompt), answerCount: 1,
+        acceptedAnswer: { '@type': 'Answer', text: plain(q.sections['Short answer']), url: q.url } } },
+      { '@type': 'BreadcrumbList', itemListElement: [
+        { '@type': 'ListItem', position: 1, name: cur.title, item: cur.site },
+        { '@type': 'ListItem', position: 2, name: 'Interviews', item: `${cur.site}interviews/` },
+        { '@type': 'ListItem', position: 3, name: q.title, item: q.url }] },
+    ] };
+    const followUps = q.sections['Follow-ups'].split('\n').filter((x) => /^\s*-\s/.test(x)).map((x) => x.replace(/^\s*-\s+/, ''));
+    const followHtml = followUps.map((f) => {
+      const [ask, expected] = f.split(/\s*\*Expected:\*\s*/);
+      return `<li><p>${mdInline(ask)}</p>${expected ? `<details class="iv-expected"><summary>Expected answer</summary><p>${mdInline(expected)}</p></details>` : ''}</li>`;
+    }).join('');
+    const taught = q.lessons.map((key) => {
+      const { p, l } = lessonByKey.get(key);
+      return `<li><a href="${lessonUrl(l).replace(cur.site, '/')}">Lesson ${l.num} · ${htmlEsc(l.title)}</a> <span class="iv-min">Phase ${pad(p.index)} · ${htmlEsc(p.name)}</span></li>`;
+    }).join('');
+    save(`${q.card}/${q.slug}`, page(
+      metaTags({ title, description, url: q.url, type: 'article' }) + '\n  ' + jsonLd(ld),
+      `<article class="iv-question" data-id="${q.card}/${q.slug}">
+      <nav class="lesson-crumbs" aria-label="Breadcrumb"><a href="/interviews/">Interviews</a> / <a href="/interviews/?card=${q.card}">${htmlEsc(cardName[q.card])}</a> / Q${pad(q.num)}</nav>
+      <h1 class="lesson-title">${htmlEsc(q.title)}</h1>
+      <p class="iv-meta">${ivLevelChip(q.level)}<span class="iv-type">${q.type}</span><span class="iv-min">~${q.minutes} min</span><span class="iv-card-tag">${htmlEsc(cardName[q.card])}</span></p>
+      <div class="iv-prompt prose">${mdToHtml(q.prompt)}</div>
+      <p class="iv-hint">Answer it out loud or on paper first. Then open the short answer.</p>
+      <details class="iv-reveal"><summary>Short answer</summary><div class="prose">${mdToHtml(q.sections['Short answer'])}</div></details>
+      <details class="iv-reveal"><summary>Full answer</summary><div class="prose">${mdToHtml(q.sections['Full answer'])}</div></details>
+      <section class="iv-section"><h2>Follow-ups</h2><ol class="iv-follow">${followHtml}</ol></section>
+      <details class="iv-reveal"><summary>Wrong answers interviewers hear</summary><div class="prose">${mdToHtml(q.sections['Wrong answers'])}</div></details>
+      <section class="iv-section"><h2>Taught in</h2><ul class="iv-taught">${taught}</ul></section>
+      <div class="iv-actions"><button type="button" class="btn btn--primary" id="ivMark">Mark as practiced</button><button type="button" class="btn" id="ivRandom">Random question</button>
+        <a class="btn" href="https://github.com/${cur.repo}/blob/main/${q.file}" target="_blank" rel="noopener">Improve this answer</a></div>
+      <nav class="lesson-pager-static iv-pager">${prev ? `<a href="${prev.href}">← ${htmlEsc(prev.title)}</a>` : '<span></span>'}${next ? `<a href="${next.href}">${htmlEsc(next.title)} →</a>` : ''}</nav>
+      <script type="application/json" id="ivAll">${JSON.stringify(interviews.map((x) => x.href))}</script>
+    </article>`));
+  });
+  console.log(`wrote ${interviews.length} interview page(s) into site/interviews/`);
+}
+
 /* ------------------------------------------------------------ lesson structure */
 
-const problems = [];
+const problems = [...ivProblems];
 for (const { l } of all.filter((x) => x.l.published)) {
   const need = ['code/main.py', 'quiz.json'];
   for (const f of need) if (!exists(`${l.path}/${f}`)) problems.push(`${l.path}: missing ${f}`);
@@ -306,4 +512,4 @@ if (CHECK && stale.length) {
   console.error(`Generated files are out of date:\n  ${stale.join('\n  ')}\nRun: node scripts/build.mjs`);
   process.exit(1);
 }
-console.log(`${totals.phases} phases · ${totals.lessons} lessons · ${totals.published} live · ~${totals.hours}h${CHECK ? ' · generated files up to date' : ''}`);
+console.log(`${totals.phases} phases · ${totals.lessons} lessons · ${totals.published} live · ~${totals.hours}h · ${interviews.length} interview questions${CHECK ? ' · generated files up to date' : ''}`);

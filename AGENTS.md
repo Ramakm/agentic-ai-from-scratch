@@ -14,6 +14,7 @@ same content.
 |------|------|
 | `curriculum.json` | Source of truth: phases, lesson ids, titles, minutes, maintainer info |
 | `phases/<phase>/<lesson>/` | One lesson: `docs/en.md`, `code/`, `quiz.json`, `outputs/` |
+| `interviews/<card>/<NN-slug>.md` | Interview questions, rendered to `/interviews/` by the build. Format in `interviews/README.md` |
 | `skills/<name>/SKILL.md` | Tutor skills installed with `npx skills add Ramakm/agentic-ai-from-scratch` |
 | `scripts/build.mjs` | Generates site data, README contents, ROADMAP, phase READMEs, llms.txt |
 | `scripts/test_lessons.py` | Runs every lesson's tests in isolation |

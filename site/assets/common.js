@@ -107,6 +107,7 @@
     ['Skills', REPO_URL + '/tree/main/skills', 1],
     ['Contents', '/#contents'],
     ['Learning paths', '/#paths'],
+    ['Interviews', '/interviews/'],
     ['Roadmap', REPO_URL + '/blob/main/ROADMAP.md', 1],
     ['Machines', '/#machines'],
     ['Books', '/#books'],
