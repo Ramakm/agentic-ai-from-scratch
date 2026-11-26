@@ -108,8 +108,10 @@ code, pre { font-family: var(--font-mono); }
   font-family: var(--font-display); font-weight: 600; letter-spacing: -.02em; font-size: 1.18rem; text-transform: uppercase; display: flex; align-items: baseline; gap: 8px; margin-inline-end: auto; white-space: nowrap;
 }
 .logo:hover { color: var(--blueprint); }
-.logo-icon { width: 12px; height: 12px; background: var(--blueprint); display: inline-block; position: relative; }
-.logo-icon::after { content: ""; position: absolute; inset: 3px; background: var(--bg); }
+.logo-icon { width: 20px; height: 20px; flex: none; align-self: center; }
+.logo-loop { fill: var(--blueprint); }
+.logo-core { fill: var(--ink); transition: fill .15s; }
+.logo:hover .logo-core { fill: var(--blueprint); }
 .header-nav { display: flex; gap: 20px; align-items: center; margin-inline-end: 8px; }
 .header-nav a {
   display: inline-flex; align-items: center; gap: 6px; min-height: 36px;

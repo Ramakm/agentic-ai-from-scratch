@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" shape-rendering="crispEdges">
+  <!-- The agent loop (an arrow going round) around the model (the core). Same mark as the header logo. -->
+  <rect width="16" height="16" fill="#EC4D36"/>
+  <path fill="#fafaf5" d="M2 3h7v2H4v8h8V9h2v6H2zM9 1h1v6H9zM10 2h1v4h-1zM11 3h1v2h-1z M6 7h4v4H6z"/>
+</svg>
