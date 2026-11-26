@@ -39,7 +39,7 @@ window.SITE = {
   "totals": {
     "phases": 16,
     "lessons": 163,
-    "published": 126,
+    "published": 137,
     "hours": 127
   }
 };
@@ -1416,96 +1416,118 @@ window.PHASES = [
   "id": "12-safety-and-security",
   "name": "Safety, Security & Guardrails",
   "desc": "The agent threat model. Prompt injection, exfiltration, least privilege, sandboxes, permissions, red-teaming.",
-  "status": "planned",
-  "published": 0,
+  "status": "complete",
+  "published": 11,
   "lessons": [
    {
     "id": "01-the-agent-threat-model",
     "title": "The agent threat model",
     "minutes": 45,
     "path": "phases/12-safety-and-security/01-the-agent-threat-model",
-    "type": "",
-    "num": "12.01"
+    "type": "Learn",
+    "num": "12.01",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "02-prompt-injection-direct-indirect",
     "title": "Prompt injection, direct & indirect",
     "minutes": 55,
     "path": "phases/12-safety-and-security/02-prompt-injection-direct-indirect",
-    "type": "",
-    "num": "12.02"
+    "type": "Build",
+    "num": "12.02",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "03-data-exfiltration-paths",
     "title": "Data exfiltration paths",
     "minutes": 45,
     "path": "phases/12-safety-and-security/03-data-exfiltration-paths",
-    "type": "",
-    "num": "12.03"
+    "type": "Build",
+    "num": "12.03",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "04-least-privilege-tools",
     "title": "Least-privilege tools",
     "minutes": 40,
     "path": "phases/12-safety-and-security/04-least-privilege-tools",
-    "type": "",
-    "num": "12.04"
+    "type": "Build",
+    "num": "12.04",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "05-sandboxing-with-containers",
     "title": "Sandboxing with containers",
     "minutes": 55,
     "path": "phases/12-safety-and-security/05-sandboxing-with-containers",
-    "type": "",
-    "num": "12.05"
+    "type": "Build",
+    "num": "12.05",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "06-permission-systems",
     "title": "Permission systems",
     "minutes": 50,
     "path": "phases/12-safety-and-security/06-permission-systems",
-    "type": "",
-    "num": "12.06"
+    "type": "Build",
+    "num": "12.06",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "07-input-output-guardrails",
     "title": "Input & output guardrails",
     "minutes": 45,
     "path": "phases/12-safety-and-security/07-input-output-guardrails",
-    "type": "",
-    "num": "12.07"
+    "type": "Build",
+    "num": "12.07",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "08-secrets-and-credentials",
     "title": "Secrets and credentials",
     "minutes": 35,
     "path": "phases/12-safety-and-security/08-secrets-and-credentials",
-    "type": "",
-    "num": "12.08"
+    "type": "Build",
+    "num": "12.08",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "09-human-in-the-loop-design",
     "title": "Human-in-the-loop design",
     "minutes": 40,
     "path": "phases/12-safety-and-security/09-human-in-the-loop-design",
-    "type": "",
-    "num": "12.09"
+    "type": "Build",
+    "num": "12.09",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "10-red-teaming-your-agent",
     "title": "Red-teaming your agent",
     "minutes": 55,
     "path": "phases/12-safety-and-security/10-red-teaming-your-agent",
-    "type": "",
-    "num": "12.10"
+    "type": "Build",
+    "num": "12.10",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "11-audit-logs",
     "title": "Audit logs",
     "minutes": 35,
     "path": "phases/12-safety-and-security/11-audit-logs",
-    "type": "",
-    "num": "12.11"
+    "type": "Build",
+    "num": "12.11",
+    "published": true,
+    "hasQuiz": true
    }
   ]
  },

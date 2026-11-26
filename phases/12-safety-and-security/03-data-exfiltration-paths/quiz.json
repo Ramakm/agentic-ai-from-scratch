@@ -1,0 +1,78 @@
+{
+  "lesson": "03-data-exfiltration-paths",
+  "title": "Data Exfiltration Paths",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Your agent has no tools that send messages or make requests. Can it still leak data?",
+      "options": [
+        "No, it has no egress",
+        "Yes: if the UI renders markdown, an image URL in its answer is fetched automatically",
+        "Only through logs",
+        "Only if the user copies the answer"
+      ],
+      "correct": 1,
+      "explanation": "The chat UI is an egress channel. A rendered image is a request the browser makes with no click."
+    },
+    {
+      "stage": "check",
+      "question": "Why does the allow-list check use endswith('.' + host) instead of 'host in dest'?",
+      "options": [
+        "It's faster",
+        "'google.com' in 'google.com.attacker.example' is true, so a substring check lets lookalike hosts through",
+        "To support IPv6",
+        "No reason"
+      ],
+      "correct": 1,
+      "explanation": "Match the host exactly or as a real parent domain. Substring checks are a classic bypass."
+    },
+    {
+      "stage": "check",
+      "question": "The chunked-subdomain attack sends six characters per request. Which detector catches it?",
+      "options": [
+        "Content matching",
+        "The canary",
+        "The destination allow-list, because the chunks are shorter than the content match window",
+        "None"
+      ],
+      "correct": 2,
+      "explanation": "Small chunks beat content matching. The unknown host doesn't."
+    },
+    {
+      "stage": "check",
+      "question": "What makes a canary token useful when content matching already exists?",
+      "options": [
+        "It blocks every leak",
+        "Nothing legitimate ever sends it, so any movement is an alarm with almost no false positives, whatever the destination",
+        "It encrypts secrets",
+        "It replaces the allow-list"
+      ],
+      "correct": 1,
+      "explanation": "A canary is a tripwire. It tells you a leak path exists, even if it doesn't stop the real secret."
+    },
+    {
+      "stage": "post",
+      "question": "An attacker posts the key reversed in a comment on github.com, which is allowed. Nothing fires. What's the real fix?",
+      "options": [
+        "Add reversal to content matching and stop there",
+        "Remove github.com from the allow-list",
+        "Don't let the secret into a session that also reads untrusted content; give tools credentials the model never sees",
+        "Ask the model not to reverse strings"
+      ],
+      "correct": 2,
+      "explanation": "Detection can always be out-transformed. Removing a trifecta leg can't."
+    },
+    {
+      "stage": "post",
+      "question": "Your agent may post to a Slack webhook on hooks.slack.com. Why is that a risk for the allow-list?",
+      "options": [
+        "Slack is slow",
+        "Anyone can create a webhook on that host, so an allowed host can deliver data to an attacker's workspace",
+        "Webhooks are encrypted",
+        "It isn't a risk"
+      ],
+      "correct": 1,
+      "explanation": "Allow-list destinations you control (specific webhook URLs, your own org), not whole multi-tenant hosts."
+    }
+  ]
+}

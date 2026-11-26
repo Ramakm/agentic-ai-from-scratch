@@ -1,0 +1,78 @@
+{
+  "lesson": "09-human-in-the-loop-design",
+  "title": "Human-in-the-Loop Design",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Why might asking a human to approve every action catch fewer harmful actions than asking less?",
+      "options": [
+        "Humans are slower than models",
+        "With many prompts, reviewers stop reading and approve by habit, so the harmful one gets the least attention",
+        "Approvals cost tokens",
+        "It can't; more prompts are always safer"
+      ],
+      "correct": 1,
+      "explanation": "Approval fatigue turns a check into a habit. Fewer, more meaningful prompts keep attention high."
+    },
+    {
+      "stage": "check",
+      "question": "Ask-by-risk-tier never showed the deletion of 40 lines of payment tests. Why?",
+      "options": [
+        "It was a read",
+        "It was classified medium risk and reversible, which that policy doesn't ask about",
+        "It happened too early",
+        "Tests are excluded"
+      ],
+      "correct": 1,
+      "explanation": "Risk tiers judge the kind of action, not whether it was expected. The plan policy caught it as off-plan."
+    },
+    {
+      "stage": "check",
+      "question": "How should you treat the attention curve in the simulation?",
+      "options": [
+        "As measured data from studies",
+        "As an assumption; change it and check whether the ranking of policies still holds",
+        "As a constant every team shares",
+        "Ignore it"
+      ],
+      "correct": 1,
+      "explanation": "The curve is a model. The lesson is the method: compare policies under different assumptions, then measure your own reviewers."
+    },
+    {
+      "stage": "check",
+      "question": "An approval request has been waiting 30 hours with a 24-hour expiry. What happens on 'approve'?",
+      "options": [
+        "Execute it",
+        "Denied: expired approvals default to no",
+        "Ask the agent",
+        "Extend the expiry"
+      ],
+      "correct": 1,
+      "explanation": "Silence and delay must fail closed. The agent can ask again with fresh facts."
+    },
+    {
+      "stage": "post",
+      "question": "A human approved paying INV-77. Before the agent resumes, the supplier's IBAN on file changes. What should happen?",
+      "options": [
+        "Pay, the invoice was approved",
+        "Re-ask: the approval was for the facts the human saw, and their fingerprint no longer matches",
+        "Pay the old IBAN",
+        "Cancel silently"
+      ],
+      "correct": 1,
+      "explanation": "Bind approvals to facts. A changed world needs a new decision."
+    },
+    {
+      "stage": "post",
+      "question": "Your logs show a reviewer approving 98% of requests with a median decision time of 0.8 seconds. What does that suggest?",
+      "options": [
+        "The agent is very accurate",
+        "The prompts have stopped being a real check; reduce and sharpen them",
+        "The reviewer is very fast at reading",
+        "Nothing"
+      ],
+      "correct": 1,
+      "explanation": "Sub-second, near-universal approval is the signature of fatigue."
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "lesson": "07-input-output-guardrails",
+  "title": "Input & Output Guardrails",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "A guardrail blocks 'How do I kill my subscription?'. What kind of error is that?",
+      "options": [
+        "A false negative",
+        "A false positive: a legitimate request was blocked",
+        "A true positive",
+        "Not an error"
+      ],
+      "correct": 1,
+      "explanation": "Guardrails are classifiers. Blocking real users is an error with a real cost."
+    },
+    {
+      "stage": "check",
+      "question": "Why does PII redaction run before the model starts, while the topic rail runs in parallel with it?",
+      "options": [
+        "Redaction is slower",
+        "Redaction's job is to keep data away from the model, so it must finish first; the topic rail only decides whether to keep the answer",
+        "The topic rail needs the model's answer",
+        "No reason"
+      ],
+      "correct": 1,
+      "explanation": "Tripwires can run in parallel because a blocked result is discarded. Data the model already saw can't be un-sent."
+    },
+    {
+      "stage": "check",
+      "question": "Why does the card redactor check Luhn before replacing 16 digits?",
+      "options": [
+        "To speed it up",
+        "So parcel references and other 16-digit numbers aren't mangled; only valid card numbers are redacted",
+        "Luhn encrypts the number",
+        "It's required by law"
+      ],
+      "correct": 1,
+      "explanation": "Validation reduces false positives without missing real cards."
+    },
+    {
+      "stage": "check",
+      "question": "How did the grounding rail catch the $490 refund?",
+      "options": [
+        "It asked another model",
+        "It looked for $490.00 in the tool results and found only amount=49.00",
+        "It compared with the user's message",
+        "It blocked every refund"
+      ],
+      "correct": 1,
+      "explanation": "Concrete facts in the answer (ids, amounts) must come from tool results. Exact checks are cheap and reliable."
+    },
+    {
+      "stage": "post",
+      "question": "Your output rails score precision 1.00 and recall 1.00 on six examples. What should you conclude?",
+      "options": [
+        "The rails are perfect",
+        "The labelled set is too small to tell; grow it from real conversations before trusting the numbers",
+        "Turn every rail to block",
+        "Remove the input rails"
+      ],
+      "correct": 1,
+      "explanation": "Perfect scores on tiny sets are common and meaningless."
+    },
+    {
+      "stage": "post",
+      "question": "You have a new jailbreak classifier with unknown accuracy. What action should it start with?",
+      "options": [
+        "block",
+        "flag, logging hits so you can measure precision on real traffic before deciding to block",
+        "redact",
+        "Don't deploy it"
+      ],
+      "correct": 1,
+      "explanation": "Flag first, measure, then block only if the false-positive rate is acceptable."
+    }
+  ]
+}

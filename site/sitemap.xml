@@ -127,4 +127,15 @@
   <url><loc>https://agentic-ai-from-scratch.vercel.app/lessons/11-evaluation-and-observability/08-online-metrics-feedback/</loc><priority>0.8</priority></url>
   <url><loc>https://agentic-ai-from-scratch.vercel.app/lessons/11-evaluation-and-observability/09-benchmarks-swe-bench-to-tau-bench/</loc><priority>0.8</priority></url>
   <url><loc>https://agentic-ai-from-scratch.vercel.app/lessons/11-evaluation-and-observability/10-building-an-eval-harness/</loc><priority>0.8</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/lessons/12-safety-and-security/01-the-agent-threat-model/</loc><priority>0.8</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/lessons/12-safety-and-security/02-prompt-injection-direct-indirect/</loc><priority>0.8</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/lessons/12-safety-and-security/03-data-exfiltration-paths/</loc><priority>0.8</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/lessons/12-safety-and-security/04-least-privilege-tools/</loc><priority>0.8</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/lessons/12-safety-and-security/05-sandboxing-with-containers/</loc><priority>0.8</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/lessons/12-safety-and-security/06-permission-systems/</loc><priority>0.8</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/lessons/12-safety-and-security/07-input-output-guardrails/</loc><priority>0.8</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/lessons/12-safety-and-security/08-secrets-and-credentials/</loc><priority>0.8</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/lessons/12-safety-and-security/09-human-in-the-loop-design/</loc><priority>0.8</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/lessons/12-safety-and-security/10-red-teaming-your-agent/</loc><priority>0.8</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/lessons/12-safety-and-security/11-audit-logs/</loc><priority>0.8</priority></url>
 </urlset>

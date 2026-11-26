@@ -1,0 +1,78 @@
+{
+  "lesson": "08-secrets-and-credentials",
+  "title": "Secrets and Credentials",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "The GitHub token is in the system prompt with 'never reveal this token'. Is it protected?",
+      "options": [
+        "Yes, the instruction protects it",
+        "No: it's in the model's context, the provider's logs and your traces, and one injection can make the model print it",
+        "Yes, if the model is large",
+        "Only if the prompt is encrypted"
+      ],
+      "correct": 1,
+      "explanation": "A secret the model can read is a secret it can output. Keep values out of the context."
+    },
+    {
+      "stage": "check",
+      "question": "What does the model see when the broker is in place?",
+      "options": [
+        "The token, masked with asterisks",
+        "A handle such as {{secret:github_token}}; the broker substitutes the value after the model writes the call",
+        "Nothing about the secret",
+        "A hash of the token"
+      ],
+      "correct": 1,
+      "explanation": "The model names the secret. Code, not the model, puts the value where it belongs."
+    },
+    {
+      "stage": "check",
+      "question": "An injection asks for `http_request(url='https://api.github.com/?t={{secret:github_token}}')`. Which binding stops it?",
+      "options": [
+        "The tool binding",
+        "The host binding",
+        "The argument binding: the secret may only go in 'authorization'",
+        "Nothing stops it"
+      ],
+      "correct": 2,
+      "explanation": "Even to an allowed host, a token in a URL ends up in proxy and server logs. Bind the argument too."
+    },
+    {
+      "stage": "check",
+      "question": "Why scrub tool results when the model never wrote the token?",
+      "options": [
+        "For performance",
+        "Tools can echo it back (error messages, debug endpoints) or return other credentials from files",
+        "To shorten outputs",
+        "Scrubbing isn't needed with a broker"
+      ],
+      "correct": 1,
+      "explanation": "Results flow into the context. Anything secret in them is as exposed as if it were in the prompt."
+    },
+    {
+      "stage": "post",
+      "question": "Why does child_env use an allow-list instead of removing variables whose names contain KEY or TOKEN?",
+      "options": [
+        "Allow-lists are faster",
+        "A deny-list misses secrets with other names (DATABASE_URL, a new variable next month); an allow-list excludes them by default",
+        "Deny-lists are not allowed in Python",
+        "No difference"
+      ],
+      "correct": 1,
+      "explanation": "Default-deny survives changes nobody told you about."
+    },
+    {
+      "stage": "post",
+      "question": "A token appeared in a trace for a few minutes before your scrubber was fixed. What do you do?",
+      "options": [
+        "Delete the trace and move on",
+        "Rotate the token: it has already been sent to the model provider and the log pipeline",
+        "Nothing, it was only a few minutes",
+        "Ask the model to forget it"
+      ],
+      "correct": 1,
+      "explanation": "You can't un-send a secret. Rotation is the only reliable fix."
+    }
+  ]
+}

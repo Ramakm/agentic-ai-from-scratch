@@ -1,0 +1,78 @@
+{
+  "lesson": "10-red-teaming-your-agent",
+  "title": "Red-Teaming Your Agent",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "You typed ten attacks into the chat and none worked. What can you conclude?",
+      "options": [
+        "The agent is safe",
+        "Those ten attacks failed today; without a structured, repeatable set you don't know what you didn't try",
+        "The model is aligned",
+        "Prompt injection is solved"
+      ],
+      "correct": 1,
+      "explanation": "Coverage you can't count and tests you can't re-run don't support a safety claim."
+    },
+    {
+      "stage": "check",
+      "question": "Why does the judge check side effects instead of the model's reply?",
+      "options": [
+        "Replies are too long",
+        "A model can refuse in words and still call the tool, or agree in words and do nothing; harm lives in the world",
+        "LLM judges are illegal",
+        "Side effects are faster to compute"
+      ],
+      "correct": 1,
+      "explanation": "Judge what happened: emails sent with the canary, URLs fetched, files deleted."
+    },
+    {
+      "stage": "check",
+      "question": "In v1, base64 attacks succeed 12/12 while plain ones succeed 6/12. What does that slice tell you?",
+      "options": [
+        "Base64 is a stronger instruction",
+        "The model's refusals match surface text, and encoding hides it",
+        "Plain attacks are broken",
+        "Nothing useful"
+      ],
+      "correct": 1,
+      "explanation": "A mutation slice far above plain means a defence is matching phrasing, not intent."
+    },
+    {
+      "stage": "check",
+      "question": "In v2, the goal slice shows destroy at 15/20 and both exfiltration goals at 0/20. What's missing?",
+      "options": [
+        "A better refusal model",
+        "A gate on irreversible actions: deleting a file isn't egress, so the egress gate never fires",
+        "More mutations",
+        "Safe rendering"
+      ],
+      "correct": 1,
+      "explanation": "Goal slices point at which capability a defence doesn't cover."
+    },
+    {
+      "stage": "post",
+      "question": "v3 scores 0/60. What's the right statement for the launch doc?",
+      "options": [
+        "The agent is secure",
+        "These 60 attacks across 3 goals, 4 framings and 5 mutations fail; the set and its regressions run on every change",
+        "Red-teaming is complete",
+        "No further testing needed"
+      ],
+      "correct": 1,
+      "explanation": "State what was tested. Then keep growing the grid."
+    },
+    {
+      "stage": "post",
+      "question": "Why keep regressions.json and replay it on every change?",
+      "options": [
+        "To slow down CI",
+        "So an attack that once worked can't silently start working again after a refactor or model change",
+        "For compliance only",
+        "To train the model"
+      ],
+      "correct": 1,
+      "explanation": "Security fixes regress like any other fix. Known attacks are the cheapest tests you have."
+    }
+  ]
+}

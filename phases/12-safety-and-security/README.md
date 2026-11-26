@@ -3,21 +3,21 @@
 
 > The agent threat model. Prompt injection, exfiltration, least privilege, sandboxes, permissions, red-teaming.
 
-**Status:** □ planned · **Lessons:** 0 of 11 live · **Time:** ~8 hours
+**Status:** ■ complete · **Lessons:** 11 of 11 live · **Time:** ~8 hours
 
 | # | Lesson | Type | Time |
 |---|--------|------|------|
-| 12.01 | The agent threat model | planned | 45 min |
-| 12.02 | Prompt injection, direct & indirect | planned | 55 min |
-| 12.03 | Data exfiltration paths | planned | 45 min |
-| 12.04 | Least-privilege tools | planned | 40 min |
-| 12.05 | Sandboxing with containers | planned | 55 min |
-| 12.06 | Permission systems | planned | 50 min |
-| 12.07 | Input & output guardrails | planned | 45 min |
-| 12.08 | Secrets and credentials | planned | 35 min |
-| 12.09 | Human-in-the-loop design | planned | 40 min |
-| 12.10 | Red-teaming your agent | planned | 55 min |
-| 12.11 | Audit logs | planned | 35 min |
+| 12.01 | [The agent threat model](01-the-agent-threat-model/docs/en.md) | Learn | 45 min |
+| 12.02 | [Prompt injection, direct & indirect](02-prompt-injection-direct-indirect/docs/en.md) | Build | 55 min |
+| 12.03 | [Data exfiltration paths](03-data-exfiltration-paths/docs/en.md) | Build | 45 min |
+| 12.04 | [Least-privilege tools](04-least-privilege-tools/docs/en.md) | Build | 40 min |
+| 12.05 | [Sandboxing with containers](05-sandboxing-with-containers/docs/en.md) | Build | 55 min |
+| 12.06 | [Permission systems](06-permission-systems/docs/en.md) | Build | 50 min |
+| 12.07 | [Input & output guardrails](07-input-output-guardrails/docs/en.md) | Build | 45 min |
+| 12.08 | [Secrets and credentials](08-secrets-and-credentials/docs/en.md) | Build | 35 min |
+| 12.09 | [Human-in-the-loop design](09-human-in-the-loop-design/docs/en.md) | Build | 40 min |
+| 12.10 | [Red-teaming your agent](10-red-teaming-your-agent/docs/en.md) | Build | 55 min |
+| 12.11 | [Audit logs](11-audit-logs/docs/en.md) | Build | 35 min |
 
 Every live lesson folder has `docs/en.md`, runnable `code/` with tests, a `quiz.json`, and an artifact in `outputs/`.
 Want to write a planned lesson? See [CONTRIBUTING.md](../../CONTRIBUTING.md) and [LESSON_TEMPLATE.md](../../LESSON_TEMPLATE.md).

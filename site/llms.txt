@@ -1,6 +1,6 @@
 # Agentic AI from Scratch
 
-> Build AI agents from a raw while-loop and an HTTP call, before a single framework gets imported. 16 phases, 163 lessons (126 live), Python and TypeScript, free and open source (MIT).
+> Build AI agents from a raw while-loop and an HTTP call, before a single framework gets imported. 16 phases, 163 lessons (137 live), Python and TypeScript, free and open source (MIT).
 
 Source: https://github.com/Ramakm/agentic-ai-from-scratch
 Site: https://agentic-ai-from-scratch.vercel.app/
@@ -198,17 +198,17 @@ Golden tasks, trajectory evals, careful LLM judges, OpenTelemetry traces, replay
 
 The agent threat model. Prompt injection, exfiltration, least privilege, sandboxes, permissions, red-teaming.
 
-- 12.01 The agent threat model (45 min) [planned]
-- 12.02 Prompt injection, direct & indirect (55 min) [planned]
-- 12.03 Data exfiltration paths (45 min) [planned]
-- 12.04 Least-privilege tools (40 min) [planned]
-- 12.05 Sandboxing with containers (55 min) [planned]
-- 12.06 Permission systems (50 min) [planned]
-- 12.07 Input & output guardrails (45 min) [planned]
-- 12.08 Secrets and credentials (35 min) [planned]
-- 12.09 Human-in-the-loop design (40 min) [planned]
-- 12.10 Red-teaming your agent (55 min) [planned]
-- 12.11 Audit logs (35 min) [planned]
+- 12.01 The agent threat model (45 min): https://agentic-ai-from-scratch.vercel.app/lessons/12-safety-and-security/01-the-agent-threat-model/ | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/12-safety-and-security/01-the-agent-threat-model/docs/en.md
+- 12.02 Prompt injection, direct & indirect (55 min): https://agentic-ai-from-scratch.vercel.app/lessons/12-safety-and-security/02-prompt-injection-direct-indirect/ | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/12-safety-and-security/02-prompt-injection-direct-indirect/docs/en.md
+- 12.03 Data exfiltration paths (45 min): https://agentic-ai-from-scratch.vercel.app/lessons/12-safety-and-security/03-data-exfiltration-paths/ | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/12-safety-and-security/03-data-exfiltration-paths/docs/en.md
+- 12.04 Least-privilege tools (40 min): https://agentic-ai-from-scratch.vercel.app/lessons/12-safety-and-security/04-least-privilege-tools/ | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/12-safety-and-security/04-least-privilege-tools/docs/en.md
+- 12.05 Sandboxing with containers (55 min): https://agentic-ai-from-scratch.vercel.app/lessons/12-safety-and-security/05-sandboxing-with-containers/ | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/12-safety-and-security/05-sandboxing-with-containers/docs/en.md
+- 12.06 Permission systems (50 min): https://agentic-ai-from-scratch.vercel.app/lessons/12-safety-and-security/06-permission-systems/ | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/12-safety-and-security/06-permission-systems/docs/en.md
+- 12.07 Input & output guardrails (45 min): https://agentic-ai-from-scratch.vercel.app/lessons/12-safety-and-security/07-input-output-guardrails/ | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/12-safety-and-security/07-input-output-guardrails/docs/en.md
+- 12.08 Secrets and credentials (35 min): https://agentic-ai-from-scratch.vercel.app/lessons/12-safety-and-security/08-secrets-and-credentials/ | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/12-safety-and-security/08-secrets-and-credentials/docs/en.md
+- 12.09 Human-in-the-loop design (40 min): https://agentic-ai-from-scratch.vercel.app/lessons/12-safety-and-security/09-human-in-the-loop-design/ | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/12-safety-and-security/09-human-in-the-loop-design/docs/en.md
+- 12.10 Red-teaming your agent (55 min): https://agentic-ai-from-scratch.vercel.app/lessons/12-safety-and-security/10-red-teaming-your-agent/ | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/12-safety-and-security/10-red-teaming-your-agent/docs/en.md
+- 12.11 Audit logs (35 min): https://agentic-ai-from-scratch.vercel.app/lessons/12-safety-and-security/11-audit-logs/ | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/12-safety-and-security/11-audit-logs/docs/en.md
 
 ## Phase 13: Production Agents
 

@@ -1,0 +1,78 @@
+{
+  "lesson": "05-sandboxing-with-containers",
+  "title": "Sandboxing with Containers",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "What does a plain `docker run python:3.12 python agent_code.py` take away from the code by default?",
+      "options": [
+        "Network access",
+        "Root inside the container",
+        "Very little: it still has network, root inside the container, a writable filesystem and no resource limits",
+        "Everything"
+      ],
+      "correct": 2,
+      "explanation": "Container defaults are built for running your own apps, not untrusted code."
+    },
+    {
+      "stage": "check",
+      "question": "Why is mounting /var/run/docker.sock into the sandbox critical?",
+      "options": [
+        "It's slow",
+        "The code can ask the root Docker daemon to start a privileged container with the host filesystem mounted",
+        "It leaks logs",
+        "It disables networking"
+      ],
+      "correct": 1,
+      "explanation": "Access to the Docker API is root on the host."
+    },
+    {
+      "stage": "check",
+      "question": "The blog command had 0 critical findings. Why is it still a poor sandbox?",
+      "options": [
+        "It uses the wrong image",
+        "It mounts the whole project (.env, .git), runs as root, and has internet and LAN access",
+        "It uses -it",
+        "It's fine"
+      ],
+      "correct": 1,
+      "explanation": "No single flag is catastrophic, but none of the main protections is on."
+    },
+    {
+      "stage": "check",
+      "question": "Why does the policy set --memory-swap to the same value as --memory?",
+      "options": [
+        "Docker requires it",
+        "So the container can't use swap beyond its memory limit",
+        "To double the memory",
+        "It improves CPU speed"
+      ],
+      "correct": 1,
+      "explanation": "Equal values mean zero swap, so the memory limit is the real limit."
+    },
+    {
+      "stage": "post",
+      "question": "The code needs to pip install packages. What's the better change?",
+      "options": [
+        "Switch to the default bridge network",
+        "Use --network host",
+        "Attach a network whose only route out is an egress proxy that allows your package index",
+        "Mount ~/.cache/pip"
+      ],
+      "correct": 2,
+      "explanation": "Give exactly the access needed, through a point you control and log."
+    },
+    {
+      "stage": "post",
+      "question": "Why add gVisor or a microVM on top of a well-configured container for model-written code?",
+      "options": [
+        "Containers can't run Python",
+        "Containers share the host kernel, so one kernel bug is an escape; gVisor or a VM puts another kernel boundary in between",
+        "It's required by Docker",
+        "For faster startup"
+      ],
+      "correct": 1,
+      "explanation": "Defence in depth: the code is untrusted, so the boundary should not be a single shared kernel."
+    }
+  ]
+}

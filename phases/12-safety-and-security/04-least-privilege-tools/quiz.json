@@ -1,0 +1,78 @@
+{
+  "lesson": "04-least-privilege-tools",
+  "title": "Least-Privilege Tools",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Your agent has run_sql(query) and the system prompt says 'only query the current customer's orders'. What actually limits it?",
+      "options": [
+        "The system prompt",
+        "Nothing in the tool: the prompt is a request, the tool is a capability",
+        "The model's training",
+        "SQL syntax"
+      ],
+      "correct": 1,
+      "explanation": "If the tool can do it, an injected or confused model can make it happen."
+    },
+    {
+      "stage": "check",
+      "question": "In narrow_tools, where does the customer's identity come from?",
+      "options": [
+        "A user_id parameter the model fills in",
+        "The model's memory",
+        "The authenticated session, captured in a closure when the tools are built",
+        "The order id"
+      ],
+      "correct": 2,
+      "explanation": "Identity is bound in code. The model never sees a parameter it could change it with."
+    },
+    {
+      "stage": "check",
+      "question": "The 'email data to attacker' attack ran email_me and it said 'sent to customer'. Why is that no harm?",
+      "options": [
+        "The email failed",
+        "email_me has no recipient parameter; it always sends to the session's customer",
+        "The body was empty",
+        "Emails are logged"
+      ],
+      "correct": 1,
+      "explanation": "Fixing the destination in code turns an exfiltration attempt into a message to the user."
+    },
+    {
+      "stage": "check",
+      "question": "Why does refund_order return 'amount must be between 0 and 49.00' instead of a plain 'denied'?",
+      "options": [
+        "To help the attacker",
+        "So a legitimate model can retry with a valid amount; the limit is enforced either way",
+        "It's required by SQLite",
+        "No reason"
+      ],
+      "correct": 1,
+      "explanation": "Errors are observations. A useful error helps honest use without weakening the check."
+    },
+    {
+      "stage": "post",
+      "question": "An analytics agent genuinely needs ad-hoc SQL. What's the least-privilege version?",
+      "options": [
+        "run_sql with a better prompt",
+        "run_sql on a read-only DB role, over views already filtered to the tenant, with a timeout and row limit",
+        "Block the agent",
+        "Let it use the admin account during business hours"
+      ],
+      "correct": 1,
+      "explanation": "When the tool must be broad, move the limits into the credential and the data it can see."
+    },
+    {
+      "stage": "post",
+      "question": "Which parameter would the audit flag in send_invoice(customer_id, amount)?",
+      "options": [
+        "amount",
+        "customer_id: the model chooses whose invoice it is; it should come from the session",
+        "Neither",
+        "Both equally"
+      ],
+      "correct": 1,
+      "explanation": "Anything that picks identity or tenant belongs in the session. Amounts need caps, but they don't pick the victim."
+    }
+  ]
+}

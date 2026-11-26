@@ -1,0 +1,78 @@
+{
+  "lesson": "11-audit-logs",
+  "title": "Audit Logs",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Why aren't your OpenTelemetry traces enough as an audit log?",
+      "options": [
+        "Traces are too slow",
+        "They're sampled, store full content (including sensitive data), and engineers can delete or rewrite them",
+        "Traces can't store tool calls",
+        "They are enough"
+      ],
+      "correct": 1,
+      "explanation": "Audit logs need completeness, minimal content and tamper evidence. Traces are built for debugging."
+    },
+    {
+      "stage": "check",
+      "question": "What makes 'why did the agent pay this invoice?' a single query?",
+      "options": [
+        "Full-text search",
+        "Each entry's cause field links to the entry that led to it, so you walk back to the user's request",
+        "Timestamps",
+        "The model explains itself"
+      ],
+      "correct": 1,
+      "explanation": "Causal links turn an investigation into following pointers: payment <- untrusted email <- read call <- request."
+    },
+    {
+      "stage": "check",
+      "question": "Someone deletes entry #4 from the JSONL file. How is it detected?",
+      "options": [
+        "It isn't",
+        "Entry #5's sequence number and prev link no longer match its position",
+        "The file size changes",
+        "The model notices"
+      ],
+      "correct": 1,
+      "explanation": "Each entry commits to the one before it. Removing one breaks the chain at the next."
+    },
+    {
+      "stage": "check",
+      "question": "Dropping the last entry passes the chain check. What catches it?",
+      "options": [
+        "A longer HMAC key",
+        "An anchor (entry count + last MAC) published somewhere the attacker can't write",
+        "Re-running verify twice",
+        "Nothing can"
+      ],
+      "correct": 1,
+      "explanation": "A chain proves order and integrity of what's there, not that nothing was cut off the end."
+    },
+    {
+      "stage": "post",
+      "question": "The log stores the email as {hash, chars}. How can you later show which email the agent read?",
+      "options": [
+        "You can't",
+        "Fetch the candidate email from the mail system and compare its hash with the logged one",
+        "Ask the model",
+        "Decrypt the hash"
+      ],
+      "correct": 1,
+      "explanation": "Hashes keep content out of the log while still letting you prove what was involved."
+    },
+    {
+      "stage": "post",
+      "question": "Where should the HMAC key live?",
+      "options": [
+        "In the agent's environment variables",
+        "In the system prompt",
+        "With the log service, never in the agent process, so a compromised agent can't forge valid entries",
+        "In the log file header"
+      ],
+      "correct": 2,
+      "explanation": "Whoever holds the key can rewrite history convincingly. Keep it away from what is being audited."
+    }
+  ]
+}
