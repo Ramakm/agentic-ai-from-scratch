@@ -682,5 +682,14 @@ body.js-anim .reveal.in-view { opacity: 1; transform: none; }
 }
 .prose > h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
 
-/* every H1 uses the pixel face */
-h1 { font-family: var(--font-pixel); font-weight: 400; font-synthesis: none; }
+/* every heading (h1–h6, plus title-like elements that aren't heading tags) uses the pixel face. !important beats the per-component
+   heading rules above (.prose h2, .quiz h2, …) without editing each one. The font
+   has one weight, so bold is off and tight display tracking is reset. */
+h1, h2, h3, h4, h5, h6,
+.phase-card-name, .aside-phase-name, .path-node-name, .paths-root strong,
+.book-name, .pager-title, .step-num, .proof strong {
+  font-family: var(--font-pixel) !important;
+  font-weight: 400 !important;
+  font-synthesis: none;
+  letter-spacing: 0 !important;
+}
