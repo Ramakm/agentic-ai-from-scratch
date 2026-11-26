@@ -692,4 +692,8 @@ h1, h2, h3, h4, h5, h6,
   font-weight: 400 !important;
   font-synthesis: none;
   letter-spacing: 0 !important;
+  /* Bold look: the font has no bold file, so thicken each glyph with a stroke
+     in the text colour. Stays crisp, unlike browser-synthesised bold. */
+  -webkit-text-stroke: .045em currentColor;
+  paint-order: stroke fill;
 }
