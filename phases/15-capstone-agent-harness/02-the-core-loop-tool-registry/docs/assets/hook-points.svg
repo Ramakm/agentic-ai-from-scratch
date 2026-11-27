@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" role="img" aria-label="One step of the loop, and where hooks run">
+<title>One step of the loop, and where hooks run</title>
+<defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(26,26,26,0.055)" stroke-width="1"/></pattern><marker id="ar-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1a1a1a"/></marker><marker id="ar-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#EC4D36"/></marker><marker id="ar-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1d7a82"/></marker><marker id="ar-amb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b07d0c"/></marker><marker id="ar-pur" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a4cb3"/></marker><marker id="ar-mute" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a7a78"/></marker><marker id="ar-grn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d3a"/></marker></defs>
+<rect width="960" height="600" fill="#fafaf5"/><rect width="960" height="600" fill="url(#grid)"/>
+<rect x="0.75" y="0.75" width="958.5" height="598.5" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+<g transform="translate(30.1667 28.1667) scale(0.916667)" shape-rendering="crispEdges"><path d="M2 3h7v2H4v8h8V9h2v6H2zM9 1h1v6H9zM10 2h1v4h-1zM11 3h1v2h-1z" fill="#EC4D36"/><path d="M6 7h4v4H6z" fill="#1a1a1a"/></g>
+<text x="52" y="40" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#EC4D36" text-anchor="start" letter-spacing="2">PHASE 15 · LESSON 02</text>
+<text x="32" y="80" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="-0.5" fill="#1a1a1a">One step of the loop, and where hooks run</text>
+<text x="32" y="106" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="16" fill="#4a4a4a" text-anchor="start" font-style="italic">The loop never changes after this lesson. Later lessons only add hooks and tools.</text>
+<line x1="32" y1="124" x2="928" y2="124" stroke="#1a1a1a" stroke-width="1" opacity="0.25"/>
+<rect x="44" y="164" width="190" height="50" fill="#1a1a1a"/>
+<rect x="40" y="160" width="190" height="50" fill="#f3f1e8" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="135.0" y="182.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#1a1a1a" text-anchor="middle">messages</text>
+<text x="135.0" y="198.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#7a7a78" text-anchor="middle">system · task · history</text>
+<rect x="294" y="164" width="190" height="50" fill="#b07d0c"/>
+<rect x="290" y="160" width="190" height="50" fill="#f6ecd0" stroke="#b07d0c" stroke-width="1.5"/>
+<text x="385.0" y="182.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#b07d0c" text-anchor="middle">before_model</text>
+<text x="385.0" y="198.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#7a7a78" text-anchor="middle">ContextManager compacts</text>
+<rect x="544" y="164" width="170" height="50" fill="#7a4cb3"/>
+<rect x="540" y="160" width="170" height="50" fill="#ebe2f6" stroke="#7a4cb3" stroke-width="1.5"/>
+<text x="625.0" y="182.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#7a4cb3" text-anchor="middle">llm(messages, tools)</text>
+<text x="625.0" y="198.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#7a7a78" text-anchor="middle">think</text>
+<rect x="774" y="164" width="160" height="50" fill="#2f7d3a"/>
+<rect x="770" y="160" width="160" height="50" fill="#dcefdc" stroke="#2f7d3a" stroke-width="1.5"/>
+<text x="850.0" y="182.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#2f7d3a" text-anchor="middle">after_model</text>
+<text x="850.0" y="198.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#7a7a78" text-anchor="middle">Tracer records</text>
+<line x1="230" y1="185" x2="286" y2="185" stroke="#1a1a1a" stroke-width="1.4" marker-end="url(#ar-ink)"/>
+<line x1="480" y1="185" x2="536" y2="185" stroke="#1a1a1a" stroke-width="1.4" marker-end="url(#ar-ink)"/>
+<line x1="710" y1="185" x2="766" y2="185" stroke="#1a1a1a" stroke-width="1.4" marker-end="url(#ar-ink)"/>
+<path d="M850 210 V250" fill="none" stroke="#1a1a1a" stroke-width="1.4" marker-end="url(#ar-ink)"/>
+<rect x="774" y="258" width="160" height="50" fill="#1a1a1a"/>
+<rect x="770" y="254" width="160" height="50" fill="#f3f1e8" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="850.0" y="284.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#1a1a1a" text-anchor="middle">tool calls?</text>
+<line x1="850" y1="304" x2="850" y2="350" stroke="#1a1a1a" stroke-width="1.4" marker-end="url(#ar-ink)"/>
+<text x="858" y="330" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#7a7a78" text-anchor="start">yes</text>
+<path d="M770 279 H700" fill="none" stroke="#EC4D36" stroke-width="1.4" marker-end="url(#ar-red)"/>
+<rect x="540" y="256" width="156" height="46" fill="#fde5e0" stroke="#EC4D36" stroke-width="1.5"/>
+<text x="618.0" y="276.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#EC4D36" text-anchor="middle">stop: answer</text>
+<text x="618.0" y="292.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#7a7a78" text-anchor="middle">final_answer</text>
+<text x="706" y="272" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#7a7a78" text-anchor="start">no</text>
+<rect x="32" y="340" width="904" height="150" fill="none" stroke="#1a1a1a" stroke-width="1" stroke-dasharray="2 3" opacity="0.5"/>
+<text x="52" y="358" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78" text-anchor="start">FOR EACH TOOL CALL</text>
+<rect x="774" y="374" width="160" height="50" fill="#EC4D36"/>
+<rect x="770" y="370" width="160" height="50" fill="#fde5e0" stroke="#EC4D36" stroke-width="1.5"/>
+<text x="850.0" y="392.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#EC4D36" text-anchor="middle">before_tool</text>
+<text x="850.0" y="408.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#7a7a78" text-anchor="middle">Permissions decide</text>
+<rect x="544" y="374" width="170" height="50" fill="#1d7a82"/>
+<rect x="540" y="370" width="170" height="50" fill="#d8eded" stroke="#1d7a82" stroke-width="1.5"/>
+<text x="625.0" y="392.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#1d7a82" text-anchor="middle">registry.call</text>
+<text x="625.0" y="408.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#7a7a78" text-anchor="middle">validate · run · clip</text>
+<rect x="294" y="374" width="190" height="50" fill="#2f7d3a"/>
+<rect x="290" y="370" width="190" height="50" fill="#dcefdc" stroke="#2f7d3a" stroke-width="1.5"/>
+<text x="385.0" y="392.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#2f7d3a" text-anchor="middle">after_tool</text>
+<text x="385.0" y="408.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#7a7a78" text-anchor="middle">Tracer · redaction</text>
+<rect x="44" y="374" width="190" height="50" fill="#1a1a1a"/>
+<rect x="40" y="370" width="190" height="50" fill="#f3f1e8" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="135.0" y="392.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#1a1a1a" text-anchor="middle">append result</text>
+<text x="135.0" y="408.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#7a7a78" text-anchor="middle">as a tool message</text>
+<line x1="766" y1="395" x2="714" y2="395" stroke="#1a1a1a" stroke-width="1.4" marker-end="url(#ar-ink)"/>
+<line x1="536" y1="395" x2="484" y2="395" stroke="#1a1a1a" stroke-width="1.4" marker-end="url(#ar-ink)"/>
+<line x1="286" y1="395" x2="234" y2="395" stroke="#1a1a1a" stroke-width="1.4" marker-end="url(#ar-ink)"/>
+<path d="M850 420 V456 H385 V424" fill="none" stroke="#EC4D36" stroke-width="1.4" marker-end="url(#ar-red)" stroke-dasharray="5 4"/>
+<text x="470" y="476" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#EC4D36" text-anchor="start">blocked: skips the tool; the reason becomes the observation</text>
+<path d="M135 370 V326 H22 V185 H36" fill="none" stroke="#1a1a1a" stroke-width="1.4" marker-end="url(#ar-ink)" stroke-dasharray="5 4"/>
+<text x="48" y="320" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#7a7a78" text-anchor="start">next step</text>
+<text x="40" y="522" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78" text-anchor="start">OTHER STOPS</text>
+<rect x="40" y="534" width="73.4" height="18" fill="#1a1a1a"/>
+<text x="76.7" y="546.5" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10" fill="#fafaf5" text-anchor="middle">max_steps</text>
+<text x="40" y="568" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#4a4a4a" text-anchor="start">step limit</text>
+<rect x="137.4" y="534" width="53.599999999999994" height="18" fill="#1a1a1a"/>
+<text x="164.2" y="546.5" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10" fill="#fafaf5" text-anchor="middle">budget</text>
+<text x="137.4" y="568" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#4a4a4a" text-anchor="start">shared token limit</text>
+<rect x="276.6" y="534" width="99.8" height="18" fill="#1a1a1a"/>
+<text x="326.5" y="546.5" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10" fill="#fafaf5" text-anchor="middle">repeated_call</text>
+<text x="276.6" y="568" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#4a4a4a" text-anchor="start">same call 3 times</text>
+<rect x="409.40000000000003" y="534" width="86.6" height="18" fill="#1a1a1a"/>
+<text x="452.70000000000005" y="546.5" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10" fill="#fafaf5" text-anchor="middle">model_error</text>
+<text x="409.40000000000003" y="568" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#4a4a4a" text-anchor="start">HTTP / bad reply</text>
+<rect x="535.8000000000001" y="534" width="60.199999999999996" height="18" fill="#1a1a1a"/>
+<text x="565.9000000000001" y="546.5" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10" fill="#fafaf5" text-anchor="middle">StopRun</text>
+<text x="535.8000000000001" y="568" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#4a4a4a" text-anchor="start">any hook can end the run</text>
+</svg>

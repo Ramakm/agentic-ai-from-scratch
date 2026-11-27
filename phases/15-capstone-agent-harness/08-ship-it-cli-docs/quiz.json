@@ -1,0 +1,78 @@
+{
+  "lesson": "08-ship-it-cli-docs",
+  "title": "Ship It: CLI + Docs",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Where should the model's API key go for this harness?",
+      "options": [
+        "In .harness.json",
+        "In HARNESS.md",
+        "In environment variables only (AGENT_API_KEY)",
+        "In the trace"
+      ],
+      "correct": 2,
+      "explanation": "Config files live in the repo; keys must not."
+    },
+    {
+      "stage": "check",
+      "question": "What went wrong with the first version of the config merge?",
+      "options": [
+        "It was slow",
+        "harness init wrote empty rule lists, which replaced, and so silently removed, every default rule",
+        "It crashed on comments",
+        "It ignored the mode"
+      ],
+      "correct": 1,
+      "explanation": "Now user rules are added to the defaults; replacing them takes an explicit option."
+    },
+    {
+      "stage": "check",
+      "question": "What does run_verified do when the check command fails?",
+      "options": [
+        "Reports success anyway",
+        "Sends the failure output back to the same conversation, up to a limit, then reports failure",
+        "Deletes the changes",
+        "Switches models"
+      ],
+      "correct": 1,
+      "explanation": "Failures go back to the agent; if it can't fix them, the run fails honestly."
+    },
+    {
+      "stage": "check",
+      "question": "With --verify set, when does harness run exit with code 0?",
+      "options": [
+        "Always",
+        "When the agent gives a final answer",
+        "Only when the agent finished and verification passed",
+        "When the trace is written"
+      ],
+      "correct": 2,
+      "explanation": "Scripts and CI can trust the exit code."
+    },
+    {
+      "stage": "check",
+      "question": "Why does `harness tools` exist?",
+      "options": [
+        "To install tools",
+        "To show what the config actually means: every tool, whether it writes, and the decision the rules give it",
+        "To run tools",
+        "To list MCP servers only"
+      ],
+      "correct": 1,
+      "explanation": "It's how you catch a wrong rule before the agent runs anything."
+    },
+    {
+      "stage": "post",
+      "question": "With llama3.2 the harness reported 'verify: FAILED' and exit code 1. What does that show about the harness?",
+      "options": [
+        "The harness is broken",
+        "It did its job: it stopped a false success report, even though it can't make a small model good at the task",
+        "The tests are wrong",
+        "Verification should be turned off for small models"
+      ],
+      "correct": 1,
+      "explanation": "Harnesses bound damage and keep results honest; capability comes from the model."
+    }
+  ]
+}

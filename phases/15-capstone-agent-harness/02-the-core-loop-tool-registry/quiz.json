@@ -1,0 +1,78 @@
+{
+  "lesson": "02-the-core-loop-tool-registry",
+  "title": "The Core Loop & Tool Registry",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "A tool raises an exception mid-run. What should the model see?",
+      "options": [
+        "Nothing; the run should stop",
+        "An error observation like 'error: ValueError: ...'",
+        "The full Python traceback",
+        "A generic 'something went wrong'"
+      ],
+      "correct": 1,
+      "explanation": "Errors are observations: short, specific, and enough to try something else."
+    },
+    {
+      "stage": "check",
+      "question": "Why does Workspace.resolve resolve the path before checking it's inside the root?",
+      "options": [
+        "Speed",
+        "So '..' segments and symlinks pointing outside are caught",
+        "To support Windows",
+        "To create missing folders"
+      ],
+      "correct": 1,
+      "explanation": "Checking the raw string misses 'inventory/../../x' and symlinks. Resolving first sees where the path really goes."
+    },
+    {
+      "stage": "check",
+      "question": "Why must every tool result carry the tool_call_id of its call?",
+      "options": [
+        "For logging only",
+        "The API pairs results with calls; a mismatched or missing id is rejected or confuses the model",
+        "It's optional",
+        "To count tokens"
+      ],
+      "correct": 1,
+      "explanation": "Chat APIs require each tool message to answer a specific call in the preceding assistant message."
+    },
+    {
+      "stage": "check",
+      "question": "The same tool with the same arguments is called a second time. What does this harness do?",
+      "options": [
+        "Stops immediately",
+        "Adds a note to the observation; a third repeat stops the run with repeated_call",
+        "Nothing",
+        "Deletes the call from history"
+      ],
+      "correct": 1,
+      "explanation": "A nudge first often gets a model out of a rut; the limit makes sure it can't loop forever."
+    },
+    {
+      "stage": "check",
+      "question": "Why is Budget an object rather than an integer on the Agent?",
+      "options": [
+        "Python style",
+        "So subagents can share the parent's budget and can't escape it",
+        "To support floats",
+        "For thread safety"
+      ],
+      "correct": 1,
+      "explanation": "A shared object means delegation draws on the same limit."
+    },
+    {
+      "stage": "post",
+      "question": "You want to block edits to tests/ in one project. Where does that belong?",
+      "options": [
+        "In loop.py",
+        "In the tool's function",
+        "In a before_tool hook (permissions), leaving the loop untouched",
+        "In the system prompt only"
+      ],
+      "correct": 2,
+      "explanation": "Blocking is exactly what before_tool is for; the loop stays the same for every project."
+    }
+  ]
+}

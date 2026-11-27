@@ -3,18 +3,18 @@
 
 > Everything at once. A loop, tool registry, memory, MCP, subagents, permissions, and evals, shipped as a CLI.
 
-**Status:** □ planned · **Lessons:** 0 of 8 live · **Time:** ~8 hours
+**Status:** ■ complete · **Lessons:** 8 of 8 live · **Time:** ~8 hours
 
 | # | Lesson | Type | Time |
 |---|--------|------|------|
-| 15.01 | Why build a harness | planned | 35 min |
-| 15.02 | The core loop & tool registry | planned | 70 min |
-| 15.03 | Memory & context manager | planned | 70 min |
-| 15.04 | MCP client integration | planned | 60 min |
-| 15.05 | Subagents & delegation | planned | 60 min |
-| 15.06 | Permissions & sandbox | planned | 60 min |
-| 15.07 | Evals & traces | planned | 60 min |
-| 15.08 | Ship it: CLI + docs | planned | 60 min |
+| 15.01 | [Why build a harness](01-why-build-a-harness/docs/en.md) | Learn | 35 min |
+| 15.02 | [The core loop & tool registry](02-the-core-loop-tool-registry/docs/en.md) | Build | 70 min |
+| 15.03 | [Memory & context manager](03-memory-context-manager/docs/en.md) | Build | 70 min |
+| 15.04 | [MCP client integration](04-mcp-client-integration/docs/en.md) | Build | 60 min |
+| 15.05 | [Subagents & delegation](05-subagents-delegation/docs/en.md) | Build | 60 min |
+| 15.06 | [Permissions & sandbox](06-permissions-sandbox/docs/en.md) | Build | 60 min |
+| 15.07 | [Evals & traces](07-evals-traces/docs/en.md) | Build | 60 min |
+| 15.08 | [Ship it: CLI + docs](08-ship-it-cli-docs/docs/en.md) | Build | 60 min |
 
 Every live lesson folder has `docs/en.md`, runnable `code/` with tests, a `quiz.json`, and an artifact in `outputs/`.
 Want to write a planned lesson? See [CONTRIBUTING.md](../../CONTRIBUTING.md) and [LESSON_TEMPLATE.md](../../LESSON_TEMPLATE.md).

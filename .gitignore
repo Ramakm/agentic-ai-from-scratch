@@ -11,3 +11,4 @@ site/lessons/
 site/interviews/
 phases/**/traces/
 phases/**/runs/
+*.egg-info/

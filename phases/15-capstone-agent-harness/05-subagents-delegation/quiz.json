@@ -1,0 +1,78 @@
+{
+  "lesson": "05-subagents-delegation",
+  "title": "Subagents & Delegation",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "What does a subagent see when it starts?",
+      "options": [
+        "The parent's whole history",
+        "Its system prompt and the brief it was given, nothing else",
+        "The parent's last message",
+        "All files in the workspace"
+      ],
+      "correct": 1,
+      "explanation": "Context isolation is the point, so the brief has to be complete."
+    },
+    {
+      "stage": "check",
+      "question": "In the demo, what did delegation change most reliably?",
+      "options": [
+        "Total tokens always went down a lot",
+        "The main agent's context per call (1,285 to 219 tokens at the last call)",
+        "The answer's wording",
+        "The number of files"
+      ],
+      "correct": 1,
+      "explanation": "Delegation reliably keeps the parent clean. Total cost depends on how much the parent does afterwards."
+    },
+    {
+      "stage": "check",
+      "question": "Why is the task tool removed from every subagent's toolset?",
+      "options": [
+        "To save tokens",
+        "To prevent recursion: subagents starting subagents without limit",
+        "It's read-only",
+        "It needs a model"
+      ],
+      "correct": 1,
+      "explanation": "There's also a depth check in the Delegator hook, as a second guard."
+    },
+    {
+      "stage": "check",
+      "question": "When is the task tool marked read_only?",
+      "options": [
+        "Always",
+        "Never",
+        "Only if every profile's toolset is read-only",
+        "Only in auto mode"
+      ],
+      "correct": 2,
+      "explanation": "Plan mode trusts read_only, so it must be honest about what subagents can do."
+    },
+    {
+      "stage": "check",
+      "question": "A subagent hits its step limit. What does the parent get?",
+      "options": [
+        "An exception",
+        "An error result with the stop reason and any partial answer",
+        "Nothing",
+        "The child's full history"
+      ],
+      "correct": 1,
+      "explanation": "Failures are observations at every level."
+    },
+    {
+      "stage": "post",
+      "question": "You have a question that needs one file read. Should you delegate it?",
+      "options": [
+        "Yes, always delegate",
+        "No: the overhead of a fresh agent outweighs the saving for one or two tool calls",
+        "Only with a bigger model",
+        "Only in plan mode"
+      ],
+      "correct": 1,
+      "explanation": "Delegate exploration whose details the parent won't need, not single lookups."
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "lesson": "07-evals-traces",
+  "title": "Evals & Traces",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "A prompt change makes your agent stop running tests, but its answers read just as well. What catches this?",
+      "options": [
+        "Reading a few answers",
+        "An eval with outcome and behaviour checks, compared against a baseline",
+        "A longer system prompt",
+        "A bigger model"
+      ],
+      "correct": 1,
+      "explanation": "Only checks on what the agent did can see it."
+    },
+    {
+      "stage": "check",
+      "question": "Why does the tracer go first in the hook list?",
+      "options": [
+        "It's fastest",
+        "So it records tool calls even when a later hook, like permissions, blocks them",
+        "Alphabetical order",
+        "It needs the model reply"
+      ],
+      "correct": 1,
+      "explanation": "The first before_tool that blocks wins; hooks after it never see the call."
+    },
+    {
+      "stage": "check",
+      "question": "Why was fix-restock's check changed from file_contains to command_passes?",
+      "options": [
+        "It's faster",
+        "Exact-text checks fail correct fixes written differently; running the tests checks the outcome",
+        "file_contains was broken",
+        "To use bash"
+      ],
+      "correct": 1,
+      "explanation": "Check the result you care about, not one implementation of it."
+    },
+    {
+      "stage": "check",
+      "question": "What does the trace store for a tool result?",
+      "options": [
+        "The full text",
+        "Its length and a 160-character redacted preview",
+        "Nothing",
+        "A hash only"
+      ],
+      "correct": 1,
+      "explanation": "Traces shouldn't become a second copy of everything the agent read."
+    },
+    {
+      "stage": "check",
+      "question": "The model events record per-call tokens. Why compute a difference?",
+      "options": [
+        "Usage on RunState is cumulative; the difference is what this call cost",
+        "To round numbers",
+        "For privacy",
+        "The provider requires it"
+      ],
+      "correct": 0,
+      "explanation": "Summing cumulative numbers would wildly overcount."
+    },
+    {
+      "stage": "post",
+      "question": "llama3.2 passed 1 of 3 tasks in one run. What's the right next step before comparing it with another model?",
+      "options": [
+        "Publish the score",
+        "Run each task several times and report pass rates with the number of runs",
+        "Remove the failing tasks",
+        "Switch to text checks"
+      ],
+      "correct": 1,
+      "explanation": "One run of a stochastic system is a sample, not a measurement."
+    }
+  ]
+}

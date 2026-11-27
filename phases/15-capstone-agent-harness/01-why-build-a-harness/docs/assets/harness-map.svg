@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="620" viewBox="0 0 960 620" role="img" aria-label="What the harness adds to the loop">
+<title>What the harness adds to the loop</title>
+<defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(26,26,26,0.055)" stroke-width="1"/></pattern><marker id="ar-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1a1a1a"/></marker><marker id="ar-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#EC4D36"/></marker><marker id="ar-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1d7a82"/></marker><marker id="ar-amb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b07d0c"/></marker><marker id="ar-pur" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a4cb3"/></marker><marker id="ar-mute" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7a7a78"/></marker><marker id="ar-grn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7d3a"/></marker></defs>
+<rect width="960" height="620" fill="#fafaf5"/><rect width="960" height="620" fill="url(#grid)"/>
+<rect x="0.75" y="0.75" width="958.5" height="618.5" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+<g transform="translate(30.1667 28.1667) scale(0.916667)" shape-rendering="crispEdges"><path d="M2 3h7v2H4v8h8V9h2v6H2zM9 1h1v6H9zM10 2h1v4h-1zM11 3h1v2h-1z" fill="#EC4D36"/><path d="M6 7h4v4H6z" fill="#1a1a1a"/></g>
+<text x="52" y="40" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#EC4D36" text-anchor="start" letter-spacing="2">PHASE 15 · LESSON 01</text>
+<text x="32" y="80" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="-0.5" fill="#1a1a1a">What the harness adds to the loop</text>
+<text x="32" y="106" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="16" fill="#4a4a4a" text-anchor="start" font-style="italic">The loop stays small. Everything else plugs into it, and each piece is one lesson.</text>
+<line x1="32" y1="124" x2="928" y2="124" stroke="#1a1a1a" stroke-width="1" opacity="0.25"/>
+<rect x="32" y="146" width="896" height="46" fill="#f3f1e8" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="48" y="174" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="13" fill="#1a1a1a">$ harness run "fix the failing test" --verify "python3 -m unittest"</text>
+<rect x="780" y="160" width="73.4" height="18" fill="#EC4D36"/>
+<text x="816.7" y="172.5" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10" fill="#fafaf5" text-anchor="middle">15.08 CLI</text>
+<rect x="32" y="214" width="600" height="300" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+<text x="46" y="234" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1a1a1a" text-anchor="start">Agent.run()  ·  the loop</text>
+<rect x="540" y="222" width="47.0" height="18" fill="#EC4D36"/>
+<text x="563.5" y="234.5" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10" fill="#fafaf5" text-anchor="middle">15.02</text>
+<rect x="60" y="260" width="150" height="64" fill="#7a4cb3"/>
+<rect x="56" y="256" width="150" height="64" fill="#ebe2f6" stroke="#7a4cb3" stroke-width="1.5"/>
+<text x="131.0" y="285.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#7a4cb3" text-anchor="middle">Model</text>
+<text x="131.0" y="301.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#7a7a78" text-anchor="middle">scripted or real</text>
+<rect x="250" y="260" width="170" height="64" fill="#EC4D36"/>
+<rect x="246" y="256" width="170" height="64" fill="#fde5e0" stroke="#EC4D36" stroke-width="1.5"/>
+<text x="331.0" y="285.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#EC4D36" text-anchor="middle">Loop</text>
+<text x="331.0" y="301.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#7a7a78" text-anchor="middle">think · act · observe</text>
+<rect x="460" y="260" width="160" height="64" fill="#1d7a82"/>
+<rect x="456" y="256" width="160" height="64" fill="#d8eded" stroke="#1d7a82" stroke-width="1.5"/>
+<text x="536.0" y="285.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#1d7a82" text-anchor="middle">Tool registry</text>
+<text x="536.0" y="301.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#7a7a78" text-anchor="middle">schemas · validation</text>
+<line x1="206" y1="280" x2="244" y2="280" stroke="#7a4cb3" stroke-width="1.4" marker-end="url(#ar-pur)"/>
+<line x1="246" y1="298" x2="208" y2="298" stroke="#7a4cb3" stroke-width="1.4" marker-end="url(#ar-pur)"/>
+<line x1="416" y1="280" x2="454" y2="280" stroke="#1d7a82" stroke-width="1.4" marker-end="url(#ar-teal)"/>
+<line x1="456" y1="298" x2="418" y2="298" stroke="#1d7a82" stroke-width="1.4" marker-end="url(#ar-teal)"/>
+<text x="56" y="352" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78" text-anchor="start">HOOKS  ·  called at five points in every step</text>
+<rect x="60" y="370" width="170" height="54" fill="#b07d0c"/>
+<rect x="56" y="366" width="170" height="54" fill="#f6ecd0" stroke="#b07d0c" stroke-width="1.5"/>
+<text x="141.0" y="390.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#b07d0c" text-anchor="middle">ContextManager</text>
+<text x="141.0" y="406.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#7a7a78" text-anchor="middle">before_model · 15.03</text>
+<rect x="250" y="370" width="170" height="54" fill="#EC4D36"/>
+<rect x="246" y="366" width="170" height="54" fill="#fde5e0" stroke="#EC4D36" stroke-width="1.5"/>
+<text x="331.0" y="390.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#EC4D36" text-anchor="middle">Permissions</text>
+<text x="331.0" y="406.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#7a7a78" text-anchor="middle">before_tool · 15.06</text>
+<rect x="440" y="370" width="170" height="54" fill="#2f7d3a"/>
+<rect x="436" y="366" width="170" height="54" fill="#dcefdc" stroke="#2f7d3a" stroke-width="1.5"/>
+<text x="521.0" y="390.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#2f7d3a" text-anchor="middle">Tracer</text>
+<text x="521.0" y="406.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#7a7a78" text-anchor="middle">every point · 15.07</text>
+<text x="56" y="450" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#4a4a4a" text-anchor="start">memory: remember / recall tools  ·  HARNESS.md in the system prompt   [15.03]</text>
+<text x="56" y="470" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#4a4a4a" text-anchor="start">stops: final_answer · max_steps · budget · repeated_call · model_error</text>
+<text x="56" y="490" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#4a4a4a" text-anchor="start">errors from tools come back as observations; nothing crashes the run</text>
+<text x="676" y="234" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78" text-anchor="start">TOOLS THE MODEL CAN CALL</text>
+<rect x="680" y="254" width="200" height="48" fill="#1d7a82"/>
+<rect x="676" y="250" width="200" height="48" fill="#d8eded" stroke="#1d7a82" stroke-width="1.5"/>
+<text x="776.0" y="271.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#1d7a82" text-anchor="middle">read · search · edit</text>
+<text x="776.0" y="287.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#7a7a78" text-anchor="middle">workspace jail · 15.02</text>
+<line x1="632" y1="274" x2="672" y2="274" stroke="#7a7a78" stroke-width="1.4" marker-end="url(#ar-mute)"/>
+<rect x="680" y="318" width="200" height="48" fill="#1d7a82"/>
+<rect x="676" y="314" width="200" height="48" fill="#d8eded" stroke="#1d7a82" stroke-width="1.5"/>
+<text x="776.0" y="335.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#1d7a82" text-anchor="middle">bash</text>
+<text x="776.0" y="351.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#7a7a78" text-anchor="middle">sandboxed process · 15.06</text>
+<line x1="632" y1="338" x2="672" y2="338" stroke="#7a7a78" stroke-width="1.4" marker-end="url(#ar-mute)"/>
+<rect x="680" y="382" width="200" height="48" fill="#7a4cb3"/>
+<rect x="676" y="378" width="200" height="48" fill="#ebe2f6" stroke="#7a4cb3" stroke-width="1.5"/>
+<text x="776.0" y="399.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#7a4cb3" text-anchor="middle">mcp__server__tool</text>
+<text x="776.0" y="415.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#7a7a78" text-anchor="middle">stdio subprocess · 15.04</text>
+<line x1="632" y1="402" x2="672" y2="402" stroke="#7a7a78" stroke-width="1.4" marker-end="url(#ar-mute)"/>
+<rect x="680" y="446" width="200" height="48" fill="#b07d0c"/>
+<rect x="676" y="442" width="200" height="48" fill="#f6ecd0" stroke="#b07d0c" stroke-width="1.5"/>
+<text x="776.0" y="463.0" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#b07d0c" text-anchor="middle">task</text>
+<text x="776.0" y="479.0" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#7a7a78" text-anchor="middle">fresh-context subagent · 15.05</text>
+<line x1="632" y1="466" x2="672" y2="466" stroke="#7a7a78" stroke-width="1.4" marker-end="url(#ar-mute)"/>
+<text x="32" y="548" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78" text-anchor="start">STATE ON DISK</text>
+<text x="32" y="570" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1a1a1a" text-anchor="start">.harness.json  (rules, MCP servers, mode)</text>
+<text x="332" y="570" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1a1a1a" text-anchor="start">.harness/memory.json</text>
+<text x="532" y="570" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1a1a1a" text-anchor="start">.harness/traces/*.jsonl</text>
+<text x="752" y="570" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1a1a1a" text-anchor="start">evals/tasks.json</text>
+<text x="32" y="600" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="10.5" fill="#7a7a78" text-anchor="start">Model settings and keys come only from the environment: AGENT_BASE_URL, AGENT_MODEL, AGENT_API_KEY.</text>
+</svg>

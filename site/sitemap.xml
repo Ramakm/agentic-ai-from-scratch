@@ -138,6 +138,14 @@
   <url><loc>https://agentic-ai-from-scratch.vercel.app/lessons/12-safety-and-security/09-human-in-the-loop-design/</loc><priority>0.8</priority></url>
   <url><loc>https://agentic-ai-from-scratch.vercel.app/lessons/12-safety-and-security/10-red-teaming-your-agent/</loc><priority>0.8</priority></url>
   <url><loc>https://agentic-ai-from-scratch.vercel.app/lessons/12-safety-and-security/11-audit-logs/</loc><priority>0.8</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/lessons/15-capstone-agent-harness/01-why-build-a-harness/</loc><priority>0.8</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/lessons/15-capstone-agent-harness/02-the-core-loop-tool-registry/</loc><priority>0.8</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/lessons/15-capstone-agent-harness/03-memory-context-manager/</loc><priority>0.8</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/lessons/15-capstone-agent-harness/04-mcp-client-integration/</loc><priority>0.8</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/lessons/15-capstone-agent-harness/05-subagents-delegation/</loc><priority>0.8</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/lessons/15-capstone-agent-harness/06-permissions-sandbox/</loc><priority>0.8</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/lessons/15-capstone-agent-harness/07-evals-traces/</loc><priority>0.8</priority></url>
+  <url><loc>https://agentic-ai-from-scratch.vercel.app/lessons/15-capstone-agent-harness/08-ship-it-cli-docs/</loc><priority>0.8</priority></url>
   <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/</loc><priority>0.9</priority></url>
   <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/llm-foundations/different-answer-every-run/</loc><priority>0.6</priority></url>
   <url><loc>https://agentic-ai-from-scratch.vercel.app/interviews/llm-foundations/forgets-the-task/</loc><priority>0.6</priority></url>

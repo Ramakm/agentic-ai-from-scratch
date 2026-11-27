@@ -1,6 +1,6 @@
 # Agentic AI from Scratch
 
-> Build AI agents from a raw while-loop and an HTTP call, before a single framework gets imported. 16 phases, 163 lessons (137 live), Python and TypeScript, free and open source (MIT).
+> Build AI agents from a raw while-loop and an HTTP call, before a single framework gets imported. 16 phases, 163 lessons (145 live), Python and TypeScript, free and open source (MIT).
 
 Source: https://github.com/Ramakm/agentic-ai-from-scratch
 Site: https://agentic-ai-from-scratch.vercel.app/
@@ -242,14 +242,14 @@ Streaming step views, approvals and undo, voice, background agents, and the desi
 
 Everything at once. A loop, tool registry, memory, MCP, subagents, permissions, and evals, shipped as a CLI.
 
-- 15.01 Why build a harness (35 min) [planned]
-- 15.02 The core loop & tool registry (70 min) [planned]
-- 15.03 Memory & context manager (70 min) [planned]
-- 15.04 MCP client integration (60 min) [planned]
-- 15.05 Subagents & delegation (60 min) [planned]
-- 15.06 Permissions & sandbox (60 min) [planned]
-- 15.07 Evals & traces (60 min) [planned]
-- 15.08 Ship it: CLI + docs (60 min) [planned]
+- 15.01 Why build a harness (35 min): https://agentic-ai-from-scratch.vercel.app/lessons/15-capstone-agent-harness/01-why-build-a-harness/ | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/15-capstone-agent-harness/01-why-build-a-harness/docs/en.md
+- 15.02 The core loop & tool registry (70 min): https://agentic-ai-from-scratch.vercel.app/lessons/15-capstone-agent-harness/02-the-core-loop-tool-registry/ | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/15-capstone-agent-harness/02-the-core-loop-tool-registry/docs/en.md
+- 15.03 Memory & context manager (70 min): https://agentic-ai-from-scratch.vercel.app/lessons/15-capstone-agent-harness/03-memory-context-manager/ | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/15-capstone-agent-harness/03-memory-context-manager/docs/en.md
+- 15.04 MCP client integration (60 min): https://agentic-ai-from-scratch.vercel.app/lessons/15-capstone-agent-harness/04-mcp-client-integration/ | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/15-capstone-agent-harness/04-mcp-client-integration/docs/en.md
+- 15.05 Subagents & delegation (60 min): https://agentic-ai-from-scratch.vercel.app/lessons/15-capstone-agent-harness/05-subagents-delegation/ | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/15-capstone-agent-harness/05-subagents-delegation/docs/en.md
+- 15.06 Permissions & sandbox (60 min): https://agentic-ai-from-scratch.vercel.app/lessons/15-capstone-agent-harness/06-permissions-sandbox/ | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/15-capstone-agent-harness/06-permissions-sandbox/docs/en.md
+- 15.07 Evals & traces (60 min): https://agentic-ai-from-scratch.vercel.app/lessons/15-capstone-agent-harness/07-evals-traces/ | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/15-capstone-agent-harness/07-evals-traces/docs/en.md
+- 15.08 Ship it: CLI + docs (60 min): https://agentic-ai-from-scratch.vercel.app/lessons/15-capstone-agent-harness/08-ship-it-cli-docs/ | raw: https://raw.githubusercontent.com/Ramakm/agentic-ai-from-scratch/main/phases/15-capstone-agent-harness/08-ship-it-cli-docs/docs/en.md
 
 ## Interview questions
 

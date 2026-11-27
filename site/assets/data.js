@@ -39,7 +39,7 @@ window.SITE = {
   "totals": {
     "phases": 16,
     "lessons": 163,
-    "published": 137,
+    "published": 145,
     "hours": 127
   }
 };
@@ -1697,72 +1697,88 @@ window.PHASES = [
   "id": "15-capstone-agent-harness",
   "name": "Capstone: Your Own Agent Harness",
   "desc": "Everything at once. A loop, tool registry, memory, MCP, subagents, permissions, and evals, shipped as a CLI.",
-  "status": "planned",
-  "published": 0,
+  "status": "complete",
+  "published": 8,
   "lessons": [
    {
     "id": "01-why-build-a-harness",
     "title": "Why build a harness",
     "minutes": 35,
     "path": "phases/15-capstone-agent-harness/01-why-build-a-harness",
-    "type": "",
-    "num": "15.01"
+    "type": "Learn",
+    "num": "15.01",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "02-the-core-loop-tool-registry",
     "title": "The core loop & tool registry",
     "minutes": 70,
     "path": "phases/15-capstone-agent-harness/02-the-core-loop-tool-registry",
-    "type": "",
-    "num": "15.02"
+    "type": "Build",
+    "num": "15.02",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "03-memory-context-manager",
     "title": "Memory & context manager",
     "minutes": 70,
     "path": "phases/15-capstone-agent-harness/03-memory-context-manager",
-    "type": "",
-    "num": "15.03"
+    "type": "Build",
+    "num": "15.03",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "04-mcp-client-integration",
     "title": "MCP client integration",
     "minutes": 60,
     "path": "phases/15-capstone-agent-harness/04-mcp-client-integration",
-    "type": "",
-    "num": "15.04"
+    "type": "Build",
+    "num": "15.04",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "05-subagents-delegation",
     "title": "Subagents & delegation",
     "minutes": 60,
     "path": "phases/15-capstone-agent-harness/05-subagents-delegation",
-    "type": "",
-    "num": "15.05"
+    "type": "Build",
+    "num": "15.05",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "06-permissions-sandbox",
     "title": "Permissions & sandbox",
     "minutes": 60,
     "path": "phases/15-capstone-agent-harness/06-permissions-sandbox",
-    "type": "",
-    "num": "15.06"
+    "type": "Build",
+    "num": "15.06",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "07-evals-traces",
     "title": "Evals & traces",
     "minutes": 60,
     "path": "phases/15-capstone-agent-harness/07-evals-traces",
-    "type": "",
-    "num": "15.07"
+    "type": "Build",
+    "num": "15.07",
+    "published": true,
+    "hasQuiz": true
    },
    {
     "id": "08-ship-it-cli-docs",
     "title": "Ship it: CLI + docs",
     "minutes": 60,
     "path": "phases/15-capstone-agent-harness/08-ship-it-cli-docs",
-    "type": "",
-    "num": "15.08"
+    "type": "Build",
+    "num": "15.08",
+    "published": true,
+    "hasQuiz": true
    }
   ]
  }
