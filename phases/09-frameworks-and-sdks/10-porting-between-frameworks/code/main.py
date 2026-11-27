@@ -257,8 +257,8 @@ if __name__ == "__main__":
     for name, emit in EMITTERS.items():
         code = emit(SPEC)
         ast.parse(code)
-        print(f"  {name:<14} {len(code.splitlines()):>3} lines, parses OK, "
-              f"functions: {', '.join(re.findall(r'^def (\w+)', code, re.M))}")
+        functions = ", ".join(re.findall(r"^def (\w+)", code, re.M))
+        print(f"  {name:<14} {len(code.splitlines()):>3} lines, parses OK, functions: {functions}")
     print("\n2. replay recorded runs through source and port")
     task = "Refund order A-1001, it arrived broken."
     good = parity(SPEC, task, CASSETTE)

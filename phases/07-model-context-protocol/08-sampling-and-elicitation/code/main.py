@@ -198,7 +198,8 @@ class Client:
                 return f"error {e.code}: {e.message}" + (f" {e.data}" if e.data else "")
             if result["resultType"] == "complete":
                 return ("isError: " if result["isError"] else "") + result["content"][0]["text"]
-            self.log(f"  id {self.ids} -> input_required: {', '.join(f'{k} ({v['method']})' for k, v in result['inputRequests'].items())}")
+            pending = ", ".join(f"{k} ({v['method']})" for k, v in result["inputRequests"].items())
+            self.log(f"  id {self.ids} -> input_required: {pending}")
             responses = {k: self.fulfil(req) for k, req in result.get("inputRequests", {}).items()}
             # Retry the ORIGINAL request: new id, same params, answers attached, state echoed unchanged.
             params = {"name": name, "arguments": arguments, "inputResponses": responses}
