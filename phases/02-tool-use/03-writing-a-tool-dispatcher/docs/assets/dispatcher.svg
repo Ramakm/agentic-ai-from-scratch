@@ -4,7 +4,7 @@
 <rect width="960" height="530" fill="#fafaf5"/>
 <rect width="960" height="530" fill="url(#grid)"/>
 <rect x="0.75" y="0.75" width="958.5" height="528.5" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
-<rect x="32" y="30" width="11" height="11" fill="#EC4D36"/><rect x="35" y="33" width="5" height="5" fill="#fafaf5"/>
+<g transform="translate(30.1667 28.1667) scale(0.916667)" shape-rendering="crispEdges"><path d="M2 3h7v2H4v8h8V9h2v6H2zM9 1h1v6H9zM10 2h1v4h-1zM11 3h1v2h-1z" fill="#EC4D36"/><path d="M6 7h4v4H6z" fill="#1a1a1a"/></g>
 <text x="52" y="40" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" letter-spacing="2" fill="#EC4D36">PHASE 02 · LESSON 03</text>
 <text x="32" y="80" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="-0.5" fill="#1a1a1a">Six stages of a tool dispatcher</text>
 <text x="32" y="106" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="16" font-style="italic" fill="#4a4a4a">Every path ends in a Result with a string the model can read. The loop never crashes on a tool.</text>

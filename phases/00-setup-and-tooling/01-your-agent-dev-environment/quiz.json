@@ -15,11 +15,23 @@
       "explanation": "Port 11434 is the Ollama server. 'Connection refused' means nothing is listening, so start it with `ollama serve` or the desktop app."
     },
     {
+      "stage": "pre",
+      "question": "Do you need a model running to start Phase 1 of this course?",
+      "options": [
+        "Yes, every lesson calls a hosted API",
+        "Yes, Ollama must be running for the tests",
+        "No. Lessons run offline against a scripted model; a real one is switched on with AGENT_BASE_URL and AGENT_MODEL",
+        "No, because lessons don't use models until Phase 9"
+      ],
+      "correct": 2,
+      "explanation": "A scripted model replays fixed assistant messages, so code and tests are deterministic and free. A real model is optional per run."
+    },
+    {
       "stage": "check",
-      "question": "Why does agent-doctor skip models like nomic-embed-text when choosing one to ping?",
+      "question": "Why does agent-doctor drop models like nomic-embed-text when choosing one to ping?",
       "options": [
         "They are too large",
-        "Embedding models turn text into vectors and cannot hold a conversation",
+        "Embedding models turn text into vectors and can't hold a conversation",
         "They require an API key",
         "They only work in TypeScript"
       ],
@@ -28,51 +40,39 @@
     },
     {
       "stage": "check",
-      "question": "What is the safe way for a diagnostic script to report API keys?",
+      "question": "On the `start` route, Docker is missing. What does agent-doctor report?",
       "options": [
-        "Print the full key so you can verify it",
-        "Print the first and last four characters",
-        "Print only the names of the environment variables that are set",
-        "Write the keys to a log file"
+        "A failure, because Phase 12 uses containers",
+        "Nothing: Docker isn't part of the `start` route, so it's neither checked nor allowed to block it",
+        "A failure, but only on macOS",
+        "It installs Docker automatically"
       ],
-      "correct": 2,
-      "explanation": "Report which keys exist, never their values. Terminal output and logs get shared, pasted, and committed."
+      "correct": 1,
+      "explanation": "Each route checks only what it needs. Docker is in the `sandboxing` route, and even there it's a warning, because only 12.05's optional `--run` needs it."
     },
     {
       "stage": "check",
-      "question": "Why does every lesson use the OpenAI-compatible /chat/completions format?",
+      "question": "agent-doctor finds a `.env` file that `git ls-files` lists. Why is that a failure, and what's the complete fix?",
       "options": [
-        "OpenAI requires it by law",
-        "It's the only format that supports tools",
-        "Ollama, OpenAI, vLLM, LM Studio and others accept it, so switching providers is just a base-URL change",
-        "It is faster than other formats"
+        "It's only a style issue; rename the file",
+        "Git tracks it, so the keys in it get committed. Untrack it, ignore it, and rotate every key it contains",
+        "Delete the file; the keys are then safe",
+        "Move it into the code/ folder"
+      ],
+      "correct": 1,
+      "explanation": "Once a key reaches a commit, clones, forks and caches may keep it. Removing the file isn't enough: rotate the keys."
+    },
+    {
+      "stage": "post",
+      "question": "Your agent's loop seems to call the same tool forever with odd arguments. agent-doctor shows `[FAIL] Model ... doesn't serve 'gpt-5'` because AGENT_BASE_URL points at a local Ollama. What should you do first?",
+      "options": [
+        "Add a step limit to the loop",
+        "Rewrite the tool's schema",
+        "Fix layer 3 first: set AGENT_MODEL to a model the server has, then see whether the loop problem remains",
+        "Switch to a framework"
       ],
       "correct": 2,
-      "explanation": "One request shape works across local and hosted servers, which keeps lesson code provider-neutral."
-    },
-    {
-      "stage": "post",
-      "question": "You accidentally committed an API key and then deleted it in the next commit. What must you do?",
-      "options": [
-        "Nothing, it's deleted",
-        "Rotate (revoke and replace) the key, because it's still in git history",
-        "Make the repository private",
-        "Rename the environment variable"
-      ],
-      "correct": 1,
-      "explanation": "The key remains in history and may already be scraped. Revoking it is the only real fix."
-    },
-    {
-      "stage": "post",
-      "question": "Why do the checks take parameters like which=shutil.which and fetch=fetch_json?",
-      "options": [
-        "To make them run faster",
-        "So tests can pass in fake functions without patching libraries or needing Ollama installed",
-        "Python requires default arguments",
-        "To support Windows"
-      ],
-      "correct": 1,
-      "explanation": "Injecting dependencies with real defaults keeps production code simple and tests fast and deterministic."
+      "explanation": "Fix the stack bottom-up. A broken model layer shows up as strange agent behaviour; debugging the loop before fixing it wastes the hour this lesson saves."
     }
   ]
 }

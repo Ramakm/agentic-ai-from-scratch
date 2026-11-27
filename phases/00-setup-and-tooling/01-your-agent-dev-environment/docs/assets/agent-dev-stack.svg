@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" role="img" aria-label="The agent dev stack: four layers, checked by agent-doctor">
+<title>The agent dev stack</title>
+<defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="rgba(26,26,26,0.055)" stroke-width="1"/></pattern></defs>
+<rect width="960" height="600" fill="#fafaf5"/><rect width="960" height="600" fill="url(#grid)"/>
+<rect x="0.75" y="0.75" width="958.5" height="598.5" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+<g transform="translate(30.1667 28.1667) scale(0.916667)" shape-rendering="crispEdges"><path d="M2 3h7v2H4v8h8V9h2v6H2zM9 1h1v6H9zM10 2h1v4h-1zM11 3h1v2h-1z" fill="#EC4D36"/><path d="M6 7h4v4H6z" fill="#1a1a1a"/></g>
+<text x="52" y="40" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#EC4D36" text-anchor="start" letter-spacing="2">PHASE 00 · LESSON 01</text>
+<text x="32" y="80" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="-0.5" fill="#1a1a1a">The agent dev stack</text>
+<text x="32" y="106" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="16" fill="#4a4a4a" text-anchor="start" font-style="italic">Four layers. A failure in a lower one looks like a bug in the one above it.</text>
+<line x1="32" y1="124" x2="928" y2="124" stroke="#1a1a1a" stroke-width="1" opacity="0.25"/>
+<rect x="36" y="152" width="600" height="72" fill="#EC4D36"/>
+<rect x="32" y="148" width="600" height="72" fill="#fde5e0" stroke="#EC4D36" stroke-width="1.5"/>
+<text x="50" y="172" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#EC4D36" text-anchor="start">4</text>
+<text x="72" y="176" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="17" font-weight="600" fill="#EC4D36">Your agent</text>
+<text x="72" y="196" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11.5" fill="#1a1a1a" text-anchor="start">code/main.py · the loop, tools, memory</text>
+<text x="72" y="212" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12.5" fill="#4a4a4a" text-anchor="start" font-style="italic">tests pass offline, every lesson</text>
+<rect x="36" y="252" width="600" height="72" fill="#7a4cb3"/>
+<rect x="32" y="248" width="600" height="72" fill="#ebe2f6" stroke="#7a4cb3" stroke-width="1.5"/>
+<text x="50" y="272" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a4cb3" text-anchor="start">3</text>
+<text x="72" y="276" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="17" font-weight="600" fill="#7a4cb3">Model access</text>
+<text x="72" y="296" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11.5" fill="#1a1a1a" text-anchor="start">scripted (default) · Ollama · hosted API</text>
+<text x="72" y="312" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12.5" fill="#4a4a4a" text-anchor="start" font-style="italic">one shape: OpenAI-compatible /chat/completions</text>
+<rect x="36" y="352" width="600" height="72" fill="#1d7a82"/>
+<rect x="32" y="348" width="600" height="72" fill="#d8eded" stroke="#1d7a82" stroke-width="1.5"/>
+<text x="50" y="372" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#1d7a82" text-anchor="start">2</text>
+<text x="72" y="376" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="17" font-weight="600" fill="#1d7a82">Runtimes</text>
+<text x="72" y="396" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11.5" fill="#1a1a1a" text-anchor="start">Python 3.10+ in a venv (uv) · Node 23.6+ (fnm)</text>
+<text x="72" y="412" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12.5" fill="#4a4a4a" text-anchor="start" font-style="italic">Docker and SDK packages only where a lesson says</text>
+<rect x="36" y="452" width="600" height="72" fill="#b07d0c"/>
+<rect x="32" y="448" width="600" height="72" fill="#f6ecd0" stroke="#b07d0c" stroke-width="1.5"/>
+<text x="50" y="472" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#b07d0c" text-anchor="start">1</text>
+<text x="72" y="476" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="17" font-weight="600" fill="#b07d0c">Machine</text>
+<text x="72" y="496" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11.5" fill="#1a1a1a" text-anchor="start">macOS · Linux · Windows via WSL2</text>
+<text x="72" y="512" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12.5" fill="#4a4a4a" text-anchor="start" font-style="italic">shell · git · an editor · keys in env, never in git</text>
+<line x1="656" y1="148" x2="656" y2="520" stroke="#1a1a1a" stroke-width="1" opacity="0.15"/>
+<text x="672" y="160" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1a1a1a" text-anchor="start">agent-doctor --route</text>
+<rect x="672" y="184" width="120" height="26" fill="#fafaf5" stroke="#1a1a1a" stroke-width="1.2"/>
+<text x="732" y="201" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1a1a1a" text-anchor="middle">start</text>
+<text x="804" y="201" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78" text-anchor="start">layer 1 2</text>
+<text x="672" y="228" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12.5" fill="#4a4a4a" text-anchor="start" font-style="italic">python · venv · git · .env</text>
+<rect x="672" y="250" width="120" height="26" fill="#fafaf5" stroke="#1a1a1a" stroke-width="1.2"/>
+<text x="732" y="267" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1a1a1a" text-anchor="middle">real-model</text>
+<text x="804" y="267" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78" text-anchor="start">layer 3</text>
+<text x="672" y="294" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12.5" fill="#4a4a4a" text-anchor="start" font-style="italic">Ollama or AGENT_BASE_URL</text>
+<rect x="672" y="316" width="120" height="26" fill="#fafaf5" stroke="#1a1a1a" stroke-width="1.2"/>
+<text x="732" y="333" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1a1a1a" text-anchor="middle">typescript</text>
+<text x="804" y="333" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78" text-anchor="start">layer 2</text>
+<text x="672" y="360" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12.5" fill="#4a4a4a" text-anchor="start" font-style="italic">node 23.6+</text>
+<rect x="672" y="382" width="120" height="26" fill="#fafaf5" stroke="#1a1a1a" stroke-width="1.2"/>
+<text x="732" y="399" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1a1a1a" text-anchor="middle">sandboxing</text>
+<text x="804" y="399" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78" text-anchor="start">layer 1 2</text>
+<text x="672" y="426" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12.5" fill="#4a4a4a" text-anchor="start" font-style="italic">bash · POSIX limits · docker</text>
+<rect x="672" y="448" width="120" height="26" fill="#fafaf5" stroke="#1a1a1a" stroke-width="1.2"/>
+<text x="732" y="465" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="12" fill="#1a1a1a" text-anchor="middle">sdks</text>
+<text x="804" y="465" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78" text-anchor="start">layer 2</text>
+<text x="672" y="492" font-family="'Source Serif 4',Georgia,'Times New Roman',serif" font-size="12.5" fill="#4a4a4a" text-anchor="start" font-style="italic">uv/pip · Phase 09 packages</text>
+<text x="32" y="576" font-family="'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace" font-size="11" fill="#7a7a78" text-anchor="start">Only route "start" is needed to begin. Lessons run against a scripted model; a real one is optional.</text>
+</svg>
